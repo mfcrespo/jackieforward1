@@ -9,66 +9,66 @@ publish_mode: simple
 
 collections:
   - name: "events"
-  label: "Events"
-  label_singular: "Event"
-  folder: "content/events"
-  create: true
-  slug: "{{slug}}"
-  format: "json"
-  extension: "json"
-  summary: "{{title}} — {{date}} — {{category}}"
-  fields:
-    - label: "Title"
-      name: "title"
-      widget: "string"
-      hint: "Example: Let’s Talk, Ward 1 – Meet & Greet"
+    label: "Events"
+    label_singular: "Event"
+    folder: "content/events"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
+    summary: "{{title}} — {{date}} — {{category}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "Example: Let’s Talk, Ward 1 – Meet & Greet"
 
-    - label: "Event Date"
-      name: "date"
-      widget: "datetime"
-      format: "YYYY-MM-DD"
-      date_format: "YYYY-MM-DD"
-      time_format: false
+      - label: "Event Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
 
-    - label: "Event Time"
-      name: "time"
-      widget: "string"
-      hint: "Example: 3:00 PM – 4:00 PM"
+      - label: "Event Time"
+        name: "time"
+        widget: "string"
+        hint: "Example: 3:00 PM – 4:00 PM"
 
-    - label: "Category"
-      name: "category"
-      widget: "select"
-      options:
-        - { label: "Meet & Greet", value: "meet-greet" }
-        - { label: "Clean Up", value: "cleanup" }
-        - { label: "Canvassing", value: "canvassing" }
-        - { label: "Town Hall", value: "townhall" }
-        - { label: "Fundraiser", value: "fundraiser" }
-        - { label: "Community Event", value: "community" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Meet & Greet", value: "meet-greet" }
+          - { label: "Clean Up", value: "cleanup" }
+          - { label: "Canvassing", value: "canvassing" }
+          - { label: "Town Hall", value: "townhall" }
+          - { label: "Fundraiser", value: "fundraiser" }
+          - { label: "Community Event", value: "community" }
 
-    - label: "Address"
-      name: "address"
-      widget: "string"
-      hint: "Full public address"
+      - label: "Address"
+        name: "address"
+        widget: "string"
+        hint: "Full public address"
 
-    - label: "Description"
-      name: "description"
-      widget: "text"
-      hint: "Short website description"
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        hint: "Short website description"
 
-    - label: "RSVP Link"
-      name: "rsvp"
-      widget: "string"
-      required: false
-      hint: "Use full URL starting with https://"
+      - label: "RSVP Link"
+        name: "rsvp"
+        widget: "string"
+        required: false
+        hint: "Use full URL starting with https://"
 
-    - label: "Event Image"
-      name: "image"
-      widget: "image"
-      required: false
+      - label: "Event Image"
+        name: "image"
+        widget: "image"
+        required: false
 
-    - label: "Featured Event"
-      name: "featured"
-      widget: "boolean"
-      default: false
-      required: false
+      - label: "Featured Event"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        required: false
