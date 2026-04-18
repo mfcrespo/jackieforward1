@@ -1,0 +1,70 @@
+body {
+  background: #edf1f5 !important;
+}
+
+/* Top bar */
+header,
+[class*="TopBarContainer"],
+[class*="AppHeader"] {
+  background: #ffffff !important;
+  border-bottom: 1px solid #d9dee5 !important;
+}
+
+/* Sidebar / collections panel */
+aside,
+[class*="SidebarContainer"],
+[class*="CollectionTopContainer"] {
+  background: #f7f9fc !important;
+}
+
+/* Main cards */
+[class*="Card"],
+[class*="CollectionTopContainer-card"],
+[class*="EditorContainer"] > div {
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Buttons */
+button {
+  border-radius: 10px !important;
+}
+
+button[class*="primary"],
+button[class*="PrimaryButton"] {
+  background: #2f3d3d !important;
+  color: #fff !important;
+}
+
+/* Published button */
+button[class*="ToolbarButton"],
+button[class*="PublishedButton"] {
+  border-radius: 10px !important;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  border-radius: 10px !important;
+  border: 1px solid #d7dde5 !important;
+  box-shadow: none !important;
+}
+
+/* Field labels */
+label,
+[class*="FieldLabel"] {
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Collection items */
+[class*="CollectionTopContainer"] [role="button"],
+[class*="ListCard"] {
+  border-radius: 12px !important;
+}
+
+/* Make things feel cleaner */
+* {
+  scrollbar-width: thin;
+}
