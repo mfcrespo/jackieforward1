@@ -1389,61 +1389,12 @@ footer{
         <div class="section-label">In the News</div>
         <h2>Jackie in the <em>Press.</em></h2>
       </div>
-      <a href="https://www.jackieforward1.com/news" target="_blank" class="btn-ghost">All Coverage →</a>
+      <a href="/news.html" target="_blank" class="btn-ghost">All Coverage →</a>
     </div>
-    <div class="news-grid">
+    <div class="news-grid" id="news-list"></div>
+      <a href="/news.html" class="btn-ghost" style="margin-top:1.5rem; display:inline-block;">See All Press Coverage</a>
 
-      <a href="https://www.dcist.com" target="_blank" class="news-card reveal">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <span class="news-outlet">DCist</span>
-          <span class="news-date">2025</span>
-        </div>
-        <div class="news-headline">"Jackie Reyes Yanes Brings a Lifetime of Ward 1 Experience to the Council Race"</div>
-        <p class="news-excerpt">The candidate has spent more than three decades building community in Mount Pleasant and Columbia Heights — and she says that's exactly what Ward 1 needs right now.</p>
-        <span class="news-read">Read Story</span>
-      </a>
-
-      <a href="https://www.washingtoncitypaper.com" target="_blank" class="news-card reveal">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <span class="news-outlet">Washington City Paper</span>
-          <span class="news-date">2025</span>
-        </div>
-        <div class="news-headline">"The Ward 1 Race: Meet the Candidates Vying for DC Council"</div>
-        <p class="news-excerpt">From affordable housing to small business support, the candidates for Ward 1 are laying out competing visions for one of DC's most diverse neighborhoods.</p>
-        <span class="news-read">Read Story</span>
-      </a>
-
-      <a href="https://www.eltiempolatino.com" target="_blank" class="news-card reveal">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <span class="news-outlet">El Tiempo Latino</span>
-          <span class="news-date">2025</span>
-        </div>
-        <div class="news-headline">"Jackie Reyes Yanes: La Voz Latina que Ward 1 Necesita en el Concejo"</div>
-        <p class="news-excerpt">Llegó a DC a los 12 años como refugiada salvadoreña. Hoy se postula al Concejo del Distrito de Columbia con un plan concreto para proteger a las familias inmigrantes.</p>
-        <span class="news-read">Leer Más</span>
-      </a>
-
-      <a href="https://www.thecommonsdc.com" target="_blank" class="news-card reveal">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <span class="news-outlet">The Commons DC</span>
-          <span class="news-date">2025</span>
-        </div>
-        <div class="news-headline">"How Jackie Reyes Yanes Saved the Monsignor Romero Apartments"</div>
-        <p class="news-excerpt">After a devastating fire, residents faced permanent displacement. One advocate stepped in and helped them become owners of their own building.</p>
-        <span class="news-read">Read Story</span>
-      </a>
-
-      <a href="https://www.washingtonpost.com" target="_blank" class="news-card reveal">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <span class="news-outlet">Washington Post</span>
-          <span class="news-date">2025</span>
-        </div>
-        <div class="news-headline">"DC's Immigrant Community Found an Unlikely Champion in a City Hall Staffer"</div>
-        <p class="news-excerpt">When federal Covid relief excluded undocumented immigrants, Jackie Reyes Yanes helped build the coalition that secured $43 million in local emergency support.</p>
-        <span class="news-read">Read Story</span>
-      </a>
-
-      <a href="https://www.jackieforward1.com/news" target="_blank" class="news-card reveal" style="background:rgba(212,160,23,.04);border-color:rgba(212,160,23,.2);justify-content:center;align-items:center;text-align:center">
+      <a href="/news.html" target="_blank" class="news-card reveal" style="background:rgba(212,160,23,.04);border-color:rgba(212,160,23,.2);justify-content:center;align-items:center;text-align:center">
         <div style="font-size:2rem;color:rgba(212,160,23,.3)">★</div>
         <div class="news-headline" style="color:var(--gold)">See All Press Coverage</div>
         <p class="news-excerpt" style="text-align:center">Follow Jackie's campaign coverage across DC media, community newsletters, and Spanish-language press.</p>
@@ -1708,6 +1659,53 @@ async function loadUpcomingEvents() {
 }
 
 loadUpcomingEvents();
+</script>
+
+<!-- 
+NEWS SCRIPT
+
+Loads news from /data/news.json.
+-->
+
+<script>
+  function escapeHtml(str = '') {
+    return String(str)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#39;');
+  }
+
+  async function loadHomeNews() {
+    const container = document.getElementById("news-list");
+    if (!container) return;
+
+    try {
+      const response = await fetch("/data/news.json", { cache: "no-store" });
+      const data = await response.json();
+      const items = Array.isArray(data.items) ? data.items : [];
+
+      const featured = items.filter(item => item.featured);
+      const selected = (featured.length ? featured : items).slice(0, 5);
+
+      container.innerHTML = selected.map(item => `
+        <article class="news-card">
+          ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" class="news-card-image">` : ""}
+          <div class="news-card-body">
+            <div class="news-source-date">${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}</div>
+            <h3>${escapeHtml(item.title || "")}</h3>
+            ${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}
+            <a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">Read Coverage</a>
+          </div>
+        </article>
+      `).join("");
+    } catch (error) {
+      console.error("Error loading home news:", error);
+    }
+  }
+
+  loadHomeNews();
 </script>
 
 </body>

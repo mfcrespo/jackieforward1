@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>All Press Coverage | Jackie Forward</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+      :root{
+        --gold:#D4A017;
+        --ink:#0B0D0B;
+        --warm:#F4EFE6;
+      }
+
+      body{
+        margin:0;
+        font-family:'Lora', serif;
+        background:var(--ink);
+        color:var(--warm);
+      }
+
+      .wrap{
+        max-width:1100px;
+        margin:0 auto;
+        padding:4rem 1.5rem;
+      }
+
+      .section-label{
+        font-family:'League Spartan', sans-serif;
+        color:var(--gold);
+        text-transform:uppercase;
+        letter-spacing:.12em;
+        font-size:.8rem;
+        margin-bottom:1rem;
+      }
+
+      h1{
+        font-family:'League Spartan', sans-serif;
+        font-size:clamp(2.4rem, 5vw, 4rem);
+        margin:0 0 2rem 0;
+      }
+
+      .news-grid{
+        display:grid;
+        gap:1.5rem;
+      }
+
+      .news-card{
+        display:grid;
+        grid-template-columns:260px 1fr;
+        gap:1.2rem;
+        background:rgba(244,239,230,.04);
+        border:1px solid rgba(244,239,230,.08);
+        overflow:hidden;
+      }
+
+      .news-card-image{
+        width:100%;
+        height:100%;
+        min-height:220px;
+        object-fit:cover;
+        display:block;
+      }
+
+      .news-card-body{
+        padding:1.2rem 1.2rem 1.2rem 0;
+      }
+
+      .news-source-date{
+        color:var(--gold);
+        font-family:'League Spartan', sans-serif;
+        text-transform:uppercase;
+        letter-spacing:.06em;
+        font-size:.8rem;
+        margin-bottom:.8rem;
+      }
+
+      .news-card h2{
+        font-family:'League Spartan', sans-serif;
+        margin:0 0 .7rem 0;
+        font-size:1.5rem;
+      }
+
+      .news-card p{
+        margin:0 0 1rem 0;
+        line-height:1.6;
+      }
+
+      .news-link{
+        display:inline-block;
+        background:var(--gold);
+        color:var(--ink);
+        text-decoration:none;
+        font-family:'League Spartan', sans-serif;
+        font-weight:700;
+        text-transform:uppercase;
+        letter-spacing:.06em;
+        padding:.75rem 1rem;
+      }
+
+      @media (max-width: 900px){
+        .news-card{
+          grid-template-columns:1fr;
+        }
+
+        .news-card-body{
+          padding:1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="section-label">Press</div>
+      <h1>All Press Coverage</h1>
+      <div id="all-news-list" class="news-grid"></div>
+    </main>
+
+    <script>
+      function escapeHtml(str = '') {
+        return String(str)
+          .replaceAll('&', '&amp;')
+          .replaceAll('<', '&lt;')
+          .replaceAll('>', '&gt;')
+          .replaceAll('"', '&quot;')
+          .replaceAll("'", '&#39;');
+      }
+
+      async function loadAllNews() {
+        const container = document.getElementById("all-news-list");
+        if (!container) return;
+
+        try {
+          const response = await fetch("/data/news.json", { cache: "no-store" });
+          const data = await response.json();
+          const items = Array.isArray(data.items) ? data.items : [];
+
+          container.innerHTML = items.map(item => `
+            <article class="news-card">
+              ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" class="news-card-image">` : ""}
+              <div class="news-card-body">
+                <div class="news-source-date">${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}</div>
+                <h2>${escapeHtml(item.title || "")}</h2>
+                ${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}
+                <a class="news-link" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">Read Coverage</a>
+              </div>
+            </article>
+          `).join("");
+        } catch (error) {
+          console.error("Error loading all news:", error);
+          container.innerHTML = "<p>Unable to load press coverage right now.</p>";
+        }
+      }
+
+      loadAllNews();
+    </script>
+  </body>
+</html>

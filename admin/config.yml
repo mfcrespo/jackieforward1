@@ -72,3 +72,50 @@ collections:
         widget: "boolean"
         default: false
         required: false
+
+  - name: "news"
+    label: "News"
+    label_singular: "News Item"
+    folder: "content/news"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
+    summary: "{{title}} — {{date}} — {{source}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+
+      - label: "Source"
+        name: "source"
+        widget: "string"
+        hint: "Example: Telemundo, Washington Post, WUSA9"
+
+      - label: "Article URL"
+        name: "url"
+        widget: "string"
+        hint: "Full URL starting with https://"
+
+      - label: "Summary"
+        name: "summary"
+        widget: "text"
+        required: false
+
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: false
+
+      - label: "Featured on Home"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        required: false

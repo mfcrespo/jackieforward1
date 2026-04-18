@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "title": "Jackie Reyes Yanes Talks Affordable Housing in Ward 1",
+      "date": "2026-04-15",
+      "source": "Telemundo",
+      "url": "https://www.telemundo.com/",
+      "summary": "Jackie Reyes Yanes discussed her housing priorities and community-centered vision for Ward 1.",
+      "image": "/images/uploads/news-1.jpg",
+      "featured": true
+    },
+    {
+      "title": "Ward 1 Candidate Forum Highlights Community Priorities",
+      "date": "2026-04-10",
+      "source": "Washington City Paper",
+      "url": "https://washingtoncitypaper.com/",
+      "summary": "The Ward 1 candidate forum focused on housing, public safety, and support for local businesses.",
+      "image": "/images/uploads/news-2.jpg",
+      "featured": true
+    },
+    {
+      "title": "Jackie Meets with Residents at Senior Estates",
+      "date": "2026-04-08",
+      "source": "El Tiempo Latino",
+      "url": "https://eltiempolatino.com/",
+      "summary": "Residents shared concerns about affordability, mobility, and quality of life during a community meet-and-greet.",
+      "image": "/images/uploads/news-3.jpg",
+      "featured": false
+    }
+  ]
+}
