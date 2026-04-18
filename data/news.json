@@ -1,31 +1,76 @@
 {
   "items": [
     {
-      "title": "Jackie Reyes Yanes Talks Affordable Housing in Ward 1",
-      "date": "2026-04-15",
-      "source": "Telemundo",
-      "url": "https://www.telemundo.com/",
-      "summary": "Jackie Reyes Yanes discussed her housing priorities and community-centered vision for Ward 1.",
-      "image": "/images/uploads/news-1.jpg",
-      "featured": true
+      "featured": true,
+      "title": "Jackie Reyes Yanes Earns Endorsement from ABC Metro Washington",
+      "summary": "Jackie Reyes Yanes is proud to receive the endorsement of the Associated Builders and Contractors of Metro Washington (ABC)",
+      "source": "ABC Metro Washington",
+      "url": "https://www.abcmetrowashington.org/Advocacy/Legislative-Resources/Legislative-News",
+      "date": "2026-03-13",
+      "image": "https://www.abcmetrowashington.org/Advocacy/Legislative-Resources/Legislative-News"
     },
     {
-      "title": "Ward 1 Candidate Forum Highlights Community Priorities",
-      "date": "2026-04-10",
-      "source": "Washington City Paper",
-      "url": "https://washingtoncitypaper.com/",
-      "summary": "The Ward 1 candidate forum focused on housing, public safety, and support for local businesses.",
-      "image": "/images/uploads/news-2.jpg",
-      "featured": true
-    },
-    {
-      "title": "Jackie Meets with Residents at Senior Estates",
-      "date": "2026-04-08",
+      "featured": true,
+      "title": "Jackie Reyes-Yanes oficializa su candidatura para el Ward 1 en DC",
+      "summary": "Con el apoyo de su familia y líderes comunitarios, Jackie Reyes-Yanes oficializó su candidatura al Concejo de DC por el Ward 1. La exdirectora de Asuntos Comunitarios promete una campaña centrada en comunidad, resultados y representación latina.",
+      "url": "https://eltiempolatino.com/2025/10/16/locales/jackie-reyes-yanes-oficializa-su-candidatura-para-el-ward-1-en-dc/",
       "source": "El Tiempo Latino",
-      "url": "https://eltiempolatino.com/",
-      "summary": "Residents shared concerns about affordability, mobility, and quality of life during a community meet-and-greet.",
-      "image": "/images/uploads/news-3.jpg",
-      "featured": false
+      "image": "https://eltiempolatino.com/2025/10/16/locales/jackie-reyes-yanes-oficializa-su-candidatura-para-el-ward-1-en-dc/",
+      "date": "2025-10-16"
+    },
+    {
+      "title": "\"Fundé Mi Pequeño El Salvador porque aquí a La Manplesa vinieron los salvadoreños\"",
+      "date": "2024-10-18",
+      "source": "ElSalvador.com",
+      "url": "https://www.elsalvador.com/h-noticias/h-nacional/salvadorenos-en-washington-dc-inmigracion-alcaldia-la-union-/1174607/2024/",
+      "summary": "Jackie Reyes-Yanes es originaria de La Unión y es la primera latina en ocupar el cargo de directora de la Oficina de Asuntos Comunitarios (MOCA) de la Alcaldía de Washington D.C; desde donde crea espacios para sus connacionales.",
+      "image": "https://www.elsalvador.com/h-noticias/h-nacional/salvadorenos-en-washington-dc-inmigracion-alcaldia-la-union-/1174607/2024/",
+      "featured": true
+    },
+    {
+      "title": "Salvadoran chefs in D.C. break world record for largest pupusa",
+      "date": "2024-09-28",
+      "source": "Washington Post",
+      "url": "https://www.washingtonpost.com/dc-md-va/2024/09/28/pupusa-guinness-world-record-dc/",
+      "summary": "The 20-foot pupusa, stuffed with mozzarella, chicharron and loroco, was nearly six feet larger than the previous world record.",
+      "image": "https://www.washingtonpost.com/dc-md-va/2024/09/28/pupusa-guinness-world-record-dc/",
+      "featured": true
+    },
+    {
+      "featured": true,
+      "title": "Es latina y fue designada para un puesto clave en Washington DC: la conmovedora historia de Jackie Reyes-Yanes",
+      "summary": "Su vida no fue nada fácil, quedó sola con sus tres hijos y debió salir adelante, pero la salvadoreña logró sortear todas las adversidades; hoy su meta es ayudar que los hispanos del estado tengan mejores oportunidades",
+      "source": "La Nación",
+      "url": "https://www.lanacion.com.ar/estados-unidos/washington/es-latina-y-fue-designada-para-un-puesto-clave-en-washington-dc-la-conmovedora-historia-de-jackie-nid19092024/",
+      "image": "https://www.lanacion.com.ar/estados-unidos/washington/es-latina-y-fue-designada-para-un-puesto-clave-en-washington-dc-la-conmovedora-historia-de-jackie-nid19092024/",
+      "date": "2024-09-19"
+    },
+    {
+      "featured": true,
+      "title": "1st Latina appointed to a key DC government role says she wants to help others prosper",
+      "summary": "WTOP celebrates National Hispanic Heritage Month this Sept. 15 through Oct. 15, with stories spotlighting the contributions, culture and accomplishments of Hispanic communities across the D.C. region.",
+      "source": "WTOP",
+      "date": "2024-09-16",
+      "url": "https://wtop.com/dc/2024/09/the-first-latina-appointed-to-a-key-dc-government-role-says-she-wants-to-help-others-prosper/",
+      "image": "https://wtop.com/dc/2024/09/the-first-latina-appointed-to-a-key-dc-government-role-says-she-wants-to-help-others-prosper/"
+    },
+    {
+      "title": "Washington DC nombrará a histórico barrio como “Pequeño El Salvador\"",
+      "date": "2021-04-08",
+      "source": "El Economista",
+      "url": "https://www.eleconomista.net/actualidad/Washington-DC-nombrara-a-historico-barrio-como-Pequeno-El-Salvador-20210408-0012.html",
+      "summary": "El histórico barrio de la Mount Pleasant, en el corazón de Washington DC, acunará al “Little El Salvador” o “Pequeño El Salvador”, un espacio de cinco cuadras que rendirá un homenaje a la comunidad salvadoreña en la capital de Estados Unidos.",
+      "image": "https://assets.eleconomista.net/__export/1617831428769/sites/prensagrafica/img/2021/04/07/70f645cb-0979-4c62-b4f3-8306b3066ce8.jpeg_525981578.jpeg",
+      "featured": true
+    },
+    {
+      "featured": true,
+      "title": "This DC-Based Public Servant Credits Her Latinx Roots As One Of Her Biggest Assets",
+      "summary": "Jackie Reyes-Yanes left El Salvador for the United States when she was just a child and it’s those roots that ultimately helped guide her personal career mission.",
+      "source": "Forbes",
+      "url": "https://www.forbes.com/sites/viviannunez/2018/06/29/for-this-dc-based-public-servant-being-latina-has-been-her-biggest-asset/",
+      "image": "https://www.forbes.com/sites/viviannunez/2018/06/29/for-this-dc-based-public-servant-being-latina-has-been-her-biggest-asset/",
+      "date": "2018-06-29"
     }
   ]
 }
