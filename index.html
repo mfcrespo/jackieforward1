@@ -1014,36 +1014,13 @@ footer{
 .press-card-meta{
   display:flex;
   flex-wrap:wrap;
-  gap:.5rem;
+  gap:.35rem;
   align-items:center;
-  margin-bottom:.2rem;
-}
-
-.press-pill{
-  display:inline-block;
-  padding:.35rem .55rem;
   font-family:'League Spartan', sans-serif;
-  font-size:.72rem;
+  font-size:.78rem;
   text-transform:uppercase;
   letter-spacing:.06em;
-  border:1px solid rgba(244,239,230,.14);
-}
-
-.press-pill-source{
   color:var(--gold);
-  border-color:rgba(212,160,23,.35);
-}
-
-.press-pill-date{
-  color:rgba(244,239,230,.8);
-  border-color:rgba(244,239,230,.14);
-}
-
-.press-pill-language{
-  color:var(--warm);
-  background:rgba(212,160,23,.10);
-  border-color:rgba(212,160,23,.25);
-  font-style:italic;
 }
 
 .press-card-dot{
@@ -1083,11 +1060,6 @@ footer{
 
 .press-card-cta-inner{
   padding:2rem 1.5rem;
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
 }
 
 .press-card-cta-star{
@@ -1108,7 +1080,6 @@ footer{
 
 .press-card-cta-link{
   display:inline-block;
-  margin:0 auto;
   font-family:'League Spartan', sans-serif;
   font-weight:700;
   text-transform:uppercase;
@@ -1874,9 +1845,9 @@ Loads news from /data/news.json.
             </div>
             <div class="press-card-body">
               <div class="press-card-meta">
-                ${item.source ? `<span class="press-pill press-pill-source">${escapeHtml(item.source)}</span>` : ""}
-                ${item.date ? `<span class="press-pill press-pill-date">${escapeHtml(item.date)}</span>` : ""}
-                ${item.language ? `<span class="press-pill press-pill-language">${escapeHtml(item.language)}</span>` : ""}
+                <span class="press-card-source">${escapeHtml(item.source || "")}</span>
+                ${item.date ? `<span class="press-card-dot">•</span><span class="press-card-date">${escapeHtml(item.date)}</span>` : ""}
+                ${item.language ? `<span class="press-card-dot">•</span><span class="press-card-language">${escapeHtml(item.language)}</span>` : ""}
               </div>
               <h3>${escapeHtml(item.title || "")}</h3>
               ${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}
