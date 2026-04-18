@@ -3,128 +3,179 @@
 
   const e = window.React.createElement;
 
-  CMS.registerPreviewTemplate("site_content", function (props) {
+  CMS.registerPreviewTemplate("events", function (props) {
     const entry = props.entry;
-    const data = entry.get("data");
 
-    // Cuando el archivo es data/events.json, los eventos viven en data.items
-    const items = data && data.get("items");
-
-    if (!items || !items.size) {
-      return e(
-        "div",
-        {
-          style: {
-            fontFamily: "Arial, sans-serif",
-            background: "#0b0d0b",
-            color: "#f4efe6",
-            padding: "24px",
-            minHeight: "100vh"
-          }
-        },
-        e("h2", null, "No events yet")
-      );
-    }
-
-    const first = items.get(0);
-
-    const title = first.get("title") || "Event title";
-    const date = first.get("date") || "";
-    const time = first.get("time") || "";
-    const address = first.get("address") || "";
-    const description = first.get("description") || "";
-    const category = first.get("category") || "";
-    const image = first.get("image") || "";
+    const title = entry.getIn(["data", "title"]) || "Event title";
+    const date = entry.getIn(["data", "date"]) || "";
+    const time = entry.getIn(["data", "time"]) || "";
+    const address = entry.getIn(["data", "address"]) || "";
+    const description = entry.getIn(["data", "description"]) || "";
+    const category = entry.getIn(["data", "category"]) || "";
+    const image = entry.getIn(["data", "image"]) || "";
+    const featured = entry.getIn(["data", "featured"]) || false;
 
     return e(
       "div",
       {
         style: {
           fontFamily: "Arial, sans-serif",
-          background: "#0b0d0b",
+          background: "#050806",
           color: "#f4efe6",
-          padding: "20px",
-          minHeight: "100vh"
+          minHeight: "100vh",
+          padding: "24px"
         }
       },
-      image
-        ? e("img", {
-            src: image,
-            alt: title,
-            style: {
-              width: "100%",
-              maxWidth: "720px",
-              height: "260px",
-              objectFit: "cover",
-              display: "block",
-              marginBottom: "20px"
-            }
-          })
-        : null,
       e(
         "div",
         {
           style: {
-            background: "#111",
-            padding: "20px",
-            maxWidth: "720px",
-            border: "1px solid rgba(244,239,230,.12)"
+            maxWidth: "760px",
+            margin: "0 auto",
+            border: featured
+              ? "1px solid rgba(212,160,23,.55)"
+              : "1px solid rgba(244,239,230,.10)",
+            background: "#0d110d",
+            boxShadow: "0 10px 30px rgba(0,0,0,.25)"
           }
         },
+
+        image
+          ? e("img", {
+              src: image,
+              alt: title,
+              style: {
+                width: "100%",
+                height: "280px",
+                objectFit: "cover",
+                display: "block"
+              }
+            })
+          : null,
+
         e(
           "div",
           {
             style: {
-              background: "#d4a017",
-              color: "#111",
-              display: "inline-block",
-              padding: "6px 10px",
-              fontSize: "12px",
-              fontWeight: "bold",
-              marginBottom: "12px",
-              textTransform: "uppercase"
+              padding: "24px"
             }
           },
-          category
-        ),
-        e(
-          "h2",
-          {
-            style: {
-              margin: "0 0 10px 0",
-              fontSize: "28px"
-            }
-          },
-          title
-        ),
-        e(
-          "p",
-          {
-            style: {
-              color: "#d4a017",
-              margin: "0 0 8px 0"
-            }
-          },
-          `${date}${time ? " · " + time : ""}`
-        ),
-        e(
-          "p",
-          {
-            style: {
-              color: "#d4a017",
-              margin: "0 0 12px 0"
-            }
-          },
-          address
-        ),
-        e(
-          "p",
-          {
-            style: {
-              lineHeight: "1.5"
-            }
-          },
-          description
+
+          e(
+            "div",
+            {
+              style: {
+                display: "flex",
+                gap: "10px",
+                alignItems: "center",
+                flexWrap: "wrap",
+                marginBottom: "14px"
+              }
+            },
+            e(
+              "span",
+              {
+                style: {
+                  display: "inline-block",
+                  background: "#d4a017",
+                  color: "#111",
+                  fontWeight: "700",
+                  fontSize: "12px",
+                  textTransform: "uppercase",
+                  letterSpacing: ".08em",
+                  padding: "7px 10px"
+                }
+              },
+              category || "event"
+            ),
+            featured
+              ? e(
+                  "span",
+                  {
+                    style: {
+                      display: "inline-block",
+                      border: "1px solid rgba(212,160,23,.45)",
+                      color: "#d4a017",
+                      fontWeight: "700",
+                      fontSize: "12px",
+                      textTransform: "uppercase",
+                      letterSpacing: ".08em",
+                      padding: "7px 10px"
+                    }
+                  },
+                  "Featured"
+                )
+              : null
+          ),
+
+          e(
+            "h1",
+            {
+              style: {
+                margin: "0 0 12px 0",
+                fontSize: "44px",
+                lineHeight: "1.05",
+                color: "#f4efe6"
+              }
+            },
+            title
+          ),
+
+          e(
+            "p",
+            {
+              style: {
+                color: "#d4a017",
+                fontWeight: "700",
+                margin: "0 0 10px 0",
+                fontSize: "18px"
+              }
+            },
+            `${date}${time ? " • " + time : ""}`
+          ),
+
+          e(
+            "p",
+            {
+              style: {
+                color: "#d4a017",
+                margin: "0 0 18px 0",
+                fontSize: "17px"
+              }
+            },
+            address
+          ),
+
+          e(
+            "p",
+            {
+              style: {
+                color: "rgba(244,239,230,.82)",
+                fontSize: "18px",
+                lineHeight: "1.6",
+                margin: "0 0 22px 0"
+              }
+            },
+            description
+          ),
+
+          e(
+            "a",
+            {
+              href: "#",
+              style: {
+                display: "inline-block",
+                background: "#d4a017",
+                color: "#111",
+                textDecoration: "none",
+                fontWeight: "800",
+                textTransform: "uppercase",
+                letterSpacing: ".06em",
+                padding: "14px 18px"
+              }
+            },
+            "RSVP"
+          )
         )
       )
     );
