@@ -6,7 +6,7 @@ body {
 header,
 [class*="TopBarContainer"],
 [class*="AppHeader"] {
-  background: #ffffff !important;
+  background: #ffba00 !important;
   border-bottom: 1px solid #d9dee5 !important;
 }
 
