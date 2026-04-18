@@ -156,5 +156,15 @@
 
       loadAllNews();
     </script>
+
+    <!-- HEADER SCRIPT -->
+    <script>
+    fetch("/header.html")
+        .then(res => res.text())
+        .then(data => {
+        document.getElementById("header").innerHTML = data;
+        });
+    </script>
+    
   </body>
 </html>
