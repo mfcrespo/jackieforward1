@@ -1,114 +1,46 @@
 (function () {
   if (!window.CMS) return;
 
-  const h = window.createElement;
+  CMS.registerPreviewTemplate("events", function (props) {
+    const entry = props.entry;
 
-  const EventPreview = createClass({
-    render: function () {
-      const entry = this.props.entry;
+    const title = entry.getIn(["data", "title"]) || "Event title";
+    const date = entry.getIn(["data", "date"]) || "";
+    const time = entry.getIn(["data", "time"]) || "";
+    const address = entry.getIn(["data", "address"]) || "";
+    const description = entry.getIn(["data", "description"]) || "";
+    const category = entry.getIn(["data", "category"]) || "";
+    const image = entry.getIn(["data", "image"]) || "";
 
-      const title = entry.getIn(["data", "title"]) || "Event title";
-      const date = entry.getIn(["data", "date"]) || "2026-04-21";
-      const time = entry.getIn(["data", "time"]) || "3:00 PM - 4:00 PM";
-      const address = entry.getIn(["data", "address"]) || "Event address";
-      const description = entry.getIn(["data", "description"]) || "Event description";
-      const category = entry.getIn(["data", "category"]) || "Category";
-      const rsvp = entry.getIn(["data", "rsvp"]) || "";
-      const image = entry.getIn(["data", "image"]) || "";
+    return `
+      <div style="font-family: Arial; background:#0b0d0b; color:#f4efe6; padding:20px;">
+        
+        ${image ? `<img src="${image}" style="width:100%; max-width:720px; height:260px; object-fit:cover; margin-bottom:20px;" />` : ""}
 
-      return h("div", {
-        style: {
-          fontFamily: "Arial, sans-serif",
-          background: "#0b0d0b",
-          color: "#f4efe6",
-          padding: "24px",
-          minHeight: "100vh"
-        }
-      }, [
-        image
-          ? h("img", {
-              src: image,
-              alt: title,
-              style: {
-                width: "100%",
-                maxWidth: "720px",
-                height: "280px",
-                objectFit: "cover",
-                display: "block",
-                marginBottom: "20px"
-              }
-            })
-          : null,
+        <div style="background:#111; padding:20px; max-width:720px; border:1px solid rgba(244,239,230,.12)">
+          
+          <div style="background:#d4a017; color:#111; display:inline-block; padding:6px 10px; font-size:12px; font-weight:bold; margin-bottom:12px;">
+            ${category}
+          </div>
 
-        h("div", {
-          style: {
-            maxWidth: "720px",
-            border: "1px solid rgba(244,239,230,.12)",
-            background: "#111",
-            padding: "24px"
-          }
-        }, [
-          h("div", {
-            style: {
-              display: "inline-block",
-              padding: "6px 10px",
-              background: "#d4a017",
-              color: "#111",
-              fontWeight: "700",
-              fontSize: "12px",
-              textTransform: "uppercase",
-              marginBottom: "14px"
-            }
-          }, category),
+          <h2 style="margin:0 0 10px 0; font-size:28px;">
+            ${title}
+          </h2>
 
-          h("h2", {
-            style: {
-              margin: "0 0 12px 0",
-              fontSize: "32px",
-              lineHeight: "1.1"
-            }
-          }, title),
+          <p style="color:#d4a017; margin:0 0 8px 0;">
+            ${date} ${time}
+          </p>
 
-          h("p", {
-            style: {
-              color: "#d4a017",
-              margin: "0 0 8px 0",
-              fontWeight: "700"
-            }
-          }, `${date} · ${time}`),
+          <p style="color:#d4a017; margin:0 0 12px 0;">
+            ${address}
+          </p>
 
-          h("p", {
-            style: {
-              color: "#d4a017",
-              margin: "0 0 14px 0"
-            }
-          }, address),
+          <p style="line-height:1.5;">
+            ${description}
+          </p>
 
-          h("p", {
-            style: {
-              margin: "0 0 16px 0",
-              lineHeight: "1.6"
-            }
-          }, description),
-
-          rsvp
-            ? h("a", {
-                href: "#",
-                style: {
-                  display: "inline-block",
-                  padding: "12px 18px",
-                  background: "#d4a017",
-                  color: "#111",
-                  textDecoration: "none",
-                  fontWeight: "700",
-                  textTransform: "uppercase"
-                }
-              }, "RSVP")
-            : null
-        ])
-      ]);
-    }
+        </div>
+      </div>
+    `;
   });
-
-  CMS.registerPreviewTemplate("events", EventPreview);
 })();
