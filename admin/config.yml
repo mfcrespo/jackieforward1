@@ -99,6 +99,14 @@ collections:
         widget: "string"
         hint: "Example: Telemundo, Washington Post, WUSA9"
 
+      - label: "Language"
+        name: "language"
+        widget: "select"
+        options:
+          - { label: "English", value: "English" }
+          - { label: "Spanish", value: "Spanish" }
+          - { label: "Bilingual", value: "Bilingual" }        
+
       - label: "Article URL"
         name: "url"
         widget: "string"

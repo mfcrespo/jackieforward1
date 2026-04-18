@@ -955,6 +955,151 @@ footer{
   section,.section{padding:3.5rem 0}
   .numbers{padding:2rem 0}
 }
+
+/* ─── PRESS - NEWS ────────────────────────────────── */
+.press-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1.5rem;
+  margin-top:2rem;
+}
+
+.press-card{
+  background:rgba(244,239,230,.04);
+  border:1px solid rgba(244,239,230,.08);
+  overflow:hidden;
+  min-height:100%;
+}
+
+.press-card-link{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  color:inherit;
+  text-decoration:none;
+}
+
+.press-card-image-wrap{
+  aspect-ratio: 16 / 9;
+  background:#111;
+  overflow:hidden;
+}
+
+.press-card-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.press-card-placeholder{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(244,239,230,.45);
+  font-family:'League Spartan', sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.press-card-body{
+  padding:1.1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.85rem;
+}
+
+.press-card-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.35rem;
+  align-items:center;
+  font-family:'League Spartan', sans-serif;
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--gold);
+}
+
+.press-card-dot{
+  opacity:.7;
+}
+
+.press-card h3{
+  margin:0;
+  font-family:'League Spartan', sans-serif;
+  font-size:1.45rem;
+  line-height:1.1;
+  color:var(--warm);
+}
+
+.press-card p{
+  margin:0;
+  line-height:1.6;
+  color:rgba(244,239,230,.75);
+}
+
+.press-card-read{
+  margin-top:auto;
+  font-family:'League Spartan', sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--gold);
+}
+
+.press-card-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(180deg, rgba(212,160,23,.06), rgba(244,239,230,.02));
+}
+
+.press-card-cta-inner{
+  padding:2rem 1.5rem;
+}
+
+.press-card-cta-star{
+  color:var(--gold);
+  font-size:3rem;
+  line-height:1;
+  margin-bottom:1rem;
+}
+
+.press-card-cta h3{
+  margin:0 0 1rem 0;
+  color:var(--gold);
+}
+
+.press-card-cta p{
+  margin:0 0 1.5rem 0;
+}
+
+.press-card-cta-link{
+  display:inline-block;
+  font-family:'League Spartan', sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--gold);
+  text-decoration:none;
+}
+
+@media (max-width: 1100px){
+  .press-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px){
+  .press-grid{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1391,7 +1536,7 @@ footer{
       </div>
       <a href="/news.html" target="_blank" class="btn-ghost">All Coverage →</a>
     </div>
-    <div class="news-grid" id="news-list"></div>
+    <div class="press-grid" id="news-list"></div>
       <a href="/news.html" class="btn-ghost" style="margin-top:1.5rem; display:inline-block;">See All Press Coverage</a>
 
       <a href="/news.html" target="_blank" class="news-card reveal" style="background:rgba(212,160,23,.04);border-color:rgba(212,160,23,.2);justify-content:center;align-items:center;text-align:center">
@@ -1686,22 +1831,47 @@ Loads news from /data/news.json.
       const data = await response.json();
       const items = Array.isArray(data.items) ? data.items : [];
 
-      const featured = items.filter(item => item.featured);
-      const selected = (featured.length ? featured : items).slice(0, 5);
+      const sorted = [...items].sort((a, b) => new Date(b.date || "1900-01-01") - new Date(a.date || "1900-01-01"));
+      const featured = sorted.filter(item => item.featured);
+      const nonFeatured = sorted.filter(item => !item.featured);
 
-      container.innerHTML = selected.map(item => `
-        <article class="news-card">
-          ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" class="news-card-image">` : ""}
-          <div class="news-card-body">
-            <div class="news-source-date">${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}</div>
-            <h3>${escapeHtml(item.title || "")}</h3>
-            ${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}
-            <a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">Read Coverage</a>
-          </div>
+      const selected = [...featured, ...nonFeatured].slice(0, 5);
+
+      const cards = selected.map(item => `
+        <article class="press-card">
+          <a class="press-card-link" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">
+            <div class="press-card-image-wrap">
+              ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title || "")}" class="press-card-image">` : `<div class="press-card-placeholder">No Image</div>`}
+            </div>
+            <div class="press-card-body">
+              <div class="press-card-meta">
+                <span class="press-card-source">${escapeHtml(item.source || "")}</span>
+                ${item.date ? `<span class="press-card-dot">•</span><span class="press-card-date">${escapeHtml(item.date)}</span>` : ""}
+                ${item.language ? `<span class="press-card-dot">•</span><span class="press-card-language">${escapeHtml(item.language)}</span>` : ""}
+              </div>
+              <h3>${escapeHtml(item.title || "")}</h3>
+              ${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}
+              <span class="press-card-read">Read Coverage →</span>
+            </div>
+          </a>
         </article>
       `).join("");
+
+      const ctaCard = `
+        <article class="press-card press-card-cta">
+          <div class="press-card-cta-inner">
+            <div class="press-card-cta-star">★</div>
+            <h3>See All Press Coverage</h3>
+            <p>Follow Jackie’s campaign coverage across DC media, community newsletters, and Spanish-language press.</p>
+            <a href="/news.html" class="press-card-cta-link">Visit Newsroom →</a>
+          </div>
+        </article>
+      `;
+
+      container.innerHTML = cards + ctaCard;
     } catch (error) {
       console.error("Error loading home news:", error);
+      container.innerHTML = `<p>Unable to load press coverage right now.</p>`;
     }
   }
 

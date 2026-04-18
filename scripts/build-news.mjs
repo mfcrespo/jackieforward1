@@ -15,7 +15,28 @@ function safeReadJson(filePath) {
   }
 }
 
-function main() {
+async function fetchOgImage(url) {
+  try {
+    const response = await fetch(url, {
+      headers: {
+        "User-Agent": "Mozilla/5.0"
+      }
+    });
+
+    const html = await response.text();
+
+    const match =
+      html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ||
+      html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
+
+    return match ? match[1] : null;
+  } catch (error) {
+    console.warn(`Could not fetch og:image from ${url}`);
+    return null;
+  }
+}
+
+async function main() {
   if (!fs.existsSync(newsDir)) {
     console.error("content/news folder not found.");
     process.exit(1);
@@ -25,10 +46,26 @@ function main() {
     .readdirSync(newsDir)
     .filter((file) => file.endsWith(".json"));
 
-  const items = files
+  const rawItems = files
     .map((file) => safeReadJson(path.join(newsDir, file)))
-    .filter(Boolean)
-    .sort((a, b) => new Date(b.date || "1900-01-01") - new Date(a.date || "1900-01-01"));
+    .filter(Boolean);
+
+  const items = [];
+  for (const item of rawItems) {
+    let image = item.image || null;
+
+    if (item.url) {
+      const ogImage = await fetchOgImage(item.url);
+      if (ogImage) image = ogImage;
+    }
+
+    items.push({
+      ...item,
+      image
+    });
+  }
+
+  items.sort((a, b) => new Date(b.date || "1900-01-01") - new Date(a.date || "1900-01-01"));
 
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
