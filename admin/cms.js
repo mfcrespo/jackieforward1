@@ -3,16 +3,38 @@
 
   const e = window.React.createElement;
 
-  CMS.registerPreviewTemplate("events", function (props) {
+  CMS.registerPreviewTemplate("site_content", function (props) {
     const entry = props.entry;
+    const data = entry.get("data");
 
-    const title = entry.getIn(["data", "title"]) || "Event title";
-    const date = entry.getIn(["data", "date"]) || "";
-    const time = entry.getIn(["data", "time"]) || "";
-    const address = entry.getIn(["data", "address"]) || "";
-    const description = entry.getIn(["data", "description"]) || "";
-    const category = entry.getIn(["data", "category"]) || "";
-    const image = entry.getIn(["data", "image"]) || "";
+    // Cuando el archivo es data/events.json, los eventos viven en data.items
+    const items = data && data.get("items");
+
+    if (!items || !items.size) {
+      return e(
+        "div",
+        {
+          style: {
+            fontFamily: "Arial, sans-serif",
+            background: "#0b0d0b",
+            color: "#f4efe6",
+            padding: "24px",
+            minHeight: "100vh"
+          }
+        },
+        e("h2", null, "No events yet")
+      );
+    }
+
+    const first = items.get(0);
+
+    const title = first.get("title") || "Event title";
+    const date = first.get("date") || "";
+    const time = first.get("time") || "";
+    const address = first.get("address") || "";
+    const description = first.get("description") || "";
+    const category = first.get("category") || "";
+    const image = first.get("image") || "";
 
     return e(
       "div",
