@@ -689,6 +689,140 @@ section { scroll-margin-top: 115px; }
   padding:.25rem .7rem;white-space:nowrap;
 }
 
+/* =========================
+   EVENTS (NEW STYLES)
+   ========================= */
+.event-card{
+  display:grid;
+  grid-template-columns: 260px 1fr;
+  gap:1.2rem;
+  background:rgba(244,239,230,.04);
+  border:1px solid rgba(244,239,230,.08);
+  margin-bottom:1.25rem;
+  overflow:hidden;
+}
+
+.event-card.featured{
+  border:1px solid rgba(212,160,23,.45);
+  box-shadow:0 0 0 1px rgba(212,160,23,.12) inset;
+}
+
+.event-card-image{
+  min-height:220px;
+  height:100%;
+  overflow:hidden;
+}
+
+.event-card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.event-card-body{
+  padding:1.2rem 1.2rem 1.2rem 0;
+}
+
+.event-date-badge{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:70px;
+  min-width:70px;
+  height:70px;
+  background:var(--gold);
+  color:var(--ink);
+  font-family:'League Spartan',sans-serif;
+  font-weight:700;
+  margin-bottom:1rem;
+}
+
+.event-month{
+  font-size:.72rem;
+  line-height:1;
+  letter-spacing:.08em;
+}
+
+.event-day{
+  font-size:1.55rem;
+  line-height:1;
+}
+
+.event-meta{
+  display:flex;
+  gap:.55rem;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-bottom:.8rem;
+}
+
+.event-category,
+.event-featured-badge{
+  font-family:'League Spartan',sans-serif;
+  font-size:.72rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  padding:.35rem .6rem;
+  border:1px solid rgba(244,239,230,.14);
+  color:rgba(244,239,230,.78);
+}
+
+.event-featured-badge{
+  border-color:rgba(212,160,23,.4);
+  color:var(--gold);
+}
+
+.event-card h4{
+  font-family:'League Spartan',sans-serif;
+  font-size:1.35rem;
+  color:var(--warm);
+  margin-bottom:.55rem;
+}
+
+.event-time-address{
+  color:var(--gold);
+  font-weight:600;
+  margin-bottom:.7rem;
+}
+
+.event-description{
+  color:rgba(244,239,230,.72);
+  line-height:1.65;
+}
+
+.event-rsvp-btn{
+  display:inline-block;
+  margin-top:.9rem;
+  background:var(--gold);
+  color:var(--ink);
+  padding:.75rem 1rem;
+  text-decoration:none;
+  font-family:'League Spartan',sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.event-rsvp-btn:hover{
+  opacity:.92;
+}
+
+@media (max-width: 900px){
+  .event-card{
+    grid-template-columns:1fr;
+  }
+
+  .event-card-body{
+    padding:1rem;
+  }
+
+  .event-card-image{
+    min-height:220px;
+  }
+}
+
 /* ─── NEWS CLIPS ─────────────────────────────── */
 #news{background:#0e110e;padding:5rem 0;border-top:1px solid rgba(244,239,230,.06)}
 .news-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
@@ -1450,17 +1584,9 @@ if (form) {
 <!-- 
 EVENTS SCRIPT
 
-This script loads events dynamically from /data/events.json and displays only upcoming events on the website.
-
-Key features:
-- Fetches event data from a JSON file
-- Filters out past events based on the current date
-- Sorts events in chronological order (soonest first)
-- Dynamically renders event cards into the #events-list container
-- Displays event details: title, date, time, address, description, category, and RSVP link
-- Shows a fallback message if no upcoming events are available
-
-Used for: keeping the Events section automatically updated via CMS (Decap/Netlify CMS)
+Loads events from /data/events.json, filters out past events,
+sorts upcoming events by date, and renders them dynamically
+into the #events-list container.
 -->
 <script>
 function escapeHtml(str = '') {
@@ -1506,8 +1632,8 @@ async function loadUpcomingEvents() {
 
     if (upcoming.length === 0) {
       container.innerHTML = `
-        <div class="ev">
-          <div class="ev-info">
+        <div class="event-card">
+          <div class="event-card-body" style="padding:1.2rem;">
             <h4>No upcoming events right now</h4>
             <p>Please check back soon for campaign events and volunteer opportunities.</p>
           </div>
@@ -1516,29 +1642,63 @@ async function loadUpcomingEvents() {
       return;
     }
 
-    container.innerHTML = upcoming.map(item => `
-      <div class="ev">
-        <div class="ev-date-block">
-          <span class="ev-mo">${new Date(item.date + "T00:00:00").toLocaleString("en-US", { month: "short" })}</span>
-          <span class="ev-day">${new Date(item.date + "T00:00:00").getDate()}</span>
+    container.innerHTML = upcoming.map(item => {
+      const eventDate = new Date(item.date + "T00:00:00");
+      const month = eventDate.toLocaleString("en-US", { month: "short" }).toUpperCase();
+      const day = eventDate.getDate();
+
+      const imageHtml = item.image
+        ? `
+          <div class="event-card-image">
+            <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title || 'Event image')}">
+          </div>
+        `
+        : "";
+
+      const rsvpHtml = item.rsvp
+        ? `
+          <a class="event-rsvp-btn" href="${escapeHtml(item.rsvp)}" target="_blank" rel="noopener noreferrer">
+            RSVP
+          </a>
+        `
+        : "";
+
+      const featuredHtml = item.featured
+        ? `<span class="event-featured-badge">Featured</span>`
+        : "";
+
+      return `
+        <div class="event-card ${item.featured ? 'featured' : ''}">
+          ${imageHtml}
+          <div class="event-card-body">
+            <div class="event-date-badge">
+              <span class="event-month">${month}</span>
+              <span class="event-day">${day}</span>
+            </div>
+
+            <div class="event-meta">
+              <span class="event-category">${escapeHtml(categoryLabel(item.category))}</span>
+              ${featuredHtml}
+            </div>
+
+            <h4>${escapeHtml(item.title || '')}</h4>
+
+            <p class="event-time-address">
+              ${escapeHtml(item.time || '')}${item.time ? ' · ' : ''}${escapeHtml(item.address || '')}
+            </p>
+
+            <p class="event-description">${escapeHtml(item.description || '')}</p>
+
+            ${rsvpHtml}
+          </div>
         </div>
-        <div class="ev-info">
-          <h4>${escapeHtml(item.title)}</h4>
-          <p>
-            ${escapeHtml(item.time || "")}${item.time ? " · " : ""}
-            ${escapeHtml(item.address || "")}
-          </p>
-          <p>${escapeHtml(item.description || "")}</p>
-          ${item.rsvp ? `<p><a href="${escapeHtml(item.rsvp)}" target="_blank" rel="noopener noreferrer">RSVP Here</a></p>` : ""}
-        </div>
-        <div class="ev-tag">${escapeHtml(categoryLabel(item.category))}</div>
-      </div>
-    `).join("");
+      `;
+    }).join("");
   } catch (error) {
     console.error("Error loading events:", error);
     container.innerHTML = `
-      <div class="ev">
-        <div class="ev-info">
+      <div class="event-card">
+        <div class="event-card-body" style="padding:1.2rem;">
           <h4>Unable to load events</h4>
           <p>Please try again later.</p>
         </div>
