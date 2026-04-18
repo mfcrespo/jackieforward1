@@ -27,8 +27,9 @@ collections:
 
               - label: "Event Date"
                 name: "date"
-                widget: "date"
+                widget: "datetime"
                 format: "YYYY-MM-DD"
+                time_format: false
 
               - label: "Event Time"
                 name: "time"
