@@ -14,7 +14,7 @@ header,
 aside,
 [class*="SidebarContainer"],
 [class*="CollectionTopContainer"] {
-  background: #000000 !important;
+  background: #ffba00 !important;
 }
 
 /* Main cards */
