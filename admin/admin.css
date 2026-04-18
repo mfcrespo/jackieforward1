@@ -3,68 +3,87 @@ body {
 }
 
 /* Top bar */
+header,/* Fondo general */
+body {
+  background: #0b0d0b !important;
+  color: #f4efe6 !important;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* Header */
 header,
 [class*="TopBarContainer"],
 [class*="AppHeader"] {
-  background: #ffba00 !important;
-  border-bottom: 1px solid #000000 !important;
+  background: #0b0d0b !important;
+  border-bottom: 1px solid #d4a017 !important;
 }
 
-/* Sidebar / collections panel */
+/* Sidebar */
 aside,
-[class*="SidebarContainer"],
-[class*="CollectionTopContainer"] {
-  background: #ffba00 !important;
+[class*="SidebarContainer"] {
+  background: #111 !important;
 }
 
-/* Main cards */
+/* Tarjetas */
 [class*="Card"],
 [class*="CollectionTopContainer-card"],
-[class*="EditorContainer"] > div {
-  border-radius: 12px !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06) !important;
+[class*="ListCard"] {
+  background: #111 !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(212, 160, 23, 0.2) !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4) !important;
 }
 
-/* Buttons */
-button {
+/* Botones principales */
+button[class*="PrimaryButton"],
+button[class*="primary"] {
+  background: #d4a017 !important;
+  color: #0b0d0b !important;
+  font-weight: 700 !important;
   border-radius: 10px !important;
 }
 
-button[class*="primary"],
-button[class*="PrimaryButton"] {
-  background: #ffba00 !important;
-  color: #000000 !important;
-}
-
-/* Published button */
-button[class*="ToolbarButton"],
-button[class*="PublishedButton"] {
-  border-radius: 10px !important;
+/* Botón Published */
+button[class*="ToolbarButton"] {
+  background: #d4a017 !important;
+  color: #0b0d0b !important;
 }
 
 /* Inputs */
 input,
 textarea,
 select {
+  background: #0b0d0b !important;
+  color: #f4efe6 !important;
+  border: 1px solid rgba(212, 160, 23, 0.3) !important;
   border-radius: 10px !important;
-  border: 1px solid #d7dde5 !important;
-  box-shadow: none !important;
 }
 
-/* Field labels */
+/* Labels */
 label,
 [class*="FieldLabel"] {
+  color: #d4a017 !important;
   font-weight: 700 !important;
-  letter-spacing: 0.02em !important;
+  letter-spacing: 0.04em;
 }
 
-/* Collection items */
-[class*="CollectionTopContainer"] [role="button"],
-[class*="ListCard"] {
-  border-radius: 12px !important;
+/* Titulos */
+h1, h2, h3 {
+  color: #f4efe6 !important;
 }
 
-/* Make things feel cleaner */
+/* Links */
+a {
+  color: #d4a017 !important;
+}
+
+/* Hover efecto */
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Scroll */
 * {
   scrollbar-width: thin;
 }
