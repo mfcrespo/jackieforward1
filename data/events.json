@@ -1,37 +1,48 @@
 {
   "items": [
     {
-      "title": "Spring Cleanup",
-      "date": "2026-04-11",
       "time": "10:00 AM – 1:00 PM",
-      "category": "cleanup",
+      "featured": false,
+      "date": "2026-04-11",
       "address": "3146 Mt Pleasant St NW & 707 Kenyon St NW, Washington, DC",
-      "description": "Join us to clean and beautify Ward 1. Gloves, bags, and supplies will be provided. Furniture and electronics accepted.",
+      "title": "Spring Cleanup",
       "rsvp": "https://jackiecleanup.eventbrite.com",
       "image": "/images/uploads/spring-cleanup.jpg",
-      "featured": false
+      "description": "Join us to clean and beautify Ward 1. Gloves, bags, and supplies will be provided. Furniture and electronics accepted.",
+      "category": "cleanup"
     },
     {
-      "title": "Ward 1 Councilmember Debate",
-      "date": "2026-04-08",
       "time": "7:00 PM",
-      "category": "townhall",
+      "featured": true,
+      "date": "2026-04-08",
       "address": "Hook Hall, 3400 Georgia Ave NW, Washington, DC",
-      "description": "Join the Ward 1 Councilmember debate hosted by the DC Nightlife Council. Doors open at 6:30 PM.",
+      "title": "Ward 1 Councilmember Debate",
       "rsvp": "https://jryforum0408.eventbrite.com",
       "image": "/images/uploads/debate.jpg",
-      "featured": true
+      "description": "Join the Ward 1 Councilmember debate hosted by the DC Nightlife Council. Doors open at 6:30 PM.",
+      "category": "townhall"
     },
     {
-      "title": "Let’s Talk, Ward 1 – Meet & Greet",
-      "date": "2026-04-21",
       "time": "3:00 PM – 4:00 PM",
-      "category": "meet-greet",
+      "featured": false,
+      "date": "2026-04-21",
       "address": "Carl F. West Senior Estates, 1370 Harvard St NW, Washington, DC",
-      "description": "Meet Jackie, share your voice, and connect with the campaign. Hosted by Adrian Lee.",
+      "title": "Let’s Talk, Ward 1 – Meet & Greet",
       "rsvp": "https://jackiemeetgreet0421.eventbrite.com",
       "image": "/images/uploads/meet-greet.jpg",
-      "featured": false
+      "description": "Meet Jackie, share your voice, and connect with the campaign. Hosted by Adrian Lee.",
+      "category": "meet-greet"
+    },
+    {
+      "time": "3:00 PM - 4:00 PM",
+      "featured": true,
+      "date": "2026-04-17",
+      "address": "1370 Harvard Street NW, Washington, DC",
+      "title": "Let’s Talk, Ward 1 Meet & Greet",
+      "rsvp": "jrymeetgreet0421",
+      "image": "/images/uploads/meet-greet-04212026_eng.jpg",
+      "description": "Sample",
+      "category": "meet-greet"
     }
   ]
 }
