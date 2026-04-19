@@ -1,11 +1,21 @@
-// Nav scroll
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 50));
+document.addEventListener("DOMContentLoaded", () => {
 
-// Mobile menu
+  const nav = document.getElementById('nav');
+
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('solid', window.scrollY > 10);
+    });
+  }
+
+});
+
 function toggleMenu() {
   const h = document.getElementById('ham');
   const m = document.getElementById('mnav');
-  h.classList.toggle('open');
-  m.classList.toggle('open');
+
+  if (h && m) {
+    h.classList.toggle('open');
+    m.classList.toggle('open');
+  }
 }

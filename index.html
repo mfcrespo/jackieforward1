@@ -1774,11 +1774,7 @@ Loads news from /data/news.json.
   loadHomeNews();
 </script>
 
-<!-- JS global -->
-  <script src="/site.js"></script>
-
-<!-- HEADER SCRIPT -->
-
+<!-- header -->
 <script>
   fetch("/partials/header.html")
     .then(res => res.text())
@@ -1787,7 +1783,8 @@ Loads news from /data/news.json.
     });
 </script>
 
-
+ <!-- JS global -->
+<script src="/site.js"></script>
 
 </body>
 </html>
