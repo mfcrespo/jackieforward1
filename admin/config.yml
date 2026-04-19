@@ -17,12 +17,15 @@ collections:
     slug: "{{slug}}"
     format: "json"
     extension: "json"
-    summary: "{{title}} — {{date}} — {{category}}"
+    summary: "{{title_en}} / {{title_es}} — {{date}}"
     fields:
-      - label: "Title"
-        name: "title"
+      - label: "Title (English)"
+        name: "title_en"
         widget: "string"
-        hint: "Example: Let’s Talk, Ward 1 – Meet & Greet"
+
+      - label: "Title (Spanish)"
+        name: "title_es"
+        widget: "string"
 
       - label: "Event Date"
         name: "date"
@@ -34,7 +37,6 @@ collections:
       - label: "Event Time"
         name: "time"
         widget: "string"
-        hint: "Example: 3:00 PM – 4:00 PM"
 
       - label: "Category"
         name: "category"
@@ -47,21 +49,29 @@ collections:
           - { label: "Fundraiser", value: "fundraiser" }
           - { label: "Community Event", value: "community" }
 
-      - label: "Address"
-        name: "address"
+      - label: "Address (English)"
+        name: "address_en"
         widget: "string"
-        hint: "Full public address"
 
-      - label: "Description"
-        name: "description"
+      - label: "Address (Spanish)"
+        name: "address_es"
+        widget: "string"
+        required: false
+
+      - label: "Description (English)"
+        name: "description_en"
         widget: "text"
-        hint: "Short website description"
+        required: false
+
+      - label: "Description (Spanish)"
+        name: "description_es"
+        widget: "text"
+        required: false
 
       - label: "RSVP Link"
         name: "rsvp"
         widget: "string"
         required: false
-        hint: "Use full URL starting with https://"
 
       - label: "Event Image"
         name: "image"
@@ -83,10 +93,14 @@ collections:
     slug: "{{slug}}"
     format: "json"
     extension: "json"
-    summary: "{{title}} — {{date}} — {{source}}"
+    summary: "{{title_en}} / {{title_es}} — {{date}}"
     fields:
-      - label: "Title"
-        name: "title"
+      - label: "Title (English)"
+        name: "title_en"
+        widget: "string"
+
+      - label: "Title (Spanish)"
+        name: "title_es"
         widget: "string"
 
       - label: "Date"
@@ -99,25 +113,29 @@ collections:
       - label: "Source"
         name: "source"
         widget: "string"
-        hint: "Example: Telemundo, Washington Post, WUSA9"
-
-      - label: "Language"
-        name: "language"
-        widget: "select"
-        options:
-          - { label: "English", value: "English" }
-          - { label: "Spanish", value: "Spanish" }
-          - { label: "Bilingual", value: "Bilingual" }        
 
       - label: "Article URL"
         name: "url"
         widget: "string"
-        hint: "Full URL starting with https://"
 
-      - label: "Summary"
-        name: "summary"
+      - label: "Summary (English)"
+        name: "summary_en"
         widget: "text"
         required: false
+
+      - label: "Summary (Spanish)"
+        name: "summary_es"
+        widget: "text"
+        required: false
+
+      - label: "Language"
+        name: "language"
+        widget: "select"
+        required: false
+        options:
+          - { label: "English", value: "English" }
+          - { label: "Spanish", value: "Spanish" }
+          - { label: "Bilingual", value: "Bilingual" }
 
       - label: "Image"
         name: "image"
@@ -139,10 +157,14 @@ collections:
     slug: "{{slug}}"
     format: "json"
     extension: "json"
-    summary: "{{title}} — {{date}} — {{type}}"
+    summary: "{{title_en}} / {{title_es}} — {{date}}"
     fields:
-      - label: "Title"
-        name: "title"
+      - label: "Title (English)"
+        name: "title_en"
+        widget: "string"
+
+      - label: "Title (Spanish)"
+        name: "title_es"
         widget: "string"
 
       - label: "Date"
@@ -172,7 +194,6 @@ collections:
         name: "video_url"
         widget: "string"
         required: false
-        hint: "YouTube, Vimeo, or direct video link"
 
       - label: "Source / Organization"
         name: "source"
@@ -188,8 +209,13 @@ collections:
           - { label: "Spanish", value: "Spanish" }
           - { label: "Bilingual", value: "Bilingual" }
 
-      - label: "Quote / Summary"
-        name: "summary"
+      - label: "Summary (English)"
+        name: "summary_en"
+        widget: "text"
+        required: false
+
+      - label: "Summary (Spanish)"
+        name: "summary_es"
         widget: "text"
         required: false
 
@@ -197,10 +223,9 @@ collections:
         name: "url"
         widget: "string"
         required: false
-        hint: "Optional article or endorsement link"
 
       - label: "Featured on Home"
         name: "featured"
         widget: "boolean"
         default: false
-        required: false        
+        required: false

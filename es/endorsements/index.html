@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Todos los respaldos | Jackie Forward</title>
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://jackieforward1.netlify.app/es/endorsements/" />
+  <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/endorsements.html" />
+  <link rel="alternate" hreflang="es" href="https://jackieforward1.netlify.app/es/endorsements/" />
+  <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    :root{
+      --gold:#D4A017;
+      --gold-lt:#F0C040;
+      --ink:#0B0D0B;
+      --warm:#F4EFE6;
+    }
+
+    body{
+      font-family:'Barlow',sans-serif;
+      background:var(--ink);
+      color:var(--warm);
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    /* NAV */
+    #nav{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      height:90px;
+      background:#0B0D0B;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 2rem;
+      z-index:100;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:1rem;
+      list-style:none;
+    }
+
+    .nav-links a{
+      font-family:'League Spartan',sans-serif;
+      font-size:.85rem;
+      text-transform:uppercase;
+      color:#ccc;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover{
+      color:var(--gold);
+    }
+
+    /* CONTENT */
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:8rem 1.5rem 4rem;
+    }
+
+    h1{
+      font-family:'League Spartan',sans-serif;
+      font-size:2.8rem;
+      margin-bottom:2rem;
+      text-transform:uppercase;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;
+    }
+
+    .card{
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.02);
+      display:flex;
+      flex-direction:column;
+    }
+
+    .media{
+      aspect-ratio:16/9;
+      background:#111;
+    }
+
+    .media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .body{
+      padding:1rem;
+      display:flex;
+      flex-direction:column;
+      gap:.6rem;
+    }
+
+    .meta{
+      font-size:.7rem;
+      color:#aaa;
+      text-transform:uppercase;
+      display:flex;
+      gap:.4rem;
+      flex-wrap:wrap;
+    }
+
+    h3{
+      font-family:'League Spartan',sans-serif;
+      font-size:1.2rem;
+    }
+
+    p{
+      font-family:'Lora',serif;
+      font-size:.9rem;
+      color:#ccc;
+    }
+
+    .link{
+      margin-top:auto;
+      color:var(--gold);
+      font-weight:bold;
+      font-size:.8rem;
+      text-transform:uppercase;
+    }
+
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="/es/">Inicio</a>
+
+    <ul class="nav-links">
+      <li><a href="/es/#platform">Plataforma</a></li>
+      <li><a href="/es/#story">Sobre Jackie</a></li>
+      <li><a href="/es/#achievements">Trayectoria</a></li>
+      <li><a href="/es/news/">Noticias</a></li>
+      <li><a href="/es/endorsements/" class="active">Respaldos</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="wrap">
+    <h1>Respaldos</h1>
+    <div id="list" class="grid"></div>
+  </main>
+
+  <script>
+    function escapeHtml(str=''){
+      return str.replaceAll('&','&amp;')
+        .replaceAll('<','&lt;')
+        .replaceAll('>','&gt;');
+    }
+
+    async function load(){
+      const res = await fetch('/data/endorsements.json');
+      const data = await res.json();
+      const items = data.items || [];
+
+      const html = items.map(item => {
+        return `
+        <div class="card">
+          <div class="media">
+            ${item.image ? `<img src="${item.image}" />` : ''}
+          </div>
+
+          <div class="body">
+            <div class="meta">
+              ${item.source || ''}
+              ${item.date ? ' • '+item.date : ''}
+              ${item.language ? ' • '+item.language : ''}
+            </div>
+
+            <h3>${escapeHtml(item.title_es || item.title_en || '')}</h3>
+
+            ${item.endorser ? `<strong>${item.endorser}</strong>` : ''}
+
+            <p>${escapeHtml(item.summary_es || item.summary_en || '')}</p>
+
+            ${item.url ? `<a href="${item.url}" target="_blank" class="link">Ver más →</a>` : ''}
+          </div>
+        </div>
+        `;
+      }).join('');
+
+      document.getElementById('list').innerHTML = html;
+    }
+
+    load();
+  </script>
+
+</body>
+</html>

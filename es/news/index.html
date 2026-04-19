@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Toda la cobertura de prensa | Jackie Forward</title>
+
+  <link rel="canonical" href="https://jackieforward1.netlify.app/es/news/" />
+  <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/news.html" />
+  <link rel="alternate" hreflang="es" href="https://jackieforward1.netlify.app/es/news/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--gold:#D4A017;--gold-lt:#F0C040;--ink:#0B0D0B;--warm:#F4EFE6}
+    body{margin:0;font-family:'Barlow',sans-serif;background:var(--ink);color:var(--warm);overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    #nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:0 2rem;height:95px;display:flex;align-items:center;justify-content:space-between;background:rgba(11,13,11,.96);border-bottom:1px solid rgba(212,160,23,.2)}
+    .nav-logo{display:flex;align-items:center;gap:.7rem}
+    .nav-logo img{height:78px;width:auto;object-fit:contain}
+    .nav-wordmark{font-family:'League Spartan',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:.04em;text-transform:uppercase;line-height:1}
+    .nav-wordmark span{color:var(--gold);display:block;font-size:.7rem;letter-spacing:.18em;font-weight:600}
+    .nav-right{display:flex;align-items:center;gap:1.1rem}
+    .nav-links{display:flex;gap:1rem;list-style:none}
+    .nav-links a{font-family:'League Spartan',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(244,239,230,.65);white-space:nowrap}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+    .nav-donate{font-family:'League Spartan',sans-serif;font-size:.88rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.42rem .95rem}
+    .ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+    .ham span{display:block;width:24px;height:2px;background:var(--warm)}
+    .mobile-nav{display:none;position:fixed;inset:0;top:70px;z-index:299;background:rgba(11,13,11,.97);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+    .mobile-nav.open{display:flex}
+    .mobile-nav a{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .mobile-nav .m-cta{background:var(--gold);color:var(--ink);padding:.6rem 2.5rem;font-size:1.6rem}
+    .wrap{max-width:1100px;margin:0 auto;padding:9rem 1.5rem 4rem}
+    .section-label{font-family:'League Spartan',sans-serif;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;margin-bottom:1rem}
+    h1{font-family:'League Spartan',sans-serif;font-size:clamp(2.4rem,5vw,4rem);margin:0 0 2rem 0;color:var(--warm);text-transform:uppercase;line-height:.95}
+    .news-grid{display:grid;gap:1.5rem}
+    .news-card{display:grid;grid-template-columns:260px 1fr;gap:1.2rem;background:rgba(244,239,230,.04);border:1px solid rgba(244,239,230,.08);overflow:hidden}
+    .news-card-image{width:100%;height:100%;min-height:220px;object-fit:cover;display:block}
+    .news-card-body{padding:1.2rem 1.2rem 1.2rem 0}
+    .news-source-date{color:var(--gold);font-family:'League Spartan',sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;margin-bottom:.8rem}
+    .news-card h2{font-family:'League Spartan',sans-serif;margin:0 0 .7rem 0;font-size:1.5rem;color:var(--warm)}
+    .news-card p{margin:0 0 1rem 0;line-height:1.6;color:rgba(244,239,230,.78);font-family:'Lora',serif}
+    .news-link{display:inline-block;background:var(--gold);color:var(--ink);font-family:'League Spartan',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.75rem 1rem}
+    @media(max-width:900px){.nav-links{display:none}.nav-donate{display:none}.ham{display:flex}.news-card{grid-template-columns:1fr}.news-card-body{padding:1rem}}
+  </style>
+</head>
+<body>
+  <nav id="nav">
+    <a href="/es/" class="nav-logo">
+      <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie logo">
+      <div class="nav-wordmark">Jackie Reyes Yanes<span>Ward 1 · Concejo DC</span></div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/es/#platform">Plataforma</a></li>
+        <li><a href="/es/#story">Sobre Jackie</a></li>
+        <li><a href="/es/#achievements">Trayectoria</a></li>
+        <li><a href="/es/endorsements/">Respaldos</a></li>
+        <li><a href="/es/news/" class="active">Noticias</a></li>
+        <li><a href="/es/#ward">Nuestro Ward</a></li>
+        <li><a href="/es/#events">Eventos</a></li>
+        <li><a href="/es/#action">Voluntariado</a></li>
+      </ul>
+      <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" class="nav-donate">Donar</a>
+      <button class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mnav">
+    <a href="/es/#platform" onclick="toggleMenu()">Plataforma</a>
+    <a href="/es/#story" onclick="toggleMenu()">Sobre Jackie</a>
+    <a href="/es/#achievements" onclick="toggleMenu()">Trayectoria</a>
+    <a href="/es/endorsements/" onclick="toggleMenu()">Respaldos</a>
+    <a href="/es/news/" onclick="toggleMenu()">Noticias</a>
+    <a href="/es/#ward" onclick="toggleMenu()">Nuestro Ward</a>
+    <a href="/es/#events" onclick="toggleMenu()">Eventos</a>
+    <a href="/es/#action" onclick="toggleMenu()">Voluntariado</a>
+    <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Dona Ahora</a>
+  </div>
+
+  <main class="wrap">
+    <div class="section-label">Prensa</div>
+    <h1>Toda la cobertura de prensa</h1>
+    <div id="all-news-list" class="news-grid"></div>
+  </main>
+
+  <script>
+    function escapeHtml(str = '') {
+      return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'","&#39;");
+    }
+
+    async function loadAllNews() {
+      const container = document.getElementById("all-news-list");
+      if (!container) return;
+      try {
+        const response = await fetch("/data/news.json", { cache: "no-store" });
+        const data = await response.json();
+        const items = Array.isArray(data.items) ? data.items : [];
+        container.innerHTML = items.map(item => `
+          <article class="news-card">
+            ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title_es || item.title_en || '')}" class="news-card-image">` : ""}
+            <div class="news-card-body">
+              <div class="news-source-date">${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}${item.language ? " • " + escapeHtml(item.language) : ""}</div>
+              <h2>${escapeHtml(item.title_es || item.title_en || "")}</h2>
+              ${(item.summary_es || item.summary_en) ? `<p>${escapeHtml(item.summary_es || item.summary_en || "")}</p>` : ""}
+              <a class="news-link" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">Leer cobertura</a>
+            </div>
+          </article>
+        `).join("");
+      } catch (error) {
+        container.innerHTML = "<p>No se pudo cargar la cobertura en este momento.</p>";
+      }
+    }
+
+    function toggleMenu() {
+      const h = document.getElementById('ham');
+      const m = document.getElementById('mnav');
+      if (h && m) {
+        h.classList.toggle('open');
+        m.classList.toggle('open');
+      }
+    }
+
+    loadAllNews();
+  </script>
+</body>
+</html>

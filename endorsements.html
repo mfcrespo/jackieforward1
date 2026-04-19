@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>All Endorsements | Jackie Forward</title>
 
+  <!-- SEO -->
+  <link rel="canonical" href="https://jackieforward1.netlify.app/endorsements.html" />
+  <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/endorsements.html" />
+  <link rel="alternate" hreflang="es" href="https://jackieforward1.netlify.app/es/endorsements/" />
+  <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/endorsements.html" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -39,7 +45,7 @@
 
     a{color:inherit;text-decoration:none}
 
-    /* ─── NAV ──────────────────────────────────── */
+    /* NAV */
     #nav{
       position:fixed;top:0;left:0;right:0;z-index:300;
       padding:0 2rem;height:95px;
@@ -92,10 +98,7 @@
       white-space:nowrap;
     }
 
-    .nav-links a:hover{
-      color:var(--gold);
-    }
-
+    .nav-links a:hover,
     .nav-links a.active{
       color:var(--gold);
     }
@@ -148,7 +151,7 @@
       padding:.6rem 2.5rem;font-size:1.6rem;
     }
 
-    /* ─── PAGE ─────────────────────────────────── */
+    /* PAGE */
     .wrap{
       max-width:1100px;
       margin:0 auto;
@@ -307,16 +310,12 @@
       .nav-links{display:none}
       .nav-donate{display:none}
       .ham{display:flex}
-
-      .endorse-grid{
-        grid-template-columns:1fr;
-      }
+      .endorse-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav id="nav">
     <a href="/" class="nav-logo">
       <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie logo">
@@ -328,8 +327,8 @@
         <li><a href="/#platform">Platform</a></li>
         <li><a href="/#story">About Jackie</a></li>
         <li><a href="/#achievements">Track Record</a></li>
-        <li><a href="/news.html">News</a></li>
         <li><a href="/endorsements.html" class="active">Endorsements</a></li>
+        <li><a href="/news.html">News</a></li>
         <li><a href="/#ward">Our Ward</a></li>
         <li><a href="/#events">Events</a></li>
         <li><a href="/#action">Volunteer</a></li>
@@ -347,15 +346,14 @@
     <a href="/#platform" onclick="toggleMenu()">Platform</a>
     <a href="/#story" onclick="toggleMenu()">About Jackie</a>
     <a href="/#achievements" onclick="toggleMenu()">Track Record</a>
-    <a href="/news.html" onclick="toggleMenu()">News</a>
     <a href="/endorsements.html" onclick="toggleMenu()">Endorsements</a>
+    <a href="/news.html" onclick="toggleMenu()">News</a>
     <a href="/#ward" onclick="toggleMenu()">Our Ward</a>
     <a href="/#events" onclick="toggleMenu()">Events</a>
     <a href="/#action" onclick="toggleMenu()">Volunteer</a>
     <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Donate Now</a>
   </div>
 
-  <!-- ENDORSEMENTS -->
   <main class="wrap">
     <div class="section-label">Endorsements</div>
     <h1>All Endorsements</h1>
@@ -404,9 +402,9 @@
         container.innerHTML = items.map(item => {
           const media =
             item.type === "video" && item.video_url
-              ? `<div class="endorse-media endorse-video"><iframe src="${escapeHtml(videoEmbedUrl(item.video_url))}" title="${escapeHtml(item.title || '')}" allowfullscreen></iframe></div>`
+              ? `<div class="endorse-media endorse-video"><iframe src="${escapeHtml(videoEmbedUrl(item.video_url))}" title="${escapeHtml(item.title_en || item.title_es || '')}" allowfullscreen></iframe></div>`
               : item.image
-                ? `<div class="endorse-media"><img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title || '')}"></div>`
+                ? `<div class="endorse-media"><img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title_en || item.title_es || '')}"></div>`
                 : `<div class="endorse-media endorse-placeholder">No Media</div>`;
 
           return `
@@ -419,11 +417,11 @@
                   ${item.language ? `<span class="endorse-pill endorse-language">${escapeHtml(item.language)}</span>` : ""}
                 </div>
 
-                <h3>${escapeHtml(item.title || "")}</h3>
+                <h3>${escapeHtml(item.title_en || item.title_es || "")}</h3>
 
                 ${item.endorser ? `<div class="endorser-name">${escapeHtml(item.endorser)}</div>` : ""}
 
-                ${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}
+                ${(item.summary_en || item.summary_es) ? `<p>${escapeHtml(item.summary_en || item.summary_es || "")}</p>` : ""}
 
                 ${item.url ? `<a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="endorse-link">Learn More →</a>` : ""}
               </div>
