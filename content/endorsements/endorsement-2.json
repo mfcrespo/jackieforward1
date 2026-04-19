@@ -1,12 +1,16 @@
 {
-  "title": "Video Endorsement from Local Advocate",
-  "date": "2026-04-16",
-  "endorser": "Ana Rodríguez",
-  "type": "video",
-  "video_url": "https://www.youtube.com/watch?v=XXXXXXXXXXX",
-  "source": "Ward 1 Advocate",
-  "language": "Spanish",
+  "endorser": "Trusted Community Leader Endorsement",
+  "summary_en": "Casilda Luna, one of the most respected and influential leaders in Washington, DC’s Latino community, endorses Jackie Reyes-Yanes in her run for Ward 1.\n\nWith decades of leadership and advocacy for the Salvadoran and Latino community, Casilda Luna’s endorsement represents more than political support—it is a recognition of Jackie’s work, her trajectory, and her vision for the future of Ward 1.\n\nThis moment reflects the strength of intergenerational Latino leadership in the District and highlights the importance of representation that truly understands and fights for the community.",
   "summary": "Ana shares why Jackie is the leader Ward 1 needs right now.",
+  "summary_es": "Casilda Luna, una de las figuras más influyentes y respetadas de la comunidad latina en Washington, DC, ofrece su respaldo a Jackie Reyes-Yanes en su candidatura al Concejo por el Ward 1.\n\nCon décadas de liderazgo, compromiso y lucha por la representación de la comunidad salvadoreña y latina, el apoyo de Casilda Luna representa mucho más que un endorsement político: es un reconocimiento al trabajo, la trayectoria y la visión de Jackie para el futuro del Ward 1.\n\nEste momento simboliza la conexión entre generaciones de liderazgo latino en la ciudad y refuerza la importancia de contar con una voz que entienda, represente y luche por nuestra comunidad.",
+  "video_url": "https://www.youtube.com/watch?v=XXXXXXXXXXX",
+  "featured": true,
+  "date": "2026-04-04",
   "url": "",
-  "featured": true
+  "title_en": "Casilda Luna Endorses Jackie Reyes-Yanes for Ward 1 — A Powerful Moment for the Community",
+  "title_es": "Casilda Luna respalda a Jackie Reyes-Yanes para el Ward 1 — Un momento histórico para la comunidad",
+  "title": "Video Endorsement from Local Advocate",
+  "language": "Spanish",
+  "type": "video",
+  "source": "Casilda Luna"
 }
