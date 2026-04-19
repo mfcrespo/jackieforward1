@@ -112,6 +112,7 @@
     </style>
   </head>
   <body>
+    <div id="header"></div>
     <main class="wrap">
       <div class="section-label">Press</div>
       <h1>All Press Coverage</h1>
@@ -159,12 +160,12 @@
 
     <!-- HEADER SCRIPT -->
     <script>
-    fetch("/header.html")
+    fetch("/partials/header.html")
         .then(res => res.text())
         .then(data => {
         document.getElementById("header").innerHTML = data;
         });
     </script>
-    
+
   </body>
 </html>
