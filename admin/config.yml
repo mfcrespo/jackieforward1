@@ -8,6 +8,7 @@ public_folder: "/images/uploads"
 publish_mode: simple
 
 collections:
+#events
   - name: "events"
     label: "Events"
     label_singular: "Event"
@@ -73,6 +74,7 @@ collections:
         default: false
         required: false
 
+# news
   - name: "news"
     label: "News"
     label_singular: "News Item"
@@ -127,3 +129,78 @@ collections:
         widget: "boolean"
         default: false
         required: false
+
+# endorsements
+  - name: "endorsements"
+    label: "Endorsements"
+    label_singular: "Endorsement"
+    folder: "content/endorsements"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
+    summary: "{{title}} — {{date}} — {{type}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+
+      - label: "Endorser Name"
+        name: "endorser"
+        widget: "string"
+
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options:
+          - { label: "Image", value: "image" }
+          - { label: "Video", value: "video" }
+
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: false
+
+      - label: "Video URL"
+        name: "video_url"
+        widget: "string"
+        required: false
+        hint: "YouTube, Vimeo, or direct video link"
+
+      - label: "Source / Organization"
+        name: "source"
+        widget: "string"
+        required: false
+
+      - label: "Language"
+        name: "language"
+        widget: "select"
+        required: false
+        options:
+          - { label: "English", value: "English" }
+          - { label: "Spanish", value: "Spanish" }
+          - { label: "Bilingual", value: "Bilingual" }
+
+      - label: "Quote / Summary"
+        name: "summary"
+        widget: "text"
+        required: false
+
+      - label: "External Link"
+        name: "url"
+        widget: "string"
+        required: false
+        hint: "Optional article or endorsement link"
+
+      - label: "Featured on Home"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        required: false        

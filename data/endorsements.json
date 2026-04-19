@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "title": "Community Leaders for Jackie",
+      "date": "2026-04-18",
+      "endorser": "Mount Pleasant Community Leaders",
+      "type": "image",
+      "image": "/images/uploads/endorsement-1.jpg",
+      "source": "Community Coalition",
+      "language": "English",
+      "summary": "Jackie has the lived experience, the values, and the track record to represent Ward 1.",
+      "url": "",
+      "featured": true
+    },
+    {
+      "title": "Video Endorsement from Local Advocate",
+      "date": "2026-04-16",
+      "endorser": "Ana Rodríguez",
+      "type": "video",
+      "video_url": "https://www.youtube.com/watch?v=XXXXXXXXXXX",
+      "source": "Ward 1 Advocate",
+      "language": "Spanish",
+      "summary": "Ana shares why Jackie is the leader Ward 1 needs right now.",
+      "url": "",
+      "featured": true
+    },
+    {
+      "title": "Neighborhood Support for Jackie",
+      "date": "2026-04-12",
+      "endorser": "Neighbors for Jackie",
+      "type": "image",
+      "image": "/images/uploads/endorsement-3.jpg",
+      "source": "Neighborhood Group",
+      "language": "Bilingual",
+      "summary": "Neighbors across Ward 1 are coming together behind Jackie’s vision.",
+      "url": "",
+      "featured": false
+    }
+  ]
+}
