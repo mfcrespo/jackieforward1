@@ -1107,6 +1107,17 @@ footer{
 <!-- NAV -->
  <div id="header"></div>
 
+<div class="mobile-nav" id="mnav">
+  <a href="#platform" onclick="toggleMenu()">Platform</a>
+  <a href="#story" onclick="toggleMenu()">About Jackie</a>
+  <a href="#achievements" onclick="toggleMenu()">Track Record</a>
+  <a href="#news" onclick="toggleMenu()">News</a>
+  <a href="#ward" onclick="toggleMenu()">Our Ward</a>
+  <a href="#events" onclick="toggleMenu()">Events</a>
+  <a href="#action" onclick="toggleMenu()">Volunteer</a>
+  <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Donate Now</a>
+</div>
+
 <!-- HERO -->
 <section id="hero">
   <div class="hero-img"></div>
@@ -1851,7 +1862,7 @@ Loads news from /data/news.json.
 
 <!-- HEADER SCRIPT -->
 <script>
-  fetch("/partials/header.html")
+  fetch("/header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header").innerHTML = data;
