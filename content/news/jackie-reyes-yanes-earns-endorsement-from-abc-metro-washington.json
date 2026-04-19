@@ -1,10 +1,14 @@
 {
-  "featured": false,
-  "title": "Jackie Reyes Yanes Earns Endorsement from ABC Metro Washington",
+  "summary_en": "Jackie Reyes Yanes is proud to receive the endorsement of the Associated Builders and Contractors of Metro Washington (ABC) — a leading voice for the construction industry, skilled trades, and workforce development across our region.",
   "summary": "Jackie Reyes Yanes is proud to receive the endorsement of the Associated Builders and Contractors of Metro Washington (ABC)",
-  "source": "ABC Metro Washington",
-  "url": "https://www.abcmetrowashington.org/Advocacy/Legislative-Resources/Legislative-News",
+  "summary_es": "Jackie Reyes-Yanes se enorgullece de recibir el respaldo de Associated Builders and Contractors of Metro Washington (ABC), una voz líder en la industria de la construcción, los oficios especializados y el desarrollo de la fuerza laboral en nuestra región.",
+  "featured": false,
   "date": "2026-03-13",
-  "image": "/images/uploads/jackie-reyes-yanes-endorment-abc.jpg",
-  "language": "English"
+  "url": "https://www.abcmetrowashington.org/Advocacy/Legislative-Resources/Legislative-News",
+  "title_en": "Jackie Reyes Yanes Earns Endorsement from ABC Metro Washington",
+  "title_es": "Jackie Reyes-Yanes recibe el respaldo de ABC Metro Washington",
+  "title": "Jackie Reyes Yanes Earns Endorsement from ABC Metro Washington",
+  "language": "English",
+  "source": "ABC Metro Washington",
+  "image": "/images/uploads/jackie-reyes-yanes-endorment-abc.jpg"
 }
