@@ -1,10 +1,14 @@
 {
-  "featured": true,
-  "title": "This DC-Based Public Servant Credits Her Latinx Roots As One Of Her Biggest Assets",
+  "summary_en": "Jackie Reyes-Yanes left El Salvador for the United States when she was just a child and it’s those roots that ultimately helped guide her personal career mission.",
   "summary": "Jackie Reyes-Yanes left El Salvador for the United States when she was just a child and it’s those roots that ultimately helped guide her personal career mission.",
-  "source": "Forbes",
-  "url": "https://www.forbes.com/sites/viviannunez/2018/06/29/for-this-dc-based-public-servant-being-latina-has-been-her-biggest-asset/",
-  "image": "/images/uploads/jackie-reyes-yanes-dc-servant.jpg",
+  "summary_es": "Jackie Reyes-Yanes dejó El Salvador cuando era apenas una niña, y fueron precisamente esas raíces las que terminaron guiando su misión personal y su trayectoria profesional.",
+  "featured": true,
   "date": "2018-06-29",
-  "language": "English"
+  "url": "https://www.forbes.com/sites/viviannunez/2018/06/29/for-this-dc-based-public-servant-being-latina-has-been-her-biggest-asset/",
+  "title_en": "This DC-Based Public Servant Credits Her Latinx Roots As One Of Her Biggest Assets",
+  "title_es": "Esta servidora pública en D.C. considera que sus raíces latinas son una de sus mayores fortalezas",
+  "title": "This DC-Based Public Servant Credits Her Latinx Roots As One Of Her Biggest Assets",
+  "language": "English",
+  "source": "Forbes",
+  "image": "/images/uploads/jackie-reyes-yanes-dc-servant.jpg"
 }
