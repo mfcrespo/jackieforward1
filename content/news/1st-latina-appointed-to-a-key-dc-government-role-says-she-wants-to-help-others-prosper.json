@@ -1,10 +1,14 @@
 {
-  "featured": false,
-  "title": "1st Latina appointed to a key DC government role says she wants to help others prosper",
+  "summary_en": "WTOP celebrates National Hispanic Heritage Month this Sept. 15 through Oct. 15, with stories spotlighting the contributions, culture and accomplishments of Hispanic communities across the D.C. region.",
   "summary": "WTOP celebrates National Hispanic Heritage Month this Sept. 15 through Oct. 15, with stories spotlighting the contributions, culture and accomplishments of Hispanic communities across the D.C. region.",
-  "source": "WTOP",
+  "summary_es": "WTOP celebra el Mes de la Herencia Hispana, del 15 de septiembre al 15 de octubre, con historias que destacan las contribuciones, la cultura y los logros de las comunidades hispanas en toda la región de Washington D.C",
+  "featured": false,
   "date": "2024-09-16",
   "url": "https://wtop.com/dc/2024/09/the-first-latina-appointed-to-a-key-dc-government-role-says-she-wants-to-help-others-prosper/",
-  "image": "https://wtop.com/dc/2024/09/the-first-latina-appointed-to-a-key-dc-government-role-says-she-wants-to-help-others-prosper/",
-  "language": "English"
+  "title_en": "1st Latina appointed to a key DC government role says she wants to help others prosper",
+  "title_es": "Primera latina nombrada en un cargo clave del gobierno de DC afirma que quiere ayudar a otros a prosperar",
+  "title": "1st Latina appointed to a key DC government role says she wants to help others prosper",
+  "language": "English",
+  "source": "WTOP",
+  "image": "https://wtop.com/dc/2024/09/the-first-latina-appointed-to-a-key-dc-government-role-says-she-wants-to-help-others-prosper/"
 }
