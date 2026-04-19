@@ -1,21 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 50));
 
-  const nav = document.getElementById('nav');
-
-  if (nav) {
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('solid', window.scrollY > 10);
-    });
-  }
-
-});
-
+// Mobile menu
 function toggleMenu() {
   const h = document.getElementById('ham');
   const m = document.getElementById('mnav');
-
-  if (h && m) {
-    h.classList.toggle('open');
-    m.classList.toggle('open');
-  }
+  h.classList.toggle('open');
+  m.classList.toggle('open');
 }
