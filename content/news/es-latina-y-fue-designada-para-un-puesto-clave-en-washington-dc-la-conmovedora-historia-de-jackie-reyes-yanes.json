@@ -1,10 +1,14 @@
 {
-  "featured": false,
-  "title": "Es latina y fue designada para un puesto clave en Washington DC: la conmovedora historia de Jackie Reyes-Yanes",
+  "summary_en": "Her life was far from easy. Left to raise her three children on her own, she had to push through countless challenges. But the Salvadoran leader overcame every obstacle—and today, her mission is to help Hispanics across the District access better opportunities.",
   "summary": "Su vida no fue nada fácil, quedó sola con sus tres hijos y debió salir adelante, pero la salvadoreña logró sortear todas las adversidades; hoy su meta es ayudar que los hispanos del estado tengan mejores oportunidades",
-  "source": "La Nación",
-  "url": "https://www.lanacion.com.ar/estados-unidos/washington/es-latina-y-fue-designada-para-un-puesto-clave-en-washington-dc-la-conmovedora-historia-de-jackie-nid19092024/",
-  "image": "/images/uploads/jackie-reyes-yanes-directora-moca.jpg",
+  "summary_es": "Su vida no fue nada fácil, quedó sola con sus tres hijos y debió salir adelante, pero la salvadoreña logró sortear todas las adversidades; hoy su meta es ayudar que los hispanos del estado tengan mejores oportunidades",
+  "featured": false,
   "date": "2024-09-19",
-  "language": "Spanish"
+  "url": "https://www.lanacion.com.ar/estados-unidos/washington/es-latina-y-fue-designada-para-un-puesto-clave-en-washington-dc-la-conmovedora-historia-de-jackie-nid19092024/",
+  "title_en": "She’s Latina and was appointed to a key role in Washington, D.C.: the inspiring story of Jackie Reyes-Yanes",
+  "title_es": "Es latina y fue designada para un puesto clave en Washington DC: la conmovedora historia de Jackie Reyes-Yanes",
+  "title": "Es latina y fue designada para un puesto clave en Washington DC: la conmovedora historia de Jackie Reyes-Yanes",
+  "language": "Spanish",
+  "source": "La Nación",
+  "image": "/images/uploads/jackie-reyes-yanes-directora-moca.jpg"
 }
