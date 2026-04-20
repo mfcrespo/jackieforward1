@@ -1,33 +1,17 @@
 {
   "items": [
     {
-      "title": "Ward 1 Councilmember Debate",
-      "date": "2026-04-08",
-      "time": "7:00 PM",
-      "category": "townhall",
-      "address": "Hook Hall, Washington, DC",
-      "description": "Join the Ward 1 debate.",
-      "rsvp": "https://jryforum0408.eventbrite.com",
-      "image": "/images/uploads/debate.jpg",
-      "featured": true
-    },
-    {
-      "title": "Spring Cleanup",
-      "date": "2026-04-11",
-      "time": "10:00 AM – 1:00 PM",
-      "category": "cleanup",
-      "address": "3146 Mt Pleasant St NW & 707 Kenyon St NW, Washington, DC",
-      "description": "Join us to clean and beautify Ward 1.",
-      "rsvp": "https://jackiecleanup.eventbrite.com",
-      "image": "/images/uploads/spring-cleanup.jpg",
-      "featured": false
-    },
-    {
+      "description_en": "Join Jackie Reyes-Yanes for a meaningful conversation with senior residents—your voice matters in shaping the future of Ward 1.",
       "time": "3:00 PM – 4:00 PM",
       "featured": false,
       "date": "2026-04-21",
+      "title_en": "Let’s Talk, Ward 1 - Meet & Greet with Jackie Reyes-Yanes",
+      "description_es": "Únete a Jackie Reyes-Yanes para una conversación significativa con residentes mayores de la comunidad. Tu voz es clave para construir el futuro del Ward 1.",
+      "address_en": "1370 Harvard St NW, Washington DC",
       "address": "1370 Harvard St NW, Washington, DC",
+      "title_es": "Hablemos, Ward 1 – Encuentro comunitario con Jackie Reyes-Yanes",
       "title": "Let’s Talk, Ward 1 – Meet & Greet",
+      "address_es": "1370 Harvard St NW, Washington DC",
       "rsvp": "https://jackiemeetgreet0421.eventbrite.com",
       "image": "/images/uploads/meet-greet-04212026_eng.jpg",
       "description": "Meet Jackie and connect.",
