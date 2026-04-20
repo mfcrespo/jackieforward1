@@ -1722,7 +1722,8 @@ footer{
             <option>Volunteer — Door Knocking</option>
             <option>Volunteer — Phone Banking</option>
             <option>Host a Yard Sign</option>
-            <option>Host a Neighborhood Event</option>
+            <option>Host a Meet & Greet</option>
+            <option>Clean Up</option>
             <option>Stay Informed</option>
             <option>Donate</option>
           </select>
@@ -2014,7 +2015,7 @@ async function loadUpcomingEvents() {
       const imageHtml = item.image
         ? `
           <div class="event-card-image">
-            <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title || 'Event image')}">
+            <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title_en || 'Event image')}">
           </div>
         `
         : "";
@@ -2045,13 +2046,13 @@ async function loadUpcomingEvents() {
               ${featuredHtml}
             </div>
 
-            <h4>${escapeHtml(item.title || '')}</h4>
+            <h4>${escapeHtml(item.title_en || '')}</h4>
 
             <p class="event-time-address">
-              ${escapeHtml(item.time || '')}${item.time ? ' · ' : ''}${escapeHtml(item.address || '')}
+              ${escapeHtml(item.time || '')}${item.time ? ' · ' : ''}${escapeHtml(item.address_en || '')}
             </p>
 
-            <p class="event-description">${escapeHtml(item.description || '')}</p>
+            <p class="event-description">${escapeHtml(item.description_en || '')}</p>
 
             ${rsvpHtml}
           </div>

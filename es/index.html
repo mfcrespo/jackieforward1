@@ -1729,8 +1729,9 @@ footer{
             <option value="">Selecciona una opción...</option>
             <option>Voluntariado — Tocar puertas</option>
             <option>Voluntariado — Llamadas</option>
-            <option>Colocar un letrero</option>
-            <option>Organizar un evento vecinal</option>
+            <option>Colocar un letrero en mi casa</option>
+            <option>Organizar un encuentro comunitario</option>
+            <option>Limpieza en mi Vecindario</option>
             <option>Mantenerme informado</option>
             <option>Donar</option>
           </select>
@@ -2006,8 +2007,8 @@ async function loadUpcomingEvents() {
       container.innerHTML = `
         <div class="event-card">
           <div class="event-card-body" style="padding:1.2rem;">
-            <h4>No upcoming events right now</h4>
-            <p>Please check back soon for campaign events and volunteer opportunities.</p>
+            <h4>No hay eventos por ahora</h4>
+            <p>Vuelve pronto para ver próximos eventos de la campaña y oportunidades de voluntariado.</p>
           </div>
         </div>
       `;
@@ -2022,7 +2023,7 @@ async function loadUpcomingEvents() {
       const imageHtml = item.image
         ? `
           <div class="event-card-image">
-            <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title || 'Event image')}">
+            <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title_es || 'Event image')}">
           </div>
         `
         : "";
@@ -2030,7 +2031,7 @@ async function loadUpcomingEvents() {
       const rsvpHtml = item.rsvp
         ? `
           <a class="event-rsvp-btn" href="${escapeHtml(item.rsvp)}" target="_blank" rel="noopener noreferrer">
-            RSVP
+            REGISTRATE
           </a>
         `
         : "";
@@ -2053,13 +2054,13 @@ async function loadUpcomingEvents() {
               ${featuredHtml}
             </div>
 
-            <h4>${escapeHtml(item.title || '')}</h4>
+            <h4>${escapeHtml(item.title_es || '')}</h4>
 
             <p class="event-time-address">
-              ${escapeHtml(item.time || '')}${item.time ? ' · ' : ''}${escapeHtml(item.address || '')}
+              ${escapeHtml(item.time || '')}${item.time ? ' · ' : ''}${escapeHtml(item.address_es || '')}
             </p>
 
-            <p class="event-description">${escapeHtml(item.description || '')}</p>
+            <p class="event-description">${escapeHtml(item.description_es || '')}</p>
 
             ${rsvpHtml}
           </div>
@@ -2071,8 +2072,8 @@ async function loadUpcomingEvents() {
     container.innerHTML = `
       <div class="event-card">
         <div class="event-card-body" style="padding:1.2rem;">
-          <h4>Unable to load events</h4>
-          <p>Please try again later.</p>
+          <h4>No se pudieron cargar los eventos</h4>
+          <p>Inténtalo de nuevo más tarde.</p>
         </div>
       </div>
     `;
