@@ -2058,8 +2058,45 @@ loadUpcomingEvents();
     return item.url || item.video_url || item.rsvp || "#";
   }
 
+  function getYouTubeId(url = "") {
+    if (!url) return "";
+
+    try {
+      const parsed = new URL(url, window.location.origin);
+      const host = parsed.hostname.replace("www.", "");
+
+      if (host === "youtu.be") {
+        return parsed.pathname.split("/").filter(Boolean)[0] || "";
+      }
+
+      if (host.includes("youtube.com")) {
+        if (parsed.searchParams.get("v")) return parsed.searchParams.get("v");
+
+        const parts = parsed.pathname.split("/").filter(Boolean);
+        const shortsIndex = parts.indexOf("shorts");
+        if (shortsIndex !== -1 && parts[shortsIndex + 1]) return parts[shortsIndex + 1];
+
+        const embedIndex = parts.indexOf("embed");
+        if (embedIndex !== -1 && parts[embedIndex + 1]) return parts[embedIndex + 1];
+
+        const liveIndex = parts.indexOf("live");
+        if (liveIndex !== -1 && parts[liveIndex + 1]) return parts[liveIndex + 1];
+      }
+    } catch (e) {
+      const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([^?&#/]+)/i);
+      return match ? match[1] : "";
+    }
+
+    return "";
+  }
+
+  function youtubeThumbnail(url = "") {
+    const youtubeId = getYouTubeId(url);
+    return youtubeId ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg` : "";
+  }
+
   function cardImage(item) {
-    return item.card_image || item.image || "";
+    return item.card_image || item.image || youtubeThumbnail(item.video_url || item.url || "") || "";
   }
 
   function mediaMarkup(item, altText, placeholderText) {
