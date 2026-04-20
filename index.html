@@ -58,6 +58,37 @@ strong{font-weight:600}
 }
 .nav-wordmark span{color:var(--gold);display:block;font-size:.7rem;letter-spacing:.18em;font-weight:600}
 .nav-right{display:flex;align-items:center;gap:1.1rem}
+
+    .lang-switch{
+      display:flex;
+      align-items:center;
+      gap:.35rem;
+      font-family:'League Spartan',sans-serif;
+      font-size:.8rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .lang-switch a{
+      color:rgba(244,239,230,.6);
+      text-decoration:none;
+      transition:color .2s;
+    }
+
+    .lang-switch a:hover{
+      color:var(--gold);
+    }
+
+    .lang-switch .active{
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .lang-switch .divider{
+      color:rgba(244,239,230,.3);
+    }
+
 .nav-links{display:flex;gap:1rem;list-style:none}
 .nav-links a{
   font-family:'League Spartan',sans-serif;
@@ -636,6 +667,8 @@ section { scroll-margin-top: 115px; }
 }
 .ach-body strong{color:rgba(244,239,230,.85);font-weight:500}
 @media(max-width:900px){
+  .lang-switch{display:none}
+
   .ach-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
@@ -1299,6 +1332,13 @@ footer{
       <li><a href="#events">Events</a></li>
       <li><a href="#action">Volunteer</a></li>
     </ul>
+      <div class="lang-switch" aria-label="Language switcher">
+        <span class="active">EN</span>
+        <span class="divider">|</span>
+        <a href="/es/" hreflang="es" lang="es">ES</a>
+      </div>
+
+
     <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" class="nav-donate">Donate</a>
     <button class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </nav>
@@ -1313,6 +1353,8 @@ footer{
   <a href="#ward" onclick="toggleMenu()">Our Ward</a>
   <a href="#events" onclick="toggleMenu()">Events</a>
   <a href="#action" onclick="toggleMenu()">Volunteer</a>
+  <a href="/es/" onclick="toggleMenu()">Español</a>
+
   <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Donate Now</a>
 </div>
 
@@ -1886,42 +1928,13 @@ into the #events-list container.
       return value === true || value === 'true' || value === 'True' || value === 1 || value === '1';
     }
 
-    function getYouTubeId(url = '') {
-      if (!url) return '';
-
-      try {
-        const parsed = new URL(url, window.location.origin);
-        const host = parsed.hostname.replace('www.', '');
-
-        if (host === 'youtu.be') {
-          return parsed.pathname.split('/').filter(Boolean)[0] || '';
-        }
-
-        if (host.includes('youtube.com')) {
-          if (parsed.searchParams.get('v')) return parsed.searchParams.get('v');
-
-          const parts = parsed.pathname.split('/').filter(Boolean);
-          const shortsIndex = parts.indexOf('shorts');
-          if (shortsIndex !== -1 && parts[shortsIndex + 1]) return parts[shortsIndex + 1];
-
-          const embedIndex = parts.indexOf('embed');
-          if (embedIndex !== -1 && parts[embedIndex + 1]) return parts[embedIndex + 1];
-
-          const liveIndex = parts.indexOf('live');
-          if (liveIndex !== -1 && parts[liveIndex + 1]) return parts[liveIndex + 1];
-        }
-      } catch (e) {
-        const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([^?&#/]+)/i);
-        return match ? match[1] : '';
-      }
-
-      return '';
-    }
-
     function videoEmbedUrl(url = '') {
       if (!url) return '';
-      const youtubeId = getYouTubeId(url);
-      if (youtubeId) return `https://www.youtube.com/embed/${youtubeId}`;
+      if (url.includes('youtube.com/watch?v=')) return url.replace('watch?v=', 'embed/');
+      if (url.includes('youtu.be/')) {
+        const id = url.split('youtu.be/')[1].split('?')[0];
+        return `https://www.youtube.com/embed/${id}`;
+      }
       if (url.includes('vimeo.com/')) {
         const id = url.split('vimeo.com/')[1].split('?')[0];
         return `https://player.vimeo.com/video/${id}`;
@@ -1930,12 +1943,20 @@ into the #events-list container.
     }
 
     function youtubeThumbnail(url = '') {
-      const id = getYouTubeId(url);
-      return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+      if (!url) return '';
+      if (url.includes('youtube.com/watch?v=')) {
+        const id = url.split('watch?v=')[1].split('&')[0];
+        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+      }
+      if (url.includes('youtu.be/')) {
+        const id = url.split('youtu.be/')[1].split('?')[0];
+        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+      }
+      return '';
     }
 
     function mediaImage(item) {
-      return youtubeThumbnail(item.video_url || item.url || '') || item.card_image || item.image || '';
+      return item.card_image || item.image || youtubeThumbnail(item.video_url || '') || '';
     }
 
 function categoryLabel(category) {

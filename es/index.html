@@ -62,6 +62,37 @@ strong{font-weight:600}
 }
 .nav-wordmark span{color:var(--gold);display:block;font-size:.7rem;letter-spacing:.18em;font-weight:600}
 .nav-right{display:flex;align-items:center;gap:1.1rem}
+
+    .lang-switch{
+      display:flex;
+      align-items:center;
+      gap:.35rem;
+      font-family:'League Spartan',sans-serif;
+      font-size:.8rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .lang-switch a{
+      color:rgba(244,239,230,.6);
+      text-decoration:none;
+      transition:color .2s;
+    }
+
+    .lang-switch a:hover{
+      color:var(--gold);
+    }
+
+    .lang-switch .active{
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .lang-switch .divider{
+      color:rgba(244,239,230,.3);
+    }
+
 .nav-links{display:flex;gap:1rem;list-style:none}
 .nav-links a{
   font-family:'League Spartan',sans-serif;
@@ -640,6 +671,8 @@ section { scroll-margin-top: 115px; }
 }
 .ach-body strong{color:rgba(244,239,230,.85);font-weight:500}
 @media(max-width:900px){
+  .lang-switch{display:none}
+
   .ach-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
@@ -1303,6 +1336,13 @@ footer{
       <li><a href="#events">Eventos</a></li>
       <li><a href="#action">Voluntariado</a></li>
     </ul>
+      <div class="lang-switch" aria-label="Selector de idioma">
+        <a href="/" hreflang="en" lang="en">EN</a>
+        <span class="divider">|</span>
+        <span class="active">ES</span>
+      </div>
+
+
     <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" class="nav-donate">Dona Hoy</a>
     <button class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </nav>
@@ -1317,6 +1357,8 @@ footer{
   <a href="#ward" onclick="toggleMenu()">Nuestro Ward</a>
   <a href="#events" onclick="toggleMenu()">Eventos</a>
   <a href="#action" onclick="toggleMenu()">Voluntariado</a>
+  <a href="/" onclick="toggleMenu()">English</a>
+
   <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Dona Ahora</a>
 </div>
 
@@ -1906,26 +1948,19 @@ into the #events-list container.
 
     function youtubeThumbnail(url = '') {
       if (!url) return '';
-
-      let id = '';
-
       if (url.includes('youtube.com/watch?v=')) {
-        id = url.split('watch?v=')[1].split('&')[0];
-      } else if (url.includes('youtu.be/')) {
-        id = url.split('youtu.be/')[1].split('?')[0].split('/')[0];
-      } else if (url.includes('youtube.com/shorts/')) {
-        id = url.split('youtube.com/shorts/')[1].split('?')[0].split('/')[0];
-      } else if (url.includes('youtube.com/embed/')) {
-        id = url.split('youtube.com/embed/')[1].split('?')[0].split('/')[0];
-      } else if (url.includes('youtube.com/live/')) {
-        id = url.split('youtube.com/live/')[1].split('?')[0].split('/')[0];
+        const id = url.split('watch?v=')[1].split('&')[0];
+        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
       }
-
-      return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+      if (url.includes('youtu.be/')) {
+        const id = url.split('youtu.be/')[1].split('?')[0];
+        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+      }
+      return '';
     }
 
     function mediaImage(item) {
-      return item.card_image || item.image || youtubeThumbnail(item.video_url || item.url || '') || '';
+      return item.card_image || item.image || youtubeThumbnail(item.video_url || '') || '';
     }
 
 function categoryLabel(category) {
