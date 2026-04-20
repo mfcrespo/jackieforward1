@@ -410,7 +410,11 @@
     }
 
     function mediaImage(item) {
-      return item.card_image || item.image || youtubeThumbnail(item.video_url || '') || '';
+      if (item.type === 'video') {
+        const ytThumb = youtubeThumbnail(item.video_url || item.url || '');
+        if (ytThumb) return ytThumb;
+      }
+      return item.card_image || item.image || youtubeThumbnail(item.video_url || item.url || '') || '';
     }
 
     async function loadAllEndorsements() {

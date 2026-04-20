@@ -374,6 +374,28 @@
         .replaceAll("'", '&#39;');
     }
 
+
+    function youtubeThumbnail(url = '') {
+      if (!url) return '';
+      if (url.includes('youtube.com/watch?v=')) {
+        const id = url.split('watch?v=')[1].split('&')[0];
+        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+      }
+      if (url.includes('youtu.be/')) {
+        const id = url.split('youtu.be/')[1].split('?')[0];
+        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+      }
+      return '';
+    }
+
+    function newsImage(item) {
+      if (item.type === 'video') {
+        const ytThumb = youtubeThumbnail(item.video_url || item.url || '');
+        if (ytThumb) return ytThumb;
+      }
+      return item.card_image || item.image || '';
+    }
+
     async function loadAllNews() {
       const container = document.getElementById("all-news-list");
       if (!container) return;
@@ -383,9 +405,11 @@
         const data = await response.json();
         const items = Array.isArray(data.items) ? data.items : [];
 
-        container.innerHTML = items.map(item => `
+        container.innerHTML = items.map(item => {
+          const image = newsImage(item);
+          return `
           <article class="news-card">
-            ${item.card_image || item.image ? `<img src="${escapeHtml(item.card_image || item.image)}" alt="${escapeHtml(item.title_en || item.title_es || item.title || '')}" class="news-card-image">` : `<div class="news-card-image"></div>`}
+            ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(item.title_en || item.title_es || item.title || '')}" class="news-card-image">` : `<div class="news-card-image"></div>`}
             <div class="news-card-body">
               <div class="news-source-date">
                 ${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}${item.language ? " • " + escapeHtml(item.language) : ""}
@@ -395,7 +419,8 @@
               <a class="news-link" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">Read Coverage</a>
             </div>
           </article>
-        `).join("");
+        `;
+        }).join("");
       } catch (error) {
         console.error("Error loading all news:", error);
         container.innerHTML = "<p>Unable to load press coverage right now.</p>";
