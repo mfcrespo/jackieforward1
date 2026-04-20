@@ -1890,16 +1890,13 @@ into the #events-list container.
       return value === true || value === 'true' || value === 'True' || value === 1 || value === '1';
     }
 
-    function extractYouTubeId(url = '') {
-      if (!url) return '';
-      const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([^&?/]+)/i);
-      return match ? match[1] : '';
-    }
-
     function videoEmbedUrl(url = '') {
       if (!url) return '';
-      const youtubeId = extractYouTubeId(url);
-      if (youtubeId) return `https://www.youtube.com/embed/${youtubeId}`;
+      if (url.includes('youtube.com/watch?v=')) return url.replace('watch?v=', 'embed/');
+      if (url.includes('youtu.be/')) {
+        const id = url.split('youtu.be/')[1].split('?')[0];
+        return `https://www.youtube.com/embed/${id}`;
+      }
       if (url.includes('vimeo.com/')) {
         const id = url.split('vimeo.com/')[1].split('?')[0];
         return `https://player.vimeo.com/video/${id}`;
@@ -1908,12 +1905,27 @@ into the #events-list container.
     }
 
     function youtubeThumbnail(url = '') {
-      const id = extractYouTubeId(url);
+      if (!url) return '';
+
+      let id = '';
+
+      if (url.includes('youtube.com/watch?v=')) {
+        id = url.split('watch?v=')[1].split('&')[0];
+      } else if (url.includes('youtu.be/')) {
+        id = url.split('youtu.be/')[1].split('?')[0].split('/')[0];
+      } else if (url.includes('youtube.com/shorts/')) {
+        id = url.split('youtube.com/shorts/')[1].split('?')[0].split('/')[0];
+      } else if (url.includes('youtube.com/embed/')) {
+        id = url.split('youtube.com/embed/')[1].split('?')[0].split('/')[0];
+      } else if (url.includes('youtube.com/live/')) {
+        id = url.split('youtube.com/live/')[1].split('?')[0].split('/')[0];
+      }
+
       return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
     }
 
     function mediaImage(item) {
-      return item.card_image || item.image || youtubeThumbnail(item.video_url || '') || '';
+      return item.card_image || item.image || youtubeThumbnail(item.video_url || item.url || '') || '';
     }
 
 function categoryLabel(category) {
