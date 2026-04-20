@@ -13,7 +13,9 @@
       "language": "Bilingual",
       "type": "video",
       "source": "Marylin Miranda - TPS Advocate",
-      "image": "https://img.youtube.com/vi/3Jtea3Bz7_k/maxresdefault.jpg"
+      "image": "https://img.youtube.com/vi/3Jtea3Bz7_k/maxresdefault.jpg",
+      "video_embed_url": "https://www.youtube.com/shorts/3Jtea3Bz7_k",
+      "card_image": "https://img.youtube.com/vi/3Jtea3Bz7_k/maxresdefault.jpg"
     },
     {
       "endorser": "Trusted Community Leader Endorsement",
@@ -30,7 +32,9 @@
       "language": "Bilingual",
       "type": "video",
       "source": "Casilda Luna - Community Leader",
-      "image": "https://img.youtube.com/vi/1leE99sUGvo/maxresdefault.jpg"
+      "image": "https://img.youtube.com/vi/1leE99sUGvo/maxresdefault.jpg",
+      "video_embed_url": "https://www.youtube.com/shorts/1leE99sUGvo",
+      "card_image": "https://img.youtube.com/vi/1leE99sUGvo/maxresdefault.jpg"
     },
     {
       "endorser": "Community Endorsement",
@@ -45,7 +49,9 @@
       "language": "Bilingual",
       "type": "video",
       "source": "Maria Queen - Park View Resident",
-      "image": "https://img.youtube.com/vi/QkHBw-OuF9U/maxresdefault.jpg"
+      "image": "https://img.youtube.com/vi/QkHBw-OuF9U/maxresdefault.jpg",
+      "video_embed_url": "https://www.youtube.com/shorts/QkHBw-OuF9U",
+      "card_image": "https://img.youtube.com/vi/QkHBw-OuF9U/maxresdefault.jpg"
     },
     {
       "endorser": "Organizational Endorsement",
@@ -61,7 +67,9 @@
       "language": "English",
       "type": "image",
       "source": "ABC Metro Washington",
-      "image": "/images/uploads/jackie-reyes-yanes-endorment-abc.jpg"
+      "image": "/images/uploads/jackie-reyes-yanes-endorment-abc.jpg",
+      "video_embed_url": "",
+      "card_image": "/images/uploads/jackie-reyes-yanes-endorment-abc.jpg"
     },
     {
       "endorser": "Community Endorsement",
@@ -78,7 +86,9 @@
       "language": "Bilingual",
       "type": "video",
       "source": "Yasmin Romero - Tenant Monseñor Romero Apartments and Former ANC1",
-      "image": "https://img.youtube.com/vi/uv_tD1hcj2Q/maxresdefault.jpg"
+      "image": "https://img.youtube.com/vi/uv_tD1hcj2Q/maxresdefault.jpg",
+      "video_embed_url": "https://www.youtube.com/shorts/uv_tD1hcj2Q",
+      "card_image": "https://img.youtube.com/vi/uv_tD1hcj2Q/maxresdefault.jpg"
     }
   ]
 }

@@ -1,270 +1,131 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>All Press Coverage | Jackie Forward</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>All Press Coverage | Jackie Forward</title>
 
-  <!-- SEO -->
-  <link rel="canonical" href="https://jackieforward1.netlify.app/news.html" />
-  <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/news.html" />
-  <link rel="alternate" hreflang="es" href="https://jackieforward1.netlify.app/es/news/" />
-  <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/news.html" />
+    <!-- SEO -->
+    <link rel="canonical" href="https://jackieforward1.netlify.app/news.html" />
+    <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/news.html" />
+    <link rel="alternate" hreflang="es" href="https://jackieforward1.netlify.app/es/news/" />
+    <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/news.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+      :root{
+        --gold:#D4A017;
+        --ink:#0B0D0B;
+        --warm:#F4EFE6;
+      }
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+      body{
+        margin:0;
+        font-family:'Lora', serif;
+        background:var(--ink);
+        color:var(--warm);
+      }
 
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      .wrap{
+        max-width:1100px;
+        margin:0 auto;
+        padding:4rem 1.5rem;
+      }
 
-    :root{
-      --gold:#D4A017;
-      --gold-lt:#F0C040;
-      --green:#1B5E35;
-      --green-lt:#2E7D45;
-      --ink:#0B0D0B;
-      --warm:#F4EFE6;
-      --warm2:#E8E2D6;
-      --cream:#F9F6EF;
-      --muted:rgba(244,239,230,.52);
-      --red:#C0392B;
-    }
+      .section-label{
+        font-family:'League Spartan', sans-serif;
+        color:var(--gold);
+        text-transform:uppercase;
+        letter-spacing:.12em;
+        font-size:.8rem;
+        margin-bottom:1rem;
+      }
 
-    html{scroll-behavior:smooth}
+      h1{
+        font-family:'League Spartan', sans-serif;
+        font-size:clamp(2.4rem, 5vw, 4rem);
+        margin:0 0 2rem 0;
+      }
 
-    body{
-      margin:0;
-      font-family:'Barlow',sans-serif;
-      background:var(--ink);
-      color:var(--warm);
-      overflow-x:hidden;
-    }
-
-    a{color:inherit;text-decoration:none}
-
-    /* NAV */
-    #nav{
-      position:fixed;top:0;left:0;right:0;z-index:300;
-      padding:0 2rem;height:95px;
-      display:flex;align-items:center;justify-content:space-between;
-      background:rgba(11,13,11,.96);
-      transition:background .4s,border-color .4s;
-      border-bottom:1px solid rgba(212,160,23,.2);
-    }
-
-    #nav.solid{
-      background:rgba(11,13,11,.96);
-      border-color:rgba(212,160,23,.2);
-    }
-
-    .nav-logo{
-      display:flex;align-items:center;gap:.7rem;
-    }
-
-    .nav-logo img{
-      height:78px;width:auto;object-fit:contain;
-    }
-
-    .nav-wordmark{
-      font-family:'League Spartan',sans-serif;
-      font-weight:800;font-size:1.1rem;
-      letter-spacing:.04em;text-transform:uppercase;
-      line-height:1;
-    }
-
-    .nav-wordmark span{
-      color:var(--gold);
-      display:block;
-      font-size:.7rem;
-      letter-spacing:.18em;
-      font-weight:600;
-    }
-
-    .nav-right{
-      display:flex;align-items:center;gap:1.1rem;
-    }
-
-    .nav-links{
-      display:flex;gap:1rem;list-style:none;
-    }
-
-    .nav-links a{
-      font-family:'League Spartan',sans-serif;
-      font-size:.88rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-      color:rgba(244,239,230,.65);transition:color .2s;
-      white-space:nowrap;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active{
-      color:var(--gold);
-    }
-
-    .nav-donate{
-      font-family:'League Spartan',sans-serif;
-      font-size:.88rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-      background:var(--gold);color:var(--ink);
-      padding:.42rem .95rem;
-      border:none;cursor:pointer;transition:background .2s;
-      white-space:nowrap;
-    }
-
-    .nav-donate:hover{
-      background:var(--gold-lt);
-    }
-
-    .ham{
-      display:none;flex-direction:column;gap:5px;
-      background:none;border:none;cursor:pointer;padding:4px;
-    }
-
-    .ham span{
-      display:block;width:24px;height:2px;background:var(--warm);
-      transition:all .3s;transform-origin:center;
-    }
-
-    .ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-    .ham.open span:nth-child(2){opacity:0}
-    .ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-    .mobile-nav{
-      display:none;position:fixed;inset:0;top:70px;z-index:299;
-      background:rgba(11,13,11,.97);
-      flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
-    }
-
-    .mobile-nav.open{display:flex}
-
-    .mobile-nav a{
-      font-family:'Barlow Condensed',sans-serif;
-      font-size:2.2rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
-      color:var(--warm);transition:color .2s;
-    }
-
-    .mobile-nav a:hover{color:var(--gold)}
-
-    .mobile-nav .m-cta{
-      background:var(--gold);color:var(--ink);
-      padding:.6rem 2.5rem;font-size:1.6rem;
-    }
-
-    /* PAGE */
-    .wrap{
-      max-width:1100px;
-      margin:0 auto;
-      padding:9rem 1.5rem 4rem;
-    }
-
-    .section-label{
-      font-family:'League Spartan', sans-serif;
-      color:var(--gold);
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      font-size:.8rem;
-      margin-bottom:1rem;
-    }
-
-    h1{
-      font-family:'League Spartan', sans-serif;
-      font-size:clamp(2.4rem, 5vw, 4rem);
-      margin:0 0 2rem 0;
-      color:var(--warm);
-      text-transform:uppercase;
-      line-height:.95;
-    }
-
-    .news-grid{
-      display:grid;
-      gap:1.5rem;
-    }
-
-    .news-card{
-      display:grid;
-      grid-template-columns:260px 1fr;
-      gap:1.2rem;
-      background:rgba(244,239,230,.04);
-      border:1px solid rgba(244,239,230,.08);
-      overflow:hidden;
-    }
-
-    .news-card-image{
-      width:100%;
-      height:100%;
-      min-height:220px;
-      object-fit:cover;
-      display:block;
-    }
-
-    .news-card-body{
-      padding:1.2rem 1.2rem 1.2rem 0;
-    }
-
-    .news-source-date{
-      color:var(--gold);
-      font-family:'League Spartan', sans-serif;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-      font-size:.8rem;
-      margin-bottom:.8rem;
-    }
-
-    .news-card h2{
-      font-family:'League Spartan', sans-serif;
-      margin:0 0 .7rem 0;
-      font-size:1.5rem;
-      color:var(--warm);
-    }
-
-    .news-card p{
-      margin:0 0 1rem 0;
-      line-height:1.6;
-      color:rgba(244,239,230,.78);
-      font-family:'Lora', serif;
-    }
-
-    .news-link{
-      display:inline-block;
-      background:var(--gold);
-      color:var(--ink);
-      text-decoration:none;
-      font-family:'League Spartan', sans-serif;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-      padding:.75rem 1rem;
-    }
-
-    .news-link:hover{
-      background:var(--gold-lt);
-    }
-
-    @media(max-width:900px){
-      .nav-links{display:none}
-      .nav-donate{display:none}
-      .ham{display:flex}
+      .news-grid{
+        display:grid;
+        gap:1.5rem;
+      }
 
       .news-card{
-        grid-template-columns:1fr;
+        display:grid;
+        grid-template-columns:260px 1fr;
+        gap:1.2rem;
+        background:rgba(244,239,230,.04);
+        border:1px solid rgba(244,239,230,.08);
+        overflow:hidden;
+      }
+
+      .news-card-image{
+        width:100%;
+        height:100%;
+        min-height:220px;
+        object-fit:cover;
+        display:block;
       }
 
       .news-card-body{
-        padding:1rem;
+        padding:1.2rem 1.2rem 1.2rem 0;
       }
-    }
-  </style>
-</head>
-<body>
 
+      .news-source-date{
+        color:var(--gold);
+        font-family:'League Spartan', sans-serif;
+        text-transform:uppercase;
+        letter-spacing:.06em;
+        font-size:.8rem;
+        margin-bottom:.8rem;
+      }
+
+      .news-card h2{
+        font-family:'League Spartan', sans-serif;
+        margin:0 0 .7rem 0;
+        font-size:1.5rem;
+      }
+
+      .news-card p{
+        margin:0 0 1rem 0;
+        line-height:1.6;
+      }
+
+      .news-link{
+        display:inline-block;
+        background:var(--gold);
+        color:var(--ink);
+        text-decoration:none;
+        font-family:'League Spartan', sans-serif;
+        font-weight:700;
+        text-transform:uppercase;
+        letter-spacing:.06em;
+        padding:.75rem 1rem;
+      }
+
+      @media (max-width: 900px){
+        .news-card{
+          grid-template-columns:1fr;
+        }
+
+        .news-card-body{
+          padding:1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+  <!-- NAV -->
   <nav id="nav">
-    <a href="/" class="nav-logo">
+    <div class="nav-logo">
       <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie logo">
       <div class="nav-wordmark">Jackie Reyes Yanes<span>Ward 1 · DC Council</span></div>
-    </a>
-
-    <div class="nav-right">
+    </div>
+    <nav class="nav-right">
       <ul class="nav-links">
         <li><a href="/#platform">Platform</a></li>
         <li><a href="/#story">About Jackie</a></li>
@@ -275,13 +136,9 @@
         <li><a href="/#events">Events</a></li>
         <li><a href="/#action">Volunteer</a></li>
       </ul>
-
       <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" class="nav-donate">Donate</a>
-
-      <button class="ham" id="ham" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+      <button class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </nav>
   </nav>
 
   <div class="mobile-nav" id="mnav">
@@ -296,68 +153,71 @@
     <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Donate Now</a>
   </div>
 
-  <main class="wrap">
-    <div class="section-label">Press</div>
-    <h1>All Press Coverage</h1>
-    <div id="all-news-list" class="news-grid"></div>
-  </main>
+     <!-- news -->
+    <main class="wrap">
+      <div class="section-label">Press</div>
+      <h1>All Press Coverage</h1>
+      <div id="all-news-list" class="news-grid"></div>
+    </main>
 
-  <script>
-    function escapeHtml(str = '') {
-      return String(str)
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#39;');
-    }
-
-    async function loadAllNews() {
-      const container = document.getElementById("all-news-list");
-      if (!container) return;
-
-      try {
-        const response = await fetch("/data/news.json", { cache: "no-store" });
-        const data = await response.json();
-        const items = Array.isArray(data.items) ? data.items : [];
-
-        container.innerHTML = items.map(item => `
-          <article class="news-card">
-            ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title_en || item.title_es || '')}" class="news-card-image">` : ""}
-            <div class="news-card-body">
-              <div class="news-source-date">
-                ${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}${item.language ? " • " + escapeHtml(item.language) : ""}
-              </div>
-              <h2>${escapeHtml(item.title_en || item.title_es || "")}</h2>
-              ${(item.summary_en || item.summary_es) ? `<p>${escapeHtml(item.summary_en || item.summary_es || "")}</p>` : ""}
-              <a class="news-link" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">Read Coverage</a>
-            </div>
-          </article>
-        `).join("");
-      } catch (error) {
-        console.error("Error loading all news:", error);
-        container.innerHTML = "<p>Unable to load press coverage right now.</p>";
+    <script>
+      function escapeHtml(str = '') {
+        return String(str)
+          .replaceAll('&', '&amp;')
+          .replaceAll('<', '&lt;')
+          .replaceAll('>', '&gt;')
+          .replaceAll('"', '&quot;')
+          .replaceAll("'", '&#39;');
       }
-    }
 
-    loadAllNews();
-  </script>
+      async function loadAllNews() {
+        const container = document.getElementById("all-news-list");
+        if (!container) return;
 
-  <script>
+        try {
+          const response = await fetch("/data/news.json", { cache: "no-store" });
+          const data = await response.json();
+          const items = Array.isArray(data.items) ? data.items : [];
+
+          container.innerHTML = items.map(item => {
+            const image = item.card_image || item.image || "";
+            const title = item.title_en || item.title_es || item.title || "";
+            const summary = item.summary_en || item.summary_es || item.summary || "";
+            const target = item.url || item.video_url || "#";
+
+            return `
+            <article class="news-card">
+              ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(title)}" class="news-card-image">` : `<div class="news-card-image" style="display:flex;align-items:center;justify-content:center;background:#111;color:rgba(244,239,230,.45);font-family:'League Spartan',sans-serif;text-transform:uppercase;letter-spacing:.08em;">${item.type === "video" ? "Video" : "No Image"}</div>`}
+              <div class="news-card-body">
+                <div class="news-source-date">${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}${item.language ? " • " + escapeHtml(item.language) : ""}</div>
+                <h2>${escapeHtml(title)}</h2>
+                ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
+                <a class="news-link" href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer">${item.type === "video" ? "Watch Story" : "Read Coverage"}</a>
+              </div>
+            </article>
+          `}).join("");
+        } catch (error) {
+          console.error("Error loading all news:", error);
+          container.innerHTML = "<p>Unable to load press coverage right now.</p>";
+        }
+      }
+
+      loadAllNews();
+    </script>
+
+    <script>
+    // Nav scroll
     const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      if (nav) nav.classList.toggle('solid', window.scrollY > 50);
-    });
+    window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 50));
 
+    // Mobile menu
     function toggleMenu() {
       const h = document.getElementById('ham');
       const m = document.getElementById('mnav');
-      if (h && m) {
-        h.classList.toggle('open');
-        m.classList.toggle('open');
-      }
+      h.classList.toggle('open');
+      m.classList.toggle('open');
     }
-  </script>
+    </script>
 
-</body>
+  </body>
 </html>
