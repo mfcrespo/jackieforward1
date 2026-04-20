@@ -374,26 +374,56 @@
         .replaceAll("'", '&#39;');
     }
 
-
-    function youtubeThumbnail(url = '') {
+    function getYouTubeId(url = '') {
       if (!url) return '';
-      if (url.includes('youtube.com/watch?v=')) {
-        const id = url.split('watch?v=')[1].split('&')[0];
-        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+
+      try {
+        const parsed = new URL(url, window.location.origin);
+        const host = parsed.hostname.replace('www.', '');
+
+        if (host === 'youtu.be') {
+          return parsed.pathname.split('/').filter(Boolean)[0] || '';
+        }
+
+        if (host.includes('youtube.com')) {
+          if (parsed.searchParams.get('v')) return parsed.searchParams.get('v');
+
+          const parts = parsed.pathname.split('/').filter(Boolean);
+          const shortsIndex = parts.indexOf('shorts');
+          if (shortsIndex !== -1 && parts[shortsIndex + 1]) return parts[shortsIndex + 1];
+
+          const embedIndex = parts.indexOf('embed');
+          if (embedIndex !== -1 && parts[embedIndex + 1]) return parts[embedIndex + 1];
+
+          const liveIndex = parts.indexOf('live');
+          if (liveIndex !== -1 && parts[liveIndex + 1]) return parts[liveIndex + 1];
+        }
+      } catch (e) {
+        const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([^?&#/]+)/i);
+        return match ? match[1] : '';
       }
-      if (url.includes('youtu.be/')) {
-        const id = url.split('youtu.be/')[1].split('?')[0];
-        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
-      }
+
       return '';
     }
 
-    function newsImage(item) {
-      if (item.type === 'video') {
-        const ytThumb = youtubeThumbnail(item.video_url || item.url || '');
-        if (ytThumb) return ytThumb;
+    function videoEmbedUrl(url = '') {
+      if (!url) return '';
+      const youtubeId = getYouTubeId(url);
+      if (youtubeId) return `https://www.youtube.com/embed/${youtubeId}`;
+      if (url.includes('vimeo.com/')) {
+        const id = url.split('vimeo.com/')[1].split('?')[0];
+        return `https://player.vimeo.com/video/${id}`;
       }
-      return item.card_image || item.image || '';
+      return url;
+    }
+
+    function youtubeThumbnail(url = '') {
+      const id = getYouTubeId(url);
+      return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+    }
+
+    function mediaImage(item) {
+      return youtubeThumbnail(item.video_url || item.url || '') || item.card_image || item.image || '';
     }
 
     async function loadAllNews() {
@@ -405,22 +435,19 @@
         const data = await response.json();
         const items = Array.isArray(data.items) ? data.items : [];
 
-        container.innerHTML = items.map(item => {
-          const image = newsImage(item);
-          return `
+        container.innerHTML = items.map(item => `
           <article class="news-card">
-            ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(item.title_en || item.title_es || item.title || '')}" class="news-card-image">` : `<div class="news-card-image"></div>`}
+            ${mediaImage(item) ? `<img src="${escapeHtml(mediaImage(item))}" alt="${escapeHtml(item.title_en || item.title_es || item.title || '')}" class="news-card-image">` : `<div class="news-card-image"></div>`}
             <div class="news-card-body">
               <div class="news-source-date">
                 ${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}${item.language ? " • " + escapeHtml(item.language) : ""}
               </div>
               <h2>${escapeHtml(item.title_en || item.title_es || item.title || "")}</h2>
               ${(item.summary_en || item.summary_es || item.summary) ? `<p>${escapeHtml(item.summary_en || item.summary_es || item.summary || "")}</p>` : ""}
-              <a class="news-link" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">Read Coverage</a>
+              <a class="news-link" href="${escapeHtml(item.url || item.video_url || "#")}" target="_blank" rel="noopener noreferrer">${item.type === "video" ? "Watch Story" : "Read Coverage"}</a>
             </div>
           </article>
-        `;
-        }).join("");
+        `).join("");
       } catch (error) {
         console.error("Error loading all news:", error);
         container.innerHTML = "<p>Unable to load press coverage right now.</p>";
