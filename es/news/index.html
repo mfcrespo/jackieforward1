@@ -1,131 +1,332 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Toda la cobertura de prensa | Jackie Forward</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Toda la cobertura de prensa | Jackie Forward</title>
 
-    <!-- SEO -->
-    <link rel="canonical" href="https://jackieforward1.netlify.app/es/news/" />
-    <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/news.html" />
-    <link rel="alternate" hreflang="es" href="https://jackieforward1.netlify.app/es/news/" />
-    <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/news.html" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <style>
-      :root{
-        --gold:#D4A017;
-        --ink:#0B0D0B;
-        --warm:#F4EFE6;
-      }
+  <!-- SEO -->
+  <link rel="canonical" href="https://jackieforward1.netlify.app/es/news/" />
+  <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/news" />
+  <link rel="alternate" hreflang="es" href="https://jackieforward1.netlify.app/es/news/" />
+  <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/news" />
 
-      body{
-        margin:0;
-        font-family:'Lora', serif;
-        background:var(--ink);
-        color:var(--warm);
-      }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-      .wrap{
-        max-width:1100px;
-        margin:0 auto;
-        padding:4rem 1.5rem;
-      }
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-      .section-label{
-        font-family:'League Spartan', sans-serif;
-        color:var(--gold);
-        text-transform:uppercase;
-        letter-spacing:.12em;
-        font-size:.8rem;
-        margin-bottom:1rem;
-      }
+    :root{
+      --gold:#D4A017;
+      --gold-lt:#F0C040;
+      --green:#1B5E35;
+      --green-lt:#2E7D45;
+      --ink:#0B0D0B;
+      --warm:#F4EFE6;
+      --warm2:#E8E2D6;
+      --cream:#F9F6EF;
+      --muted:rgba(244,239,230,.52);
+      --red:#C0392B;
+    }
 
-      h1{
-        font-family:'League Spartan', sans-serif;
-        font-size:clamp(2.4rem, 5vw, 4rem);
-        margin:0 0 2rem 0;
-      }
+    html{scroll-behavior:smooth}
 
-      .news-grid{
-        display:grid;
-        gap:1.5rem;
-      }
+    body{
+      margin:0;
+      font-family:'Barlow',sans-serif;
+      background:var(--ink);
+      color:var(--warm);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    /* NAV */
+    #nav{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:300;
+      padding:0 2rem;
+      height:95px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:rgba(11,13,11,.96);
+      transition:background .4s,border-color .4s;
+      border-bottom:1px solid rgba(212,160,23,.2);
+    }
+
+    #nav.solid{
+      background:rgba(11,13,11,.96);
+      border-color:rgba(212,160,23,.2);
+    }
+
+    .nav-logo{
+      display:flex;
+      align-items:center;
+      gap:.7rem;
+    }
+
+    .nav-logo img{
+      height:78px;
+      width:auto;
+      object-fit:contain;
+      display:block;
+    }
+
+    .nav-wordmark{
+      font-family:'League Spartan',sans-serif;
+      font-weight:800;
+      font-size:1.1rem;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      line-height:1;
+      color:var(--warm);
+    }
+
+    .nav-wordmark span{
+      color:var(--gold);
+      display:block;
+      font-size:.7rem;
+      letter-spacing:.18em;
+      font-weight:600;
+      margin-top:.15rem;
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:1.1rem;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:1rem;
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+
+    .nav-links li{
+      list-style:none;
+    }
+
+    .nav-links a{
+      font-family:'League Spartan',sans-serif;
+      font-size:.88rem;
+      font-weight:600;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:rgba(244,239,230,.65);
+      transition:color .2s;
+      white-space:nowrap;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+      color:var(--gold);
+    }
+
+    .nav-donate{
+      font-family:'League Spartan',sans-serif;
+      font-size:.88rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      background:var(--gold);
+      color:var(--ink);
+      padding:.42rem .95rem;
+      border:none;
+      cursor:pointer;
+      transition:background .2s;
+      white-space:nowrap;
+    }
+
+    .nav-donate:hover{
+      background:var(--gold-lt);
+    }
+
+    .ham{
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      background:none;
+      border:none;
+      cursor:pointer;
+      padding:4px;
+    }
+
+    .ham span{
+      display:block;
+      width:24px;
+      height:2px;
+      background:var(--warm);
+      transition:all .3s;
+      transform-origin:center;
+    }
+
+    .ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .ham.open span:nth-child(2){opacity:0}
+    .ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    .mobile-nav{
+      display:none;
+      position:fixed;
+      inset:0;
+      top:70px;
+      z-index:299;
+      background:rgba(11,13,11,.97);
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:2.5rem;
+    }
+
+    .mobile-nav.open{
+      display:flex;
+    }
+
+    .mobile-nav a{
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:2.2rem;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:var(--warm);
+      transition:color .2s;
+    }
+
+    .mobile-nav a:hover{
+      color:var(--gold);
+    }
+
+    .mobile-nav .m-cta{
+      background:var(--gold);
+      color:var(--ink);
+      padding:.6rem 2.5rem;
+      font-size:1.6rem;
+    }
+
+    /* PAGE */
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:9rem 1.5rem 4rem;
+    }
+
+    .section-label{
+      font-family:'League Spartan',sans-serif;
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.8rem;
+      margin-bottom:1rem;
+    }
+
+    h1{
+      font-family:'League Spartan',sans-serif;
+      font-size:clamp(2.4rem,5vw,4rem);
+      margin:0 0 2rem 0;
+      color:var(--warm);
+      text-transform:uppercase;
+      line-height:.95;
+    }
+
+    .news-grid{
+      display:grid;
+      gap:1.5rem;
+    }
+
+    .news-card{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:1.2rem;
+      background:rgba(244,239,230,.04);
+      border:1px solid rgba(244,239,230,.08);
+      overflow:hidden;
+    }
+
+    .news-card-image{
+      width:100%;
+      height:100%;
+      min-height:220px;
+      object-fit:cover;
+      display:block;
+      background:#111;
+    }
+
+    .news-card-body{
+      padding:1.2rem 1.2rem 1.2rem 0;
+    }
+
+    .news-source-date{
+      color:var(--gold);
+      font-family:'League Spartan',sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      font-size:.8rem;
+      margin-bottom:.8rem;
+    }
+
+    .news-card h2{
+      font-family:'League Spartan',sans-serif;
+      margin:0 0 .7rem 0;
+      font-size:1.5rem;
+      color:var(--warm);
+    }
+
+    .news-card p{
+      margin:0 0 1rem 0;
+      line-height:1.6;
+      color:rgba(244,239,230,.78);
+      font-family:'Lora',serif;
+    }
+
+    .news-link{
+      display:inline-block;
+      background:var(--gold);
+      color:var(--ink);
+      font-family:'League Spartan',sans-serif;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      padding:.75rem 1rem;
+    }
+
+    .news-link:hover{
+      background:var(--gold-lt);
+    }
+
+    @media(max-width:900px){
+      .nav-links{display:none}
+      .nav-donate{display:none}
+      .ham{display:flex}
 
       .news-card{
-        display:grid;
-        grid-template-columns:260px 1fr;
-        gap:1.2rem;
-        background:rgba(244,239,230,.04);
-        border:1px solid rgba(244,239,230,.08);
-        overflow:hidden;
-      }
-
-      .news-card-image{
-        width:100%;
-        height:100%;
-        min-height:220px;
-        object-fit:cover;
-        display:block;
+        grid-template-columns:1fr;
       }
 
       .news-card-body{
-        padding:1.2rem 1.2rem 1.2rem 0;
+        padding:1rem;
       }
+    }
+  </style>
+</head>
+<body>
 
-      .news-source-date{
-        color:var(--gold);
-        font-family:'League Spartan', sans-serif;
-        text-transform:uppercase;
-        letter-spacing:.06em;
-        font-size:.8rem;
-        margin-bottom:.8rem;
-      }
-
-      .news-card h2{
-        font-family:'League Spartan', sans-serif;
-        margin:0 0 .7rem 0;
-        font-size:1.5rem;
-      }
-
-      .news-card p{
-        margin:0 0 1rem 0;
-        line-height:1.6;
-      }
-
-      .news-link{
-        display:inline-block;
-        background:var(--gold);
-        color:var(--ink);
-        text-decoration:none;
-        font-family:'League Spartan', sans-serif;
-        font-weight:700;
-        text-transform:uppercase;
-        letter-spacing:.06em;
-        padding:.75rem 1rem;
-      }
-
-      @media (max-width: 900px){
-        .news-card{
-          grid-template-columns:1fr;
-        }
-
-        .news-card-body{
-          padding:1rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-
-  <!-- NAV -->
   <nav id="nav">
-    <div class="nav-logo">
-      <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie logo">
+    <a href="/es/" class="nav-logo" aria-label="Ir al inicio">
+      <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie Reyes Yanes logo">
       <div class="nav-wordmark">Jackie Reyes Yanes<span>Ward 1 · Concejo DC</span></div>
-    </div>
-    <nav class="nav-right">
+    </a>
+
+    <div class="nav-right">
       <ul class="nav-links">
         <li><a href="/es/#platform">Plataforma</a></li>
         <li><a href="/es/#story">Sobre Jackie</a></li>
@@ -136,9 +337,13 @@
         <li><a href="/es/#events">Eventos</a></li>
         <li><a href="/es/#action">Voluntariado</a></li>
       </ul>
-      <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" class="nav-donate">Donar</a>
-      <button class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></button>
-    </nav>
+
+      <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" rel="noopener noreferrer" class="nav-donate">Donar</a>
+
+      <button class="ham" id="ham" onclick="toggleMenu()" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <div class="mobile-nav" id="mnav">
@@ -146,21 +351,20 @@
     <a href="/es/#story" onclick="toggleMenu()">Sobre Jackie</a>
     <a href="/es/#achievements" onclick="toggleMenu()">Trayectoria</a>
     <a href="/es/endorsements/" onclick="toggleMenu()">Respaldos</a>
-    <a href="/news.html" onclick="toggleMenu()">Noticias</a>
+    <a href="/es/news/" onclick="toggleMenu()">Noticias</a>
     <a href="/es/#ward" onclick="toggleMenu()">Nuestro Ward</a>
     <a href="/es/#events" onclick="toggleMenu()">Eventos</a>
     <a href="/es/#action" onclick="toggleMenu()">Voluntariado</a>
-    <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Dona Ahora</a>
+    <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" rel="noopener noreferrer" class="m-cta">Dona Ahora</a>
   </div>
 
-     <!-- news -->
-    <main class="wrap">
-      <div class="section-label">Prensa</div>
-      <h1>Toda la cobertura de prensa</h1>
-      <div id="all-news-list" class="news-grid"></div>
-    </main>
+  <main class="wrap">
+    <div class="section-label">Prensa</div>
+    <h1>Toda la cobertura de prensa</h1>
+    <div id="all-news-list" class="news-grid"></div>
+  </main>
 
-    <script>
+  <script>
     function escapeHtml(str = '') {
       return String(str)
         .replaceAll('&', '&amp;')
@@ -170,89 +374,53 @@
         .replaceAll("'", '&#39;');
     }
 
-    function normalizeFeatured(value) {
-      return value === true || value === 'true' || value === 'True' || value === 1 || value === '1';
+    async function loadAllNews() {
+      const container = document.getElementById("all-news-list");
+      if (!container) return;
+
+      try {
+        const response = await fetch("/data/news.json", { cache: "no-store" });
+        const data = await response.json();
+        const items = Array.isArray(data.items) ? data.items : [];
+
+        container.innerHTML = items.map(item => `
+          <article class="news-card">
+            ${item.card_image || item.image ? `<img src="${escapeHtml(item.card_image || item.image)}" alt="${escapeHtml(item.title_es || item.title_en || item.title || '')}" class="news-card-image">` : `<div class="news-card-image"></div>`}
+            <div class="news-card-body">
+              <div class="news-source-date">
+                ${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}${item.language ? " • " + escapeHtml(item.language) : ""}
+              </div>
+              <h2>${escapeHtml(item.title_es || item.title_en || item.title || "")}</h2>
+              ${(item.summary_es || item.summary_en || item.summary) ? `<p>${escapeHtml(item.summary_es || item.summary_en || item.summary || "")}</p>` : ""}
+              <a class="news-link" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">Leer cobertura</a>
+            </div>
+          </article>
+        `).join("");
+      } catch (error) {
+        console.error("Error loading all news:", error);
+        container.innerHTML = "<p>No se pudo cargar la cobertura en este momento.</p>";
+      }
     }
 
-    function videoEmbedUrl(url = '') {
-      if (!url) return '';
-      if (url.includes('youtube.com/watch?v=')) return url.replace('watch?v=', 'embed/');
-      if (url.includes('youtu.be/')) {
-        const id = url.split('youtu.be/')[1].split('?')[0];
-        return `https://www.youtube.com/embed/${id}`;
-      }
-      if (url.includes('vimeo.com/')) {
-        const id = url.split('vimeo.com/')[1].split('?')[0];
-        return `https://player.vimeo.com/video/${id}`;
-      }
-      return url;
-    }
+    loadAllNews();
+  </script>
 
-    function youtubeThumbnail(url = '') {
-      if (!url) return '';
-      if (url.includes('youtube.com/watch?v=')) {
-        const id = url.split('watch?v=')[1].split('&')[0];
-        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
-      }
-      if (url.includes('youtu.be/')) {
-        const id = url.split('youtu.be/')[1].split('?')[0];
-        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
-      }
-      return '';
-    }
-
-    function mediaImage(item) {
-      return item.card_image || item.image || youtubeThumbnail(item.video_url || '') || '';
-    }
-
-      async function loadAllNews() {
-        const container = document.getElementById("all-news-list");
-        if (!container) return;
-
-        try {
-          const response = await fetch("/data/news.json", { cache: "no-store" });
-          const data = await response.json();
-          const items = Array.isArray(data.items) ? data.items : [];
-
-          container.innerHTML = items.map(item => {
-            const image = mediaImage(item);
-            const title = item.title_es || item.title_en || item.title || '';
-            const summary = item.summary_es || item.summary_en || item.summary || '';
-            const target = item.url || item.video_url || '#';
-            return `
-              <article class="news-card">
-                ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(title)}" class="news-card-image">` : `<div class="news-card-image" style="display:flex;align-items:center;justify-content:center;background:#111;color:rgba(244,239,230,.45);font-family:'League Spartan',sans-serif;text-transform:uppercase;letter-spacing:.08em;">${item.type === "video" ? "Video" : "Sin imagen"}</div>`}
-                <div class="news-card-body">
-                  <div class="news-source-date">${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}${item.language ? " • " + escapeHtml(item.language) : ""}</div>
-                  <h2>${escapeHtml(title)}</h2>
-                  ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
-                  ${target !== '#' ? `<a class="news-link" href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer">${item.type === "video" ? "Ver video" : "Leer cobertura"}</a>` : ""}
-                </div>
-              </article>
-            `;
-          }).join("");
-        } catch (error) {
-          console.error("Error loading all news:", error);
-          container.innerHTML = "<p>No se pudo cargar la cobertura en este momento.</p>";
-        }
-      }
-
-      loadAllNews();
-    </script>
-
-    <script>
-    // Nav scroll
+  <script>
     const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 50));
 
-    // Mobile menu
+    window.addEventListener('scroll', () => {
+      if (nav) nav.classList.toggle('solid', window.scrollY > 50);
+    });
+
     function toggleMenu() {
       const h = document.getElementById('ham');
       const m = document.getElementById('mnav');
-      h.classList.toggle('open');
-      m.classList.toggle('open');
+      if (h && m) {
+        h.classList.toggle('open');
+        m.classList.toggle('open');
+      }
     }
-    </script>
+  </script>
 
-  </body>
+</body>
 </html>
