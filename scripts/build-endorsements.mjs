@@ -15,37 +15,6 @@ function safeReadJson(filePath) {
   }
 }
 
-function normalizeBool(value) {
-  return value === true || value === "true" || value === 1 || value === "1" || value === "yes";
-}
-
-function youtubeId(url = "") {
-  if (!url) return "";
-  const watch = url.match(/[?&]v=([^&#]+)/);
-  if (watch) return watch[1];
-  const short = url.match(/youtu\.be\/([^?&#/]+)/);
-  if (short) return short[1];
-  const embed = url.match(/youtube\.com\/embed\/([^?&#/]+)/);
-  if (embed) return embed[1];
-  return "";
-}
-
-function videoPoster(url = "") {
-  const id = youtubeId(url);
-  if (id) return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
-  return "";
-}
-
-function videoEmbedUrl(url = "") {
-  const id = youtubeId(url);
-  if (id) return `https://www.youtube.com/embed/${id}`;
-  if (url.includes("vimeo.com/")) {
-    const id = url.split("vimeo.com/")[1].split("?")[0];
-    return `https://player.vimeo.com/video/${id}`;
-  }
-  return url || "";
-}
-
 async function fetchOgImage(url) {
   try {
     const response = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0" } });
@@ -60,9 +29,26 @@ async function fetchOgImage(url) {
   }
 }
 
+function youtubeThumbnail(url = "") {
+  if (!url) return null;
+  if (url.includes('youtube.com/watch?v=')) {
+    const id = url.split('watch?v=')[1].split('&')[0];
+    return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : null;
+  }
+  if (url.includes('youtu.be/')) {
+    const id = url.split('youtu.be/')[1].split('?')[0];
+    return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : null;
+  }
+  return null;
+}
+
+function normalizeFeatured(value) {
+  return value === true || value === 'true' || value === 'True' || value === 1 || value === '1';
+}
+
 async function main() {
   if (!fs.existsSync(endorsementsDir)) {
-    console.error("content/news folder not found.");
+    console.error("content/endorsements folder not found.");
     process.exit(1);
   }
 
@@ -71,26 +57,35 @@ async function main() {
 
   const items = [];
   for (const item of rawItems) {
-    const explicitImage = item.image || "";
-    const poster = item.video_url ? videoPoster(item.video_url) : "";
-    const ogImage = item.url ? await fetchOgImage(item.url) : "";
-    const cardImage = explicitImage || poster || ogImage || "";
+    let image = item.image || null;
+    let card_image = item.card_image || null;
+
+    if (!image && item.video_url) {
+      image = youtubeThumbnail(item.video_url) || image;
+    }
+
+    if ((!image || !card_image) && item.url) {
+      const ogImage = await fetchOgImage(item.url);
+      if (ogImage) {
+        image = image || ogImage;
+        card_image = card_image || ogImage;
+      }
+    }
+
+    card_image = card_image || image || null;
 
     items.push({
       ...item,
-      featured: normalizeBool(item.featured),
-      video_embed_url: item.video_url ? videoEmbedUrl(item.video_url) : "",
-      card_image: cardImage
+      image,
+      card_image,
+      featured: normalizeFeatured(item.featured)
     });
   }
 
-  items.sort((a, b) => new Date(b.date || "1900-01-01") - new Date(a.date || "1900-01-01"));
+  items.sort((a, b) => new Date(b.date || '1900-01-01') - new Date(a.date || '1900-01-01'));
 
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-  }
-
-  fs.writeFileSync(outputFile, JSON.stringify({ items }, null, 2), "utf8");
+  if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
+  fs.writeFileSync(outputFile, JSON.stringify({ items }, null, 2), 'utf8');
   console.log(`Built ${outputFile} with ${items.length} endorsements.`);
 }
 

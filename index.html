@@ -4,10 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jackie Reyes Yanes — Ward 1, DC Council</title>
-<link rel="canonical" href="https://jackieforward1.netlify.app/" />
-<link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/" />
-<link rel="alternate" hreflang="es" href="https://jackieforward1.netlify.app/es/" />
-<link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
@@ -1876,14 +1872,50 @@ sorts upcoming events by date, and renders them dynamically
 into the #events-list container.
 -->
 <script>
-function escapeHtml(str = '') {
-  return String(str)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#39;');
-}
+
+    function escapeHtml(str = '') {
+      return String(str)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function normalizeFeatured(value) {
+      return value === true || value === 'true' || value === 'True' || value === 1 || value === '1';
+    }
+
+    function videoEmbedUrl(url = '') {
+      if (!url) return '';
+      if (url.includes('youtube.com/watch?v=')) return url.replace('watch?v=', 'embed/');
+      if (url.includes('youtu.be/')) {
+        const id = url.split('youtu.be/')[1].split('?')[0];
+        return `https://www.youtube.com/embed/${id}`;
+      }
+      if (url.includes('vimeo.com/')) {
+        const id = url.split('vimeo.com/')[1].split('?')[0];
+        return `https://player.vimeo.com/video/${id}`;
+      }
+      return url;
+    }
+
+    function youtubeThumbnail(url = '') {
+      if (!url) return '';
+      if (url.includes('youtube.com/watch?v=')) {
+        const id = url.split('watch?v=')[1].split('&')[0];
+        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+      }
+      if (url.includes('youtu.be/')) {
+        const id = url.split('youtu.be/')[1].split('?')[0];
+        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+      }
+      return '';
+    }
+
+    function mediaImage(item) {
+      return item.card_image || item.image || youtubeThumbnail(item.video_url || '') || '';
+    }
 
 function categoryLabel(category) {
   const labels = {
@@ -1997,41 +2029,6 @@ async function loadUpcomingEvents() {
 loadUpcomingEvents();
 </script>
 
-
-<script>
-  function normalizeBool(value) {
-    return value === true || value === "true" || value === 1 || value === "1" || value === "yes";
-  }
-
-  function pickTitle(item, lang) {
-    if (lang === "es") return item.title_es || item.title_en || item.title || "";
-    return item.title_en || item.title_es || item.title || "";
-  }
-
-  function pickSummary(item, lang) {
-    if (lang === "es") return item.summary_es || item.summary_en || item.summary || "";
-    return item.summary_en || item.summary_es || item.summary || "";
-  }
-
-  function pickAddress(item, lang) {
-    if (lang === "es") return item.address_es || item.address_en || item.address || "";
-    return item.address_en || item.address_es || item.address || "";
-  }
-
-  function linkTarget(item) {
-    return item.url || item.video_url || item.rsvp || "#";
-  }
-
-  function cardImage(item) {
-    return item.card_image || item.image || "";
-  }
-
-  function mediaMarkup(item, altText, placeholderText) {
-    const image = cardImage(item);
-    if (image) return `<div class="endorse-media"><img src="${escapeHtml(image)}" alt="${escapeHtml(altText)}"></div>`;
-    return `<div class="endorse-media endorse-placeholder">${placeholderText}</div>`;
-  }
-</script>
 <!-- 
 NEWS SCRIPT
 
@@ -2058,31 +2055,35 @@ Loads news from /data/news.json.
       const items = Array.isArray(data.items) ? data.items : [];
 
       const sorted = [...items].sort((a, b) => new Date(b.date || "1900-01-01") - new Date(a.date || "1900-01-01"));
-      const featured = sorted.filter(item => normalizeBool(item.featured));
-      const nonFeatured = sorted.filter(item => !normalizeBool(item.featured));
+      const featured = sorted.filter(item => normalizeFeatured(item.featured));
+      const nonFeatured = sorted.filter(item => !normalizeFeatured(item.featured));
       const selected = [...featured, ...nonFeatured].slice(0, 5);
 
       const cards = selected.map(item => {
-        const image = cardImage(item);
+        const image = mediaImage(item);
+        const title = item.title_en || item.title_es || item.title || "";
+        const summary = item.summary_en || item.summary_es || item.summary || "";
+        const target = item.url || item.video_url || "#";
+
         return `
-        <article class="press-card">
-          <a class="press-card-link" href="${escapeHtml(linkTarget(item))}" target="_blank" rel="noopener noreferrer">
-            <div class="press-card-image-wrap">
-              ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(pickTitle(item, "en"))}" class="press-card-image">` : `<div class="press-card-placeholder">${item.type === "video" ? "Video" : "No Image"}</div>`}
-            </div>
-            <div class="press-card-body">
-              <div class="press-card-meta">
-                <span class="press-card-source">${escapeHtml(item.source || "")}</span>
-                ${item.date ? `<span class="press-card-dot">•</span><span class="press-card-date">${escapeHtml(item.date)}</span>` : ""}
-                ${item.language ? `<span class="press-card-dot">•</span><span class="press-card-language">${escapeHtml(item.language)}</span>` : ""}
+          <article class="press-card">
+            <a class="press-card-link" href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer">
+              <div class="press-card-image-wrap">
+                ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(title)}" class="press-card-image">` : `<div class="press-card-placeholder">${item.type === "video" ? "Video" : "No Image"}</div>`}
               </div>
-              <h3>${escapeHtml(pickTitle(item, "en"))}</h3>
-              ${pickSummary(item, "en") ? `<p>${escapeHtml(pickSummary(item, "en"))}</p>` : ""}
-              <span class="press-card-read">${item.type === "video" ? "Watch Story →" : "Read Coverage →"}</span>
-            </div>
-          </a>
-        </article>
-      `;
+              <div class="press-card-body">
+                <div class="press-card-meta">
+                  <span class="press-card-source">${escapeHtml(item.source || "")}</span>
+                  ${item.date ? `<span class="press-card-dot">•</span><span class="press-card-date">${escapeHtml(item.date)}</span>` : ""}
+                  ${item.language ? `<span class="press-card-dot">•</span><span class="press-card-language">${escapeHtml(item.language)}</span>` : ""}
+                </div>
+                <h3>${escapeHtml(title)}</h3>
+                ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
+                <span class="press-card-read">${item.type === "video" ? "Watch Story →" : "Read Coverage →"}</span>
+              </div>
+            </a>
+          </article>
+        `;
       }).join("");
 
       const ctaCard = `
@@ -2099,7 +2100,7 @@ Loads news from /data/news.json.
       container.innerHTML = cards + ctaCard;
     } catch (error) {
       console.error("Error loading home news:", error);
-      container.innerHTML = `<p style="color:rgba(244,239,230,.65)">Unable to load press coverage right now.</p>`;
+      container.innerHTML = `<p>Unable to load press coverage right now.</p>`;
     }
   }
 
@@ -2121,26 +2122,36 @@ Loads ENDORSEMENTS from /data/endorsement.json.
       const items = Array.isArray(data.items) ? data.items : [];
 
       const sorted = [...items].sort((a, b) => new Date(b.date || "1900-01-01") - new Date(a.date || "1900-01-01"));
-      const featured = sorted.filter(item => normalizeBool(item.featured));
-      const nonFeatured = sorted.filter(item => !normalizeBool(item.featured));
+      const featured = sorted.filter(item => normalizeFeatured(item.featured));
+      const nonFeatured = sorted.filter(item => !normalizeFeatured(item.featured));
       const selected = [...featured, ...nonFeatured].slice(0, 5);
 
-      const cards = selected.map(item => `
+      const cards = selected.map(item => {
+        const image = mediaImage(item);
+        const title = item.title_en || item.title_es || item.title || "";
+        const summary = item.summary_en || item.summary_es || item.summary || "";
+        const target = item.url || item.video_url || "#";
+        const media = image
+          ? `<div class="endorse-media"><img src="${escapeHtml(image)}" alt="${escapeHtml(title)}"></div>`
+          : `<div class="endorse-media endorse-placeholder">${item.type === "video" ? "Video" : "No Media"}</div>`;
+
+        return `
           <article class="endorse-card">
-            ${mediaMarkup(item, pickTitle(item, "en"), item.type === "video" ? "Video" : "No Media")}
+            ${media}
             <div class="endorse-body">
               <div class="endorse-meta">
                 ${item.source ? `<span class="endorse-pill endorse-source">${escapeHtml(item.source)}</span>` : ""}
                 ${item.date ? `<span class="endorse-pill endorse-date">${escapeHtml(item.date)}</span>` : ""}
                 ${item.language ? `<span class="endorse-pill endorse-language">${escapeHtml(item.language)}</span>` : ""}
               </div>
-              <h3>${escapeHtml(pickTitle(item, "en"))}</h3>
+              <h3>${escapeHtml(title)}</h3>
               ${item.endorser ? `<div class="endorser-name">${escapeHtml(item.endorser)}</div>` : ""}
-              ${pickSummary(item, "en") ? `<p>${escapeHtml(pickSummary(item, "en"))}</p>` : ""}
-              ${linkTarget(item) !== "#" ? `<a href="${escapeHtml(linkTarget(item))}" target="_blank" rel="noopener noreferrer" class="endorse-link">${item.type === "video" ? "Watch Endorsement →" : "Learn More →"}</a>` : ""}
+              ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
+              ${target !== "#" ? `<a href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer" class="endorse-link">${item.type === "video" ? "Watch Endorsement →" : "Learn More →"}</a>` : ""}
             </div>
           </article>
-        `).join("");
+        `;
+      }).join("");
 
       const ctaCard = `
         <article class="endorse-card endorse-card-cta">

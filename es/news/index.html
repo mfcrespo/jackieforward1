@@ -161,14 +161,49 @@
     </main>
 
     <script>
-      function escapeHtml(str = '') {
-        return String(str)
-          .replaceAll('&', '&amp;')
-          .replaceAll('<', '&lt;')
-          .replaceAll('>', '&gt;')
-          .replaceAll('"', '&quot;')
-          .replaceAll("'", '&#39;');
+    function escapeHtml(str = '') {
+      return String(str)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function normalizeFeatured(value) {
+      return value === true || value === 'true' || value === 'True' || value === 1 || value === '1';
+    }
+
+    function videoEmbedUrl(url = '') {
+      if (!url) return '';
+      if (url.includes('youtube.com/watch?v=')) return url.replace('watch?v=', 'embed/');
+      if (url.includes('youtu.be/')) {
+        const id = url.split('youtu.be/')[1].split('?')[0];
+        return `https://www.youtube.com/embed/${id}`;
       }
+      if (url.includes('vimeo.com/')) {
+        const id = url.split('vimeo.com/')[1].split('?')[0];
+        return `https://player.vimeo.com/video/${id}`;
+      }
+      return url;
+    }
+
+    function youtubeThumbnail(url = '') {
+      if (!url) return '';
+      if (url.includes('youtube.com/watch?v=')) {
+        const id = url.split('watch?v=')[1].split('&')[0];
+        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+      }
+      if (url.includes('youtu.be/')) {
+        const id = url.split('youtu.be/')[1].split('?')[0];
+        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+      }
+      return '';
+    }
+
+    function mediaImage(item) {
+      return item.card_image || item.image || youtubeThumbnail(item.video_url || '') || '';
+    }
 
       async function loadAllNews() {
         const container = document.getElementById("all-news-list");
@@ -180,22 +215,22 @@
           const items = Array.isArray(data.items) ? data.items : [];
 
           container.innerHTML = items.map(item => {
-            const image = item.card_image || item.image || "";
-            const title = item.title_es || item.title_en || item.title || "";
-            const summary = item.summary_es || item.summary_en || item.summary || "";
-            const target = item.url || item.video_url || "#";
-
+            const image = mediaImage(item);
+            const title = item.title_es || item.title_en || item.title || '';
+            const summary = item.summary_es || item.summary_en || item.summary || '';
+            const target = item.url || item.video_url || '#';
             return `
-            <article class="news-card">
-              ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(title)}" class="news-card-image">` : `<div class="news-card-image" style="display:flex;align-items:center;justify-content:center;background:#111;color:rgba(244,239,230,.45);font-family:'League Spartan',sans-serif;text-transform:uppercase;letter-spacing:.08em;">${item.type === "video" ? "Video" : "No Image"}</div>`}
-              <div class="news-card-body">
-                <div class="news-source-date">${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}${item.language ? " • " + escapeHtml(item.language) : ""}</div>
-                <h2>${escapeHtml(title)}</h2>
-                ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
-                <a class="news-link" href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer">${item.type === "video" ? "Ver video" : "Leer cobertura"}</a>
-              </div>
-            </article>
-          `}).join("");
+              <article class="news-card">
+                ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(title)}" class="news-card-image">` : `<div class="news-card-image" style="display:flex;align-items:center;justify-content:center;background:#111;color:rgba(244,239,230,.45);font-family:'League Spartan',sans-serif;text-transform:uppercase;letter-spacing:.08em;">${item.type === "video" ? "Video" : "Sin imagen"}</div>`}
+                <div class="news-card-body">
+                  <div class="news-source-date">${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}${item.language ? " • " + escapeHtml(item.language) : ""}</div>
+                  <h2>${escapeHtml(title)}</h2>
+                  ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
+                  ${target !== '#' ? `<a class="news-link" href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer">${item.type === "video" ? "Ver video" : "Leer cobertura"}</a>` : ""}
+                </div>
+              </article>
+            `;
+          }).join("");
         } catch (error) {
           console.error("Error loading all news:", error);
           container.innerHTML = "<p>No se pudo cargar la cobertura en este momento.</p>";
