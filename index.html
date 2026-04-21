@@ -1323,6 +1323,117 @@ footer{
   }
 }
 
+/* btn card testimony */
+.btn-testimony{
+  display:inline-block;
+  margin-top:1.2rem;
+  font-family:'League Spartan',sans-serif;
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid rgba(212,160,23,.4);
+  padding:.55rem .95rem;
+  text-decoration:none;
+  transition:all .2s;
+  background:transparent;
+}
+
+.btn-testimony:hover{
+  background:var(--gold);
+  color:var(--ink);
+  border-color:var(--gold);
+}
+
+.testimony-modal{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+}
+
+.testimony-modal.open{
+  display:block;
+}
+
+.testimony-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.82);
+  backdrop-filter:blur(3px);
+}
+
+.testimony-modal-content{
+  position:relative;
+  width:min(920px, 92vw);
+  margin:5vh auto 0;
+  z-index:2;
+}
+
+.testimony-close{
+  position:absolute;
+  top:-42px;
+  right:0;
+  width:38px;
+  height:38px;
+  border:none;
+  background:var(--gold);
+  color:var(--ink);
+  font-size:1.5rem;
+  font-weight:700;
+  line-height:1;
+  cursor:pointer;
+}
+
+.testimony-video-wrap{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  background:#000;
+  border:1px solid rgba(212,160,23,.25);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.testimony-video-wrap iframe{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+body.modal-open{
+  overflow:hidden;
+}
+
+@media(max-width:600px){
+  .testimony-modal-content{
+    width:94vw;
+    margin:12vh auto 0;
+  }
+
+  .testimony-close{
+    top:-46px;
+    right:0;
+  }
+}
+
+/* categoria record track */
+.ach-top{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  margin-bottom:.4rem;
+}
+
+.ach-cat{
+  font-family:'League Spartan',sans-serif;
+  font-size:.95rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(244,239,230,.35);
+}
+
 </style>
 </head>
 <body>
@@ -1469,7 +1580,7 @@ footer{
     <div class="n-item"><span class="n-num">$43M+</span><span class="n-lbl">Emergency Immigrant Support Fund created</span></div>
     <div class="n-item"><span class="n-num">$12M+</span><span class="n-lbl">In rental relief secured for DC residents</span></div>
     <div class="n-item"><span class="n-num">$3.5M</span><span class="n-lbl">Immigrant Justice Grant — grown from $400K</span></div>
-    <div class="n-item"><span class="n-num">20</span><span class="n-lbl">Paid Community Ambassador jobs to be created</span></div>
+    <div class="n-item"><span class="n-num">300+ M</span><span class="n-lbl">Generated in economic impact through 2025 World Pride</span></div>
   </div>
 </div>
 
@@ -1484,45 +1595,64 @@ footer{
     <div class="ach-grid">
 
       <div class="ach-card reveal">
-        <div class="ach-num">01</div>
+        <div class="ach-top">
+          <div class="ach-num">01</div>
+          <div class="ach-cat">IMMIGRATION</div>
+        </div>
         <div class="ach-impact">Protecting Families from I.C.E.</div>
         <div class="ach-title">Immigrant Justice Grant</div>
         <p class="ach-body">Jackie created the <strong>Immigrant Justice Legal Services Grant</strong> — providing free immigration legal representation to DC's immigrant community. She helped grow it from an initial <strong>$400,000</strong> into a <strong>$3.5 million coalition fund</strong>, giving thousands of DC immigrants access to attorneys who can fight for their right to stay.</p>
       </div>
 
       <div class="ach-card reveal">
-        <div class="ach-num">02</div>
-        <div class="ach-impact">Families Kept Home</div>
-        <div class="ach-title">Monseñor Romero Apartments — Saved After Fire</div>
-        <p class="ach-body">When fire devastated the Monsignor Romero Apartments, residents faced the very real threat of permanent displacement. Jackie stepped in, <strong>fought for the residents</strong>, and helped them form a <strong>housing cooperative</strong> — giving the families legal ownership and control of their own building so they could <strong>continue living in their community</strong>, not lose it.</p>
+        <div class="ach-top">
+          <div class="ach-num">02</div>
+          <div class="ach-cat">HOUSING</div>
+        </div>
+        <div class="ach-impact">Families Saved. Community Preserved.</div>
+        <div class="ach-title">Monseñor Romero Apartments — Saved After Fire (2008)</div>
+        <p class="ach-body">When fire destroyed the Monseñor Romero Apartments, more than 150 residents faced the very real threat of permanent displacement. Jackie stepped in, <strong>fought for the victims</strong>, and helped them form a housing cooperative, giving the families legal ownership and control of their own building so they could <strong>continue living in their community</strong>, not lose it.</p>
+        <a href="#" class="btn-testimony" onclick="openTestimonyModal(event, 'uv_tD1hcj2Q')">View Testimony →</a>
       </div>
 
       <div class="ach-card reveal">
-        <div class="ach-num">03</div>
+        <div class="ach-top">
+          <div class="ach-num">03</div>
+          <div class="ach-cat">HOUSING</div>
+        </div>
         <div class="ach-impact">$12 Million+</div>
         <div class="ach-title">Emergency Rental Relief for DC Residents</div>
         <p class="ach-body">During the housing crisis, Jackie helped <strong>thousands of DC residents</strong> navigate the city's emergency rental assistance programs — directly facilitating more than <strong>$12 million in financial support</strong> for families behind on rent, preventing evictions and keeping people housed when they had nowhere else to turn.</p>
       </div>
 
       <div class="ach-card reveal">
-        <div class="ach-num">04</div>
+        <div class="ach-top">
+          <div class="ach-num">04</div>
+          <div class="ach-cat">IMCLUSION</div>
+        </div>
         <div class="ach-impact">Language Access Expanded</div>
         <div class="ach-title">City Services in Your Language</div>
         <p class="ach-body">Jackie expanded <strong>language access</strong> across DC's constituent services agencies — specifically within the Mayor's Office of Community Affairs — ensuring that residents who speak Spanish and other languages could <strong>access the same city services</strong> and receive the same quality of help as English-speaking residents. No one left behind because of language.</p>
       </div>
 
       <div class="ach-card reveal">
-        <div class="ach-num">05</div>
+        <div class="ach-top">
+          <div class="ach-num">05</div>
+          <div class="ach-cat">WORKFORCE</div>
+        </div>
         <div class="ach-impact">Youth Employment Created</div>
         <div class="ach-title">Summer Youth Employment Program for Immigrants</div>
         <p class="ach-body">Jackie <strong>created DC's Summer Youth Employment Program for recently arrived immigrant youth</strong> — opening the door for young newcomers to <strong>earn income, build work experience, and participate in the same opportunities</strong> as their DC peers, giving them a real foothold in their new city from day one.</p>
       </div>
 
       <div class="ach-card reveal">
-        <div class="ach-num">06</div>
-        <div class="ach-impact">$43 Million+</div>
-        <div class="ach-title">Emergency Immigrant Support Fund</div>
-        <p class="ach-body">When the federal relief package left DC's immigrant community behind, Jackie helped create the <strong>DC Emergency Immigrant Support Fund</strong> — a first-of-its-kind safety net providing direct financial support to immigrants excluded from federal benefits. The fund delivered <strong>more than $43 million</strong> to thousands of DC immigrant families who had nowhere else to turn.</p>
+        <div class="ach-top">
+          <div class="ach-num">06</div>
+          <div class="ach-cat">LGBTQ+</div>
+        </div>
+        <div class="ach-impact">MORE 300 Million</div>
+        <div class="ach-title">Through the Mayor's Office on LGBTQ</div>
+        <p class="ach-body">Coordinated through the Mayor’s Office on LGBTQ+ and Capital Pride  Alliance the celebration of WorldPride DC 2025 generating   approximately <strong>$310.7 million</strong> in total economic impact and drawing 1.2 million attendees.</p>
       </div>
 
       <div class="ach-card reveal" style="background:rgba(212,160,23,.04);border:1px solid rgba(212,160,23,.15);grid-column:1/-1">
@@ -2302,6 +2432,51 @@ Loads ENDORSEMENTS from /data/endorsement.json.
 
   updateCountdown();
 </script>
+
+<!-- modal video -->
+<script>
+  function openTestimonyModal(event, videoId) {
+    event.preventDefault();
+
+    const modal = document.getElementById('testimonyModal');
+    const video = document.getElementById('testimonyVideo');
+
+    video.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+
+    modal.classList.add('open');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeTestimonyModal() {
+    const modal = document.getElementById('testimonyModal');
+    const video = document.getElementById('testimonyVideo');
+
+    modal.classList.remove('open');
+    video.src = '';
+    document.body.classList.remove('modal-open');
+  }
+</script>
+
+
+<!-- modal for view testimony -->
+<div class="testimony-modal" id="testimonyModal" aria-hidden="true">
+  <div class="testimony-modal-backdrop" onclick="closeTestimonyModal()"></div>
+
+  <div class="testimony-modal-content" role="dialog" aria-modal="true" aria-label="Testimony video">
+    <button class="testimony-close" onclick="closeTestimonyModal()" aria-label="Close video">×</button>
+
+    <div class="testimony-video-wrap">
+      <iframe
+        id="testimonyVideo"
+        src=""
+        title="Testimony video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
