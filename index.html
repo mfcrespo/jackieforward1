@@ -1945,22 +1945,65 @@ into the #events-list container.
       return url;
     }
 
-    function youtubeThumbnail(url = '') {
-      if (!url) return '';
-      if (url.includes('youtube.com/watch?v=')) {
-        const id = url.split('watch?v=')[1].split('&')[0];
-        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
-      }
-      if (url.includes('youtu.be/')) {
-        const id = url.split('youtu.be/')[1].split('?')[0];
-        return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
-      }
-      return '';
+function getYouTubeId(url = '') {
+  if (!url) return '';
+
+  try {
+    const parsed = new URL(url, window.location.origin);
+    const host = parsed.hostname.replace('www.', '');
+
+    // youtu.be/ID
+    if (host === 'youtu.be') {
+      return parsed.pathname.split('/').filter(Boolean)[0] || '';
     }
 
-    function mediaImage(item) {
-      return item.card_image || item.image || youtubeThumbnail(item.video_url || '') || '';
+    // youtube.com/*
+    if (host.includes('youtube.com')) {
+      // watch?v=ID
+      if (parsed.searchParams.get('v')) {
+        return parsed.searchParams.get('v');
+      }
+
+      const parts = parsed.pathname.split('/').filter(Boolean);
+
+      // /shorts/ID
+      const shortsIndex = parts.indexOf('shorts');
+      if (shortsIndex !== -1 && parts[shortsIndex + 1]) {
+        return parts[shortsIndex + 1];
+      }
+
+      // /embed/ID
+      const embedIndex = parts.indexOf('embed');
+      if (embedIndex !== -1 && parts[embedIndex + 1]) {
+        return parts[embedIndex + 1];
+      }
+
+      // /live/ID
+      const liveIndex = parts.indexOf('live');
+      if (liveIndex !== -1 && parts[liveIndex + 1]) {
+        return parts[liveIndex + 1];
+      }
     }
+  } catch (e) {
+    // fallback regex
+    const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([^?&#/]+)/i);
+    return match ? match[1] : '';
+  }
+
+  return '';
+}
+
+function youtubeThumbnail(url = '') {
+  const id = getYouTubeId(url);
+  return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+}
+
+function mediaImage(item) {
+  return youtubeThumbnail(item.video_url || item.url || '') 
+    || item.card_image 
+    || item.image 
+    || '';
+}
 
 function categoryLabel(category) {
   const labels = {
