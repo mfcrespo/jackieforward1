@@ -1537,305 +1537,7 @@ body.modal-open{
   border:none;
 }
 
-
-
-    /* ─── RESPONSIVE PATCH ───────────────────── */
-    @media (max-width: 900px){
-      #nav{
-        height:78px;
-        padding:0 1rem;
-      }
-
-      .mobile-nav{
-        top:78px;
-        padding:1.5rem 1.25rem 2rem;
-        justify-content:flex-start;
-        overflow-y:auto;
-      }
-
-      .mobile-nav a{
-        font-size:1.55rem;
-        text-align:center;
-      }
-
-      .mobile-nav .m-cta{
-        font-size:1.1rem;
-        padding:.8rem 1.4rem;
-      }
-
-      .nav-logo{
-        gap:.55rem;
-        min-width:0;
-      }
-
-      .nav-logo img{
-        height:56px;
-      }
-
-      .nav-wordmark{
-        font-size:.9rem;
-        line-height:.95;
-      }
-
-      .nav-wordmark span{
-        font-size:.58rem;
-        letter-spacing:.12em;
-      }
-
-      .nav-right{
-        gap:.65rem;
-      }
-
-      .lang-switch{
-        display:none;
-      }
-    }
-
-    @media (max-width: 600px){
-      #nav{
-        padding:0 .8rem;
-      }
-
-      .nav-logo img{
-        height:50px;
-      }
-
-      .nav-wordmark{
-        font-size:.78rem;
-      }
-
-      .nav-wordmark span{
-        font-size:.5rem;
-        letter-spacing:.08em;
-      }
-    }
-
-    @media (max-width: 900px){
-      #hero{
-        min-height:720px;
-        height:auto;
-      }
-
-      .hero-img{
-        background-position:center top;
-      }
-
-      .hero-text{
-        padding:0 1.2rem 2.4rem;
-        transform:none;
-      }
-
-      .hero-h1{
-        transform:none;
-        margin-bottom:1.8rem;
-        -webkit-text-stroke:1px #ffffff;
-      }
-
-      .hero-byline{
-        line-height:1.55;
-        max-width:none;
-      }
-
-      .hero-meta,
-      .hero-meta-2{
-        gap:1rem 1.5rem;
-        padding-top:1.2rem;
-      }
-
-      .story-copy,
-      .wrap,
-      .numbers-inner,
-      .action-wrap,
-      .platform-intro,
-      .ward-head,
-      .events-head,
-      .news-head{
-        padding-left:1.2rem;
-        padding-right:1.2rem;
-      }
-
-      .story-copy p,
-      .platform-intro p,
-      .ward-head p,
-      .ach-head p{
-        max-width:none;
-      }
-
-      .story-year-badge{
-        left:1.2rem;
-        bottom:1.2rem;
-      }
-
-      .event-card{
-        grid-template-columns:1fr;
-      }
-
-      .event-card-image{
-        min-height:200px;
-      }
-
-      .event-card-body{
-        padding:1rem;
-      }
-
-      .event-card h4,
-      .news-card h2,
-      .endorse-card h3,
-      .press-card h3{
-        font-size:1.2rem;
-      }
-
-      .press-grid,
-      .endorse-grid{
-        gap:1rem;
-      }
-
-      .testimony-modal-content{
-        width:min(92vw, 760px);
-        margin:10vh auto 0;
-      }
-    }
-
-    @media (max-width: 600px){
-      #hero{
-        min-height:660px;
-      }
-
-      .hero-text,
-      .wrap,
-      .story-copy,
-      .numbers-inner,
-      .action-wrap,
-      .platform-intro,
-      .ward-head,
-      .events-head,
-      .news-head{
-        padding-left:1rem;
-        padding-right:1rem;
-      }
-
-      .hero-h1{
-        font-size:2.55rem;
-        line-height:.92;
-      }
-
-      .hero-kicker{
-        letter-spacing:.18em;
-        gap:.55rem;
-      }
-
-      .hero-kicker::before{
-        width:16px;
-      }
-
-      .hero-byline{
-        font-size:.95rem;
-      }
-
-      .hero-meta,
-      .hero-meta-2{
-        display:grid;
-        grid-template-columns:repeat(2,minmax(0,1fr));
-        gap:.9rem 1rem;
-      }
-
-      .hero-meta-item .num{
-        font-size:1.3rem;
-      }
-
-      .section-label{
-        font-size:.78rem;
-        letter-spacing:.18em;
-      }
-
-      .platform-intro h2,
-      .ward-head h2,
-      .ach-head h2,
-      .action-left h2,
-      .events-head h2,
-      .news-head h2{
-        font-size:2rem;
-      }
-
-      .story-copy{
-        padding-top:2.4rem;
-        padding-bottom:2.4rem;
-      }
-
-      .story-copy p,
-      .platform-intro p,
-      .ward-head p,
-      .action-left p,
-      .ach-head p,
-      .event-description,
-      .press-card p,
-      .endorse-card p,
-      .news-excerpt{
-        font-size:.95rem;
-        line-height:1.6;
-      }
-
-      .numbers-inner{
-        grid-template-columns:1fr;
-        gap:1rem;
-      }
-
-      .n-item{
-        border-bottom:1px solid rgba(244,239,230,.1) !important;
-        padding-bottom:1rem;
-      }
-
-      .n-item:last-child{
-        border-bottom:none !important;
-        padding-bottom:0;
-      }
-
-      .photo-row{
-        grid-template-columns:1fr;
-        height:auto;
-      }
-
-      .photo-row-cell{
-        height:220px;
-      }
-
-      .event-meta,
-      .endorse-meta,
-      .press-meta{
-        gap:.4rem;
-      }
-
-      .event-date-badge{
-        width:62px;
-        min-width:62px;
-        height:62px;
-      }
-
-      .event-card h4,
-      .news-card h2,
-      .endorse-card h3,
-      .press-card h3{
-        font-size:1.08rem;
-        line-height:1.15;
-      }
-
-      .btn-primary,
-      .btn-ghost,
-      .event-rsvp-btn,
-      .btn-testimony,
-      .press-link,
-      .news-link{
-        width:100%;
-        text-align:center;
-      }
-
-      .testimony-modal-content{
-        width:94vw;
-        margin:12vh auto 0;
-      }
-    }
-
-  </style>
+</style>
 </head>
 <body>
 
@@ -1852,6 +1554,7 @@ body.modal-open{
       <li><a href="#platform">Policy Platform</a></li>      
       <li><a href="#endorsements">Endorsements</a></li>
       <li><a href="#news">News</a></li>
+      <!--<li><a href="#ward">Our Ward</a></li>-->
       <li><a href="#events">Events</a></li>
       <li><a href="#action">Volunteer</a></li>
     </ul>
@@ -1868,15 +1571,15 @@ body.modal-open{
 </nav>
 
 <div class="mobile-nav" id="mnav">
-  <a href="/es/" onclick="toggleMenu()">Español</a>
+  <a href="#platform" onclick="toggleMenu()">Platform</a>
   <a href="#story" onclick="toggleMenu()">About Jackie</a>
   <a href="#achievements" onclick="toggleMenu()">Track Record</a>
-  <a href="#platform" onclick="toggleMenu()">Policy Platform</a>
   <a href="#endorsements" onclick="toggleMenu()">Endorsements</a>
   <a href="#news" onclick="toggleMenu()">News</a>
+  <a href="#ward" onclick="toggleMenu()">Our Ward</a>
   <a href="#events" onclick="toggleMenu()">Events</a>
   <a href="#action" onclick="toggleMenu()">Volunteer</a>
-
+  <a href="/es/" onclick="toggleMenu()">Español</a>
 
   <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Donate Now</a>
 </div>
@@ -2157,7 +1860,7 @@ body.modal-open{
     </div>
 
     <div class="ptabs" role="tablist">
-      <button class="ptab on" onclick="switchTab('business',this)">🌮 Small Business Revival</button>
+      <button class="ptab on" onclick="switchTab('barrio',this)">🌮 Small Business Revival</button>
       <button class="ptab" onclick="switchTab('nsc',this)">🤝 Solution Center</button>
       <button class="ptab" onclick="switchTab('housing',this)">🏘 Affordable Housing</button>
       <button class="ptab" onclick="switchTab('childcare',this)">👶 Universal Childcare</button>
@@ -2165,7 +1868,7 @@ body.modal-open{
     </div>
 
     <!-- SMALL BUSINESS -->
-    <div id="tab-business" class="ppanel">
+    <div id="tab-barrio" class="ppanel">
       <div class="policy-layout">
         <div class="pl-left">
           <div class="p-num">01</div>
@@ -2399,11 +2102,11 @@ body.modal-open{
       <div class="footer-col">
         <h5>Platform</h5>
         <ul>
-          <li><a href="#platform" onclick="switchTab('business',document.querySelector('.ptab'))">Small Business Revival</a></li>
-          <li><a href="#platform" onclick="switchTab('nsc',document.querySelectorAll('.ptab')[1])">Solution Center</a></li>
-          <li><a href="#platform" onclick="switchTab('housing',document.querySelectorAll('.ptab')[2])">Affordable Housing</a></li>
-          <li><a href="#platform" onclick="switchTab('childcare',document.querySelectorAll('.ptab')[3])">Universal Childcare</a></li>
-          <li><a href="#platform" onclick="switchTab('safety',document.querySelectorAll('.ptab')[4])">Community Safety</a></li>
+          <li><a href="#platform" onclick="switchTab('housing',document.querySelector('.ptab'))">Affordable Housing</a></li>
+          <li><a href="#platform" onclick="switchTab('childcare',document.querySelectorAll('.ptab')[1])">Universal Childcare</a></li>
+          <li><a href="#platform" onclick="switchTab('barrio',document.querySelectorAll('.ptab')[2])">Small Business Activation</a></li>
+          <li><a href="#platform" onclick="switchTab('safety',document.querySelectorAll('.ptab')[3])">Community Safety</a></li>
+          <li><a href="#platform" onclick="switchTab('nsc',document.querySelectorAll('.ptab')[4])">Solution Center</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -2420,6 +2123,7 @@ body.modal-open{
           <li><a href="#story">Jackie's Story</a></li>
           <li><a href="#achievements">Track Record</a></li>
           <li><a href="#news">News</a></li>
+          <li><a href="#ward">Our Ward</a></li>
           <li><a href="https://www.jackieforward1.com">jackieforward1.com</a></li>
         </ul>
       </div>
