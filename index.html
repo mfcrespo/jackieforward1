@@ -1434,6 +1434,90 @@ body.modal-open{
   color:rgba(244,239,230,.35);
 }
 
+/* video meet jackie section */
+.video-section{
+  padding:4rem 0;
+  display:flex;
+  justify-content:center;
+}
+
+.video-wrap{
+  width:100%;
+  max-width:900px;
+  aspect-ratio:16 / 9;
+  background:#000;
+  border:1px solid rgba(212,160,23,.25);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.video-wrap iframe{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+/* video con thumbnail y boton de play encima */
+.video-embed{
+  width:100%;
+  max-width:900px;
+  margin:2rem 0;
+}
+
+.video-cover,
+.video-frame-wrap{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  display:block;
+  border:none;
+  padding:0;
+  background:#000;
+  cursor:pointer;
+  overflow:hidden;
+}
+
+.video-thumb{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.video-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,.12), rgba(0,0,0,.38));
+}
+
+.video-play{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:84px;
+  height:84px;
+  border-radius:50%;
+  background:rgba(212,160,23,.92);
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  line-height:1;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+.video-cover:hover .video-play{
+  transform:translate(-50%,-50%) scale(1.05);
+}
+
+.video-embed iframe{
+  width:100%;
+  height:100%;
+  display:block;
+  border:none;
+}
+
 </style>
 </head>
 <body>
@@ -1545,6 +1629,31 @@ body.modal-open{
     <div class="story-copy reveal">
       <div class="section-label">Meet Jackie</div>
       <h2>From <em>Refugee</em><br>to Ward 1<br>Warrior.</h2>
+
+      <!--
+      <div class="video-section">
+        <div class="video-wrap">
+          <iframe 
+            src="https://www.youtube.com/embed/E7b7SKmFeVA" 
+            title="Jackie Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>  -->
+      
+      <div class="video-embed" data-video-id="E7b7SKmFeVA">
+        <button class="video-cover" type="button" aria-label="Play video">
+          <img
+            class="video-thumb"
+            src="https://img.youtube.com/vi/E7b7SKmFeVA/maxresdefault.jpg"
+            alt="Watch Jackie’s video">
+          <span class="video-overlay"></span>
+          <span class="video-play">▶</span>
+        </button>
+      </div>      
+
       <p><strong>Jackie Reyes Yanes arrived in Washington, DC in 1990</strong> at just 12 years old, escaping civil war in El Salvador, landing in Mount Pleasant with nothing. She became a teen mother of 3.  She talks about issues she has lived. She found community at the Latin American Youth Center and let that experience set the direction of her life.</p>
       <p><strong>Everything Jackie fights for, she has lived.</strong> Affordable housing isn't a policy paper to her, it's the story of her father buying a home on a dishwasher's wages. Universal childcare isn't a campaign promise, it's what she needed and didn't have.</p>
       <div class="timeline">
@@ -2508,6 +2617,29 @@ Loads ENDORSEMENTS from /data/endorsement.json.
     </div>
   </div>
 </div>
+
+<!-- video con thumbnail y play encima -->
+<script>
+  document.querySelectorAll('.video-embed').forEach(function(wrapper){
+    const btn = wrapper.querySelector('.video-cover');
+    const videoId = wrapper.dataset.videoId;
+
+    if (!btn || !videoId) return;
+
+    btn.addEventListener('click', function(){
+      wrapper.innerHTML = `
+        <div class="video-frame-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      `;
+    });
+  });
+</script>
 
 </body>
 </html>
