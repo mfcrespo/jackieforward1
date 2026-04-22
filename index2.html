@@ -1,0 +1,2642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jackie Reyes Yanes — Ward 1, DC Council</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#D4A017;
+  --gold-lt:#F0C040;
+  --green:#1B5E35;
+  --green-lt:#2E7D45;
+  --ink:#0B0D0B;
+  --warm:#F4EFE6;
+  --warm2:#E8E2D6;
+  --cream:#F9F6EF;
+  --muted:rgba(244,239,230,.52);
+  --red:#C0392B;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Barlow',sans-serif;
+  background:var(--ink);
+  color:var(--warm);
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+strong{font-weight:600}
+
+/* ─── NAV ──────────────────────────────────── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  padding:0 2rem;height:95px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(11,13,11,0);
+  transition:background .4s,border-color .4s;
+  border-bottom:1px solid transparent;
+}
+#nav.solid{
+  background:rgba(11,13,11,.96);
+  border-color:rgba(212,160,23,.2);
+}
+.nav-logo{
+  display:flex;align-items:center;gap:.7rem;
+}
+.nav-logo img{height:78px;width:auto;object-fit:contain;}
+.nav-wordmark{
+  font-family:'League Spartan',sans-serif;
+  font-weight:800;font-size:1.1rem;
+  letter-spacing:.04em;text-transform:uppercase;
+  line-height:1;
+}
+.nav-wordmark span{color:var(--gold);display:block;font-size:.7rem;letter-spacing:.18em;font-weight:600}
+.nav-right{display:flex;align-items:center;gap:1.1rem}
+
+    .lang-switch{
+      display:flex;
+      align-items:center;
+      gap:.35rem;
+      font-family:'League Spartan',sans-serif;
+      font-size:.8rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .lang-switch a{
+      color:rgba(244,239,230,.6);
+      text-decoration:none;
+      transition:color .2s;
+    }
+
+    .lang-switch a:hover{
+      color:var(--gold);
+    }
+
+    .lang-switch .active{
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .lang-switch .divider{
+      color:rgba(244,239,230,.3);
+    }
+
+.nav-links{display:flex;gap:1rem;list-style:none}
+.nav-links a{
+  font-family:'League Spartan',sans-serif;
+  font-size:1.3rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  color:rgba(244,239,230,.65);transition:color .2s;
+}
+.nav-donate{
+  font-family:'League Spartan',sans-serif;
+  font-size:.88rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--gold);color:var(--ink);
+  padding:.42rem .95rem;
+  border:none;cursor:pointer;transition:background .2s;
+}
+.nav-donate:hover{background:var(--gold-lt)}
+.ham{
+  display:none;flex-direction:column;gap:5px;
+  background:none;border:none;cursor:pointer;padding:4px;
+}
+.ham span{display:block;width:24px;height:2px;background:var(--warm);transition:all .3s;transform-origin:center}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{
+  display:none;position:fixed;inset:0;top:70px;z-index:299;
+  background:rgba(11,13,11,.97);
+  flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
+}
+.mobile-nav.open{display:flex}
+.mobile-nav a{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:2.2rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--warm);transition:color .2s;
+}
+.mobile-nav a:hover{color:var(--gold)}
+.mobile-nav .m-cta{
+  background:var(--gold);color:var(--ink);
+  padding:.6rem 2.5rem;font-size:1.6rem;
+}
+
+/* ─── HERO ─────────────────────────────────── */
+#hero{
+  position:relative;
+  height:100vh;min-height:600px;
+  overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;
+}
+.hero-img{
+  position:absolute;inset:0;
+  background:
+    url('/images/jackie-reyes-yanes-mt-pleasant.jpg')
+    center 8% / cover no-repeat;
+}
+/* subtle vignette only — let the photo breathe */
+.hero-img::after{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(to bottom,
+      transparent 0%,
+      transparent 30%,
+      rgba(11,13,11,.6) 60%,
+      rgba(11,13,11,.93) 82%,
+      rgba(11,13,11,1) 100%
+    );
+}
+.hero-stripe{
+  position:absolute;top:0;left:0;right:0;height:5px;
+  background:linear-gradient(90deg,var(--green),var(--gold),var(--green-lt));
+  z-index:2;
+}
+.hero-text{
+  position:relative;z-index:2;
+  padding:0 2.5rem 3.5rem;
+  max-width:1100px;
+  transform: translateY(40px);
+}
+.hero-kicker{
+  font-family:'League Spartan',sans-serif;
+  font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+  display:flex;align-items:center;gap:.8rem;
+}
+.hero-kicker::before{content:'';display:block;width:24px;height:2px;background:var(--gold)}
+.hero-h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(3.2rem,8vw,7rem);
+  font-weight:800;line-height:.88;
+  text-transform:uppercase;
+  letter-spacing:-.01em;
+  color:var(--warm);
+  margin-bottom:3rem;
+  transform: translateY(40px);
+  -webkit-text-stroke: 1.5px #ffffff;
+  paint-order: stroke fill;
+  text-shadow:
+    1px 0 0 #fff,
+   -1px 0 0 #fff,
+    0 1px 0 #fff,
+    0 -1px 0 #fff;
+}
+.hero-h1 .gold-line{color:var(--gold)}
+.hero-h1 .outline-line{
+  -webkit-text-stroke:2px var(--warm);
+  color:transparent;
+}
+.hero-byline{
+  font-family:'Lora',serif;
+  font-size:clamp(.95rem,2vw,1.2rem);
+  font-style:italic;
+  color:rgba(244,239,230,.82);
+  max-width:620px;
+  line-height:1.75;
+  margin-top:.8rem;
+  margin-bottom:2rem;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:2.5rem}
+.btn-primary{
+  font-family:'League Spartan',sans-serif;
+  font-size:1rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--gold);color:var(--ink);
+  padding:.75rem 1.8rem;border:none;cursor:pointer;
+  transition:background .2s;display:inline-block;
+}
+.btn-primary:hover{background:var(--gold-lt)}
+.btn-ghost{
+  font-family:'League Spartan',sans-serif;
+  font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  background:transparent;color:var(--warm);
+  padding:.72rem 1.8rem;border:2.5px solid rgba(246, 161, 3, 0.35);
+  cursor:pointer;transition:border-color .2s,color .2s;display:inline-block;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-meta{
+  display:flex;gap:2.5rem;flex-wrap:wrap;
+  padding-top:2rem;
+  border-top:1px solid rgba(212,160,23,.25);
+}
+.hero-meta-item .num{
+  font-family:'League Spartan',sans-serif;
+  font-size:2rem;font-weight:600;
+  color:var(--gold);line-height:1;display:block;
+}
+.hero-meta-item .lbl{
+  font-size:0.8rem;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);
+  display:block;margin-top:.2rem;
+}
+
+.hero-meta-2{
+  display:flex;gap:2.5rem;flex-wrap:wrap;
+  padding-top:2rem;
+  border-top:1px solid rgba(212,160,23,.25);
+}
+/* ─── MARQUEE ──────────────────────────────── */
+.marquee{
+  background:var(--green);
+  overflow:hidden;white-space:nowrap;
+  padding:.6rem 0;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);
+}
+.marquee-track{display:inline-flex;animation:scroll 35s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.mi{
+  font-family:'League Spartan',sans-serif;
+  font-size:1rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--warm);padding:0 2rem;
+  display:inline-flex;align-items:center;gap:1rem;
+}
+.mi::after{content:'◆';font-size:.4rem;color:var(--gold)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─── SECTION BASE ─────────────────────────── */
+.section{padding:5rem 0}
+section { scroll-margin-top: 115px; }
+.wrap{max-width:1100px;margin:0 auto;padding:0 2.5rem}
+.section-label{
+  font-family:'League Spartan',sans-serif;
+  font-size:1rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.8rem;
+  display:flex;align-items:center;gap:.7rem;
+}
+.section-label::before{content:'';display:block;width:20px;height:2px;background:var(--gold)}
+
+/* ─── STORY ────────────────────────────────── */
+#story{background:var(--ink);padding:0}
+.story-split{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:90vh;
+}
+.story-photo{
+  position:relative;overflow:hidden;
+}
+.story-photo-bg{
+  position:absolute;inset:0;
+  background:
+    url('/images/jackie-reyes-yanes-la-manplesa2.jpg')
+    center top / cover no-repeat;
+}
+.story-photo-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to right, transparent 60%, var(--ink) 100%);
+}
+.story-year-badge{
+  position:absolute;bottom:2.5rem;left:2.5rem;z-index:2;
+  background:var(--gold);color:var(--ink);
+  padding:1rem 1.3rem;
+}
+.story-year-badge .yr{
+  font-family:'League Spartan',sans-serif;
+  font-size:2.4rem;font-weight:900;line-height:1;display:block;
+}
+.story-year-badge .yr-lbl{
+  font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+}
+.story-copy{
+  padding:5rem 3.5rem;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.story-copy h2{
+  font-family:'League Spartan',sans-serif;
+  font-size:clamp(2.2rem,4vw,3.5rem);
+  font-weight:700;text-transform:uppercase;
+  line-height:.92;letter-spacing:.02em;
+  color:var(--warm);margin:1rem 0 1.8rem;
+}
+.story-copy h2 em{font-style:italic;color:var(--gold);font-family:'Lora',serif;text-transform:none;font-size:90%}
+.story-copy p{
+  font-family:'Lora',serif;
+  font-size:1rem;line-height:1.85;
+  color:rgba(244,239,230,.72);
+  margin-bottom:1.2rem;max-width:460px;
+}
+.story-copy p strong{color:var(--warm);font-weight:500}
+.timeline{margin:2rem 0;border-left:2px solid rgba(212,160,23,.3);padding-left:1.8rem}
+.tl-item{padding:.6rem 0 1.2rem;position:relative}
+.tl-item::before{
+  content:'';position:absolute;left:-2.2rem;top:.75rem;
+  width:10px;height:10px;border-radius:50%;
+  border:2px solid var(--gold);background:var(--ink);
+}
+.tl-yr{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold);
+}
+.tl-item h4{
+  font-family:'League Spartan',sans-serif;
+  font-size:1.2rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--warm);margin:.2rem 0;
+}
+.tl-item p{font-size:.85rem;margin:0;color:rgba(244,239,230,.6);font-family:'Barlow',sans-serif}
+
+/* ─── PLATFORM ─────────────────────────────── */
+#platform{background:#0e110e}
+.platform-intro{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;
+  padding-bottom:4rem;
+  border-bottom:1px solid rgba(212,160,23,.15);
+  margin-bottom:4rem;
+  align-items:end;
+}
+.platform-intro h2{
+  font-family:'League Spartan',sans-serif;
+  font-size:clamp(2.5rem,5vw,4.2rem);
+  font-weight:800;text-transform:uppercase;
+  line-height:.9;letter-spacing:.01em;
+  color:var(--warm);
+}
+.platform-intro h2 em{
+  font-style:italic;color:var(--gold);
+  font-family:'Lora',serif;text-transform:none;font-size:85%;
+}
+.platform-intro p{
+  font-family:'Lora',serif;
+  font-size:1rem;line-height:1.8;
+  color:rgba(244,239,230,.65);
+  max-width:420px;
+}
+
+/* Policy tabs */
+.ptabs{display:flex;gap:0;flex-wrap:wrap;margin-bottom:3rem;border-bottom:2px solid rgba(244,239,230,.08)}
+.ptab{
+  font-family:'League Spartan',sans-serif;
+  font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  color:rgba(244,239,230,.45);
+  padding:.8rem 1.4rem;
+  background:none;border:none;cursor:pointer;
+  border-bottom:3px solid transparent;
+  margin-bottom:-2px;transition:all .2s;white-space:nowrap;
+}
+.ptab.on{color:var(--gold);border-bottom-color:var(--gold)}
+.ptab:hover:not(.on){color:rgba(244,239,230,.8)}
+
+.ppanel{display:none}
+.ppanel.on{display:block}
+
+/* Each policy as two columns: big headline left, items right */
+.policy-layout{
+  display:grid;grid-template-columns:2fr 3fr;gap:4rem;
+  align-items:start;
+}
+.pl-left{}
+.pl-left .p-num{
+  font-family:'League Spartan',sans-serif;
+  font-size:5rem;font-weight:900;
+  color:rgba(212,160,23,.12);
+  line-height:1;margin-bottom:-.5rem;
+}
+.pl-left h3{
+  font-family:'League Spartan',sans-serif;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:900;text-transform:uppercase;
+  line-height:.93;letter-spacing:.01em;
+  color:var(--warm);margin-bottom:1.2rem;
+}
+.pl-left h3 em{
+  font-style:italic;color:var(--gold);
+  font-family:'Lora',serif;text-transform:none;font-size:90%;
+}
+.pl-left .p-body{
+  font-family:'Lora',serif;
+  font-size:.95rem;line-height:1.82;
+  color:rgba(244,239,230,.62);margin-bottom:1.5rem;
+}
+.pl-left blockquote{
+  border-left:3px solid var(--gold);
+  padding:.8rem 1.2rem;
+  margin-top:1.5rem;
+  background:rgba(212,160,23,.06);
+}
+.pl-left blockquote p{
+  font-family:'Lora',serif;font-style:italic;
+  font-size:.92rem;line-height:1.65;color:var(--warm);
+}
+.pl-left blockquote cite{
+  display:block;margin-top:.5rem;
+  font-family:'League Spartan',sans-serif;
+  font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);font-style:normal;
+}
+.pl-left .p-photo{
+  margin-top:1.5rem;height:320px;overflow:hidden;border-radius:8px;
+}
+.pl-left .p-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Policy items */
+.pl-right{}
+.p-items{list-style:none;display:flex;flex-direction:column;gap:0}
+.p-item{
+  padding:1.1rem 0;
+  border-bottom:1px solid rgba(244,239,230,.07);
+  display:grid;grid-template-columns:auto 1fr;gap:1.2rem;
+  align-items:start;
+}
+.p-item:first-child{border-top:1px solid rgba(244,239,230,.07)}
+.p-item .p-dot{
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--gold);
+  margin-top:.45rem;flex-shrink:0;
+}
+.p-item-body{}
+.p-item h4{
+  font-family:'League Spartan',sans-serif;
+  font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--warm);margin-bottom:.35rem;
+}
+.p-item p{
+  font-size:1rem;line-height:1.7;
+  color:rgba(244,239,230,.6);
+  font-family:'League Spartan',sans-serif;font-weight:100;
+}
+
+/* ─── NUMBERS ──────────────────────────────── */
+.numbers{
+  background:var(--green);
+  padding:3rem 0;
+  border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);
+}
+.numbers-inner{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;
+  max-width:1100px;margin:0 auto;padding:0 2.5rem;
+}
+.n-item{
+  text-align:center;padding:0 1rem;
+  border-right:1px solid rgba(244,239,230,.15);
+}
+.n-item:last-child{border-right:none}
+.n-num{
+  font-family:'League Spartan',sans-serif;
+  font-size:2.8rem;font-weight:800;
+  color:var(--gold);line-height:1;display:block;
+}
+.n-lbl{
+  font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(244,239,230,.65);margin-top:.35rem;display:block;
+  font-family:'League Spartan',sans-serif;
+}
+
+/* ─── WARD ─────────────────────────────────── */
+#ward{background:var(--ink);padding:5rem 0}
+.ward-head{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;
+  margin-bottom:4rem;align-items:end;
+}
+.ward-head h2{
+  font-family:'League Spartan',sans-serif;
+  font-size:clamp(2.5rem,5vw,4rem);font-weight:800;
+  text-transform:uppercase;line-height:.9;letter-spacing:.01em;
+  color:var(--warm);
+}
+.ward-head h2 em{font-style:italic;color:var(--gold);font-family:'Lora',serif;text-transform:none;font-size:85%}
+.ward-head p{
+  font-family:'Lora',serif;font-size:1rem;line-height:1.8;
+  color:rgba(244,239,230,.62);max-width:420px;align-self:end;
+}
+.ward-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:rgba(244,239,230,.06);
+}
+.ward-cell{
+  background:var(--ink);padding:2rem 1.8rem;
+  transition:background .25s;
+}
+.ward-cell:hover{background:#121512}
+.ward-cell-icon{font-size:1.4rem;margin-bottom:.8rem}
+.ward-cell h4{
+  font-family:'League Spartan',sans-serif;
+  font-size:1rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--warm);margin-bottom:.5rem;
+}
+.ward-cell p{font-size:.84rem;line-height:1.7;color:rgba(244,239,230,.5);font-weight:300}
+
+/* ─── PHOTOS ────────────────────────────────── */
+.photo-row{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:3px;height:220px;
+}
+.photo-row-cell{overflow:hidden;position:relative}
+.photo-row-cell img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s;filter:brightness(.8) saturate(.9);
+}
+.photo-row-cell:hover img{transform:scale(1.04);filter:brightness(.95) saturate(1.1)}
+
+/* ─── TAKE ACTION ──────────────────────────── */
+#action{
+  background:#0e110e;
+  padding:5rem 0;
+  position:relative;overflow:hidden;
+}
+#action::before{
+  content:'';position:absolute;
+  top:-60%;right:-20%;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(27,94,53,.25) 0%,transparent 70%);
+  pointer-events:none;
+}
+.action-wrap{
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;
+}
+.action-left h2{
+  font-family:'League Spartan',sans-serif;
+  font-size:clamp(2.2rem,4.5vw,3.8rem);
+  font-weight:900;text-transform:uppercase;
+  line-height:.9;letter-spacing:.01em;
+  color:var(--warm);margin:1rem 0 1.5rem;
+}
+.action-left h2 em{font-style:italic;color:var(--gold);font-family:'Lora',serif;text-transform:none}
+.action-left p{
+  font-family:'Lora',serif;
+  font-size:.98rem;line-height:1.8;
+  color:rgba(244,239,230,.62);margin-bottom:1.5rem;
+}
+.election-box{
+  background:var(--green);
+  padding:1.5rem 1.8rem;margin-top:2rem;
+  border-left:4px solid var(--gold);
+}
+.election-box .e-kicker{
+  font-family:'League Spartan',sans-serif;
+  font-size:.6rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(244,239,230,.6);margin-bottom:.4rem;
+}
+.election-box .e-date{
+  font-family:'League Spartan',sans-serif;
+  font-size:2.2rem;font-weight:900;color:var(--gold);
+  line-height:1;
+}
+.election-box .e-sub{
+  font-size:.8rem;color:rgba(244,239,230,.55);margin-top:.3rem;
+  font-family:'League Spartan',sans-serif;font-weight:300;
+}
+.form-box{
+  background:rgba(244,239,230,.03);
+  border:1px solid rgba(212,160,23,.2);
+  padding:2.5rem;
+}
+.form-box h3{
+  font-family:'League Spartan',sans-serif;
+  font-size:1.6rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.04em;color:var(--warm);margin-bottom:.3rem;
+}
+.form-box p{font-size:.82rem;color:var(--muted);margin-bottom:1.8rem;font-weight:300}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem}
+.f-field{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.8rem}
+.f-field label{
+  font-family:'League Spartan',sans-serif;
+  font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);
+}
+.f-field input,.f-field select{
+  background:rgba(244,239,230,.06);
+  border:1px solid rgba(244,239,230,.12);
+  padding:.65rem .9rem;
+  font-size:.88rem;color:var(--warm);
+  font-family:'League Spartan',sans-serif;
+  outline:none;transition:border-color .2s;
+  -webkit-appearance:none;
+}
+.f-field input:focus,.f-field select:focus{border-color:var(--gold)}
+.f-field input::placeholder{color:rgba(244,239,230,.25)}
+.f-field select option{background:#0e110e;color:var(--warm)}
+.f-submit{
+  width:100%;padding:.9rem;
+  background:var(--gold);color:var(--ink);
+  border:none;cursor:pointer;
+  font-family:'League Spartan',sans-serif;
+  font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  margin-top:.5rem;transition:background .2s;
+}
+.f-submit:hover{background:var(--gold-lt)}
+
+/* ─── ACHIEVEMENTS ──────────────────────────── */
+#achievements{background:#0a0d0a;padding:5rem 0;border-top:1px solid rgba(212,160,23,.12)}
+.ach-head{margin-bottom:3.5rem}
+.ach-head h2{
+  font-family:'League Spartan',sans-serif;
+  font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:900;
+  text-transform:uppercase;line-height:.9;letter-spacing:.01em;
+  color:var(--warm);margin:1rem 0 1.2rem;
+}
+.ach-head h2 em{font-style:italic;color:var(--gold);font-family:'Lora',serif;text-transform:none;font-size:88%}
+.ach-head p{
+  font-family:'Lora',serif;font-size:1rem;line-height:1.8;
+  color:rgba(244,239,230,.6);max-width:560px;
+}
+.ach-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:rgba(244,239,230,.06);
+}
+.ach-card{
+  background:#0a0d0a;
+  padding:2.2rem 2rem;
+  position:relative;
+  transition:background .25s;
+  overflow:hidden;
+}
+.ach-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--gold);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s;
+}
+.ach-card:hover{background:#0f120f}
+.ach-card:hover::before{transform:scaleX(1)}
+.ach-num{
+  font-family:'League Spartan',sans-serif;
+  font-size:3rem;font-weight:900;color:rgba(212,160,23,.15);
+  line-height:1;margin-bottom:.3rem;
+  transition:color .3s;
+}
+.ach-card:hover .ach-num{color:rgba(212,160,23,.28)}
+.ach-impact{
+  font-family:'League Spartan',sans-serif;
+  font-size:1.6rem;font-weight:700;color:var(--gold);
+  line-height:1;margin-bottom:.6rem;letter-spacing:.02em;
+}
+.ach-title{
+  font-family:'League Spartan',sans-serif;
+  font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--warm);margin-bottom:.7rem;
+}
+.ach-body{
+  font-size:1rem;font-weight:300;line-height:1.72;
+  color:rgba(244,239,230,.55);
+  font-family:'League Spartan',sans-serif;
+}
+.ach-body strong{color:rgba(244,239,230,.85);font-weight:500}
+@media(max-width:900px){
+  .lang-switch{display:none}
+
+  .ach-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .ach-grid{grid-template-columns:1fr}
+}
+
+/* ─── EVENTS ────────────────────────────────── */
+#events{background:var(--ink);padding:5rem 0}
+.events-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:3rem;flex-wrap:wrap;gap:1rem;
+}
+.events-head h2{
+  font-family:'League Spartan',sans-serif;
+  font-size:clamp(2rem,4vw,3.2rem);font-weight:900;
+  text-transform:uppercase;line-height:.9;
+  color:var(--warm);
+}
+.events-head h2 em{font-style:italic;color:var(--gold);font-family:'Lora',serif;text-transform:none}
+.events-list{display:flex;flex-direction:column;gap:0}
+.ev{
+  display:grid;grid-template-columns:80px 1fr auto;
+  gap:2rem;align-items:center;
+  padding:1.5rem 0;
+  border-bottom:1px solid rgba(244,239,230,.07);
+  transition:background .2s;
+}
+.ev:first-child{border-top:1px solid rgba(244,239,230,.07)}
+.ev-date-block{text-align:center}
+.ev-date-block .ev-mo{
+  font-family:'League Spartan',sans-serif;
+  font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(244,239,230,.5);display:block;
+}
+.ev-date-block .ev-day{
+  font-family:'League Spartan',sans-serif;
+  font-size:2.5rem;font-weight:700;color:var(--gold);
+  line-height:1;display:block;
+}
+.ev-info h4{
+  font-family:'League Spartan',sans-serif;
+  font-size:1.05rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--warm);margin-bottom:.3rem;
+}
+.ev-info p{font-size:.84rem;color:rgba(244,239,230,.5);line-height:1.6;font-weight:300}
+.ev-tag{
+  font-family:'League Spartan',sans-serif;
+  font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);background:rgba(212,160,23,.1);
+  padding:.25rem .7rem;white-space:nowrap;
+}
+
+/* =========================
+   EVENTS (NEW STYLES)
+   ========================= */
+.event-card{
+  display:grid;
+  grid-template-columns: 260px 1fr;
+  gap:1.2rem;
+  background:rgba(244,239,230,.04);
+  border:1px solid rgba(244,239,230,.08);
+  margin-bottom:1.25rem;
+  overflow:hidden;
+}
+
+.event-card.featured{
+  border:1px solid rgba(212,160,23,.45);
+  box-shadow:0 0 0 1px rgba(212,160,23,.12) inset;
+}
+
+.event-card-image{
+  min-height:220px;
+  height:100%;
+  overflow:hidden;
+}
+
+.event-card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.event-card-body{
+  padding:1.2rem 1.2rem 1.2rem 0;
+}
+
+.event-date-badge{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:70px;
+  min-width:70px;
+  height:70px;
+  background:var(--gold);
+  color:var(--ink);
+  font-family:'League Spartan',sans-serif;
+  font-weight:700;
+  margin-bottom:1rem;
+}
+
+.event-month{
+  font-size:.72rem;
+  line-height:1;
+  letter-spacing:.08em;
+}
+
+.event-day{
+  font-size:1.55rem;
+  line-height:1;
+}
+
+.event-meta{
+  display:flex;
+  gap:.55rem;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-bottom:.8rem;
+}
+
+.event-category,
+.event-featured-badge{
+  font-family:'League Spartan',sans-serif;
+  font-size:.72rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  padding:.35rem .6rem;
+  border:1px solid rgba(244,239,230,.14);
+  color:rgba(244,239,230,.78);
+}
+
+.event-featured-badge{
+  border-color:rgba(212,160,23,.4);
+  color:var(--gold);
+}
+
+.event-card h4{
+  font-family:'League Spartan',sans-serif;
+  font-size:1.35rem;
+  color:var(--warm);
+  margin-bottom:.55rem;
+}
+
+.event-time-address{
+  color:var(--gold);
+  font-weight:600;
+  margin-bottom:.7rem;
+}
+
+.event-description{
+  color:rgba(244,239,230,.72);
+  line-height:1.65;
+}
+
+.event-rsvp-btn{
+  display:inline-block;
+  margin-top:.9rem;
+  background:var(--gold);
+  color:var(--ink);
+  padding:.75rem 1rem;
+  text-decoration:none;
+  font-family:'League Spartan',sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.event-rsvp-btn:hover{
+  opacity:.92;
+}
+
+@media (max-width: 900px){
+  .event-card{
+    grid-template-columns:1fr;
+  }
+
+  .event-card-body{
+    padding:1rem;
+  }
+
+  .event-card-image{
+    min-height:220px;
+  }
+}
+
+/* ─── NEWS CLIPS ─────────────────────────────── */
+#news{background:#0e110e;padding:5rem 0;border-top:1px solid rgba(244,239,230,.06)}
+.news-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
+.news-head h2{
+  font-family:'League Spartan',sans-serif;
+  font-size:clamp(2rem,4vw,3.2rem);font-weight:900;
+  text-transform:uppercase;line-height:.9;color:var(--warm);
+}
+.news-head h2 em{font-style:italic;color:var(--gold);font-family:'Lora',serif;text-transform:none}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.news-card{
+  background:var(--ink);border:1px solid rgba(244,239,230,.07);
+  padding:1.8rem;display:flex;flex-direction:column;gap:1rem;
+  transition:border-color .2s,transform .2s;
+  text-decoration:none;
+}
+.news-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.news-outlet{
+  font-family:'League Spartan',sans-serif;
+  font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:.6rem;
+}
+.news-outlet::before{content:'';display:block;width:16px;height:2px;background:var(--gold)}
+.news-date{
+  font-family:'League Spartan',sans-serif;
+  font-size:.65rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(244,239,230,.3);
+}
+.news-headline{
+  font-family:'League Spartan',sans-serif;
+  font-size:1.2rem;font-weight:600;letter-spacing:.02em;
+  color:var(--warm);line-height:1.25;flex:1;
+}
+.news-excerpt{
+  font-size:.82rem;line-height:1.65;color:rgba(244,239,230,.5);
+  font-weight:300;
+}
+.news-read{
+  font-family:'League Spartan',sans-serif;
+  font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:.4rem;
+  margin-top:.5rem;
+}
+.news-read::after{content:'→'}
+@media(max-width:900px){.news-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.news-grid{grid-template-columns:1fr}}
+
+/* ─── FOOTER ────────────────────────────────── */
+footer{
+  background:#070907;
+  border-top:1px solid rgba(244,239,230,.07);
+  padding:4rem 0 2rem;
+}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:3rem;margin-bottom:3rem;
+}
+.footer-brand p{
+  font-size:.83rem;line-height:1.75;color:rgba(244,239,230,.4);
+  margin-top:.8rem;max-width:260px;font-weight:300;
+}
+.footer-col h5{
+  font-family:'League Spartan',sans-serif;
+  font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.footer-col ul a{
+  font-size:.82rem;color:rgba(244,239,230,.45);
+  transition:color .2s;font-weight:300;
+}
+.footer-col ul a:hover{color:var(--gold)}
+.footer-bottom{
+  border-top:1px solid rgba(244,239,230,.06);
+  padding-top:1.5rem;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;
+}
+.footer-legal{font-size:.68rem;color:rgba(244,239,230,.25);font-weight:300}
+.social-row{display:flex;gap:.5rem}
+.soc{
+  width:30px;height:30px;
+  border:1px solid rgba(244,239,230,.12);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'League Spartan',sans-serif;
+  font-size:.75rem;font-weight:700;letter-spacing:.04em;
+  color:rgba(244,239,230,.4);transition:all .2s;
+}
+.soc:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ─── FADE IN ────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.reveal.shown{opacity:1;transform:none}
+
+/* ─── RESPONSIVE ──────────────────────────────── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-donate{display:none}
+  .ham{display:flex}
+  .story-split,.platform-intro,.ward-head,.action-wrap,.footer-top{
+    grid-template-columns:1fr;gap:2rem;
+  }
+  .story-photo{height:50vw;min-height:280px}
+  .story-copy{padding:3rem 2rem}
+  .policy-layout{grid-template-columns:1fr;gap:2rem}
+  .ward-grid{grid-template-columns:1fr 1fr}
+  .numbers-inner{grid-template-columns:1fr 1fr;gap:2rem}
+  .n-item{border-right:none;border-bottom:1px solid rgba(244,239,230,.1);padding-bottom:1.5rem}
+  .n-item:nth-child(even){border-bottom:none}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .ev{grid-template-columns:60px 1fr;gap:1rem}
+  .ev-tag{display:none}
+  .photo-row{grid-template-columns:1fr 1fr;height:280px}
+}
+@media(max-width:600px){
+  .wrap{padding:0 1.25rem}
+  .hero-h1{font-size:3.2rem}
+  .hero-text{padding:0 1.25rem 3rem}
+  .hero-meta{gap:1.2rem}
+  .hero-meta-item .num{font-size:1.4rem}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn-primary,.hero-actions .btn-ghost{text-align:center;justify-content:center;display:block;padding:.85rem 1rem}
+  .ward-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .ptabs{overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;padding-bottom:.3rem}
+  .ptabs::-webkit-scrollbar{display:none}
+  .ptab{flex-shrink:0}
+  .f-row{grid-template-columns:1fr}
+  .story-copy h2{font-size:2rem}
+  section,.section{padding:3.5rem 0}
+  .numbers{padding:2rem 0}
+}
+
+/* ─── PRESS - NEWS ────────────────────────────────── */
+.press-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1.5rem;
+  margin-top:2rem;
+}
+
+.press-card{
+  background:rgba(244,239,230,.04);
+  border:1px solid rgba(244,239,230,.08);
+  overflow:hidden;
+  min-height:100%;
+}
+
+.press-card-link{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  color:inherit;
+  text-decoration:none;
+}
+
+.press-card-image-wrap{
+  aspect-ratio: 16 / 9;
+  background:#111;
+  overflow:hidden;
+}
+
+.press-card-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.press-card-placeholder{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(244,239,230,.45);
+  font-family:'League Spartan', sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.press-card-body{
+  padding:1.1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.85rem;
+}
+
+.press-card-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.35rem;
+  align-items:center;
+  font-family:'League Spartan', sans-serif;
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--gold);
+}
+
+.press-card-dot{
+  opacity:.7;
+}
+
+.press-card h3{
+  margin:0;
+  font-family:'League Spartan', sans-serif;
+  font-size:1.45rem;
+  line-height:1.1;
+  color:var(--warm);
+}
+
+.press-card p{
+  margin:0;
+  line-height:1.6;
+  color:rgba(244,239,230,.75);
+}
+
+.press-card-read{
+  margin-top:auto;
+  font-family:'League Spartan', sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--gold);
+}
+
+.press-card-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(180deg, rgba(212,160,23,.06), rgba(244,239,230,.02));
+}
+
+.press-card-cta-inner{
+  padding:2rem 1.5rem;
+}
+
+.press-card-cta-star{
+  color:var(--gold);
+  font-size:3rem;
+  line-height:1;
+  margin-bottom:1rem;
+}
+
+.press-card-cta h3{
+  margin:0 0 1rem 0;
+  color:var(--gold);
+}
+
+.press-card-cta p{
+  margin:0 0 1.5rem 0;
+}
+
+.press-card-cta-link{
+  display:inline-block;
+  font-family:'League Spartan', sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--gold);
+  text-decoration:none;
+}
+
+@media (max-width: 1100px){
+  .press-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px){
+  .press-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ─── ENDORSEMENTS ────────────────────────────────── */
+#endorsements{
+  background:var(--ink);
+  border-top:1px solid rgba(244,239,230,.06);
+}
+
+.endorse-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1.5rem;
+  margin-top:2rem;
+}
+
+.endorse-card{
+  background:rgba(244,239,230,.04);
+  border:1px solid rgba(244,239,230,.08);
+  overflow:hidden;
+  min-height:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+.endorse-media{
+  aspect-ratio:16 / 9;
+  background:#111;
+  overflow:hidden;
+}
+
+.endorse-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.endorse-video iframe{
+  width:100%;
+  height:100%;
+}
+
+.endorse-placeholder{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(244,239,230,.45);
+  font-family:'League Spartan', sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.endorse-body{
+  padding:1.1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.85rem;
+}
+
+.endorse-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  align-items:center;
+}
+
+.endorse-pill{
+  display:inline-block;
+  padding:.35rem .55rem;
+  font-family:'League Spartan', sans-serif;
+  font-size:.72rem;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border:1px solid rgba(244,239,230,.14);
+}
+
+.endorse-source{
+  color:var(--gold);
+  border-color:rgba(212,160,23,.35);
+}
+
+.endorse-date{
+  color:rgba(244,239,230,.8);
+  border-color:rgba(244,239,230,.14);
+}
+
+.endorse-language{
+  color:var(--warm);
+  background:rgba(212,160,23,.10);
+  border-color:rgba(212,160,23,.25);
+  font-style:italic;
+}
+
+.endorse-card h3{
+  margin:0;
+  font-family:'League Spartan', sans-serif;
+  font-size:1.35rem;
+  line-height:1.1;
+  color:var(--warm);
+}
+
+.endorser-name{
+  font-family:'League Spartan', sans-serif;
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-size:.85rem;
+}
+
+.endorse-card p{
+  margin:0;
+  line-height:1.6;
+  color:rgba(244,239,230,.75);
+}
+
+.endorse-link{
+  margin-top:auto;
+  font-family:'League Spartan', sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--gold);
+  text-decoration:none;
+}
+
+.endorse-card-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(180deg, rgba(212,160,23,.06), rgba(244,239,230,.02));
+}
+
+.endorse-card-cta-inner{
+  padding:2rem 1.5rem;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.endorse-card-cta-star{
+  color:var(--gold);
+  font-size:3rem;
+  line-height:1;
+  margin-bottom:1rem;
+}
+
+.endorse-card-cta h3{
+  margin:0 0 1rem 0;
+  color:var(--gold);
+}
+
+.endorse-card-cta p{
+  margin:0 0 1.5rem 0;
+}
+
+.endorse-card-cta-link{
+  display:inline-block;
+  margin:0 auto;
+  font-family:'League Spartan', sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--gold);
+  text-decoration:none;
+}
+
+@media (max-width:1100px){
+  .endorse-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width:700px){
+  .endorse-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* btn card testimony */
+.btn-testimony{
+  display:inline-block;
+  margin-top:1.2rem;
+  font-family:'League Spartan',sans-serif;
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid rgba(212,160,23,.4);
+  padding:.55rem .95rem;
+  text-decoration:none;
+  transition:all .2s;
+  background:transparent;
+}
+
+.btn-testimony:hover{
+  background:var(--gold);
+  color:var(--ink);
+  border-color:var(--gold);
+}
+
+.testimony-modal{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+}
+
+.testimony-modal.open{
+  display:block;
+}
+
+.testimony-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.82);
+  backdrop-filter:blur(3px);
+}
+
+.testimony-modal-content{
+  position:relative;
+  width:min(920px, 92vw);
+  margin:5vh auto 0;
+  z-index:2;
+}
+
+.testimony-close{
+  position:absolute;
+  top:-42px;
+  right:0;
+  width:38px;
+  height:38px;
+  border:none;
+  background:var(--gold);
+  color:var(--ink);
+  font-size:1.5rem;
+  font-weight:700;
+  line-height:1;
+  cursor:pointer;
+}
+
+.testimony-video-wrap{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  background:#000;
+  border:1px solid rgba(212,160,23,.25);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.testimony-video-wrap iframe{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+body.modal-open{
+  overflow:hidden;
+}
+
+@media(max-width:600px){
+  .testimony-modal-content{
+    width:94vw;
+    margin:12vh auto 0;
+  }
+
+  .testimony-close{
+    top:-46px;
+    right:0;
+  }
+}
+
+/* categoria record track */
+.ach-top{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  margin-bottom:.4rem;
+}
+
+.ach-cat{
+  font-family:'League Spartan',sans-serif;
+  font-size:.95rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(244,239,230,.35);
+}
+
+/* video meet jackie section */
+.video-section{
+  padding:4rem 0;
+  display:flex;
+  justify-content:center;
+}
+
+.video-wrap{
+  width:100%;
+  max-width:900px;
+  aspect-ratio:16 / 9;
+  background:#000;
+  border:1px solid rgba(212,160,23,.25);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.video-wrap iframe{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+/* video con thumbnail y boton de play encima */
+.video-embed{
+  width:100%;
+  max-width:900px;
+  margin:2rem 0;
+}
+
+.video-cover,
+.video-frame-wrap{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  display:block;
+  border:none;
+  padding:0;
+  background:#000;
+  cursor:pointer;
+  overflow:hidden;
+}
+
+.video-thumb{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.video-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,.12), rgba(0,0,0,.38));
+}
+
+.video-play{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:84px;
+  height:84px;
+  border-radius:50%;
+  background:rgba(212,160,23,.92);
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  line-height:1;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+.video-cover:hover .video-play{
+  transform:translate(-50%,-50%) scale(1.05);
+}
+
+.video-embed iframe{
+  width:100%;
+  height:100%;
+  display:block;
+  border:none;
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="/" class="nav-logo" aria-label="Go to home">
+    <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie Reyes Yanes logo">
+    <!--<div class="nav-wordmark">Jackie Reyes Yanes<span>Ward 1 · DC Council</span></div>-->
+  </a>
+  <nav class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#story">About Jackie</a></li>
+      <li><a href="#achievements">Track Record</a></li>
+      <li><a href="#platform">Policy Platform</a></li>      
+      <li><a href="#endorsements">Endorsements</a></li>
+      <li><a href="#news">News</a></li>
+      <!--<li><a href="#ward">Our Ward</a></li>-->
+      <li><a href="#events">Events</a></li>
+      <li><a href="#action">Volunteer</a></li>
+    </ul>
+      <div class="lang-switch" aria-label="Language switcher">
+        <span class="active">EN</span>
+        <span class="divider">|</span>
+        <a href="/es/" hreflang="es" lang="es">ES</a>
+      </div>
+
+
+    <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" class="nav-donate">Donate</a>
+    <button class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+</nav>
+
+<div class="mobile-nav" id="mnav">
+  <a href="#platform" onclick="toggleMenu()">Platform</a>
+  <a href="#story" onclick="toggleMenu()">About Jackie</a>
+  <a href="#achievements" onclick="toggleMenu()">Track Record</a>
+  <a href="#endorsements" onclick="toggleMenu()">Endorsements</a>
+  <a href="#news" onclick="toggleMenu()">News</a>
+  <a href="#ward" onclick="toggleMenu()">Our Ward</a>
+  <a href="#events" onclick="toggleMenu()">Events</a>
+  <a href="#action" onclick="toggleMenu()">Volunteer</a>
+  <a href="/es/" onclick="toggleMenu()">Español</a>
+
+  <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Donate Now</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-img"></div>
+  <div class="hero-stripe"></div>
+  <div class="hero-text">
+    <h1 class="hero-h1">
+      <span class="gold-line">For a Ward 1<br>
+      We can all<br>afford<br></span>
+      <!--<span class="outline-line">Afford.</span> -->
+    </h1>
+    <!--<p class="hero-byline">Jackie Reyes Yanes came to Ward 1 in 1990 with nothing and settled in Mt. Pleasant. She built her life here — block by block, neighbor by neighbor. Now she's running for DC Council to make sure everyone else can too.</p>-->
+    <div class="hero-actions">
+      <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" class="btn-ghost">★ &nbsp;Donate Today</a>
+      <a href="#action" class="btn-ghost">Become a Warrior Volunteer</a>
+      <a href="#platform" class="btn-ghost">See the Platform →</a>
+    </div>
+
+    <div class="hero-meta">
+      <a href="#story"><div class="hero-meta-item"><span class="num">EXPERIENCE +</span><span class="num">30+</span><span class="lbl">Years living in Ward 1</span></a></div>
+      <!--<a href="#story"><div class="hero-meta-item"><span class="num">June 16</span><span class="lbl">Primary Election Day</span></a></div>-->
+      <a href="#achievements"><div class="hero-meta-item"><span class="num">HANDS ON =</span><span class="num">$43M+</span><span class="lbl">Secured for DC Immigrants</span></a></div>
+     <a href="#platform"><div class="hero-meta-item"><span class="num">RESULTS</span><span class="num">5</span><span class="lbl">Concrete Policy Commitments</span></a></div>    
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+
+    <span class="mi">Rank Jackie as Your Number ONE Choice</span>    
+    <span class="mi">For a Ward 1 We can all afford</span>
+    <span class="mi" id="countdown">Loading...</span>  
+    <span class="mi">Affordable Housing</span>
+    <span class="mi">Universal Childcare</span>
+    <span class="mi">Small Business Revival</span>
+    <span class="mi">Safer Streets</span>
+    <span class="mi">Rat FREE</span>
+    <span class="mi">Neighborhood Solution Center</span>
+    <span class="mi">Rank Jackie as Your Number ONE Choice</span>    
+    <span class="mi">For a Ward 1 We can all afford</span>
+    <span class="mi" id="countdown">Loading...</span>  
+    <span class="mi">Affordable Housing</span>
+    <span class="mi">Universal Childcare</span>
+    <span class="mi">Small Business Revival</span>
+    <span class="mi">Safer Streets</span>
+    <span class="mi">Rat FREE</span>
+    <span class="mi">Neighborhood Solution Center</span>
+  </div>
+</div>
+
+<!-- STORY -->
+<section id="story">
+  <div class="story-split">
+    <div class="story-photo">
+      <div class="story-photo-bg"></div>
+      <div class="story-year-badge">
+        <span class="yr">1990</span>
+        <span class="yr-lbl">Arrived in Ward 1</span>
+      </div>
+    </div>
+    <div class="story-copy reveal">
+      <div class="section-label">Meet Jackie</div>
+      <h2>From <em>Refugee</em><br>to Ward 1<br><em>Warrior.</em></h2>
+
+      <!--
+      <div class="video-section">
+        <div class="video-wrap">
+          <iframe 
+            src="https://www.youtube.com/embed/E7b7SKmFeVA" 
+            title="Jackie Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>  -->
+      
+      <div class="video-embed" data-video-id="E7b7SKmFeVA">
+        <button class="video-cover" type="button" aria-label="Play video">
+          <img
+            class="video-thumb"
+            src="https://img.youtube.com/vi/E7b7SKmFeVA/maxresdefault.jpg"
+            alt="Watch Jackie’s video">
+          <span class="video-overlay"></span>
+          <span class="video-play">▶</span>
+        </button>
+      </div>      
+
+      <p><strong>Jackie Reyes Yanes arrived in Washington, DC in 1990</strong> at just 12 years old, escaping civil war in El Salvador, landing in Mount Pleasant with nothing. She became a teen mother of 3.  She talks about issues she has lived. She found community at the Latin American Youth Center and let that experience set the direction of her life.</p>
+      <p><strong>Everything Jackie fights for, she has lived.</strong> Affordable housing isn't a policy paper to her, it's the story of her father buying a home on a dishwasher's wages. Universal childcare isn't a campaign promise, it's what she needed and didn't have.</p>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-yr">1990</div>
+          <h4>A New Beginning in Mount Pleasant</h4>
+          <p>Arrived in DC at 12 years old, fleeing El Salvador's civil war. Ward 1 became home.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-yr">Early 1990s</div>
+          <h4>Found Community at LAYC</h4>
+          <p>The Latin American Youth Center gave her resources, belonging, and a model for what community support could look like.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-yr">1990s–2005</div>
+          <h4>Rose Through Resilience</h4>
+          <p>Young mother. Survivor of homelessness. Her father bought their home on a dishwasher's salary. She built a career in public service, one neighbor at a time.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-yr">2005-Today</div>
+          <h4>FROM LIVED EXPERIENCE TO DELIVERED RESULTS</h4>
+          <p>20 years of service, Jackie turned her story into action across District government:</p>
+        </div>
+<!--  
+      </div>
+      <a href="#" 
+        class="btn-primary" 
+        onclick="openTestimonyModal(event, 'E7b7SKmFeVA')">
+        See Why She’s Running →
+      </a>
+    </div>
+  </div>-->
+</section>
+
+<!-- STORY
+<section id="story">
+  <div class="story-split">
+    <div class="story-photo">
+      <div class="story-photo-bg"></div>
+      <div class="story-year-badge">
+        <span class="yr">1990</span>
+        <span class="yr-lbl">Arrived in Ward 1</span>
+      </div>
+    </div>
+    <div class="story-copy reveal">
+      <div class="section-label">Meet Jackie</div>
+      <h2>From <em>Refugee</em><br>to Ward 1<br>Warrior.</h2>
+      <p>Jackie Reyes Yanes didn’t just study the issues, she lived them. And she delivered.</p>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-yr">1990</div>
+          <h4>A New Beginning in Mount Pleasant</h4>
+          <p>Arrived in Washington, DC at just 12 years old, fleeing civil war in El Salvador. Landed in Mount Pleasant with nothing — but found a community that would shape her life. She lived through the Mt. Pleasant riots — witnessing firsthand the consequences of injustice, lack of language access, and broken trust between government and community. That moment didn’t just shape her — it fueled her lifelong fight for equity and representation.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-yr">Early 1990s</div>
+          <h4>FOUND COMMUNITY. FOUND PURPOSE</h4>
+          <p>At the Latin American Youth Center and Mary’s Center, Jackie found more than services — she found belonging. Those spaces became her foundation and showed her what real community investment looks like.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-yr">1990s–2005</div>
+          <h4>RESILIENCE IN ACTION</h4>
+          <p>Young mother. Survivor of homelessness. Watched her father buy a home on a dishwasher’s wages — proving what’s possible in Ward 1.<br>This is why: Affordable housing is personal Childcare is survival.<br>Jackie didn’t wait for change — she started building it.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-yr">2005–2025</div>
+          <h4>FROM LIVED EXPERIENCE TO DELIVERED RESULTS</h4>
+          <p>Over 20 years of service, Jackie turned her story into action across District government:<br><br>Connected 20,000+ residents to critical services<br>Helped deliver $10M+ in rental assistance to families<br>Led the Mayor’s Office of Community Affairs (MOCA) — overseeing 14 community offices across all 8 wards<br>Strengthened outreach across communities, including through the Mayor’s Office on Caribbean Affairs (MOCA)<br>Championed inclusion and accessibility through the Mayor’s Office of Deaf, DeafBlind, and Hard of Hearing (MODDHH)<br>Expanded language access so no family is left behind<br>Helped grow Immigrant Justice Legal Services to protect immigrant families<br><br>Under her leadership, community engagement wasn’t talk — it was action.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-yr">NOW</div>
+          <h4>READY TO FIGHT FOR WARD 1</h4>
+          <p>Ward 1 doesn’t need someone learning on the job. It needs a Councilmember who has lived the struggle — and has delivered results.<br><br>Because when Jackie fights: She fights for housing you can afford. She fights for families who need support. She fights for accessible, responsive government for ALL.
+          <br><br>JACKIE REYES YANES: Rank Her Your Number One Choice for Ward 1.<br><br>The Time Is Now.</p>
+        </div>
+      </div>
+      <a href="#action" class="btn-primary" style="display:inline-block;margin-top:2rem">Jackie's BIO →</a>
+    </div>
+  </div> 
+  
+</section> -->
+
+<!-- STATS -->
+<div class="numbers">
+  <div class="numbers-inner">
+    <div class="n-item"><span class="n-num">$43M+</span><span class="n-lbl">Emergency Immigrant Support Fund created</span></div>
+    <div class="n-item"><span class="n-num">$12M+</span><span class="n-lbl">In rental relief secured for DC residents</span></div>
+    <div class="n-item"><span class="n-num">$3.5M</span><span class="n-lbl">Immigrant Justice Grant, grown from $400K</span></div>
+    <div class="n-item"><span class="n-num">$300M+</span><span class="n-lbl">Generated in economic impact through 2025 World Pride</span></div>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="wrap">
+    <div class="ach-head reveal">
+      <div class="section-label">Government Track Record</div>
+      <h2>Getting Things Done.<br><em>Jackie Delivers.</em></h2>
+      <p>Before running for Council, Jackie built a 20+ years career in DC government getting things done for real people, securing millions in funding, protecting families from displacement, and opening doors for immigrants and young people who had none. Jackie wants to create opportunities for all Ward 1 neighbors.</p>
+    </div>
+    <div class="ach-grid">
+
+      <div class="ach-card reveal">
+        <div class="ach-top">
+          <div class="ach-num">01</div>
+          <div class="ach-cat">IMMIGRATION</div>
+        </div>
+        <div class="ach-impact">Protecting Families from I.C.E.</div>
+        <div class="ach-title">Immigrant Justice Grant</div>
+        <p class="ach-body">Jackie created the <strong>Immigrant Justice Legal Services Grant</strong>, providing free immigration legal representation to DC's immigrant community. She helped grow it from an initial <strong>$400,000</strong> into a <strong>$3.5 million coalition fund</strong>, giving thousands of DC immigrants access to attorneys who can fight for their right to stay.</p>
+      </div>
+
+      <div class="ach-card reveal">
+        <div class="ach-top">
+          <div class="ach-num">02</div>
+          <div class="ach-cat">HOUSING</div>
+        </div>
+        <div class="ach-impact">Families Saved. Community Preserved.</div>
+        <div class="ach-title">Monseñor Romero Apartments, Saved After Fire (2008)</div>
+        <p class="ach-body">When fire destroyed the Monseñor Romero Apartments, more than 150 residents faced the very real threat of permanent displacement. Jackie stepped in, <strong>fought for the victims</strong>, and helped them form a housing cooperative, giving the families legal ownership and control of their own building so they could <strong>continue living in their community</strong>, not lose it.</p>
+        <a href="#" class="btn-testimony" onclick="openTestimonyModal(event, 'uv_tD1hcj2Q')">View Testimony →</a>
+      </div>
+
+      <div class="ach-card reveal">
+        <div class="ach-top">
+          <div class="ach-num">03</div>
+          <div class="ach-cat">GOVERNMENT SERVICES</div>
+        </div>
+        <div class="ach-impact">$12 Million+</div>
+        <div class="ach-title">Emergency Rental Relief for DC Residents</div>
+        <p class="ach-body">During the housing crisis, Jackie helped <strong>thousands of DC residents</strong> navigate the city's emergency rental assistance programs, directly facilitating more than <strong>$12 million in financial support</strong> for families behind on rent, preventing evictions and keeping people housed when they had nowhere else to turn.</p>
+      </div>
+
+      <div class="ach-card reveal">
+        <div class="ach-top">
+          <div class="ach-num">04</div>
+          <div class="ach-cat">INCLUSION</div>
+        </div>
+        <div class="ach-impact">Language Access Expanded</div>
+        <div class="ach-title">City Services in Your Language</div>
+        <p class="ach-body">Jackie expanded <strong>language access</strong> across DC's constituent services agencies, specifically within the Mayor's Office of Community Affairs (MOCA), ensuring that residents who speak Spanish and other languages could <strong>access the same city services</strong> and receive the same quality of help as English-speaking residents. No one left behind because of language.</p>
+      </div>
+
+      <div class="ach-card reveal">
+        <div class="ach-top">
+          <div class="ach-num">05</div>
+          <div class="ach-cat">WORKFORCE</div>
+        </div>
+        <div class="ach-impact">Youth Employment Created</div>
+        <div class="ach-title">Summer Youth Employment Program for Immigrants</div>
+        <p class="ach-body">Jackie <strong>created DC's Summer Youth Employment Program for recently arrived immigrant youth</strong>, opening the door for young newcomers to <strong>earn income, build work experience, and participate in the same opportunities</strong> as their DC peers, giving them a real foothold in their new city from day one.</p>
+      </div>
+
+      <div class="ach-card reveal">
+        <div class="ach-top">
+          <div class="ach-num">06</div>
+          <div class="ach-cat">ECONOMIC DEVELOPMENT</div>
+        </div>
+        <div class="ach-impact">MORE 300 Million</div>
+        <div class="ach-title">Through the Mayor's Office on LGBTQ+</div>
+        <p class="ach-body">Coordinated through the Mayor’s Office on LGBTQ+ and Capital Pride Alliance the celebration of WorldPride DC 2025 generating approximately <strong>$310.7 million</strong> in total economic impact and drawing 1.2 million attendees.</p>
+      </div>
+ 
+      <div class="ach-card reveal" style="background:rgba(212,160,23,.04);border:1px solid rgba(212,160,23,.15);grid-column:1/-1">
+        <div class="ach-num" style="color:rgba(212,160,23,.25)">★</div>
+        <div class="ach-impact" style="font-size:1.2rem;color:var(--warm)">Real Equity. Real Inclusion</div>
+        <div class="ach-title" style="color:rgba(244,239,230,.5);margin-top:.8rem">Jackie Reyes Yanes · Ward 1 Warrior</div>
+        <p class="ach-body" style="margin-top:.8rem;max-width:600px">“Exclusion by omission is worse than intentional exclusion, because it means you never even thought about the people you were leaving behind.”</p>
+        <a href="#action" class="btn-primary" style="display:inline-block;margin-top:1.5rem;font-size:.75rem">Become a Warrior Volunteer →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section id="platform" class="section">
+  <div class="wrap">
+    <div class="platform-intro reveal">
+      <div>
+        <div class="section-label">The Platform</div>
+        <h2>One plan.<br><em>Achievable<br>promises.</em></h2>
+      </div>
+      <p>These are commitments built from 20 years of conversations in every neighborhood in Ward 1. Jackie will get job done!.</p>
+    </div>
+
+    <div class="ptabs" role="tablist">
+      <button class="ptab on" onclick="switchTab('barrio',this)">🌮 Small Business Revival</button>
+      <button class="ptab" onclick="switchTab('nsc',this)">🤝 Solution Center</button>
+      <button class="ptab" onclick="switchTab('housing',this)">🏘 Affordable Housing</button>
+      <button class="ptab" onclick="switchTab('childcare',this)">👶 Universal Childcare</button>
+      <button class="ptab" onclick="switchTab('safety',this)">🌳 Community Safety</button>
+    </div>
+
+    <!-- SMALL BUSINESS -->
+    <div id="tab-barrio" class="ppanel">
+      <div class="policy-layout">
+        <div class="pl-left">
+          <div class="p-num">01</div>
+          <h3><em>Small Business Revival</em> &amp; Cultural and Commercial Corridor Destinations.</h3>
+          <p class="p-body">Mt. Pleasant and Columbia Heights are the cultural heartbeat of DC's Latino community. Rising commercial rents and lack of capital are forcing out the bodegas, taquerías, and family shops that define our barrio. Jackie's Small Business Activation Program puts real money, up to $50,000 in direct grants, behind every Ward 1 business that needs it.</p>
+          <blockquote>
+            <p>"A strong Ward 1 depends on a strong tax base, and that starts with small businesses. I am the only candidate focused on growing our economy without raising taxes, by investing in our local entrepreneurs."</p>
+            <cite>— Jackie Reyes Yanes</cite>
+          </blockquote>
+        </div>
+        <div class="pl-right">
+          <ul class="p-items">
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Small Business Activation Grants, $5,000 to $50,000</h4><p>A dedicated Ward 1 grant fund, <strong>$5,000 to $50,000</strong>, for any Ward 1 small business, for equipment, renovations, inventory, hiring, and expansion. No bureaucratic maze. Real capital, fast decisions, multilingual.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Cultural and Commercial Corridor Destinations in Ward 1</h4><p>Officially create, designate and protect <strong>Cultural and Commercial Corridor Destinations</strong> highlithing Ward 1's diverse communities and vibrancy.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Festival Activation, Culture on Every Corner</h4><p>Year-round neighborhood activations, Día de los Muertos, book festivals, live music, night markets, movie nights. Culture drives foot traffic, foot traffic keeps businesses alive.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>One-Stop Business Solutions HUB</h4><p>A navigators assisting entrepreneurs and business owners cutting business opening time and connecting them financial resources.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Small Business First Right of Purchase</h4><p>Activate Vacant Storefronts through a Small Business First Right of Purchase to avoid small business owners being displaced.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- NSC -->
+    <div id="tab-nsc" class="ppanel">
+      <div class="policy-layout">
+        <div class="pl-left">
+          <div class="p-num">02</div>
+          <h3>The Neighborhood <em>Solution Center —</em> Your Ward, Served.</h3>
+          <p class="p-body">The NSC isn't a hotline or a website. It's a ward-based hub where seniors and young people work side by side as paid Community Ambassadors, answering phones, walking Ward 1 streets, delivering direct support to residents. Real people. Real help.</p>
+          <blockquote>
+            <p>"I want a grandmother from LeDroit Park and a 19-year-old from Columbia Heights both working for their community, and both getting a paycheck for it. That's the NSC."</p>
+            <cite>— Jackie Reyes Yanes</cite>
+          </blockquote>
+        </div>
+        <div class="pl-right">
+          <ul class="p-items">
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Community Ambassador Corps</h4><p>20 part-time paid Ambassadors, 10 seniors (55+) and 10 young people (18–24). They staff the phone line, walk Ward 1 corridors, and connect residents to city services. Starting wage: $18/hour.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Street-Level Support, On Your Block</h4><p>Ambassadors walk assigned Ward 1 neighborhoods weekly, checking on elderly residents, flagging broken lights, potholes, and trash, distributing resources in English and Spanish.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Constituent Hotline, 72-Hour Response Guarantee</h4><p>Call 202-724-8181. A real person answers who knows your neighborhood. Every case opened, tracked, resolved. Monthly public dashboards track resolution rates. No runaround.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Intergenerational Mentorship Built In</h4><p>Seniors and youth Ambassadors are paired together, real mentorship happening through the work itself. Older residents bring neighborhood history; young people bring energy and tech.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Monthly Neighborhood Town Halls</h4><p>In-person meetings in Adams Morgan, Columbia Heights, Mount Pleasant, LeDroit Park, and Park View every month, in English and Spanish. Jackie shows up. No exceptions.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- HOUSING -->
+    <div id="tab-housing" class="ppanel on">
+      <div class="policy-layout">
+        <div class="pl-left">
+          <div class="p-num">03</div>
+          <h3>Keep Ward 1 <em>Affordable</em> for Everyone.</h3>
+          <p class="p-body">Too many of our neighbors, the teachers, nurses, restaurant workers, and artists who make Ward 1 who it is, are being pushed out. Jackie's father bought their home in the 1990s working as a dishwasher. That door must stay open for the next generation.</p>
+          <blockquote>
+            <p>"My father bought this home on a dishwasher's wages. That dream should still be possible. I'll fight every single day to make sure it is."</p>
+            <cite>— Jackie Reyes Yanes</cite>
+          </blockquote>
+          <div class="p-photo"><img src="/images/jackie-reyes-yanes-affordable-housing.jpg" alt="Jackie on housing"></div>
+        </div>
+        <div class="pl-right">
+          <ul class="p-items">
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Expand Homeownership via HPAP</h4><p>Raise DC's Home Purchase Assistance Program fund to <strong>$30 million</strong> and lift the individual income limit to <strong>$150,000</strong>, opening the door for teachers, nurses, first responders, and working professionals who earn too much to qualify but too little to buy.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Strengthen Rent Control</h4><p>Close the loopholes landlords use to skip DC's rent stabilization rules. No more renovictions. No more bad-faith vacancy filings. Your rent is your rent.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Anti-Displacement Task Force, With Real Tools</h4><p>Four concrete actions: (1) an <strong>Inspection Request Team</strong> responding within 72 hours; (2) a <strong>Vacant Property Partnership Program</strong> converting empty buildings into affordable units; (3) <strong>expedited permitting</strong> so housing gets built instead of stuck; (4) block-by-block displacement risk tracking with direct intervention for families at risk.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>More Affordable Units, Now</h4><p>All new Ward 1 developments above 10 units must include at least 20% affordable at 60% AMI or below. No waivers. No buyouts.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHILDCARE -->
+    <div id="tab-childcare" class="ppanel">
+      <div class="policy-layout">
+        <div class="pl-left">
+          <div class="p-num">04</div>
+          <h3>No Parent Chooses Between <em>Career</em> and <em>Caregiving.</em></h3>
+          <p class="p-body">Childcare in DC costs over $2,500 a month, more than most mortgages. Ward 1 families are making impossible choices every single day. Jackie will end that, because a city that doesn't invest in its youngest residents has given up on its future.</p>
+          <blockquote>
+            <p>"Childcare shouldn't cost $2,500 a month. You're working hard for your family. This city should work just as hard for you."</p>
+            <cite>— Jackie Reyes Yanes</cite>
+          </blockquote>
+          <div class="p-photo"><img src="/images/jackie-reyes-yanes-childcare.jpg" alt="Jackie on childcare"></div>
+        </div>
+        <div class="pl-right">
+          <ul class="p-items">
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Universal Pre-K 3 and Pre-K 4</h4><p>Free, universal Pre-K 3 and Pre-K 4 for every Ward 1 child, regardless of family income. No waitlists. No exceptions. Every 3- and 4-year-old gets a high-quality seat before kindergarten.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Fair Pay for Early Childhood Educators</h4><p>Salary supplements bringing all early childhood educators to at least $22/hour, with benefits and professional development. The people shaping our children's first years deserve professional pay, not poverty wages.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Build New Childcare Facilities, City &amp; Private Spaces</h4><p>Use city-owned vacant properties and underutilized privately-owned spaces, church halls, community centers, commercial ground floors, to build and renovate childcare facilities across Ward 1. More seats, lower costs, closer to home.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Subsidized Infant &amp; Toddler Care</h4><p>Expand subsidy eligibility to families earning up to 150% AMI, covering working Ward 1 families who earn too much to qualify but too little to pay $2,500 a month.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY -->
+    <div id="tab-safety" class="ppanel">
+      <div class="policy-layout">
+        <div class="pl-left">
+          <div class="p-num">05</div>
+          <h3>Safe Streets Start with <em>Strong Communities.</em></h3>
+          <p class="p-body">Real safety is kids outside after dark. Seniors at the bus stop without fear. Neighbors who know each other's names. Jackie's approach: smart infrastructure, activated public spaces, and community-driven programs that address root causes, not just symptoms.</p>
+          <blockquote>
+            <p>"A well-lit block with neighbors who look out for each other is safer than any patrol car. We reclaim our streets by investing in them, and in each other."</p>
+            <cite>— Jackie Reyes Yanes</cite>
+          </blockquote>
+        </div>
+        <div class="pl-right">
+          <ul class="p-items">
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Light Every Block in Ward 1</h4><p>Full audit and upgrade of every street light in Ward 1, prioritizing alleys, transit stops, and park paths most frequently reported as unsafe. Bright streets are safe streets. Year 1 commitment.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Activate Public Spaces</h4><p>Year-round programming in Ward 1 parks and plazas, outdoor movies, weekend markets, sports leagues, senior fitness classes. Public spaces belong to the community, not to fear.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Youth Employment = Community Safety</h4><p>Guaranteed summer and after-school jobs for every Ward 1 young person who wants one. A teen with a job, a paycheck, and a mentor is the most effective crime prevention strategy we have.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+<!-- PHOTO ROW -->
+<div class="photo-row">
+  <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-columbia-heights.jpg" alt="Jackie in Ward 1"></div>
+  <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-reading2.jpg" alt="Jackie in community"></div>
+  <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-meet-and-greet.jpg" alt="Jackie with neighbors"></div>
+  <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-cleanup.jpg" alt="Jackie on the trail"></div>
+</div>
+
+<!-- ACTION -->
+<section id="action" class="section">
+  <div class="wrap">
+    <div class="action-wrap">
+      <div class="action-left reveal">
+        <div class="section-label">Get Involved</div>
+        <h2>This Campaign<br>Runs on <em>You.</em></h2>
+        <p>Door-knocking. Phone banking. Yard signs. Showing up June 16. Every hour you give is a vote for the Ward 1 we deserve. Jackie's campaign is neighbor-powered, that's the only way it works.</p>
+        <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" class="btn-primary" style="display:inline-block;margin-bottom:1.5rem">★ &nbsp;Donate via ActBlue</a>
+        <div class="election-box">
+          <div class="e-kicker">Primary Election Day</div>
+          <div class="e-date">June 16, 2025</div>
+          <div class="e-sub">DC Democratic Primary · Ward 1 DC Council · Polls open 7 AM – 8 PM</div>
+        </div>
+      </div>
+      <form class="form-box reveal" id="join-form" name="join-the-movement" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="join-the-movement">
+        <h3>Join the Movement</h3>
+        <p>Sign up to volunteer, get updates, or both.</p>
+        <div class="f-row">
+          <div class="f-field"><label>First Name</label><input type="text" name="first_name" placeholder="Maria"></div>
+          <div class="f-field"><label>Last Name</label><input type="text" name="last_name" placeholder="Garcia"></div>
+        </div>
+        <div class="f-field"><label>Email Address</label><input type="email" name="email" placeholder="maria@email.com"></div>
+        <div class="f-field"><label>Phone Number</label><input type="tel" name="phone" placeholder="(202) 555-1234"></div>
+        <div class="f-field">
+          <label>I Want To</label>
+          <select name="interest">
+            <option value="">Select a role...</option>
+            <option>Volunteer — Door Knocking</option>
+            <option>Volunteer — Phone Banking</option>
+            <option>Host a Yard Sign</option>
+            <option>Host a Meet & Greet</option>
+            <option>Clean Up</option>
+            <option>Stay Informed</option>
+            <option>Donate</option>
+          </select>
+        </div>
+        <button class="f-submit" id="join-submit-btn">★ &nbsp;Count Me In</button>
+        <div id="form-message" style="display:none; margin-top:1rem;"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="events-head">
+      <div>
+        <div class="section-label">Upcoming Events</div>
+        <h2>Find Jackie in<br>the <em>Neighborhood.</em></h2>
+      </div>
+      <a href="#action" class="btn-ghost">Get Event Alerts →</a>
+    </div>
+    <div class="events-list" id="events-list"></div>
+  </div>
+</section>
+
+<!-- NEWS CLIPS -->
+<section id="news">
+  <div class="wrap">
+    <div class="news-head">
+      <div>
+        <div class="section-label">In the News</div>
+        <h2>Jackie in the <em>Press.</em></h2>
+      </div>
+      <a href="/news.html" target="_blank" class="btn-ghost">All Coverage →</a>
+    </div>
+    <div class="press-grid" id="news-list"></div>
+      <a href="/news.html" class="btn-ghost" style="margin-top:1.5rem; display:inline-block;">See All Press Coverage</a>
+    </div>
+  </div>
+</section>
+
+<!-- endorsements -->
+<section id="endorsements" class="section">
+  <div class="wrap">
+    <div class="news-head">
+      <div>
+        <div class="section-label">Endorsements</div>
+        <h2>Support from<br><em>trusted voices.</em></h2>
+      </div>
+      <a href="/endorsements.html" class="btn-ghost">See All Endorsements</a>
+    </div>
+
+    <div class="endorse-grid" id="endorse-list"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie logo" style="height:60px;object-fit:contain">
+      <div class="footer-col"><h5>FOLLOW US IN SOCIAL MEDIA</h5></div>
+        <div class="social-row" style="margin-top:1rem">
+          <a href="https://www.facebook.com/profile.php?id=61581923504141" target="_blank" class="soc" title="Facebook">FB</a>
+          <a href="https://twitter.com/warriorforward1" target="_blank" class="soc" title="Twitter / X">TW</a>
+          <a href="https://www.instagram.com/warriorforward1" target="_blank" class="soc" title="Instagram">IG</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <ul>
+          <li><a href="#platform" onclick="switchTab('housing',document.querySelector('.ptab'))">Affordable Housing</a></li>
+          <li><a href="#platform" onclick="switchTab('childcare',document.querySelectorAll('.ptab')[1])">Universal Childcare</a></li>
+          <li><a href="#platform" onclick="switchTab('barrio',document.querySelectorAll('.ptab')[2])">Small Business Activation</a></li>
+          <li><a href="#platform" onclick="switchTab('safety',document.querySelectorAll('.ptab')[3])">Community Safety</a></li>
+          <li><a href="#platform" onclick="switchTab('nsc',document.querySelectorAll('.ptab')[4])">Solution Center</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get Involved</h5>
+        <ul>
+          <li><a href="#action">Volunteer</a></li>
+          <li><a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank">Donate via ActBlue</a></li>
+          <li><a href="#events">Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>About</h5>
+        <ul>
+          <li><a href="#story">Jackie's Story</a></li>
+          <li><a href="#achievements">Track Record</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#ward">Our Ward</a></li>
+          <li><a href="https://www.jackieforward1.com">jackieforward1.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">PAID BY JACKIE THE WARRIOR FOR WARD 1. MARCO A. GONZALEZ, TREASURER. 1319 Monroe Street NW, Washington DC 20010. A copy of our report is on file with the DC Office of Campaign Finance.</div>
+      <div class="footer-legal">★ Vote JACKIE, Your Number ONE Choice, June 16</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 50));
+
+// Mobile menu
+function toggleMenu() {
+  const h = document.getElementById('ham');
+  const m = document.getElementById('mnav');
+  h.classList.toggle('open');
+  m.classList.toggle('open');
+}
+
+// Platform tabs
+function switchTab(id, btn) {
+  document.querySelectorAll('.ppanel').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.ptab').forEach(t => t.classList.remove('on'));
+  document.getElementById('tab-' + id).classList.add('on');
+  if (btn && btn.classList) btn.classList.add('on');
+}
+
+// Reveal on scroll
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('shown'); ro.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// Stagger ward cells
+document.querySelectorAll('.ward-grid .reveal').forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.07) + 's';
+});
+</script>
+
+<!-- ============================= -->
+<!-- JOIN THE MOVEMENT FORM LOGIC -->
+<!-- Handles:
+     - Form submission
+     - Prevent page reload
+     - Show success/error message -->
+<!-- ============================= -->
+<script>
+const form = document.getElementById("join-form");
+const message = document.getElementById("form-message");
+const button = document.getElementById("join-submit-btn");
+
+if (form) {
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    button.innerHTML = "Sending...";
+    button.disabled = true;
+
+    const data = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString()
+    })
+    .then(() => {
+      message.style.display = "block";
+      message.innerHTML = "Thank you for joining the movement! We’ll be in touch soon.";
+      message.style.color = "#d4a017";
+      form.reset();
+    })
+    .catch(() => {
+      message.style.display = "block";
+      message.innerHTML = "Something went wrong. Please try again.";
+      message.style.color = "red";
+    })
+    .finally(() => {
+      button.innerHTML = "★ &nbsp;Count Me In";
+      button.disabled = false;
+    });
+  });
+}
+</script>
+
+<!-- 
+EVENTS SCRIPT
+
+Loads events from /data/events.json, filters out past events,
+sorts upcoming events by date, and renders them dynamically
+into the #events-list container.
+-->
+<script>
+
+    function escapeHtml(str = '') {
+      return String(str)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function normalizeFeatured(value) {
+      return value === true || value === 'true' || value === 'True' || value === 1 || value === '1';
+    }
+
+    function videoEmbedUrl(url = '') {
+      if (!url) return '';
+      if (url.includes('youtube.com/watch?v=')) return url.replace('watch?v=', 'embed/');
+      if (url.includes('youtu.be/')) {
+        const id = url.split('youtu.be/')[1].split('?')[0];
+        return `https://www.youtube.com/embed/${id}`;
+      }
+      if (url.includes('vimeo.com/')) {
+        const id = url.split('vimeo.com/')[1].split('?')[0];
+        return `https://player.vimeo.com/video/${id}`;
+      }
+      return url;
+    }
+
+function getYouTubeId(url = '') {
+  if (!url) return '';
+
+  try {
+    const parsed = new URL(url, window.location.origin);
+    const host = parsed.hostname.replace('www.', '');
+
+    // youtu.be/ID
+    if (host === 'youtu.be') {
+      return parsed.pathname.split('/').filter(Boolean)[0] || '';
+    }
+
+    // youtube.com/*
+    if (host.includes('youtube.com')) {
+      // watch?v=ID
+      if (parsed.searchParams.get('v')) {
+        return parsed.searchParams.get('v');
+      }
+
+      const parts = parsed.pathname.split('/').filter(Boolean);
+
+      // /shorts/ID
+      const shortsIndex = parts.indexOf('shorts');
+      if (shortsIndex !== -1 && parts[shortsIndex + 1]) {
+        return parts[shortsIndex + 1];
+      }
+
+      // /embed/ID
+      const embedIndex = parts.indexOf('embed');
+      if (embedIndex !== -1 && parts[embedIndex + 1]) {
+        return parts[embedIndex + 1];
+      }
+
+      // /live/ID
+      const liveIndex = parts.indexOf('live');
+      if (liveIndex !== -1 && parts[liveIndex + 1]) {
+        return parts[liveIndex + 1];
+      }
+    }
+  } catch (e) {
+    // fallback regex
+    const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([^?&#/]+)/i);
+    return match ? match[1] : '';
+  }
+
+  return '';
+}
+
+function youtubeThumbnail(url = '') {
+  const id = getYouTubeId(url);
+  return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+}
+
+function mediaImage(item) {
+  return youtubeThumbnail(item.video_url || item.url || '') 
+    || item.card_image 
+    || item.image 
+    || '';
+}
+
+function categoryLabel(category) {
+  const labels = {
+    "meet-greet": "Meet & Greet",
+    "cleanup": "Clean Up",
+    "canvassing": "Canvassing",
+    "townhall": "Town Hall",
+    "fundraiser": "Fundraiser",
+    "community": "Community Event"
+  };
+  return labels[category] || category || "";
+}
+
+async function loadUpcomingEvents() {
+  const container = document.getElementById("events-list");
+  if (!container) return;
+
+  try {
+    const response = await fetch("/data/events.json", { cache: "no-store" });
+    const data = await response.json();
+    const items = Array.isArray(data.items) ? data.items : [];
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const upcoming = items
+      .filter(item => item.date)
+      .filter(item => {
+        const eventDate = new Date(item.date + "T00:00:00");
+        return eventDate >= today;
+      })
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    if (upcoming.length === 0) {
+      container.innerHTML = `
+        <div class="event-card">
+          <div class="event-card-body" style="padding:1.2rem;">
+            <h4>No upcoming events right now</h4>
+            <p>Please check back soon for campaign events and volunteer opportunities.</p>
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = upcoming.map(item => {
+      const eventDate = new Date(item.date + "T00:00:00");
+      const month = eventDate.toLocaleString("en-US", { month: "short" }).toUpperCase();
+      const day = eventDate.getDate();
+
+      const imageHtml = item.image
+        ? `
+          <div class="event-card-image">
+            <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title_en || 'Event image')}">
+          </div>
+        `
+        : "";
+
+      const rsvpHtml = item.rsvp
+        ? `
+          <a class="event-rsvp-btn" href="${escapeHtml(item.rsvp)}" target="_blank" rel="noopener noreferrer">
+            RSVP
+          </a>
+        `
+        : "";
+
+      const featuredHtml = item.featured
+        ? `<span class="event-featured-badge">Featured</span>`
+        : "";
+
+      return `
+        <div class="event-card ${item.featured ? 'featured' : ''}">
+          ${imageHtml}
+          <div class="event-card-body">
+            <div class="event-date-badge">
+              <span class="event-month">${month}</span>
+              <span class="event-day">${day}</span>
+            </div>
+
+            <div class="event-meta">
+              <span class="event-category">${escapeHtml(categoryLabel(item.category))}</span>
+              ${featuredHtml}
+            </div>
+
+            <h4>${escapeHtml(item.title_en || '')}</h4>
+
+            <p class="event-time-address">
+              ${escapeHtml(item.time || '')}${item.time ? ' · ' : ''}${escapeHtml(item.address_en || '')}
+            </p>
+
+            <p class="event-description">${escapeHtml(item.description_en || '')}</p>
+
+            ${rsvpHtml}
+          </div>
+        </div>
+      `;
+    }).join("");
+  } catch (error) {
+    console.error("Error loading events:", error);
+    container.innerHTML = `
+      <div class="event-card">
+        <div class="event-card-body" style="padding:1.2rem;">
+          <h4>Unable to load events</h4>
+          <p>Please try again later.</p>
+        </div>
+      </div>
+    `;
+  }
+}
+
+loadUpcomingEvents();
+</script>
+
+<!-- 
+NEWS SCRIPT
+
+Loads news from /data/news.json.
+-->
+
+<script>
+  function escapeHtml(str = '') {
+    return String(str)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#39;');
+  }
+
+  async function loadHomeNews() {
+    const container = document.getElementById("news-list");
+    if (!container) return;
+
+    try {
+      const response = await fetch("/data/news.json", { cache: "no-store" });
+      const data = await response.json();
+      const items = Array.isArray(data.items) ? data.items : [];
+
+      const sorted = [...items].sort((a, b) => new Date(b.date || "1900-01-01") - new Date(a.date || "1900-01-01"));
+      const featured = sorted.filter(item => normalizeFeatured(item.featured));
+      const nonFeatured = sorted.filter(item => !normalizeFeatured(item.featured));
+      const selected = [...featured, ...nonFeatured].slice(0, 5);
+
+      const cards = selected.map(item => {
+        const image = mediaImage(item);
+        const title = item.title_en || item.title_es || item.title || "";
+        const summary = item.summary_en || item.summary_es || item.summary || "";
+        const target = item.url || item.video_url || "#";
+
+        return `
+          <article class="press-card">
+            <a class="press-card-link" href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer">
+              <div class="press-card-image-wrap">
+                ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(title)}" class="press-card-image">` : `<div class="press-card-placeholder">${item.type === "video" ? "Video" : "No Image"}</div>`}
+              </div>
+              <div class="press-card-body">
+                <div class="press-card-meta">
+                  <span class="press-card-source">${escapeHtml(item.source || "")}</span>
+                  ${item.date ? `<span class="press-card-dot">•</span><span class="press-card-date">${escapeHtml(item.date)}</span>` : ""}
+                  ${item.language ? `<span class="press-card-dot">•</span><span class="press-card-language">${escapeHtml(item.language)}</span>` : ""}
+                </div>
+                <h3>${escapeHtml(title)}</h3>
+                ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
+                <span class="press-card-read">${item.type === "video" ? "Watch Story →" : "Read Coverage →"}</span>
+              </div>
+            </a>
+          </article>
+        `;
+      }).join("");
+
+      const ctaCard = `
+        <article class="press-card press-card-cta">
+          <div class="press-card-cta-inner">
+            <div class="press-card-cta-star">★</div>
+            <h3>See All Press Coverage</h3>
+            <p>Follow Jackie’s campaign coverage across DC media, community newsletters, and Spanish-language press.</p>
+            <a href="/news.html" class="press-card-cta-link">Visit Newsroom →</a>
+          </div>
+        </article>
+      `;
+
+      container.innerHTML = cards + ctaCard;
+    } catch (error) {
+      console.error("Error loading home news:", error);
+      container.innerHTML = `<p>Unable to load press coverage right now.</p>`;
+    }
+  }
+
+  loadHomeNews();
+</script>
+
+<!-- 
+ENDORSEMENTS
+Loads ENDORSEMENTS from /data/endorsement.json.
+-->
+<script>
+  async function loadHomeEndorsements() {
+    const container = document.getElementById("endorse-list");
+    if (!container) return;
+
+    try {
+      const response = await fetch("/data/endorsements.json", { cache: "no-store" });
+      const data = await response.json();
+      const items = Array.isArray(data.items) ? data.items : [];
+
+      const sorted = [...items].sort((a, b) => new Date(b.date || "1900-01-01") - new Date(a.date || "1900-01-01"));
+      const featured = sorted.filter(item => normalizeFeatured(item.featured));
+      const nonFeatured = sorted.filter(item => !normalizeFeatured(item.featured));
+      const selected = [...featured, ...nonFeatured].slice(0, 5);
+
+      const cards = selected.map(item => {
+        const image = mediaImage(item);
+        const title = item.title_en || item.title_es || item.title || "";
+        const summary = item.summary_en || item.summary_es || item.summary || "";
+        const target = item.url || item.video_url || "#";
+        const media = image
+          ? `<div class="endorse-media"><img src="${escapeHtml(image)}" alt="${escapeHtml(title)}"></div>`
+          : `<div class="endorse-media endorse-placeholder">${item.type === "video" ? "Video" : "No Media"}</div>`;
+
+        return `
+          <article class="endorse-card">
+            ${media}
+            <div class="endorse-body">
+              <div class="endorse-meta">
+                ${item.source ? `<span class="endorse-pill endorse-source">${escapeHtml(item.source)}</span>` : ""}
+                ${item.date ? `<span class="endorse-pill endorse-date">${escapeHtml(item.date)}</span>` : ""}
+                ${item.language ? `<span class="endorse-pill endorse-language">${escapeHtml(item.language)}</span>` : ""}
+              </div>
+              <h3>${escapeHtml(title)}</h3>
+              ${item.endorser ? `<div class="endorser-name">${escapeHtml(item.endorser)}</div>` : ""}
+              ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
+              ${target !== "#" ? `<a href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer" class="endorse-link">${item.type === "video" ? "Watch Endorsement →" : "Learn More →"}</a>` : ""}
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      const ctaCard = `
+        <article class="endorse-card endorse-card-cta">
+          <div class="endorse-card-cta-inner">
+            <div class="endorse-card-cta-star">★</div>
+            <h3>See All Endorsements</h3>
+            <p>Explore the growing coalition of community leaders, neighbors, and advocates supporting Jackie.</p>
+            <a href="/endorsements.html" class="endorse-card-cta-link">Visit Endorsements →</a>
+          </div>
+        </article>
+      `;
+
+      container.innerHTML = cards + ctaCard;
+    } catch (error) {
+      console.error("Error loading endorsements:", error);
+      container.innerHTML = "<p>Unable to load endorsements right now.</p>";
+    }
+  }
+
+  loadHomeEndorsements();
+</script>
+
+<!-- contador -->
+<script>
+  function updateCountdown() {
+    const today = new Date();
+    const target = new Date(today.getFullYear(), 5, 16); // Junio = mes 5
+
+    // Si ya pasó este año, usa el próximo
+    if (today > target) {
+      target.setFullYear(target.getFullYear() + 1);
+    }
+
+    const diff = target - today;
+    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+
+    const el = document.getElementById("countdown");
+    if (el) {
+      el.textContent = "VOTE JACKIE " + days + " DAYS UNTIL ELECTION - JUNE 16";
+    }
+  }
+
+  updateCountdown();
+</script>
+
+<!-- modal video -->
+<script>
+  function openTestimonyModal(event, videoId) {
+    event.preventDefault();
+
+    const modal = document.getElementById('testimonyModal');
+    const video = document.getElementById('testimonyVideo');
+
+    video.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+
+    modal.classList.add('open');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeTestimonyModal() {
+    const modal = document.getElementById('testimonyModal');
+    const video = document.getElementById('testimonyVideo');
+
+    modal.classList.remove('open');
+    video.src = '';
+    document.body.classList.remove('modal-open');
+  }
+</script>
+
+
+<!-- modal for view testimony -->
+<div class="testimony-modal" id="testimonyModal" aria-hidden="true">
+  <div class="testimony-modal-backdrop" onclick="closeTestimonyModal()"></div>
+
+  <div class="testimony-modal-content" role="dialog" aria-modal="true" aria-label="Testimony video">
+    <button class="testimony-close" onclick="closeTestimonyModal()" aria-label="Close video">×</button>
+
+    <div class="testimony-video-wrap">
+      <iframe
+        id="testimonyVideo"
+        src=""
+        title="Testimony video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- video con thumbnail y play encima -->
+<script>
+  document.querySelectorAll('.video-embed').forEach(function(wrapper){
+    const btn = wrapper.querySelector('.video-cover');
+    const videoId = wrapper.dataset.videoId;
+
+    if (!btn || !videoId) return;
+
+    btn.addEventListener('click', function(){
+      wrapper.innerHTML = `
+        <div class="video-frame-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      `;
+    });
+  });
+</script>
+
+</body>
+</html>
