@@ -1532,7 +1532,7 @@ body.modal-open{
   </div>
 </div>
 
-<!-- STORY 
+<!-- STORY -->
 <section id="story">
   <div class="story-split">
     <div class="story-photo">
@@ -1569,12 +1569,16 @@ body.modal-open{
           <p>30+ years, thousands of conversations, one conviction: Ward 1 needs a Councilmember who has actually lived what they're legislating.</p>
         </div>
       </div>
-      <a href="#action" class="btn-primary" style="display:inline-block;margin-top:2rem">Jackie's BIO →</a>
+      <a href="#" 
+        class="btn-primary" 
+        onclick="openTestimonyModal(event, 'E7b7SKmFeVA')">
+        See Why She’s Running →
+      </a>
     </div>
   </div>
-</section> -->
+</section>
 
-<!-- STORY -->
+<!-- STORY
 <section id="story">
   <div class="story-split">
     <div class="story-photo">
@@ -1618,9 +1622,9 @@ body.modal-open{
       </div>
       <a href="#action" class="btn-primary" style="display:inline-block;margin-top:2rem">Jackie's BIO →</a>
     </div>
-  </div>
+  </div> 
   
-</section>
+</section> -->
 
 <!-- STATS -->
 <div class="numbers">
@@ -1637,7 +1641,7 @@ body.modal-open{
   <div class="wrap">
     <div class="ach-head reveal">
       <div class="section-label">Government Track Record</div>
-      <h2>Gettings Things Done.<br><em>Jackie Delivers.</em></h2>
+      <h2>Getting Things Done.<br><em>Jackie Delivers.</em></h2>
       <p>Before running for Council, Jackie built a 20+ years career in DC government getting things done for real people, securing millions in funding, protecting families from displacement, and opening doors for immigrants and young people who had none. Jackie wants to create opportunities for all Ward 1 neighbors.</p>
     </div>
     <div class="ach-grid">
@@ -1702,13 +1706,13 @@ body.modal-open{
         <div class="ach-title">Through the Mayor's Office on LGBTQ+</div>
         <p class="ach-body">Coordinated through the Mayor’s Office on LGBTQ+ and Capital Pride Alliance the celebration of WorldPride DC 2025 generating approximately <strong>$310.7 million</strong> in total economic impact and drawing 1.2 million attendees.</p>
       </div>
-
+ 
       <div class="ach-card reveal" style="background:rgba(212,160,23,.04);border:1px solid rgba(212,160,23,.15);grid-column:1/-1">
         <div class="ach-num" style="color:rgba(212,160,23,.25)">★</div>
-        <div class="ach-impact" style="font-size:1.2rem;color:var(--warm)">This is what 30 years of showing up looks like.</div>
-        <div class="ach-title" style="color:rgba(244,239,230,.5);margin-top:.8rem">Jackie Reyes Yanes · Ward 1 · June 16</div>
-        <p class="ach-body" style="margin-top:.8rem;max-width:600px">Every one of these achievements happened because Jackie sat with people, understood what they needed, and refused to take no for an answer. That's what she'll do for Ward 1 from the DC Council.</p>
-        <a href="#action" class="btn-primary" style="display:inline-block;margin-top:1.5rem;font-size:.75rem">Vote June 16 →</a>
+        <div class="ach-impact" style="font-size:1.2rem;color:var(--warm)">Real Equity. Real Inclusion</div>
+        <div class="ach-title" style="color:rgba(244,239,230,.5);margin-top:.8rem">Jackie Reyes Yanes · Ward 1 Warrior</div>
+        <p class="ach-body" style="margin-top:.8rem;max-width:600px">“Exclusion by omission is worse than intentional exclusion, because it means you never even thought about the people you were leaving behind.”</p>
+        <a href="#action" class="btn-primary" style="display:inline-block;margin-top:1.5rem;font-size:.75rem">Become a Warrior Volunteer →</a>
       </div>
 
     </div>
@@ -1727,104 +1731,32 @@ body.modal-open{
     </div>
 
     <div class="ptabs" role="tablist">
-      <button class="ptab on" onclick="switchTab('housing',this)">🏘 Affordable Housing</button>
-      <button class="ptab" onclick="switchTab('childcare',this)">👶 Universal Childcare</button>
-      <button class="ptab" onclick="switchTab('barrio',this)">🌮 Small Business Activation</button>
-      <button class="ptab" onclick="switchTab('safety',this)">🌳 Community Safety</button>
+      <button class="ptab on" onclick="switchTab('barrio',this)">🌮 Small Business Revival</button>
       <button class="ptab" onclick="switchTab('nsc',this)">🤝 Solution Center</button>
+      <button class="ptab" onclick="switchTab('housing',this)">🏘 Affordable Housing</button>
+      <button class="ptab" onclick="switchTab('childcare',this)">👶 Universal Childcare</button>
+      <button class="ptab" onclick="switchTab('safety',this)">🌳 Community Safety</button>
     </div>
 
-    <!-- HOUSING -->
-    <div id="tab-housing" class="ppanel on">
-      <div class="policy-layout">
-        <div class="pl-left">
-          <div class="p-num">01</div>
-          <h3>Keep Ward 1 <em>Affordable</em> for Everyone.</h3>
-          <p class="p-body">Too many of our neighbors, the teachers, nurses, restaurant workers, and artists who make Ward 1 who it is, are being pushed out. Jackie's father bought their home in the 1990s working as a dishwasher. That door must stay open for the next generation.</p>
-          <blockquote>
-            <p>"My father bought this home on a dishwasher's wages. That dream should still be possible. I'll fight every single day to make sure it is."</p>
-            <cite>— Jackie Reyes Yanes</cite>
-          </blockquote>
-          <div class="p-photo"><img src="/images/jackie-reyes-yanes-affordable-housing.jpg" alt="Jackie on housing"></div>
-        </div>
-        <div class="pl-right">
-          <ul class="p-items">
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Expand Homeownership via HPAP</h4><p>Raise DC's Home Purchase Assistance Program fund to <strong>$30 million</strong> and lift the individual income limit to <strong>$150,000</strong>, opening the door for teachers, nurses, first responders, and working professionals who earn too much to qualify but too little to buy.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Strengthen Rent Control</h4><p>Close the loopholes landlords use to skip DC's rent stabilization rules. No more renovictions. No more bad-faith vacancy filings. Your rent is your rent.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Tenant Right of First Refusal</h4><p>When a building sells, its tenants get the first offer, at fair market value. No more being blindsided when a new owner shows up.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Anti-Displacement Task Force, With Real Tools</h4><p>Four concrete actions: (1) an <strong>Inspection Request Team</strong> responding within 72 hours; (2) a <strong>Vacant Property Partnership Program</strong> converting empty buildings into affordable units; (3) <strong>expedited permitting</strong> so housing gets built instead of stuck; (4) block-by-block displacement risk tracking with direct intervention for families at risk.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>More Affordable Units, Now</h4><p>All new Ward 1 developments above 10 units must include at least 20% affordable at 60% AMI or below. No waivers. No buyouts.</p></div></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- CHILDCARE -->
-    <div id="tab-childcare" class="ppanel">
-      <div class="policy-layout">
-        <div class="pl-left">
-          <div class="p-num">02</div>
-          <h3>No Parent Chooses Between <em>Career</em> and <em>Caregiving.</em></h3>
-          <p class="p-body">Childcare in DC costs over $2,500 a month, more than most mortgages. Ward 1 families are making impossible choices every single day. Jackie will end that, because a city that doesn't invest in its youngest residents has given up on its future.</p>
-          <blockquote>
-            <p>"Childcare shouldn't cost $2,500 a month. You're working hard for your family. This city should work just as hard for you."</p>
-            <cite>— Jackie Reyes Yanes</cite>
-          </blockquote>
-          <div class="p-photo"><img src="/images/jackie-reyes-yanes-childcare.jpg" alt="Jackie on childcare"></div>
-        </div>
-        <div class="pl-right">
-          <ul class="p-items">
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Universal Pre-K 3 and Pre-K 4</h4><p>Free, universal Pre-K 3 and Pre-K 4 for every Ward 1 child, regardless of family income. No waitlists. No exceptions. Every 3- and 4-year-old gets a high-quality seat before kindergarten.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Fair Pay for Early Childhood Educators</h4><p>Salary supplements bringing all early childhood educators to at least $22/hour, with benefits and professional development. The people shaping our children's first years deserve professional pay, not poverty wages.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Build New Childcare Facilities, City &amp; Private Spaces</h4><p>Use city-owned vacant properties and underutilized privately-owned spaces, church halls, community centers, commercial ground floors, to build and renovate childcare facilities across Ward 1. More seats, lower costs, closer to home.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Subsidized Infant &amp; Toddler Care</h4><p>Expand subsidy eligibility to families earning up to 150% AMI, covering working Ward 1 families who earn too much to qualify but too little to pay $2,500 a month.</p></div></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- BARRIO -->
+    <!-- SMALL BUSINESS -->
     <div id="tab-barrio" class="ppanel">
       <div class="policy-layout">
         <div class="pl-left">
-          <div class="p-num">03</div>
-          <h3><em>Small Business Activation</em> &amp; Cultural and Commercial Corridor Destinations.</h3>
+          <div class="p-num">01</div>
+          <h3><em>Small Business Revival</em> &amp; Cultural and Commercial Corridor Destinations.</h3>
           <p class="p-body">Mt. Pleasant and Columbia Heights are the cultural heartbeat of DC's Latino community. Rising commercial rents and lack of capital are forcing out the bodegas, taquerías, and family shops that define our barrio. Jackie's Small Business Activation Program puts real money, up to $50,000 in direct grants, behind every Ward 1 business that needs it.</p>
           <blockquote>
-            <p>"Our barrio is not just a neighborhood, it's a living culture. If we lose the businesses, we lose the soul. I'll make sure that doesn't happen."</p>
+            <p>"A strong Ward 1 depends on a strong tax base, and that starts with small businesses. I am the only candidate focused on growing our economy without raising taxes, by investing in our local entrepreneurs."</p>
             <cite>— Jackie Reyes Yanes</cite>
           </blockquote>
         </div>
         <div class="pl-right">
           <ul class="p-items">
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Small Business Activation Grants, $5,000 to $50,000</h4><p>A dedicated Ward 1 grant fund, <strong>$5,000 to $50,000</strong>, for any Ward 1 small business, for equipment, renovations, inventory, hiring, and expansion. No bureaucratic maze. Real capital, fast decisions, in English and Spanish.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Cultural and Commercial Corridor Destinations, Mt. Pleasant &amp; Columbia Heights</h4><p>Officially designate and protect the <strong>Cultural and Commercial Corridor Destinations</strong> along Mt. Pleasant St NW and 14th St NW in Columbia Height, storefront preservation incentives, bilingual signage, and cultural identity standards for new commercial tenants. The soul of our barrio, protected by law.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Commercial Rent Stabilization Program</h4><p>Cap annual rent increases for ground-floor small businesses at no more than <strong>5% per year</strong>. Longtime corridor anchors stay put instead of being priced out by speculative landlords.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Festival Activation, Culture on Every Corner</h4><p>Year-round neighborhood activations, Día de los Muertos, Feria de las Flores, Latin Jazz on the Plaza, night markets on Mt. Pleasant St. Culture drives foot traffic. Foot traffic keeps businesses alive.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>One-Stop Business Support Desk</h4><p>A bilingual navigator at the Neighborhood Solution Center cutting business opening time from 6+ months to <strong>60 days</strong>, permits, licenses, inspections, and grant applications all in one place.</p></div></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- SAFETY -->
-    <div id="tab-safety" class="ppanel">
-      <div class="policy-layout">
-        <div class="pl-left">
-          <div class="p-num">04</div>
-          <h3>Safe Streets Start with <em>Community,</em> Not Just Cops.</h3>
-          <p class="p-body">Real safety is kids outside after dark. Seniors at the bus stop without fear. Neighbors who know each other's names. Jackie's approach: smart infrastructure, activated public spaces, and community-driven programs that address root causes, not just symptoms.</p>
-          <blockquote>
-            <p>"A well-lit block with neighbors who look out for each other is safer than any patrol car. We reclaim our streets by investing in them, and in each other."</p>
-            <cite>— Jackie Reyes Yanes</cite>
-          </blockquote>
-        </div>
-        <div class="pl-right">
-          <ul class="p-items">
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Light Every Block in Ward 1</h4><p>Full audit and upgrade of every street light in Ward 1, prioritizing alleys, transit stops, and park paths most frequently reported as unsafe. Bright streets are safe streets. Year 1 commitment.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>200 New Trees</h4><p>Plant 200 trees along Ward 1's most-traveled corridors. Greenery slows traffic, reduces stress, creates natural gathering spots, and shows this community invests in itself.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Activate Public Spaces</h4><p>Year-round programming in Ward 1 parks and plazas, outdoor movies, weekend markets, sports leagues, senior fitness classes. Public spaces belong to the community, not to fear.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Youth Employment = Community Safety</h4><p>Guaranteed summer and after-school jobs for every Ward 1 young person who wants one. A teen with a job, a paycheck, and a mentor is the most effective crime prevention strategy we have.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Small Business Activation Grants, $5,000 to $50,000</h4><p>A dedicated Ward 1 grant fund, <strong>$5,000 to $50,000</strong>, for any Ward 1 small business, for equipment, renovations, inventory, hiring, and expansion. No bureaucratic maze. Real capital, fast decisions, multilingual.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Cultural and Commercial Corridor Destinations in Ward 1</h4><p>Officially create, designate and protect <strong>Cultural and Commercial Corridor Destinations</strong> highlithing Ward 1's diverse communities and vibrancy.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Festival Activation, Culture on Every Corner</h4><p>Year-round neighborhood activations, Día de los Muertos, book festivals, live music, night markets, movie nights. Culture drives foot traffic, foot traffic keeps businesses alive.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>One-Stop Business Solutions HUB</h4><p>A navigators assisting entrepreneurs and business owners cutting business opening time and connecting them financial resources.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Small Business First Right of Purchase</h4><p>Activate Vacant Storefronts through a Small Business First Right of Purchase to avoid small business owners being displaced.</p></div></li>
           </ul>
         </div>
       </div>
@@ -1834,7 +1766,7 @@ body.modal-open{
     <div id="tab-nsc" class="ppanel">
       <div class="policy-layout">
         <div class="pl-left">
-          <div class="p-num">05</div>
+          <div class="p-num">02</div>
           <h3>The Neighborhood <em>Solution Center —</em> Your Ward, Served.</h3>
           <p class="p-body">The NSC isn't a hotline or a website. It's a ward-based hub where seniors and young people work side by side as paid Community Ambassadors, answering phones, walking Ward 1 streets, delivering direct support to residents. Real people. Real help.</p>
           <blockquote>
@@ -1854,6 +1786,78 @@ body.modal-open{
       </div>
     </div>
   </div>
+
+
+    <!-- HOUSING -->
+    <div id="tab-housing" class="ppanel on">
+      <div class="policy-layout">
+        <div class="pl-left">
+          <div class="p-num">03</div>
+          <h3>Keep Ward 1 <em>Affordable</em> for Everyone.</h3>
+          <p class="p-body">Too many of our neighbors, the teachers, nurses, restaurant workers, and artists who make Ward 1 who it is, are being pushed out. Jackie's father bought their home in the 1990s working as a dishwasher. That door must stay open for the next generation.</p>
+          <blockquote>
+            <p>"My father bought this home on a dishwasher's wages. That dream should still be possible. I'll fight every single day to make sure it is."</p>
+            <cite>— Jackie Reyes Yanes</cite>
+          </blockquote>
+          <div class="p-photo"><img src="/images/jackie-reyes-yanes-affordable-housing.jpg" alt="Jackie on housing"></div>
+        </div>
+        <div class="pl-right">
+          <ul class="p-items">
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Expand Homeownership via HPAP</h4><p>Raise DC's Home Purchase Assistance Program fund to <strong>$30 million</strong> and lift the individual income limit to <strong>$150,000</strong>, opening the door for teachers, nurses, first responders, and working professionals who earn too much to qualify but too little to buy.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Strengthen Rent Control</h4><p>Close the loopholes landlords use to skip DC's rent stabilization rules. No more renovictions. No more bad-faith vacancy filings. Your rent is your rent.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Anti-Displacement Task Force, With Real Tools</h4><p>Four concrete actions: (1) an <strong>Inspection Request Team</strong> responding within 72 hours; (2) a <strong>Vacant Property Partnership Program</strong> converting empty buildings into affordable units; (3) <strong>expedited permitting</strong> so housing gets built instead of stuck; (4) block-by-block displacement risk tracking with direct intervention for families at risk.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>More Affordable Units, Now</h4><p>All new Ward 1 developments above 10 units must include at least 20% affordable at 60% AMI or below. No waivers. No buyouts.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHILDCARE -->
+    <div id="tab-childcare" class="ppanel">
+      <div class="policy-layout">
+        <div class="pl-left">
+          <div class="p-num">04</div>
+          <h3>No Parent Chooses Between <em>Career</em> and <em>Caregiving.</em></h3>
+          <p class="p-body">Childcare in DC costs over $2,500 a month, more than most mortgages. Ward 1 families are making impossible choices every single day. Jackie will end that, because a city that doesn't invest in its youngest residents has given up on its future.</p>
+          <blockquote>
+            <p>"Childcare shouldn't cost $2,500 a month. You're working hard for your family. This city should work just as hard for you."</p>
+            <cite>— Jackie Reyes Yanes</cite>
+          </blockquote>
+          <div class="p-photo"><img src="/images/jackie-reyes-yanes-childcare.jpg" alt="Jackie on childcare"></div>
+        </div>
+        <div class="pl-right">
+          <ul class="p-items">
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Universal Pre-K 3 and Pre-K 4</h4><p>Free, universal Pre-K 3 and Pre-K 4 for every Ward 1 child, regardless of family income. No waitlists. No exceptions. Every 3- and 4-year-old gets a high-quality seat before kindergarten.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Fair Pay for Early Childhood Educators</h4><p>Salary supplements bringing all early childhood educators to at least $22/hour, with benefits and professional development. The people shaping our children's first years deserve professional pay, not poverty wages.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Build New Childcare Facilities, City &amp; Private Spaces</h4><p>Use city-owned vacant properties and underutilized privately-owned spaces, church halls, community centers, commercial ground floors, to build and renovate childcare facilities across Ward 1. More seats, lower costs, closer to home.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Subsidized Infant &amp; Toddler Care</h4><p>Expand subsidy eligibility to families earning up to 150% AMI, covering working Ward 1 families who earn too much to qualify but too little to pay $2,500 a month.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY -->
+    <div id="tab-safety" class="ppanel">
+      <div class="policy-layout">
+        <div class="pl-left">
+          <div class="p-num">05</div>
+          <h3>Safe Streets Start with <em>Strong Communities.</em></h3>
+          <p class="p-body">Real safety is kids outside after dark. Seniors at the bus stop without fear. Neighbors who know each other's names. Jackie's approach: smart infrastructure, activated public spaces, and community-driven programs that address root causes, not just symptoms.</p>
+          <blockquote>
+            <p>"A well-lit block with neighbors who look out for each other is safer than any patrol car. We reclaim our streets by investing in them, and in each other."</p>
+            <cite>— Jackie Reyes Yanes</cite>
+          </blockquote>
+        </div>
+        <div class="pl-right">
+          <ul class="p-items">
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Light Every Block in Ward 1</h4><p>Full audit and upgrade of every street light in Ward 1, prioritizing alleys, transit stops, and park paths most frequently reported as unsafe. Bright streets are safe streets. Year 1 commitment.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Activate Public Spaces</h4><p>Year-round programming in Ward 1 parks and plazas, outdoor movies, weekend markets, sports leagues, senior fitness classes. Public spaces belong to the community, not to fear.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Youth Employment = Community Safety</h4><p>Guaranteed summer and after-school jobs for every Ward 1 young person who wants one. A teen with a job, a paycheck, and a mentor is the most effective crime prevention strategy we have.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
 </section>
 
 <!-- PHOTO ROW -->
