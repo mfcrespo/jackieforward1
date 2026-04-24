@@ -16,6 +16,34 @@
       "image": "/images/uploads/meet-greet-04212026_eng.jpg",
       "description": "Meet Jackie and connect.",
       "category": "meet-greet"
+    },
+    {
+      "description_en": "Join neighbors from across Ward 1 for a community meet & greet with DC Council candidate Jackie Reyes-Yanes.",
+      "time": "7:30 PM – 9:30 PM",
+      "featured": false,
+      "date": "2026-04-24",
+      "title_en": "Meet & Greet with Jackie Reyes-Yanes — Candidate for Ward 1 DC Council",
+      "description_es": "Acompaña a vecinos de todo el Ward 1 en un encuentro comunitario con la candidata al Concejo de DC, Jackie Reyes-Yanes.",
+      "address_en": "MECHO'S DOMINICAN KITCHEN, 2450 Market St, NE, WASHINGTON, DC 20018",
+      "title_es": "Encuentro comunitario con Jackie Reyes-Yanes — Candidata al Concejo del Ward 1 de Washington, DC",
+      "address_es": "MECHO'S DOMINICAN KITCHEN, 2450 Market St, NE, WASHINGTON, DC 20018",
+      "rsvp": "https://www.eventbrite.com/e/meet-greet-with-jackie-reyes-yanes-candidate-for-ward-1-dc-council-tickets-1988136832786?aff=oddtdtcreator",
+      "image": "/images/uploads/meet-greet-04242026_eng.jpg",
+      "category": "meet-greet"
+    },
+    {
+      "description_en": "Join us for a Ward 1 Meet & Greet and Bilingual Ranked Choice Voting Workshop with DC Council candidate Jackie Reyes Yanes in partnership with DC Board of Elections.\n\nWhat you’ll learn:\n✔ How Ranked Choice Voting works\n✔ How to correctly complete your ballot\n✔ What to expect on Election Day\n✔ Answers to your questions\n\nThis workshop will be conducted in English and Spanish.",
+      "time": "10:00 AM – 12:00 PM",
+      "featured": false,
+      "date": "2026-04-26",
+      "title_en": "Bilingual Ranked Choice Voting Workshop",
+      "description_es": "Acompáñanos en un encuentro comunitario en Ward 1 y en un taller bilingüe sobre votación por orden de preferencia con la candidata al Concejo de DC, Jackie Reyes-Yanes, en colaboración con la DC Board of Elections.\n\nLo que aprenderás:\n✔ Cómo funciona la votación por orden de preferencia\n✔ Cómo completar correctamente tu boleta\n✔ Qué esperar el día de las elecciones\n✔ Respuestas a tus preguntas\n\nEste taller se llevará a cabo en inglés y español.",
+      "address_en": "Sacred Heart Church, 3211 Sacred Heart Way NW",
+      "title_es": "Taller bilingüe sobre votación por orden de preferencia",
+      "address_es": "iglesia del Sagrado Corazón, 3211 Sacred Heart Way NW",
+      "rsvp": "https://JRYWorkshop426.eventbrite.com",
+      "image": "/images/uploads/jry-workshop0426_eng.jpg",
+      "category": "community"
     }
   ]
 }
