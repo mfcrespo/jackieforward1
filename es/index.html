@@ -2808,12 +2808,12 @@ function mediaImage(item) {
 
 function categoryLabel(category) {
   const labels = {
-    "meet-greet": "Meet & Greet",
-    "cleanup": "Clean Up",
-    "canvassing": "Canvassing",
-    "townhall": "Town Hall",
-    "fundraiser": "Fundraiser",
-    "community": "Community Event"
+    "meet-greet": "Encuentro comunitario",
+    "cleanup": "Limpieza",
+    "canvassing": "Recorrido",
+    "townhall": "Foro",
+    "fundraiser": "Recaudación de fondos",
+    "community": "Evento comunitario"
   };
   return labels[category] || category || "";
 }
@@ -2842,8 +2842,8 @@ async function loadUpcomingEvents() {
       container.innerHTML = `
         <div class="event-card">
           <div class="event-card-body" style="padding:1.2rem;">
-            <h4>No upcoming events right now</h4>
-            <p>Please check back soon for campaign events and volunteer opportunities.</p>
+            <h4>No hay eventos próximos en este momento.</h4>
+            <p>Por favor, vuelve pronto para ver los eventos de la campaña y las oportunidades de voluntariado.</p>
           </div>
         </div>
       `;
@@ -2852,13 +2852,13 @@ async function loadUpcomingEvents() {
 
     container.innerHTML = upcoming.map(item => {
       const eventDate = new Date(item.date + "T00:00:00");
-      const month = eventDate.toLocaleString("en-US", { month: "short" }).toUpperCase();
+      const month = eventDate.toLocaleString("es-ES", { month: "short" }).toUpperCase();
       const day = eventDate.getDate();
 
       const imageHtml = item.image
         ? `
           <div class="event-card-image">
-            <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title_en || 'Event image')}">
+            <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title_es || 'Event image')}">
           </div>
         `
         : "";
@@ -2866,7 +2866,7 @@ async function loadUpcomingEvents() {
       const rsvpHtml = item.rsvp
         ? `
           <a class="event-rsvp-btn" href="${escapeHtml(item.rsvp)}" target="_blank" rel="noopener noreferrer">
-            RSVP
+            REGÍSTRATE
           </a>
         `
         : "";
@@ -2889,13 +2889,13 @@ async function loadUpcomingEvents() {
               ${featuredHtml}
             </div>
 
-            <h4>${escapeHtml(item.title_en || '')}</h4>
+            <h4>${escapeHtml(item.title_es || '')}</h4>
 
             <p class="event-time-address">
-              ${escapeHtml(item.time || '')}${item.time ? ' · ' : ''}${escapeHtml(item.address_en || '')}
+              ${escapeHtml(item.time || '')}${item.time ? ' · ' : ''}${escapeHtml(item.address_es || '')}
             </p>
 
-            <p class="event-description">${escapeHtml(item.description_en || '')}</p>
+            <p class="event-description">${escapeHtml(item.description_es || '')}</p>
 
             ${rsvpHtml}
           </div>
@@ -2907,8 +2907,8 @@ async function loadUpcomingEvents() {
     container.innerHTML = `
       <div class="event-card">
         <div class="event-card-body" style="padding:1.2rem;">
-          <h4>Unable to load events</h4>
-          <p>Please try again later.</p>
+          <h4>No se pueden cargar los eventos.</h4>
+          <p>Por favor intenta mas tarde.</p>
         </div>
       </div>
     `;
