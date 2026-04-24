@@ -7,9 +7,9 @@
 
   <!-- SEO -->
   <link rel="canonical" href="https://jackieforward1.netlify.app/es/news/" />
-  <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/es/news/" />
+  <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/news" />
   <link rel="alternate" hreflang="es" href="https://jackieforward1.netlify.app/es/news/" />
-  <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/es/news/" />
+  <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/news" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -252,23 +252,17 @@
       overflow:hidden;
     }
 
-    .news-card-image-wrap{
-      width:100%;
-      min-height:220px;
-      background:#111;
-      overflow:hidden;
-    }
-
     .news-card-image{
       width:100%;
       height:100%;
+      min-height:220px;
       object-fit:cover;
       display:block;
+      background:#111;
     }
 
     .news-card-body{
       padding:1.2rem 1.2rem 1.2rem 0;
-      background:rgba(11,13,11,.92);
     }
 
     .news-source-date{
@@ -318,11 +312,6 @@
         grid-template-columns:1fr;
       }
 
-      .news-card-image-wrap{
-        min-height:220px;
-        aspect-ratio:16 / 9;
-      }
-
       .news-card-body{
         padding:1rem;
       }
@@ -359,174 +348,53 @@
       color:rgba(244,239,230,.3);
     }
 
-  
-
-    /* ─── RESPONSIVE PATCH ───────────────────── */
-    @media (max-width: 900px){
-      #nav{
-        height:78px;
-        padding:0 1rem;
-      }
-
-      .mobile-nav{
-        top:78px;
-        padding:1.5rem 1.25rem 2rem;
-        justify-content:flex-start;
-        overflow-y:auto;
-      }
-
-      .mobile-nav a{
-        font-size:1.55rem;
-        text-align:center;
-      }
-
-      .mobile-nav .m-cta{
-        font-size:1.1rem;
-        padding:.8rem 1.4rem;
-      }
-
-      .nav-logo{
-        gap:.55rem;
-        min-width:0;
-      }
-
-      .nav-logo img{
-        height:56px;
-      }
-
-      .nav-wordmark{
-        font-size:.9rem;
-        line-height:.95;
-      }
-
-      .nav-wordmark span{
-        font-size:.58rem;
-        letter-spacing:.12em;
-      }
-
-      .nav-right{
-        gap:.65rem;
-      }
-
-      .lang-switch{
-        display:none;
-      }
-    }
-
-    @media (max-width: 600px){
-      #nav{
-        padding:0 .8rem;
-      }
-
-      .nav-logo img{
-        height:50px;
-      }
-
-      .nav-wordmark{
-        font-size:.78rem;
-      }
-
-      .nav-wordmark span{
-        font-size:.5rem;
-        letter-spacing:.08em;
-      }
-    }
-
-    @media (max-width: 900px){
-      .wrap{
-        padding:7rem 1rem 3rem;
-      }
-    }
-
-    @media (max-width: 600px){
-      .wrap{
-        padding:6.5rem .9rem 2.5rem;
-      }
-
-      h1{
-        font-size:2rem;
-        line-height:1;
-      }
-
-      .section-label{
-        font-size:.72rem;
-      }
-
-      .news-grid{
-        gap:1rem;
-      }
-
-      .news-card h2{
-        font-size:1.1rem;
-        line-height:1.18;
-      }
-
-      .news-card p{
-        font-size:.95rem;
-        line-height:1.55;
-      }
-
-      .news-source-date{
-        font-size:.72rem;
-        line-height:1.4;
-      }
-
-      .news-card-image-wrap{
-        min-height:180px;
-        aspect-ratio:16 / 9;
-      }
-
-      .news-link{
-        width:100%;
-        text-align:center;
-      }
-    }
-
   </style>
 </head>
 <body>
 
   <nav id="nav">
-    <a href="/es/" class="nav-logo" aria-label="Go to home">
+    <a href="/es/" class="nav-logo" aria-label="Ir al inicio">
       <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie Reyes Yanes logo">
-      <div class="nav-wordmark">Jackie Reyes Yanes<span>Tu primera opción</span></div>
+      <div class="nav-wordmark">Jackie Reyes Yanes<span>Ward 1 · Concejo DC</span></div>
     </a>
 
     <div class="nav-right">
       <ul class="nav-links">
+        <li><a href="/es/#platform">Propuestas</a></li>
         <li><a href="/es/#story">Sobre Jackie</a></li>
         <li><a href="/es/#achievements">Trayectoria</a></li>
-        <li><a href="/es/#platform">Plataforma</a></li>        
-        <li><a href="/es/#endorsements/">Respaldos</a></li>
-        <li><a href="/es/#news/" class="active">Noticias</a></li>
+        <li><a href="/es/endorsements/">Respaldos</a></li>
+        <li><a href="/es/news/" class="active">Noticias</a></li>
+        <li><a href="/es/#ward">Nuestro Ward</a></li>
         <li><a href="/es/#events">Eventos</a></li>
         <li><a href="/es/#action">Voluntariado</a></li>
       </ul>
-<!-- Switch lang button -->
-      <div class="lang-switch" aria-label="Language switcher">
-        <a href="news" hreflang="en" lang="en">EN</a>
+
+<!-- Switch lang button -->    
+      <div class="lang-switch" aria-label="Selector de idioma">
+        <a href="/news/" hreflang="en" lang="en">EN</a>
         <span class="divider">|</span>
         <span class="active">ES</span>
       </div>
 
       <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" rel="noopener noreferrer" class="nav-donate">Donar</a>
 
-      <button class="ham" id="ham" onclick="toggleMenu()" aria-label="Open menu">
+      <button class="ham" id="ham" onclick="toggleMenu()" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <div class="mobile-nav" id="mnav">
-
+    <a href="/es/#platform" onclick="toggleMenu()">Propuestas</a>
     <a href="/es/#story" onclick="toggleMenu()">Sobre Jackie</a>
     <a href="/es/#achievements" onclick="toggleMenu()">Trayectoria</a>
-    <a href="/es/#platform" onclick="toggleMenu()">Plataforma</a>    
     <a href="/es/endorsements/" onclick="toggleMenu()">Respaldos</a>
     <a href="/es/news/" onclick="toggleMenu()">Noticias</a>
+    <a href="/es/#ward" onclick="toggleMenu()">Nuestro Ward</a>
     <a href="/es/#events" onclick="toggleMenu()">Eventos</a>
     <a href="/es/#action" onclick="toggleMenu()">Voluntariado</a>
-    <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" rel="noopener noreferrer" class="m-cta">Dona ahora</a>
+    <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" rel="noopener noreferrer" class="m-cta">Dona Ahora</a>
   </div>
 
   <main class="wrap">
@@ -597,7 +465,7 @@
       return youtubeThumbnail(item.video_url || item.url || '') || item.card_image || item.image || '';
     }
 
-    async function loadAllNoticias() {
+    async function loadAllNews() {
       const container = document.getElementById("all-news-list");
       if (!container) return;
 
@@ -608,28 +476,24 @@
 
         container.innerHTML = items.map(item => `
           <article class="news-card">
-            <div class="news-card-image-wrap">
-              ${mediaImage(item)
-                ? `<img src="${escapeHtml(mediaImage(item))}" alt="${escapeHtml(item.title_en || item.title_es || item.title || '')}" class="news-card-image">`
-                : `<div class="news-card-image"></div>`}
-            </div>
+            ${item.card_image || item.image ? `<img src="${escapeHtml(item.card_image || item.image)}" alt="${escapeHtml(item.title_es || item.title_en || item.title || '')}" class="news-card-image">` : `<div class="news-card-image"></div>`}
             <div class="news-card-body">
               <div class="news-source-date">
                 ${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}${item.language ? " • " + escapeHtml(item.language) : ""}
               </div>
               <h2>${escapeHtml(item.title_es || item.title_en || item.title || "")}</h2>
-              ${(item.summary_en || item.summary_es || item.summary) ? `<p>${escapeHtml(item.summary_es || item.summary_en || item.summary || "")}</p>` : ""}
-              <a class="news-link" href="${escapeHtml(item.url || item.video_url || "#")}" target="_blank" rel="noopener noreferrer">${item.type === "video" ? "Ver nota" : "Leer cobertura"}</a>
+              ${(item.summary_es || item.summary_en || item.summary) ? `<p>${escapeHtml(item.summary_es || item.summary_en || item.summary || "")}</p>` : ""}
+              <a class="news-link" href="${escapeHtml(item.url || item.video_url || "#")}" target="_blank" rel="noopener noreferrer">${item.type === "video" ? "Ver video" : "Leer cobertura"}</a>
             </div>
           </article>
         `).join("");
       } catch (error) {
         console.error("Error loading all news:", error);
-        container.innerHTML = "<p>No se puede cargar la cobertura de prensa en este momento.</p>";
+        container.innerHTML = "<p>No se pudo cargar la cobertura en este momento.</p>";
       }
     }
 
-    loadAllNoticias();
+    loadAllNews();
   </script>
 
   <script>

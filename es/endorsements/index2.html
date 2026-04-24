@@ -7,9 +7,9 @@
 
   <!-- SEO -->
   <link rel="canonical" href="https://jackieforward1.netlify.app/es/endorsements/" />
-  <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/es/endorsements/" />
+  <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/endorsements.html" />
   <link rel="alternate" hreflang="es" href="https://jackieforward1.netlify.app/es/endorsements/" />
-  <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/es/endorsements/" />
+  <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/endorsements.html" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -289,156 +289,18 @@
       font-family:'Lora', serif;
     }
 
-.endorse-link{
-  margin-top:auto;
-  font-family:'League Spartan', sans-serif;
-  font-size:.75rem;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  color:var(--gold);
-  text-decoration:none;
-  background:none;
-  border:none;
-  padding:0;
-  cursor:pointer;
-  display:inline-block;
-}
-
-.endorse-link:hover{
-  color:var(--gold-lt);
-}
-
-    .endorse-media-button{
-      position:relative;
-      width:100%;
-      height:100%;
-      display:block;
-      border:none;
-      padding:0;
-      background:#000;
-      cursor:pointer;
-      overflow:hidden;
-    }
-
-    .video-thumb{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .video-overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to bottom, rgba(0,0,0,.12), rgba(0,0,0,.38));
-    }
-
-    .video-play{
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%,-50%);
-      width:60px;
-      height:60px;
-      border-radius:50%;
-      background:rgba(212,160,23,.50);
-      color:var(--ink);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:1.5rem;
-      line-height:1;
-      box-shadow:0 12px 30px rgba(0,0,0,.35);
-      transition:transform .2s ease;
-    }
-
-    .endorse-media-button:hover .video-play{
-      transform:translate(-50%,-50%) scale(1.05);
-    }
-
-    .btn-testimony{
-      display:inline-block;
+    .endorse-link{
       margin-top:auto;
-      font-family:'League Spartan',sans-serif;
-      font-size:.75rem;
+      font-family:'League Spartan', sans-serif;
       font-weight:700;
-      letter-spacing:.12em;
       text-transform:uppercase;
+      letter-spacing:.06em;
       color:var(--gold);
-      border:1px solid rgba(212,160,23,.4);
-      padding:.55rem .95rem;
       text-decoration:none;
-      transition:all .2s;
-      background:transparent;
-      cursor:pointer;
-      align-self:flex-start;
     }
 
-    .btn-testimony:hover{
-      background:var(--gold);
-      color:var(--ink);
-      border-color:var(--gold);
-    }
-
-    .testimony-modal{
-      position:fixed;
-      inset:0;
-      z-index:9999;
-      display:none;
-    }
-
-    .testimony-modal.open{
-      display:block;
-    }
-
-    .testimony-modal-backdrop{
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.82);
-      backdrop-filter:blur(3px);
-    }
-
-    .testimony-modal-content{
-      position:relative;
-      width:min(920px, 92vw);
-      margin:5vh auto 0;
-      z-index:2;
-    }
-
-    .testimony-close{
-      position:absolute;
-      top:-42px;
-      right:0;
-      width:38px;
-      height:38px;
-      border:none;
-      background:var(--gold);
-      color:var(--ink);
-      font-size:1.5rem;
-      font-weight:700;
-      line-height:1;
-      cursor:pointer;
-    }
-
-    .testimony-video-wrap{
-      position:relative;
-      width:100%;
-      aspect-ratio:16 / 9;
-      background:#000;
-      border:1px solid rgba(212,160,23,.25);
-      box-shadow:0 20px 60px rgba(0,0,0,.45);
-    }
-
-    .testimony-video-wrap iframe{
-      width:100%;
-      height:100%;
-      border:0;
-      display:block;
-    }
-
-    body.modal-open{
-      overflow:hidden;
+    .endorse-link:hover{
+      color:var(--gold-lt);
     }
 
     @media (max-width:1100px){
@@ -488,162 +350,6 @@
       color:rgba(244,239,230,.3);
     }
 
-  
-
-    /* ─── RESPONSIVE PATCH ───────────────────── */
-    @media (max-width: 900px){
-      #nav{
-        height:78px;
-        padding:0 1rem;
-      }
-
-      .mobile-nav{
-        top:78px;
-        padding:1.5rem 1.25rem 2rem;
-        justify-content:flex-start;
-        overflow-y:auto;
-      }
-
-      .mobile-nav a{
-        font-size:1.55rem;
-        text-align:center;
-      }
-
-      .mobile-nav .m-cta{
-        font-size:1.1rem;
-        padding:.8rem 1.4rem;
-      }
-
-      .nav-logo{
-        gap:.55rem;
-        min-width:0;
-      }
-
-      .nav-logo img{
-        height:56px;
-      }
-
-      .nav-wordmark{
-        font-size:.9rem;
-        line-height:.95;
-      }
-
-      .nav-wordmark span{
-        font-size:.58rem;
-        letter-spacing:.12em;
-      }
-
-      .nav-right{
-        gap:.65rem;
-      }
-
-      .lang-switch{
-        display:none;
-      }
-    }
-
-    @media (max-width: 600px){
-      #nav{
-        padding:0 .8rem;
-      }
-
-      .nav-logo img{
-        height:50px;
-      }
-
-      .nav-wordmark{
-        font-size:.78rem;
-      }
-
-      .nav-wordmark span{
-        font-size:.5rem;
-        letter-spacing:.08em;
-      }
-    }
-
-    @media (max-width: 900px){
-      .wrap{
-        padding:7rem 1rem 3rem;
-      }
-
-      h1{
-        margin-bottom:1.4rem;
-      }
-
-      .endorse-card h3{
-        font-size:1.2rem;
-      }
-
-      .endorse-body{
-        padding:1rem;
-      }
-
-      .video-play{
-        width:60px;
-        height:60px;
-        font-size:1.5rem;
-      }
-
-      .testimony-modal-content{
-        width:min(92vw, 760px);
-        margin:10vh auto 0;
-      }
-    }
-
-    @media (max-width: 600px){
-      .wrap{
-        padding:6.5rem .9rem 2.5rem;
-      }
-
-      h1{
-        font-size:2rem;
-        line-height:1;
-      }
-
-      .section-label{
-        font-size:.72rem;
-      }
-
-      .endorse-grid{
-        gap:1rem;
-      }
-
-      .endorse-card h3{
-        font-size:1.08rem;
-      }
-
-      .endorse-card p{
-        font-size:.95rem;
-        line-height:1.55;
-      }
-
-      .endorse-meta{
-        gap:.35rem;
-      }
-
-      .endorse-pill{
-        font-size:.66rem;
-        padding:.28rem .45rem;
-      }
-
-      .btn-testimony,
-      .endorse-link{
-        width:100%;
-        text-align:center;
-      }
-
-      .video-play{
-        width:64px;
-        height:64px;
-        font-size:1.5rem;
-      }
-
-      .testimony-modal-content{
-        width:94vw;
-        margin:12vh auto 0;
-      }
-    }
-
   </style>
 </head>
 <body>
@@ -652,23 +358,24 @@
   <nav id="nav">
     <a href="/es/" class="nav-logo">
       <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie logo">
-      <div class="nav-wordmark">Jackie Reyes Yanes<span>Tu primera opción</span></div>
+      <div class="nav-wordmark">Jackie Reyes Yanes<span>Ward 1 · Concejo DC</span></div>
     </a>
 
     <div class="nav-right">
       <ul class="nav-links">
+        <li><a href="/es/#platform">Propuestas</a></li>
         <li><a href="/es/#story">Sobre Jackie</a></li>
         <li><a href="/es/#achievements">Trayectoria</a></li>
-        <li><a href="/es/#platform">Plataforma</a></li>        
         <li><a href="/es/endorsements/" class="active">Respaldos</a></li>
-        <li><a href="/news.html">Noticias</a></li>
+        <li><a href="/es/news/">Noticias</a></li>
+        <li><a href="/es/#ward">Nuestro Ward</a></li>
         <li><a href="/es/#events">Eventos</a></li>
         <li><a href="/es/#action">Voluntariado</a></li>
       </ul>
 
-<!-- Switch lang button -->
-      <div class="lang-switch" aria-label="Language switcher">
-        <a href="/endorsements.html" hreflang="en" lang="en">EN</a>
+<!-- Switch lang button -->    
+      <div class="lang-switch" aria-label="Selector de idioma">
+        <a href="/endorsements/" hreflang="en" lang="en">EN</a>
         <span class="divider">|</span>
         <span class="active">ES</span>
       </div>
@@ -682,42 +389,23 @@
   </nav>
 
   <div class="mobile-nav" id="mnav">
+    <a href="/es/#platform" onclick="toggleMenu()">Propuestas</a>
     <a href="/es/#story" onclick="toggleMenu()">Sobre Jackie</a>
     <a href="/es/#achievements" onclick="toggleMenu()">Trayectoria</a>
-    <a href="/es/#platform" onclick="toggleMenu()">Plataforma</a>    
     <a href="/es/endorsements/" onclick="toggleMenu()">Respaldos</a>
-    <a href="/news.html" onclick="toggleMenu()">Noticias</a>
+    <a href="/es/news/" onclick="toggleMenu()">Noticias</a>
+    <a href="/es/#ward" onclick="toggleMenu()">Nuestro Ward</a>
     <a href="/es/#events" onclick="toggleMenu()">Eventos</a>
     <a href="/es/#action" onclick="toggleMenu()">Voluntariado</a>
-    <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Dona ahora</a>
+    <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Dona Ahora</a>
   </div>
 
-  <!-- RESPALDOS -->
+  <!-- ENDORSEMENTS -->
   <main class="wrap">
     <div class="section-label">Respaldos</div>
     <h1>Todos los respaldos</h1>
     <div id="all-endorsements-list" class="endorse-grid"></div>
   </main>
-
-
-  <div class="testimony-modal" id="endorsementModal" aria-hidden="true">
-    <div class="testimony-modal-backdrop" onclick="closeEndorsementModal()"></div>
-
-    <div class="testimony-modal-content" role="dialog" aria-modal="true" aria-label="Video de respaldo">
-      <button class="testimony-close" onclick="closeEndorsementModal()" aria-label="Close video">×</button>
-
-      <div class="testimony-video-wrap">
-        <iframe
-          id="endorsementVideo"
-          src=""
-          title="Video de respaldo"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-  </div>
 
   <script>
     function escapeHtml(str = '') {
@@ -767,10 +455,10 @@
     function videoEmbedUrl(url = '') {
       if (!url) return '';
       const youtubeId = getYouTubeId(url);
-      if (youtubeId) return `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+      if (youtubeId) return `https://www.youtube.com/embed/${youtubeId}`;
       if (url.includes('vimeo.com/')) {
         const id = url.split('vimeo.com/')[1].split('?')[0];
-        return `https://player.vimeo.com/video/${id}?autoplay=1`;
+        return `https://player.vimeo.com/video/${id}`;
       }
       return url;
     }
@@ -784,29 +472,7 @@
       return youtubeThumbnail(item.video_url || item.url || '') || item.card_image || item.image || '';
     }
 
-    function openEndorsementModal(url, title = 'Video de respaldo') {
-      const modal = document.getElementById('endorsementModal');
-      const video = document.getElementById('endorsementVideo');
-      if (!modal || !video || !url) return;
-
-      video.src = videoEmbedUrl(url);
-      video.title = title || 'Video de respaldo';
-
-      modal.classList.add('open');
-      document.body.classList.add('modal-open');
-    }
-
-    function closeEndorsementModal() {
-      const modal = document.getElementById('endorsementModal');
-      const video = document.getElementById('endorsementVideo');
-      if (!modal || !video) return;
-
-      modal.classList.remove('open');
-      video.src = '';
-      document.body.classList.remove('modal-open');
-    }
-
-    async function loadAllRespaldos() {
+    async function loadAllEndorsements() {
       const container = document.getElementById("all-endorsements-list");
       if (!container) return;
 
@@ -820,18 +486,9 @@
           const title = item.title_es || item.title_en || item.title || '';
           const summary = item.summary_es || item.summary_en || item.summary || '';
           const target = item.url || item.video_url || '#';
-          const isVideo = item.type === "video";
           const media = image
-            ? isVideo
-              ? `<div class="endorse-media">
-                  <button type="button" class="endorse-media-button" onclick="openEndorsementModal('${escapeHtml(target)}', '${escapeHtml(title)}')" aria-label="Ver respaldo">
-                    <img class="video-thumb" src="${escapeHtml(image)}" alt="${escapeHtml(title)}">
-                    <span class="video-overlay"></span>
-                    <span class="video-play">▶</span>
-                  </button>
-                </div>`
-              : `<div class="endorse-media"><img src="${escapeHtml(image)}" alt="${escapeHtml(title)}"></div>`
-            : `<div class="endorse-media endorse-placeholder">${isVideo ? "Video" : "Sin contenido multimedia"}</div>`;
+            ? `<div class="endorse-media"><img src="${escapeHtml(image)}" alt="${escapeHtml(title)}"></div>`
+            : `<div class="endorse-media endorse-placeholder">${item.type === "video" ? "Video" : "Sin contenido"}</div>`;
 
           return `
             <article class="endorse-card">
@@ -845,22 +502,18 @@
                 <h3>${escapeHtml(title)}</h3>
                 ${item.endorser ? `<div class="endorser-name">${escapeHtml(item.endorser)}</div>` : ""}
                 ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
-                ${target !== '#'
-                  ? isVideo
-                    ? `<button type="button" class="endorse-link" style="background:none;border:none;padding:0;text-align:left;cursor:pointer;" onclick="openEndorsementModal('${escapeHtml(target)}', '${escapeHtml(title)}')">Ver respaldo →</button>`
-                    : `<a href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer" class="endorse-link">Leer cobertura →</a>`
-                  : ""}
+                ${target !== '#' ? `<a href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer" class="endorse-link">${item.type === "video" ? "Ver respaldo →" : "Conocer más →"}</a>` : ""}
               </div>
             </article>
           `;
         }).join("");
       } catch (error) {
         console.error("Error loading endorsements:", error);
-        container.innerHTML = "<p>No se pueden cargar los respaldos en este momento.</p>";
+        container.innerHTML = "<p>No se pudieron cargar los respaldos en este momento.</p>";
       }
     }
 
-    loadAllRespaldos();
+    loadAllEndorsements();
   </script>
 
   <script>
@@ -877,7 +530,6 @@
         m.classList.toggle('open');
       }
     }
-
   </script>
 
 </body>
