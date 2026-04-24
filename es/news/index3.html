@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Toda la Cobertura de Prensa | Jackie Forward</title>
+  <title>Toda la cobertura de prensa | Jackie Forward</title>
 
   <!-- SEO -->
   <link rel="canonical" href="https://jackieforward1.netlify.app/es/news/" />
-  <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/news" />
+  <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/es/news/" />
   <link rel="alternate" hreflang="es" href="https://jackieforward1.netlify.app/es/news/" />
-  <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/news" />
+  <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/es/news/" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -309,7 +309,26 @@
       background:var(--gold-lt);
     }
 
-    /* lang switch */
+    @media(max-width:900px){
+      .nav-links{display:none}
+      .nav-donate{display:none}
+      .ham{display:flex}
+
+      .news-card{
+        grid-template-columns:1fr;
+      }
+
+      .news-card-image-wrap{
+        min-height:220px;
+        aspect-ratio:16 / 9;
+      }
+
+      .news-card-body{
+        padding:1rem;
+      }
+    }
+
+/* lang switch button style */
     .lang-switch{
       display:flex;
       align-items:center;
@@ -340,12 +359,10 @@
       color:rgba(244,239,230,.3);
     }
 
-    @media(max-width:900px){
-      .nav-links{display:none}
-      .nav-donate{display:none}
-      .ham{display:flex}
-      .lang-switch{display:none}
+  
 
+    /* ─── RESPONSIVE PATCH ───────────────────── */
+    @media (max-width: 900px){
       #nav{
         height:78px;
         padding:0 1rem;
@@ -358,30 +375,70 @@
         overflow-y:auto;
       }
 
-      .nav-logo img{ height:56px; }
-
-      .news-card{
-        grid-template-columns:1fr;
+      .mobile-nav a{
+        font-size:1.55rem;
+        text-align:center;
       }
 
-      .news-card-image-wrap{
-        min-height:220px;
-        aspect-ratio:16 / 9;
+      .mobile-nav .m-cta{
+        font-size:1.1rem;
+        padding:.8rem 1.4rem;
       }
 
-      .news-card-body{
-        padding:1rem;
+      .nav-logo{
+        gap:.55rem;
+        min-width:0;
       }
 
+      .nav-logo img{
+        height:56px;
+      }
+
+      .nav-wordmark{
+        font-size:.9rem;
+        line-height:.95;
+      }
+
+      .nav-wordmark span{
+        font-size:.58rem;
+        letter-spacing:.12em;
+      }
+
+      .nav-right{
+        gap:.65rem;
+      }
+
+      .lang-switch{
+        display:none;
+      }
+    }
+
+    @media (max-width: 600px){
+      #nav{
+        padding:0 .8rem;
+      }
+
+      .nav-logo img{
+        height:50px;
+      }
+
+      .nav-wordmark{
+        font-size:.78rem;
+      }
+
+      .nav-wordmark span{
+        font-size:.5rem;
+        letter-spacing:.08em;
+      }
+    }
+
+    @media (max-width: 900px){
       .wrap{
         padding:7rem 1rem 3rem;
       }
     }
 
     @media (max-width: 600px){
-      #nav{ padding:0 .8rem; }
-      .nav-logo img{ height:50px; }
-
       .wrap{
         padding:6.5rem .9rem 2.5rem;
       }
@@ -430,9 +487,9 @@
 <body>
 
   <nav id="nav">
-    <a href="/es/" class="nav-logo" aria-label="Ir al inicio">
-      <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Logo Jackie Reyes Yanes">
-      <div class="nav-wordmark">Jackie Reyes Yanes<span>Tu Primera Opción</span></div>
+    <a href="/es/" class="nav-logo" aria-label="Go to home">
+      <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie Reyes Yanes logo">
+      <div class="nav-wordmark">Jackie Reyes Yanes<span>Tu primera opción</span></div>
     </a>
 
     <div class="nav-right">
@@ -441,12 +498,12 @@
         <li><a href="/es/#achievements">Trayectoria</a></li>
         <li><a href="/es/#platform">Plataforma</a></li>        
         <li><a href="/es/endorsements/">Respaldos</a></li>
-        <li><a href="/es/news/" class="active">Prensa</a></li>
+        <li><a href="/es/news/" class="active">Noticias</a></li>
         <li><a href="/es/#events">Eventos</a></li>
         <li><a href="/es/#action">Voluntariado</a></li>
       </ul>
-
-      <div class="lang-switch" aria-label="Cambiar idioma">
+<!-- Switch lang button -->
+      <div class="lang-switch" aria-label="Language switcher">
         <a href="/news" hreflang="en" lang="en">EN</a>
         <span class="divider">|</span>
         <span class="active">ES</span>
@@ -454,26 +511,27 @@
 
       <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" rel="noopener noreferrer" class="nav-donate">Donar</a>
 
-      <button class="ham" id="ham" onclick="toggleMenu()" aria-label="Abrir menú">
+      <button class="ham" id="ham" onclick="toggleMenu()" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <div class="mobile-nav" id="mnav">
+
     <a href="/es/#story" onclick="toggleMenu()">Sobre Jackie</a>
     <a href="/es/#achievements" onclick="toggleMenu()">Trayectoria</a>
     <a href="/es/#platform" onclick="toggleMenu()">Plataforma</a>    
     <a href="/es/endorsements/" onclick="toggleMenu()">Respaldos</a>
-    <a href="/es/news/" onclick="toggleMenu()">Prensa</a>
+    <a href="/es/news/" onclick="toggleMenu()">Noticias</a>
     <a href="/es/#events" onclick="toggleMenu()">Eventos</a>
     <a href="/es/#action" onclick="toggleMenu()">Voluntariado</a>
-    <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" rel="noopener noreferrer" class="m-cta">Donar Ahora</a>
+    <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" rel="noopener noreferrer" class="m-cta">Dona ahora</a>
   </div>
 
   <main class="wrap">
     <div class="section-label">Prensa</div>
-    <h1>Toda la Cobertura de Prensa</h1>
+    <h1>Toda la cobertura de prensa</h1>
     <div id="all-news-list" class="news-grid"></div>
   </main>
 
@@ -489,23 +547,45 @@
 
     function getYouTubeId(url = '') {
       if (!url) return '';
+
       try {
         const parsed = new URL(url, window.location.origin);
         const host = parsed.hostname.replace('www.', '');
-        if (host === 'youtu.be') return parsed.pathname.split('/').filter(Boolean)[0] || '';
+
+        if (host === 'youtu.be') {
+          return parsed.pathname.split('/').filter(Boolean)[0] || '';
+        }
+
         if (host.includes('youtube.com')) {
           if (parsed.searchParams.get('v')) return parsed.searchParams.get('v');
+
           const parts = parsed.pathname.split('/').filter(Boolean);
           const shortsIndex = parts.indexOf('shorts');
           if (shortsIndex !== -1 && parts[shortsIndex + 1]) return parts[shortsIndex + 1];
+
           const embedIndex = parts.indexOf('embed');
           if (embedIndex !== -1 && parts[embedIndex + 1]) return parts[embedIndex + 1];
+
+          const liveIndex = parts.indexOf('live');
+          if (liveIndex !== -1 && parts[liveIndex + 1]) return parts[liveIndex + 1];
         }
       } catch (e) {
         const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([^?&#/]+)/i);
         return match ? match[1] : '';
       }
+
       return '';
+    }
+
+    function videoEmbedUrl(url = '') {
+      if (!url) return '';
+      const youtubeId = getYouTubeId(url);
+      if (youtubeId) return `https://www.youtube.com/embed/${youtubeId}`;
+      if (url.includes('vimeo.com/')) {
+        const id = url.split('vimeo.com/')[1].split('?')[0];
+        return `https://player.vimeo.com/video/${id}`;
+      }
+      return url;
     }
 
     function youtubeThumbnail(url = '') {
@@ -517,7 +597,7 @@
       return youtubeThumbnail(item.video_url || item.url || '') || item.card_image || item.image || '';
     }
 
-    async function loadAllNews() {
+    async function loadAllNoticias() {
       const container = document.getElementById("all-news-list");
       if (!container) return;
 
@@ -526,36 +606,30 @@
         const data = await response.json();
         const items = Array.isArray(data.items) ? data.items : [];
 
-        container.innerHTML = items.map(item => {
-          const title = item.title_es || item.title_en || item.title || '';
-          const summary = item.summary_es || item.summary_en || item.summary || '';
-          const image = mediaImage(item);
-          const isVideo = item.type === "video";
-          return `
-            <article class="news-card">
-              <div class="news-card-image-wrap">
-                ${image
-                  ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(title)}" class="news-card-image">`
-                  : `<div class="news-card-image"></div>`}
+        container.innerHTML = items.map(item => `
+          <article class="news-card">
+            <div class="news-card-image-wrap">
+              ${mediaImage(item)
+                ? `<img src="${escapeHtml(mediaImage(item))}" alt="${escapeHtml(item.title_en || item.title_es || item.title || '')}" class="news-card-image">`
+                : `<div class="news-card-image"></div>`}
+            </div>
+            <div class="news-card-body">
+              <div class="news-source-date">
+                ${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}${item.language ? " • " + escapeHtml(item.language) : ""}
               </div>
-              <div class="news-card-body">
-                <div class="news-source-date">
-                  ${escapeHtml(item.source || "")}${item.date ? " • " + escapeHtml(item.date) : ""}${item.language ? " • " + escapeHtml(item.language) : ""}
-                </div>
-                <h2>${escapeHtml(title)}</h2>
-                ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
-                <a class="news-link" href="${escapeHtml(item.url || item.video_url || "#")}" target="_blank" rel="noopener noreferrer">${isVideo ? "Ver Nota" : "Leer Cobertura"}</a>
-              </div>
-            </article>
-          `;
-        }).join("");
+              <h2>${escapeHtml(item.title_es || item.title_en || item.title || "")}</h2>
+              ${(item.summary_en || item.summary_es || item.summary) ? `<p>${escapeHtml(item.summary_es || item.summary_en || item.summary || "")}</p>` : ""}
+              <a class="news-link" href="${escapeHtml(item.url || item.video_url || "#")}" target="_blank" rel="noopener noreferrer">${item.type === "video" ? "Ver nota" : "Leer cobertura"}</a>
+            </div>
+          </article>
+        `).join("");
       } catch (error) {
-        console.error("Error al cargar noticias:", error);
-        container.innerHTML = "<p>No se pudo cargar la cobertura de prensa en este momento.</p>";
+        console.error("Error loading all news:", error);
+        container.innerHTML = "<p>No se puede cargar la cobertura de prensa en este momento.</p>";
       }
     }
 
-    loadAllNews();
+    loadAllNoticias();
   </script>
 
   <script>

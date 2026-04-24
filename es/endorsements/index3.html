@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Todos los Respaldos | Jackie Forward</title>
+  <title>Todos los respaldos | Jackie Forward</title>
 
   <!-- SEO -->
   <link rel="canonical" href="https://jackieforward1.netlify.app/es/endorsements/" />
-  <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/endorsements.html" />
+  <link rel="alternate" hreflang="en" href="https://jackieforward1.netlify.app/es/endorsements/" />
   <link rel="alternate" hreflang="es" href="https://jackieforward1.netlify.app/es/endorsements/" />
-  <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/endorsements.html" />
+  <link rel="alternate" hreflang="x-default" href="https://jackieforward1.netlify.app/es/endorsements/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -97,8 +98,13 @@
       white-space:nowrap;
     }
 
-    .nav-links a:hover{ color:var(--gold); }
-    .nav-links a.active{ color:var(--gold); }
+    .nav-links a:hover{
+      color:var(--gold);
+    }
+
+    .nav-links a.active{
+      color:var(--gold);
+    }
 
     .nav-donate{
       font-family:'League Spartan',sans-serif;
@@ -109,7 +115,9 @@
       white-space:nowrap;
     }
 
-    .nav-donate:hover{ background:var(--gold-lt); }
+    .nav-donate:hover{
+      background:var(--gold-lt);
+    }
 
     .ham{
       display:none;flex-direction:column;gap:5px;
@@ -281,23 +289,25 @@
       font-family:'Lora', serif;
     }
 
-    .endorse-link{
-      margin-top:auto;
-      font-family:'League Spartan', sans-serif;
-      font-size:.75rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-      color:var(--gold);
-      text-decoration:none;
-      background:none;
-      border:none;
-      padding:0;
-      cursor:pointer;
-      display:inline-block;
-    }
+.endorse-link{
+  margin-top:auto;
+  font-family:'League Spartan', sans-serif;
+  font-size:.75rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--gold);
+  text-decoration:none;
+  background:none;
+  border:none;
+  padding:0;
+  cursor:pointer;
+  display:inline-block;
+}
 
-    .endorse-link:hover{ color:var(--gold-lt); }
+.endorse-link:hover{
+  color:var(--gold-lt);
+}
 
     .endorse-media-button{
       position:relative;
@@ -427,9 +437,27 @@
       display:block;
     }
 
-    body.modal-open{ overflow:hidden; }
+    body.modal-open{
+      overflow:hidden;
+    }
 
-    /* lang switch */
+    @media (max-width:1100px){
+      .endorse-grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:900px){
+      .nav-links{display:none}
+      .nav-donate{display:none}
+      .ham{display:flex}
+
+      .endorse-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+/* lang switch button style */
     .lang-switch{
       display:flex;
       align-items:center;
@@ -447,7 +475,9 @@
       transition:color .2s;
     }
 
-    .lang-switch a:hover{ color:var(--gold); }
+    .lang-switch a:hover{
+      color:var(--gold);
+    }
 
     .lang-switch .active{
       color:var(--gold);
@@ -458,18 +488,10 @@
       color:rgba(244,239,230,.3);
     }
 
-    @media (max-width:1100px){
-      .endorse-grid{
-        grid-template-columns:repeat(2, 1fr);
-      }
-    }
+  
 
-    @media(max-width:900px){
-      .nav-links{display:none}
-      .nav-donate{display:none}
-      .ham{display:flex}
-      .lang-switch{display:none}
-
+    /* ─── RESPONSIVE PATCH ───────────────────── */
+    @media (max-width: 900px){
       #nav{
         height:78px;
         padding:0 1rem;
@@ -482,20 +504,79 @@
         overflow-y:auto;
       }
 
-      .nav-logo img{ height:56px; }
-
-      .endorse-grid{
-        grid-template-columns:1fr;
+      .mobile-nav a{
+        font-size:1.55rem;
+        text-align:center;
       }
 
+      .mobile-nav .m-cta{
+        font-size:1.1rem;
+        padding:.8rem 1.4rem;
+      }
+
+      .nav-logo{
+        gap:.55rem;
+        min-width:0;
+      }
+
+      .nav-logo img{
+        height:56px;
+      }
+
+      .nav-wordmark{
+        font-size:.9rem;
+        line-height:.95;
+      }
+
+      .nav-wordmark span{
+        font-size:.58rem;
+        letter-spacing:.12em;
+      }
+
+      .nav-right{
+        gap:.65rem;
+      }
+
+      .lang-switch{
+        display:none;
+      }
+    }
+
+    @media (max-width: 600px){
+      #nav{
+        padding:0 .8rem;
+      }
+
+      .nav-logo img{
+        height:50px;
+      }
+
+      .nav-wordmark{
+        font-size:.78rem;
+      }
+
+      .nav-wordmark span{
+        font-size:.5rem;
+        letter-spacing:.08em;
+      }
+    }
+
+    @media (max-width: 900px){
       .wrap{
         padding:7rem 1rem 3rem;
       }
 
-      h1{ margin-bottom:1.4rem; }
+      h1{
+        margin-bottom:1.4rem;
+      }
 
-      .endorse-card h3{ font-size:1.2rem; }
-      .endorse-body{ padding:1rem; }
+      .endorse-card h3{
+        font-size:1.2rem;
+      }
+
+      .endorse-body{
+        padding:1rem;
+      }
 
       .video-play{
         width:60px;
@@ -510,9 +591,6 @@
     }
 
     @media (max-width: 600px){
-      #nav{ padding:0 .8rem; }
-      .nav-logo img{ height:50px; }
-
       .wrap{
         padding:6.5rem .9rem 2.5rem;
       }
@@ -522,17 +600,26 @@
         line-height:1;
       }
 
-      .section-label{ font-size:.72rem; }
+      .section-label{
+        font-size:.72rem;
+      }
 
-      .endorse-grid{ gap:1rem; }
-      .endorse-card h3{ font-size:1.08rem; }
+      .endorse-grid{
+        gap:1rem;
+      }
+
+      .endorse-card h3{
+        font-size:1.08rem;
+      }
 
       .endorse-card p{
         font-size:.95rem;
         line-height:1.55;
       }
 
-      .endorse-meta{ gap:.35rem; }
+      .endorse-meta{
+        gap:.35rem;
+      }
 
       .endorse-pill{
         font-size:.66rem;
@@ -564,8 +651,8 @@
   <!-- NAV -->
   <nav id="nav">
     <a href="/es/" class="nav-logo">
-      <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Logo Jackie">
-      <div class="nav-wordmark">Jackie Reyes Yanes<span>Tu Primera Opción</span></div>
+      <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie logo">
+      <div class="nav-wordmark">Jackie Reyes Yanes<span>Tu primera opción</span></div>
     </a>
 
     <div class="nav-right">
@@ -574,13 +661,13 @@
         <li><a href="/es/#achievements">Trayectoria</a></li>
         <li><a href="/es/#platform">Plataforma</a></li>        
         <li><a href="/es/endorsements/" class="active">Respaldos</a></li>
-        <li><a href="/es/news/">Prensa</a></li>
+        <li><a href="/news.html">Noticias</a></li>
         <li><a href="/es/#events">Eventos</a></li>
         <li><a href="/es/#action">Voluntariado</a></li>
       </ul>
 
-      <!-- Switch lang button -->
-      <div class="lang-switch" aria-label="Cambiar idioma">
+<!-- Switch lang button -->
+      <div class="lang-switch" aria-label="Language switcher">
         <a href="/endorsements.html" hreflang="en" lang="en">EN</a>
         <span class="divider">|</span>
         <span class="active">ES</span>
@@ -599,24 +686,25 @@
     <a href="/es/#achievements" onclick="toggleMenu()">Trayectoria</a>
     <a href="/es/#platform" onclick="toggleMenu()">Plataforma</a>    
     <a href="/es/endorsements/" onclick="toggleMenu()">Respaldos</a>
-    <a href="/es/news/" onclick="toggleMenu()">Prensa</a>
+    <a href="/news.html" onclick="toggleMenu()">Noticias</a>
     <a href="/es/#events" onclick="toggleMenu()">Eventos</a>
     <a href="/es/#action" onclick="toggleMenu()">Voluntariado</a>
-    <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Donar Ahora</a>
+    <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Dona ahora</a>
   </div>
 
-  <!-- ENDORSEMENTS -->
+  <!-- RESPALDOS -->
   <main class="wrap">
     <div class="section-label">Respaldos</div>
-    <h1>Todos los Respaldos</h1>
+    <h1>Todos los respaldos</h1>
     <div id="all-endorsements-list" class="endorse-grid"></div>
   </main>
+
 
   <div class="testimony-modal" id="endorsementModal" aria-hidden="true">
     <div class="testimony-modal-backdrop" onclick="closeEndorsementModal()"></div>
 
     <div class="testimony-modal-content" role="dialog" aria-modal="true" aria-label="Video de respaldo">
-      <button class="testimony-close" onclick="closeEndorsementModal()" aria-label="Cerrar video">×</button>
+      <button class="testimony-close" onclick="closeEndorsementModal()" aria-label="Close video">×</button>
 
       <div class="testimony-video-wrap">
         <iframe
@@ -644,20 +732,27 @@
     function normalizeFeatured(value) {
       return value === true || value === 'true' || value === 'True' || value === 1 || value === '1';
     }
-
     function getYouTubeId(url = '') {
       if (!url) return '';
+
       try {
         const parsed = new URL(url, window.location.origin);
         const host = parsed.hostname.replace('www.', '');
-        if (host === 'youtu.be') return parsed.pathname.split('/').filter(Boolean)[0] || '';
+
+        if (host === 'youtu.be') {
+          return parsed.pathname.split('/').filter(Boolean)[0] || '';
+        }
+
         if (host.includes('youtube.com')) {
           if (parsed.searchParams.get('v')) return parsed.searchParams.get('v');
+
           const parts = parsed.pathname.split('/').filter(Boolean);
           const shortsIndex = parts.indexOf('shorts');
           if (shortsIndex !== -1 && parts[shortsIndex + 1]) return parts[shortsIndex + 1];
+
           const embedIndex = parts.indexOf('embed');
           if (embedIndex !== -1 && parts[embedIndex + 1]) return parts[embedIndex + 1];
+
           const liveIndex = parts.indexOf('live');
           if (liveIndex !== -1 && parts[liveIndex + 1]) return parts[liveIndex + 1];
         }
@@ -665,6 +760,7 @@
         const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([^?&#/]+)/i);
         return match ? match[1] : '';
       }
+
       return '';
     }
 
@@ -692,8 +788,10 @@
       const modal = document.getElementById('endorsementModal');
       const video = document.getElementById('endorsementVideo');
       if (!modal || !video || !url) return;
+
       video.src = videoEmbedUrl(url);
       video.title = title || 'Video de respaldo';
+
       modal.classList.add('open');
       document.body.classList.add('modal-open');
     }
@@ -702,12 +800,13 @@
       const modal = document.getElementById('endorsementModal');
       const video = document.getElementById('endorsementVideo');
       if (!modal || !video) return;
+
       modal.classList.remove('open');
       video.src = '';
       document.body.classList.remove('modal-open');
     }
 
-    async function loadAllEndorsements() {
+    async function loadAllRespaldos() {
       const container = document.getElementById("all-endorsements-list");
       if (!container) return;
 
@@ -722,7 +821,6 @@
           const summary = item.summary_es || item.summary_en || item.summary || '';
           const target = item.url || item.video_url || '#';
           const isVideo = item.type === "video";
-
           const media = image
             ? isVideo
               ? `<div class="endorse-media">
@@ -733,7 +831,7 @@
                   </button>
                 </div>`
               : `<div class="endorse-media"><img src="${escapeHtml(image)}" alt="${escapeHtml(title)}"></div>`
-            : `<div class="endorse-media endorse-placeholder">${isVideo ? "Video" : "Sin Imagen"}</div>`;
+            : `<div class="endorse-media endorse-placeholder">${isVideo ? "Video" : "Sin contenido multimedia"}</div>`;
 
           return `
             <article class="endorse-card">
@@ -749,20 +847,20 @@
                 ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
                 ${target !== '#'
                   ? isVideo
-                    ? `<button type="button" class="endorse-link" style="background:none;border:none;padding:0;text-align:left;cursor:pointer;" onclick="openEndorsementModal('${escapeHtml(target)}', '${escapeHtml(title)}')">Ver Respaldo →</button>`
-                    : `<a href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer" class="endorse-link">Leer Cobertura →</a>`
+                    ? `<button type="button" class="endorse-link" style="background:none;border:none;padding:0;text-align:left;cursor:pointer;" onclick="openEndorsementModal('${escapeHtml(target)}', '${escapeHtml(title)}')">Ver respaldo →</button>`
+                    : `<a href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer" class="endorse-link">Leer cobertura →</a>`
                   : ""}
               </div>
             </article>
           `;
         }).join("");
       } catch (error) {
-        console.error("Error al cargar respaldos:", error);
-        container.innerHTML = "<p>No se pudieron cargar los respaldos en este momento.</p>";
+        console.error("Error loading endorsements:", error);
+        container.innerHTML = "<p>No se pueden cargar los respaldos en este momento.</p>";
       }
     }
 
-    loadAllEndorsements();
+    loadAllRespaldos();
   </script>
 
   <script>
@@ -779,6 +877,7 @@
         m.classList.toggle('open');
       }
     }
+
   </script>
 
 </body>

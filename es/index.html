@@ -145,7 +145,6 @@ strong{font-weight:600}
     url('/images/jackie-reyes-yanes-mt-pleasant.jpg')
     center 8% / cover no-repeat;
 }
-/* subtle vignette only — let the photo breathe */
 .hero-img::after{
   content:'';position:absolute;inset:0;
   background:
@@ -343,7 +342,7 @@ section { scroll-margin-top: 115px; }
 }
 .tl-item p{font-size:.85rem;margin:0;color:rgba(244,239,230,.6);font-family:'Barlow',sans-serif}
 
-/* ─── PLATAFORMA ─────────────────────────────── */
+/* ─── PLATFORM ─────────────────────────────── */
 #platform{background:#0e110e}
 .platform-intro{
   display:grid;grid-template-columns:1fr 1fr;gap:4rem;
@@ -410,7 +409,6 @@ section { scroll-margin-top: 115px; }
 .ppanel{display:none}
 .ppanel.on{display:block}
 
-/* Each policy as two columns: big headline left, items right */
 .policy-layout{
   display:grid;grid-template-columns:2fr 3fr;gap:4rem;
   align-items:start;
@@ -459,7 +457,6 @@ section { scroll-margin-top: 115px; }
 }
 .pl-left .p-photo img{width:100%;height:100%;object-fit:cover;display:block}
 
-/* Policy items */
 .pl-right{}
 .p-items{list-style:none;display:flex;flex-direction:column;gap:0}
 .p-item{
@@ -487,7 +484,6 @@ section { scroll-margin-top: 115px; }
   font-family:'League Spartan',sans-serif;font-weight:100;
 }
 
-/* platform swipe */
 .platform-tabs-wrap{
   position:relative;
 }
@@ -501,17 +497,16 @@ section { scroll-margin-top: 115px; }
   font-weight:700;
   letter-spacing:.14em;
   text-transform:uppercase;
-  color:rgba(244,239,230,.55);
+  color:var(--gold);
   margin-bottom:.85rem;
 }
 
-/* Por defecto mostramos desktop */
 .hint-mobile{ display:none; }
 .hint-desktop{ display:inline; }
 
 .swipe-arrow{
   position:relative;
-  width:36px;   /* ← aquí controlas lo ancha */
+  width:36px;
   height:3px;
   background:var(--gold);
   display:inline-block;
@@ -606,7 +601,7 @@ section { scroll-margin-top: 115px; }
 }
 .photo-row-cell:hover img{transform:scale(1.04);filter:brightness(.95) saturate(1.1)}
 
-/* ─── TAKE ACCIÓN ──────────────────────────── */
+/* ─── TAKE ACTION ──────────────────────────── */
 #action{
   background:#0e110e;
   padding:5rem 0;
@@ -694,7 +689,7 @@ section { scroll-margin-top: 115px; }
 }
 .f-submit:hover{background:var(--gold-lt)}
 
-/* ─── LOGROS ──────────────────────────── */
+/* ─── ACHIEVEMENTS ──────────────────────────── */
 #achievements{background:#0a0d0a;padding:5rem 0;border-top:1px solid rgba(212,160,23,.12)}
 .ach-head{margin-bottom:3.5rem}
 .ach-head h2{
@@ -760,7 +755,7 @@ section { scroll-margin-top: 115px; }
   .ach-grid{grid-template-columns:1fr}
 }
 
-/* ─── EVENTOS ────────────────────────────────── */
+/* ─── EVENTS ────────────────────────────────── */
 #events{background:var(--ink);padding:5rem 0}
 .events-head{
   display:flex;justify-content:space-between;align-items:flex-end;
@@ -774,41 +769,7 @@ section { scroll-margin-top: 115px; }
 }
 .events-head h2 em{font-style:italic;color:var(--gold);font-family:'Lora',serif;text-transform:none}
 .events-list{display:flex;flex-direction:column;gap:0}
-.ev{
-  display:grid;grid-template-columns:80px 1fr auto;
-  gap:2rem;align-items:center;
-  padding:1.5rem 0;
-  border-bottom:1px solid rgba(244,239,230,.07);
-  transition:background .2s;
-}
-.ev:first-child{border-top:1px solid rgba(244,239,230,.07)}
-.ev-date-block{text-align:center}
-.ev-date-block .ev-mo{
-  font-family:'League Spartan',sans-serif;
-  font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-  color:rgba(244,239,230,.5);display:block;
-}
-.ev-date-block .ev-day{
-  font-family:'League Spartan',sans-serif;
-  font-size:2.5rem;font-weight:700;color:var(--gold);
-  line-height:1;display:block;
-}
-.ev-info h4{
-  font-family:'League Spartan',sans-serif;
-  font-size:1.05rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
-  color:var(--warm);margin-bottom:.3rem;
-}
-.ev-info p{font-size:.84rem;color:rgba(244,239,230,.5);line-height:1.6;font-weight:300}
-.ev-tag{
-  font-family:'League Spartan',sans-serif;
-  font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--gold);background:rgba(212,160,23,.1);
-  padding:.25rem .7rem;white-space:nowrap;
-}
 
-/* =========================
-   EVENTOS (NEW STYLES)
-   ========================= */
 .event-card{
   display:grid;
   grid-template-columns: 260px 1fr;
@@ -926,21 +887,7 @@ section { scroll-margin-top: 115px; }
   opacity:.92;
 }
 
-@media (max-width: 900px){
-  .event-card{
-    grid-template-columns:1fr;
-  }
-
-  .event-card-body{
-    padding:1rem;
-  }
-
-  .event-card-image{
-    min-height:220px;
-  }
-}
-
-/* ─── EN LAS NOTICIAS ─────────────────────────────── */
+/* ─── NEWS CLIPS ─────────────────────────────── */
 #news{background:#0e110e;padding:5rem 0;border-top:1px solid rgba(244,239,230,.06)}
 .news-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
 .news-head h2{
@@ -950,44 +897,411 @@ section { scroll-margin-top: 115px; }
 }
 .news-head h2 em{font-style:italic;color:var(--gold);font-family:'Lora',serif;text-transform:none}
 .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.news-card{
-  background:var(--ink);border:1px solid rgba(244,239,230,.07);
-  padding:1.8rem;display:flex;flex-direction:column;gap:1rem;
-  transition:border-color .2s,transform .2s;
+
+/* ─── PRESS / NEWS cards ─── */
+.press-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1.5rem;
+  margin-top:2rem;
+}
+.press-card{
+  background:rgba(244,239,230,.04);
+  border:1px solid rgba(244,239,230,.08);
+  overflow:hidden;
+  min-height:100%;
+}
+.press-card-link{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  color:inherit;
   text-decoration:none;
 }
-.news-card:hover{border-color:var(--gold);transform:translateY(-3px)}
-.news-outlet{
-  font-family:'League Spartan',sans-serif;
-  font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--gold);display:flex;align-items:center;gap:.6rem;
+.press-card-image-wrap{
+  aspect-ratio: 16 / 9;
+  background:#111;
+  overflow:hidden;
 }
-.news-outlet::before{content:'';display:block;width:16px;height:2px;background:var(--gold)}
-.news-date{
-  font-family:'League Spartan',sans-serif;
-  font-size:.65rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(244,239,230,.3);
+.press-card-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
-.news-headline{
-  font-family:'League Spartan',sans-serif;
-  font-size:1.2rem;font-weight:600;letter-spacing:.02em;
-  color:var(--warm);line-height:1.25;flex:1;
+.press-card-placeholder{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(244,239,230,.45);
+  font-family:'League Spartan', sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
 }
-.news-excerpt{
-  font-size:.82rem;line-height:1.65;color:rgba(244,239,230,.5);
-  font-weight:300;
+.press-card-body{
+  padding:1.1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.85rem;
 }
-.news-read{
-  font-family:'League Spartan',sans-serif;
-  font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--gold);display:flex;align-items:center;gap:.4rem;
-  margin-top:.5rem;
+.press-card-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.35rem;
+  align-items:center;
+  font-family:'League Spartan', sans-serif;
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--gold);
 }
-.news-read::after{content:'→'}
-@media(max-width:900px){.news-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.news-grid{grid-template-columns:1fr}}
+.press-card-dot{ opacity:.7; }
+.press-card h3{
+  margin:0;
+  font-family:'League Spartan', sans-serif;
+  font-size:1.45rem;
+  line-height:1.1;
+  color:var(--warm);
+}
+.press-card p{
+  margin:0;
+  line-height:1.6;
+  color:rgba(244,239,230,.75);
+}
+.press-card-read{
+  margin-top:auto;
+  font-family:'League Spartan', sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--gold);
+}
+.press-card-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(180deg, rgba(212,160,23,.06), rgba(244,239,230,.02));
+}
+.press-card-cta-inner{
+  padding:2rem 1.5rem;
+}
+.press-card-cta-star{
+  color:var(--gold);
+  font-size:3rem;
+  line-height:1;
+  margin-bottom:1rem;
+}
+.press-card-cta h3{
+  margin:0 0 1rem 0;
+  color:var(--gold);
+}
+.press-card-cta p{
+  margin:0 0 1.5rem 0;
+}
+.press-card-cta-link{
+  display:inline-block;
+  font-family:'League Spartan', sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--gold);
+  text-decoration:none;
+}
 
-/* ─── PIE DE PÁGINA ────────────────────────────────── */
+/* ─── ENDORSEMENTS ────────────────────────────────── */
+#endorsements{
+  background:var(--ink);
+  border-top:1px solid rgba(244,239,230,.06);
+}
+.endorse-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1.5rem;
+  margin-top:2rem;
+}
+.endorse-card{
+  background:rgba(244,239,230,.04);
+  border:1px solid rgba(244,239,230,.08);
+  overflow:hidden;
+  min-height:100%;
+  display:flex;
+  flex-direction:column;
+}
+.endorse-media{
+  aspect-ratio:16 / 9;
+  background:#111;
+  overflow:hidden;
+}
+.endorse-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.endorse-media-button{
+  width:100%;
+  height:100%;
+  border:none;
+  padding:0;
+  background:#000;
+  cursor:pointer;
+}
+.endorse-body{
+  padding:1.1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.85rem;
+}
+.endorse-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  align-items:center;
+}
+.endorse-pill{
+  display:inline-block;
+  padding:.35rem .55rem;
+  font-family:'League Spartan', sans-serif;
+  font-size:.72rem;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border:1px solid rgba(244,239,230,.14);
+}
+.endorse-source{
+  color:var(--gold);
+  border-color:rgba(212,160,23,.35);
+}
+.endorse-date{
+  color:rgba(244,239,230,.8);
+  border-color:rgba(244,239,230,.14);
+}
+.endorse-language{
+  color:var(--warm);
+  background:rgba(212,160,23,.10);
+  border-color:rgba(212,160,23,.25);
+  font-style:italic;
+}
+.endorse-card h3{
+  margin:0;
+  font-family:'League Spartan', sans-serif;
+  font-size:1.35rem;
+  line-height:1.1;
+  color:var(--warm);
+}
+.endorser-name{
+  font-family:'League Spartan', sans-serif;
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-size:.85rem;
+}
+.endorse-card p{
+  margin:0;
+  line-height:1.6;
+  color:rgba(244,239,230,.75);
+}
+.endorse-link{
+  margin-top:auto;
+  font-family:'League Spartan', sans-serif;
+  font-size:.75rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--gold);
+  text-decoration:none;
+  background:none;
+  border:none;
+  padding:0;
+  cursor:pointer;
+  display:inline-block;
+}
+.endorse-link:hover{ color:var(--gold-lt); }
+.endorse-card-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(180deg, rgba(212,160,23,.06), rgba(244,239,230,.02));
+}
+.endorse-card-cta-inner{
+  padding:2rem 1.5rem;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+.endorse-card-cta-star{
+  color:var(--gold);
+  font-size:3rem;
+  line-height:1;
+  margin-bottom:1rem;
+}
+.endorse-card-cta h3{
+  margin:0 0 1rem 0;
+  color:var(--gold);
+}
+.endorse-card-cta p{
+  margin:0 0 1.5rem 0;
+}
+.endorse-card-cta-link{
+  display:inline-block;
+  margin:0 auto;
+  font-family:'League Spartan', sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--gold);
+  text-decoration:none;
+}
+
+/* btn testimony */
+.btn-testimony{
+  display:inline-block;
+  margin-top:1.2rem;
+  font-family:'League Spartan',sans-serif;
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid rgba(212,160,23,.4);
+  padding:.55rem .95rem;
+  text-decoration:none;
+  transition:all .2s;
+  background:transparent;
+}
+.btn-testimony:hover{
+  background:var(--gold);
+  color:var(--ink);
+  border-color:var(--gold);
+}
+.testimony-modal{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+}
+.testimony-modal.open{
+  display:block;
+}
+.testimony-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.82);
+  backdrop-filter:blur(3px);
+}
+.testimony-modal-content{
+  position:relative;
+  width:min(920px, 92vw);
+  margin:5vh auto 0;
+  z-index:2;
+}
+.testimony-close{
+  position:absolute;
+  top:-42px;
+  right:0;
+  width:38px;
+  height:38px;
+  border:none;
+  background:var(--gold);
+  color:var(--ink);
+  font-size:1.5rem;
+  font-weight:700;
+  line-height:1;
+  cursor:pointer;
+}
+.testimony-video-wrap{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  background:#000;
+  border:1px solid rgba(212,160,23,.25);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+.testimony-video-wrap iframe{
+  width:100%;
+  height:100%;
+  display:block;
+}
+body.modal-open{ overflow:hidden; }
+
+/* ach top */
+.ach-top{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  margin-bottom:.4rem;
+}
+.ach-cat{
+  font-family:'League Spartan',sans-serif;
+  font-size:.95rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(244,239,230,.35);
+}
+
+/* video */
+.video-embed{
+  width:100%;
+  max-width:900px;
+  margin:2rem 0;
+}
+.video-cover,
+.video-frame-wrap{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  display:block;
+  border:none;
+  padding:0;
+  background:#000;
+  cursor:pointer;
+  overflow:hidden;
+}
+.video-thumb{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.video-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,.12), rgba(0,0,0,.38));
+}
+.video-play{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:rgba(212,160,23,.50);
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.5rem;
+  line-height:1;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+.video-cover:hover .video-play{
+  transform:translate(-50%,-50%) scale(1.05);
+}
+.video-embed iframe{
+  width:100%;
+  height:100%;
+  display:block;
+  border:none;
+}
+
+/* ─── FOOTER ────────────────────────────────── */
 footer{
   background:#070907;
   border-top:1px solid rgba(244,239,230,.07);
@@ -1042,93 +1356,38 @@ footer{
   .story-split,.platform-intro,.ward-head,.action-wrap,.footer-top{
     grid-template-columns:1fr;gap:2rem;
   }
-.story-photo{
-  height:84vw;
-  min-height:400px;
-  max-height:520px;
-}
-
-.story-photo-bg{
-  background-position:center 18%;
-}
-
-.story-copy{
-  padding:2rem 2rem 3rem;
-}
+  .story-photo{
+    height:84vw;
+    min-height:400px;
+    max-height:520px;
+  }
+  .story-photo-bg{
+    background-position:center 18%;
+  }
+  .story-copy{
+    padding:2rem 2rem 3rem;
+  }
   .policy-layout{grid-template-columns:1fr;gap:2rem}
   .ward-grid{grid-template-columns:1fr 1fr}
   .numbers-inner{grid-template-columns:1fr 1fr;gap:2rem}
   .n-item{border-right:none;border-bottom:1px solid rgba(244,239,230,.1);padding-bottom:1.5rem}
   .n-item:nth-child(even){border-bottom:none}
   .footer-top{grid-template-columns:1fr 1fr}
-  .ev{grid-template-columns:60px 1fr;gap:1rem}
-  .ev-tag{display:none}
   .photo-row{grid-template-columns:1fr 1fr;height:280px}
-
-  /* swipe */
-  .platform-swipe-hint{
-    display:flex;
-  }
-
+  .platform-swipe-hint{ display:flex; }
   .hint-mobile{ display:inline; }
   .hint-desktop{ display:none; }
-
-  .swipe-arrow{
-    animation:swipeNudge 1s ease-in-out infinite;
-  }
-
+  .swipe-arrow{ animation:swipeNudge 1s ease-in-out infinite; }
   .ptabs{
     padding-bottom:.25rem;
     mask-image:linear-gradient(to right, black 0%, black 88%, transparent 100%);
     -webkit-mask-image:linear-gradient(to right, black 0%, black 88%, transparent 100%);
   }
-
-  .ptab{
-    padding:.8rem 1rem;
-    font-size:.72rem;
-  }
-}
-
-
-@media (max-width: 820px) and (min-width: 601px){
-  .story-photo{
-    height:96vw;
-    min-height:500px;
-    max-height:620px;
-  }
-
-  .story-photo-bg{
-    background-position:center 24%;
-  }
-
-  .story-year-badge{
-    left:1rem;
-    bottom:1rem;
-    padding:.8rem .95rem;
-  }
-
-  .story-year-badge .yr{
-    font-size:1.9rem;
-  }
-
-  .story-year-badge .yr-lbl{
-    font-size:.54rem;
-    letter-spacing:.1em;
-  }
-
-  .story-copy{
-    padding:1.9rem 1.4rem 2.4rem;
-  }
-
-  .story-photo-bg::after{
-    background:linear-gradient(
-      to bottom,
-      transparent 60%,
-      rgba(11,13,11,.8) 82%,
-      var(--ink) 100%
-    );
-  }
-
+  .ptab{ padding:.8rem 1rem; font-size:.72rem; }
+  .event-card{ grid-template-columns:1fr; }
+  .event-card-image{ min-height:200px; }
+  .event-card-body{ padding:1rem; }
+  .press-grid, .endorse-grid{ gap:1rem; }
 }
 
 @media(max-width:600px){
@@ -1141,932 +1400,67 @@ footer{
   .hero-actions .btn-primary,.hero-actions .btn-ghost{text-align:center;justify-content:center;display:block;padding:.85rem 1rem}
   .ward-grid{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr}
-  .ptabs{overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;padding-bottom:.3rem}
-  .ptabs::-webkit-scrollbar{display:none}
-  .ptab{flex-shrink:0}
   .f-row{grid-template-columns:1fr}
   .story-copy h2{font-size:2rem}
   section,.section{padding:3.5rem 0}
   .numbers{padding:2rem 0}
-  .story-photo{
-    height:100vw;
-    min-height:420px;
-    max-height:540px;
+  .press-grid, .endorse-grid{ grid-template-columns:1fr; }
+}
+
+@media (max-width: 900px){
+  #nav{ height:78px; padding:0 1rem; }
+  .mobile-nav{
+    top:78px;
+    padding:1.5rem 1.25rem 2rem;
+    justify-content:flex-start;
+    overflow-y:auto;
   }
-
-  .story-photo-bg{
-    background-position:center 16%;
-  }
-
-  .story-year-badge{
-    left:.9rem;
-    bottom:.9rem;
-    padding:.7rem .85rem;
-  }
-
-  .story-year-badge .yr{
-    font-size:1.75rem;
-  }
-
-  .story-year-badge .yr-lbl{
-    font-size:.52rem;
-    letter-spacing:.1em;
-  }
-
-  .story-copy{
-    padding:1.8rem 1rem 2.4rem;
-  }
-
-  .story-photo-bg::after{
-    background:linear-gradient(
-      to bottom,
-      transparent 62%,
-      rgba(11,13,11,.82) 84%,
-      var(--ink) 100%
-    );
-  }
-
+  .nav-logo img{ height:56px; }
+  .lang-switch{ display:none; }
 }
-
-/* ─── PRESS - NEWS ────────────────────────────────── */
-.press-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:1.5rem;
-  margin-top:2rem;
+@media (max-width: 600px){
+  #nav{ padding:0 .8rem; }
+  .nav-logo img{ height:50px; }
 }
-
-.press-card{
-  background:rgba(244,239,230,.04);
-  border:1px solid rgba(244,239,230,.08);
-  overflow:hidden;
-  min-height:100%;
-}
-
-.press-card-link{
-  display:flex;
-  flex-direction:column;
-  height:100%;
-  color:inherit;
-  text-decoration:none;
-}
-
-.press-card-image-wrap{
-  aspect-ratio: 16 / 9;
-  background:#111;
-  overflow:hidden;
-}
-
-.press-card-image{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-.press-card-placeholder{
-  width:100%;
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:rgba(244,239,230,.45);
-  font-family:'League Spartan', sans-serif;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-}
-
-.press-card-body{
-  padding:1.1rem;
-  display:flex;
-  flex-direction:column;
-  gap:.85rem;
-}
-
-.press-card-meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.35rem;
-  align-items:center;
-  font-family:'League Spartan', sans-serif;
-  font-size:.78rem;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  color:var(--gold);
-}
-
-.press-card-dot{
-  opacity:.7;
-}
-
-.press-card h3{
-  margin:0;
-  font-family:'League Spartan', sans-serif;
-  font-size:1.45rem;
-  line-height:1.1;
-  color:var(--warm);
-}
-
-.press-card p{
-  margin:0;
-  line-height:1.6;
-  color:rgba(244,239,230,.75);
-}
-
-.press-card-read{
-  margin-top:auto;
-  font-family:'League Spartan', sans-serif;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  color:var(--gold);
-}
-
-.press-card-cta{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:linear-gradient(180deg, rgba(212,160,23,.06), rgba(244,239,230,.02));
-}
-
-.press-card-cta-inner{
-  padding:2rem 1.5rem;
-}
-
-.press-card-cta-star{
-  color:var(--gold);
-  font-size:3rem;
-  line-height:1;
-  margin-bottom:1rem;
-}
-
-.press-card-cta h3{
-  margin:0 0 1rem 0;
-  color:var(--gold);
-}
-
-.press-card-cta p{
-  margin:0 0 1.5rem 0;
-}
-
-.press-card-cta-link{
-  display:inline-block;
-  font-family:'League Spartan', sans-serif;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  color:var(--gold);
-  text-decoration:none;
-}
-
-@media (max-width: 1100px){
-  .press-grid{
-    grid-template-columns:repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 700px){
-  .press-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-/* ─── RESPALDOS ────────────────────────────────── */
-#endorsements{
-  background:var(--ink);
-  border-top:1px solid rgba(244,239,230,.06);
-}
-
-.endorse-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:1.5rem;
-  margin-top:2rem;
-}
-
-.endorse-card{
-  background:rgba(244,239,230,.04);
-  border:1px solid rgba(244,239,230,.08);
-  overflow:hidden;
-  min-height:100%;
-  display:flex;
-  flex-direction:column;
-}
-
-.endorse-media{
-  aspect-ratio:16 / 9;
-  background:#111;
-  overflow:hidden;
-}
-
-.endorse-media img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-.endorse-media-button{
-  width:100%;
-  height:100%;
-  border:none;
-  padding:0;
-  background:#000;
-  cursor:pointer;
-}
-
-.endorse-video iframe{
-  width:100%;
-  height:100%;
-}
-
-.endorse-placeholder{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:rgba(244,239,230,.45);
-  font-family:'League Spartan', sans-serif;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-}
-
-.endorse-body{
-  padding:1.1rem;
-  display:flex;
-  flex-direction:column;
-  gap:.85rem;
-}
-
-.endorse-meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.5rem;
-  align-items:center;
-}
-
-.endorse-pill{
-  display:inline-block;
-  padding:.35rem .55rem;
-  font-family:'League Spartan', sans-serif;
-  font-size:.72rem;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  border:1px solid rgba(244,239,230,.14);
-}
-
-.endorse-source{
-  color:var(--gold);
-  border-color:rgba(212,160,23,.35);
-}
-
-.endorse-date{
-  color:rgba(244,239,230,.8);
-  border-color:rgba(244,239,230,.14);
-}
-
-.endorse-language{
-  color:var(--warm);
-  background:rgba(212,160,23,.10);
-  border-color:rgba(212,160,23,.25);
-  font-style:italic;
-}
-
-.endorse-card h3{
-  margin:0;
-  font-family:'League Spartan', sans-serif;
-  font-size:1.35rem;
-  line-height:1.1;
-  color:var(--warm);
-}
-
-.endorser-name{
-  font-family:'League Spartan', sans-serif;
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  font-size:.85rem;
-}
-
-.endorse-card p{
-  margin:0;
-  line-height:1.6;
-  color:rgba(244,239,230,.75);
-}
-
-.endorse-link{
-  margin-top:auto;
-  font-family:'League Spartan', sans-serif;
-  font-size:.75rem;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  color:var(--gold);
-  text-decoration:none;
-  background:none;
-  border:none;
-  padding:0;
-  cursor:pointer;
-  display:inline-block;
-}
-
-.endorse-link:hover{
-  color:var(--gold-lt);
-}
-
-.endorse-card-cta{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:linear-gradient(180deg, rgba(212,160,23,.06), rgba(244,239,230,.02));
-}
-
-.endorse-card-cta-inner{
-  padding:2rem 1.5rem;
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-}
-
-.endorse-card-cta-star{
-  color:var(--gold);
-  font-size:3rem;
-  line-height:1;
-  margin-bottom:1rem;
-}
-
-.endorse-card-cta h3{
-  margin:0 0 1rem 0;
-  color:var(--gold);
-}
-
-.endorse-card-cta p{
-  margin:0 0 1.5rem 0;
-}
-
-.endorse-card-cta-link{
-  display:inline-block;
-  margin:0 auto;
-  font-family:'League Spartan', sans-serif;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  color:var(--gold);
-  text-decoration:none;
-}
-
-@media (max-width:1100px){
-  .endorse-grid{
-    grid-template-columns:repeat(2, 1fr);
-  }
-}
-
-@media (max-width:700px){
-  .endorse-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-/* btn card testimony */
-.btn-testimony{
-  display:inline-block;
-  margin-top:1.2rem;
-  font-family:'League Spartan',sans-serif;
-  font-size:.75rem;
-  font-weight:700;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--gold);
-  border:1px solid rgba(212,160,23,.4);
-  padding:.55rem .95rem;
-  text-decoration:none;
-  transition:all .2s;
-  background:transparent;
-}
-
-.btn-testimony:hover{
-  background:var(--gold);
-  color:var(--ink);
-  border-color:var(--gold);
-}
-
-.testimony-modal{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  display:none;
-}
-
-.testimony-modal.open{
-  display:block;
-}
-
-.testimony-modal-backdrop{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.82);
-  backdrop-filter:blur(3px);
-}
-
-.testimony-modal-content{
-  position:relative;
-  width:min(920px, 92vw);
-  margin:5vh auto 0;
-  z-index:2;
-}
-
-.testimony-close{
-  position:absolute;
-  top:-42px;
-  right:0;
-  width:38px;
-  height:38px;
-  border:none;
-  background:var(--gold);
-  color:var(--ink);
-  font-size:1.5rem;
-  font-weight:700;
-  line-height:1;
-  cursor:pointer;
-}
-
-.testimony-video-wrap{
-  position:relative;
-  width:100%;
-  aspect-ratio:16 / 9;
-  background:#000;
-  border:1px solid rgba(212,160,23,.25);
-  box-shadow:0 20px 60px rgba(0,0,0,.45);
-}
-
-.testimony-video-wrap iframe{
-  width:100%;
-  height:100%;
-  display:block;
-}
-
-body.modal-open{
-  overflow:hidden;
-}
-
-@media(max-width:600px){
-  .testimony-modal-content{
-    width:94vw;
-    margin:12vh auto 0;
-  }
-
-  .testimony-close{
-    top:-46px;
-    right:0;
-  }
-}
-
-/* categoria record track */
-.ach-top{
-  display:flex;
-  align-items:center;
-  gap:.6rem;
-  margin-bottom:.4rem;
-}
-
-.ach-cat{
-  font-family:'League Spartan',sans-serif;
-  font-size:.95rem;
-  font-weight:700;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:rgba(244,239,230,.35);
-}
-
-/* video meet jackie section */
-.video-section{
-  padding:4rem 0;
-  display:flex;
-  justify-content:center;
-}
-
-.video-wrap{
-  width:100%;
-  max-width:900px;
-  aspect-ratio:16 / 9;
-  background:#000;
-  border:1px solid rgba(212,160,23,.25);
-  box-shadow:0 20px 60px rgba(0,0,0,.45);
-}
-
-.video-wrap iframe{
-  width:100%;
-  height:100%;
-  display:block;
-}
-
-/* video con thumbnail y boton de play encima */
-.video-embed{
-  width:100%;
-  max-width:900px;
-  margin:2rem 0;
-}
-
-.video-cover,
-.video-frame-wrap{
-  position:relative;
-  width:100%;
-  aspect-ratio:16 / 9;
-  display:block;
-  border:none;
-  padding:0;
-  background:#000;
-  cursor:pointer;
-  overflow:hidden;
-}
-
-.video-thumb{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-.video-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to bottom, rgba(0,0,0,.12), rgba(0,0,0,.38));
-}
-
-.video-play{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  background:rgba(212,160,23,.50);
-  color:var(--ink);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.5rem;
-  line-height:1;
-  box-shadow:0 12px 30px rgba(0,0,0,.35);
-}
-
-.video-cover:hover .video-play{
-  transform:translate(-50%,-50%) scale(1.05);
-}
-
-.video-embed iframe{
-  width:100%;
-  height:100%;
-  display:block;
-  border:none;
-}
-
-
-
-    /* ─── RESPONSIVE PATCH ───────────────────── */
-    @media (max-width: 900px){
-      #nav{
-        height:78px;
-        padding:0 1rem;
-      }
-
-      .mobile-nav{
-        top:78px;
-        padding:1.5rem 1.25rem 2rem;
-        justify-content:flex-start;
-        overflow-y:auto;
-      }
-
-      .mobile-nav a{
-        font-size:1.55rem;
-        text-align:center;
-      }
-
-      .mobile-nav .m-cta{
-        font-size:1.1rem;
-        padding:.8rem 1.4rem;
-      }
-
-      .nav-logo{
-        gap:.55rem;
-        min-width:0;
-      }
-
-      .nav-logo img{
-        height:56px;
-      }
-
-      .nav-wordmark{
-        font-size:.9rem;
-        line-height:.95;
-      }
-
-      .nav-wordmark span{
-        font-size:.58rem;
-        letter-spacing:.12em;
-      }
-
-      .nav-right{
-        gap:.65rem;
-      }
-
-      .lang-switch{
-        display:none;
-      }
-    }
-
-    @media (max-width: 600px){
-      #nav{
-        padding:0 .8rem;
-      }
-
-      .nav-logo img{
-        height:50px;
-      }
-
-      .nav-wordmark{
-        font-size:.78rem;
-      }
-
-      .nav-wordmark span{
-        font-size:.5rem;
-        letter-spacing:.08em;
-      }
-    }
-
-    @media (max-width: 900px){
-      #hero{
-        min-height:720px;
-        height:auto;
-      }
-
-      .hero-img{
-        background-position:center top;
-      }
-
-      .hero-text{
-        padding:0 1.2rem 2.4rem;
-        transform:none;
-      }
-
-      .hero-h1{
-        transform:none;
-        margin-bottom:1.8rem;
-        -webkit-text-stroke:1px #ffffff;
-      }
-
-      .hero-byline{
-        line-height:1.55;
-        max-width:none;
-      }
-
-      .hero-meta,
-      .hero-meta-2{
-        gap:1rem 1.5rem;
-        padding-top:1.2rem;
-      }
-
-      .story-copy,
-      .wrap,
-      .numbers-inner,
-      .action-wrap,
-      .platform-intro,
-      .ward-head,
-      .events-head,
-      .news-head{
-        padding-left:1.2rem;
-        padding-right:1.2rem;
-      }
-
-      .story-copy p,
-      .platform-intro p,
-      .ward-head p,
-      .ach-head p{
-        max-width:none;
-      }
-
-      .story-year-badge{
-        left:1.2rem;
-        bottom:1.2rem;
-      }
-
-      .event-card{
-        grid-template-columns:1fr;
-      }
-
-      .event-card-image{
-        min-height:200px;
-      }
-
-      .event-card-body{
-        padding:1rem;
-      }
-
-      .event-card h4,
-      .news-card h2,
-      .endorse-card h3,
-      .press-card h3{
-        font-size:1.2rem;
-      }
-
-      .press-grid,
-      .endorse-grid{
-        gap:1rem;
-      }
-
-      .testimony-modal-content{
-        width:min(92vw, 760px);
-        margin:10vh auto 0;
-      }
-    }
-
-    @media (max-width: 600px){
-      #hero{
-        min-height:660px;
-      }
-
-      .hero-text,
-      .wrap,
-      .story-copy,
-      .numbers-inner,
-      .action-wrap,
-      .platform-intro,
-      .ward-head,
-      .events-head,
-      .news-head{
-        padding-left:1rem;
-        padding-right:1rem;
-      }
-
-      .hero-h1{
-        font-size:2.55rem;
-        line-height:.92;
-      }
-
-      .hero-kicker{
-        letter-spacing:.18em;
-        gap:.55rem;
-      }
-
-      .hero-kicker::before{
-        width:16px;
-      }
-
-      .hero-byline{
-        font-size:.95rem;
-      }
-
-      .hero-meta,
-      .hero-meta-2{
-        display:grid;
-        grid-template-columns:repeat(2,minmax(0,1fr));
-        gap:.9rem 1rem;
-      }
-
-      .hero-meta-item .num{
-        font-size:1.3rem;
-      }
-
-      .section-label{
-        font-size:.78rem;
-        letter-spacing:.18em;
-      }
-
-      .platform-intro h2,
-      .ward-head h2,
-      .ach-head h2,
-      .action-left h2,
-      .events-head h2,
-      .news-head h2{
-        font-size:2rem;
-      }
-
-      .story-copy{
-        padding-top:2.4rem;
-        padding-bottom:2.4rem;
-      }
-
-      .story-copy p,
-      .platform-intro p,
-      .ward-head p,
-      .action-left p,
-      .ach-head p,
-      .event-description,
-      .press-card p,
-      .endorse-card p,
-      .news-excerpt{
-        font-size:.95rem;
-        line-height:1.6;
-      }
-
-      .numbers-inner{
-        grid-template-columns:1fr;
-        gap:1rem;
-      }
-
-      .n-item{
-        border-bottom:1px solid rgba(244,239,230,.1) !important;
-        padding-bottom:1rem;
-      }
-
-      .n-item:last-child{
-        border-bottom:none !important;
-        padding-bottom:0;
-      }
-
-      .photo-row{
-        grid-template-columns:1fr;
-        height:auto;
-      }
-
-      .photo-row-cell{
-        height:220px;
-      }
-
-      .event-meta,
-      .endorse-meta,
-      .press-meta{
-        gap:.4rem;
-      }
-
-      .event-date-badge{
-        width:62px;
-        min-width:62px;
-        height:62px;
-      }
-
-      .event-card h4,
-      .news-card h2,
-      .endorse-card h3,
-      .press-card h3{
-        font-size:1.08rem;
-        line-height:1.15;
-      }
-
-      .btn-primary,
-      .btn-ghost,
-      .event-rsvp-btn,
-      .btn-testimony,
-      .press-link,
-      .news-link{
-        width:100%;
-        text-align:center;
-      }
-
-      .testimony-modal-content{
-        width:94vw;
-        margin:12vh auto 0;
-      }
-    }
-
-  </style>
+</style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="/es/" class="nav-logo" aria-label="Go to home">
-    <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie Reyes Yanes logo">
-    <!--<div class="nav-wordmark">Jackie Reyes Yanes<span>Ward 1 · Concejo de DC</span></div>-->
+  <a href="/es/" class="nav-logo" aria-label="Ir al inicio">
+    <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Logo Jackie Reyes Yanes">
   </a>
   <nav class="nav-right">
     <ul class="nav-links">
       <li><a href="#story">Sobre Jackie</a></li>
       <li><a href="#achievements">Trayectoria</a></li>
-      <li><a href="#platform">Plataforma</a></li>      
+      <li><a href="#platform">Propuestas</a></li>      
       <li><a href="#endorsements">Respaldos</a></li>
-      <li><a href="#news">Noticias</a></li>
+      <li><a href="#news">Prensa</a></li>
       <li><a href="#events">Eventos</a></li>
       <li><a href="#action">Voluntariado</a></li>
     </ul>
-      <div class="lang-switch" aria-label="Language switcher">
-        <a href="/" hreflang="en" lang="en">EN</a>
-        <span class="divider">|</span>
-        <span class="active">ES</span>
-      </div>
-
-
+    <div class="lang-switch" aria-label="Cambiar idioma">
+      <a href="/" hreflang="en" lang="en">EN</a>
+      <span class="divider">|</span>
+      <span class="active">ES</span>
+    </div>
     <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" class="nav-donate">Donar</a>
     <button class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </nav>
 </nav>
 
 <div class="mobile-nav" id="mnav">
-  <a href="/es/" onclick="toggleMenu()">Español</a>
+  <a href="/" onclick="toggleMenu()">English</a>
   <a href="#story" onclick="toggleMenu()">Sobre Jackie</a>
   <a href="#achievements" onclick="toggleMenu()">Trayectoria</a>
-  <a href="#platform" onclick="toggleMenu()">Plataforma</a>
+  <a href="#platform" onclick="toggleMenu()">Propuestas</a>
   <a href="#endorsements" onclick="toggleMenu()">Respaldos</a>
-  <a href="#news" onclick="toggleMenu()">Noticias</a>
+  <a href="#news" onclick="toggleMenu()">Prensa</a>
   <a href="#events" onclick="toggleMenu()">Eventos</a>
   <a href="#action" onclick="toggleMenu()">Voluntariado</a>
-
-
-  <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Dona ahora</a>
+  <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Donar Ahora</a>
 </div>
 
 <!-- HERO -->
@@ -2076,21 +1470,18 @@ body.modal-open{
   <div class="hero-text">
     <h1 class="hero-h1">
       <span class="gold-line">Por un Ward 1<br>
-      donde todos podamos<br>vivir<br></span>
-      <!--<span class="outline-line">vivir.</span> -->
+      al alcance<br>de todos</span>
     </h1>
-    <!--<p class="hero-byline">Jackie Reyes Yanes llegó al Ward 1 en 1990 sin nada y se estableció en Mt. Pleasant. Construyó su vida aquí —cuadra por cuadra, vecino por vecino—. Ahora se postula al Concejo de DC para asegurar que todos los demás también puedan hacerlo.</p>-->
     <div class="hero-actions">
-      <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" class="btn-ghost">★ &nbsp;Donar Today</a>
-      <a href="#action" class="btn-ghost">Únete al equipo de voluntarios Warrior</a>
-      <a href="#platform" class="btn-ghost">Ver la plataforma →</a>
+      <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" class="btn-ghost">★ &nbsp;Donar Hoy</a>
+      <a href="#action" class="btn-ghost">Sé un Voluntario Guerrero</a>
+      <a href="#platform" class="btn-ghost">Ver las Propuestas →</a>
     </div>
 
     <div class="hero-meta">
-      <a href="#story"><div class="hero-meta-item"><span class="num">EXPERIENCIA +</span><span class="num">30+</span><span class="lbl">Años viviendo en el Ward 1</span></a></div>
-      <!--<a href="#story"><div class="hero-meta-item"><span class="num">16 de junio</span><span class="lbl">Día de la elección primaria</span></a></div>-->
-      <a href="#achievements"><div class="hero-meta-item"><span class="num">TRABAJO EN TERRENO =</span><span class="num">$43M+</span><span class="lbl">Asegurados para inmigrantes de DC</span></a></div>
-     <a href="#platform"><div class="hero-meta-item"><span class="num">RESULTADOS</span><span class="num">5</span><span class="lbl">Compromisos de política concretos</span></a></div>    
+      <a href="#story"><div class="hero-meta-item"><span class="num">EXPERIENCIA +</span><span class="num">30+</span><span class="lbl">Años viviendo en el Ward 1</span></div></a>
+      <a href="#achievements"><div class="hero-meta-item"><span class="num">ACCIÓN =</span><span class="num">$43M+</span><span class="lbl">Asegurados para inmigrantes de DC</span></div></a>
+      <a href="#platform"><div class="hero-meta-item"><span class="num">RESULTADOS</span><span class="num">5</span><span class="lbl">Propuestas concretas de política pública</span></div></a>    
     </div>
   </div>
 </section>
@@ -2098,25 +1489,24 @@ body.modal-open{
 <!-- MARQUEE -->
 <div class="marquee">
   <div class="marquee-track">
-
-    <span class="mi">Marca a Jackie como tu primera opción</span>    
-    <span class="mi">Por un Ward 1 donde todos podamos vivir</span>
+    <span class="mi">Vota a Jackie como tu Primera Opción</span>    
+    <span class="mi">Por un Ward 1 al alcance de todos</span>
     <span class="mi" id="countdown">Cargando...</span>  
-    <span class="mi">Vivienda asequible</span>
-    <span class="mi">Cuidado infantil universal</span>
-    <span class="mi">Reactivación de pequeños negocios</span>
-    <span class="mi">Calles más seguras</span>
-    <span class="mi">Sin ratas</span>
-    <span class="mi">Centro de Soluciones del Vecindario</span>
-    <span class="mi">Marca a Jackie como tu primera opción</span>    
-    <span class="mi">Por un Ward 1 donde todos podamos vivir</span>
-    <span class="mi" id="countdown">Cargando...</span>  
-    <span class="mi">Vivienda asequible</span>
-    <span class="mi">Cuidado infantil universal</span>
-    <span class="mi">Reactivación de pequeños negocios</span>
-    <span class="mi">Calles más seguras</span>
-    <span class="mi">Sin ratas</span>
-    <span class="mi">Centro de Soluciones del Vecindario</span>
+    <span class="mi">Vivienda Asequible</span>
+    <span class="mi">Cuidado Infantil Universal</span>
+    <span class="mi">Reactivación de Pequeños Negocios</span>
+    <span class="mi">Calles Seguras</span>
+    <span class="mi">Sin Ratas</span>
+    <span class="mi">Centro de Soluciones Vecinales</span>
+    <span class="mi">Vota a Jackie como tu Primera Opción</span>    
+    <span class="mi">Por un Ward 1 al alcance de todos</span>
+    <span class="mi" id="countdown2">Cargando...</span>  
+    <span class="mi">Vivienda Asequible</span>
+    <span class="mi">Cuidado Infantil Universal</span>
+    <span class="mi">Reactivación de Pequeños Negocios</span>
+    <span class="mi">Calles Seguras</span>
+    <span class="mi">Sin Ratas</span>
+    <span class="mi">Centro de Soluciones Vecinales</span>
   </div>
 </div>
 
@@ -2132,131 +1522,64 @@ body.modal-open{
     </div>
     <div class="story-copy reveal">
       <div class="section-label">Conoce a Jackie</div>
-      <h2>From <em>refugiada</em><br>a luchadora del<br><em>Ward 1.</em></h2>
+      <h2>De <em>Refugiada</em><br>a <em>Guerrera</em><br>del Ward 1.</h2>
 
-      <!--
-      <div class="video-section">
-        <div class="video-wrap">
-          <iframe 
-            src="https://www.youtube.com/embed/E7b7SKmFeVA" 
-            title="Video de Jackie"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>  -->
-      
       <div class="video-embed" data-video-id="E7b7SKmFeVA">
-        <button class="video-cover" type="button" aria-label="Play video">
+        <button class="video-cover" type="button" aria-label="Reproducir video">
           <img
             class="video-thumb"
             src="https://img.youtube.com/vi/E7b7SKmFeVA/maxresdefault.jpg"
-            alt="Watch Jackie’s video">
+            alt="Ver el video de Jackie">
           <span class="video-overlay"></span>
           <span class="video-play">▶</span>
         </button>
       </div>      
 
-      <p><strong>Jackie Reyes Yanes llegó a Washington, DC en 1990</strong> at just 12 years old, escaping civil war in El Salvador, landing in Mount Pleasant with nothing. She became a teen mother of 3.  She talks about issues she has lived. She found community at the Latin American Youth Center and let that experience set the direction of her life.</p>
-      <p><strong>Jackie ha vivido todo aquello por lo que lucha.</strong> Para ella, la vivienda asequible no es un documento de política pública: es la historia de su padre comprando una casa con el salario de lavaplatos. El cuidado infantil universal no es una promesa de campaña: es lo que ella necesitó y no tuvo.</p>
+      <p><strong>Jackie Reyes Yanes llegó a Washington, DC en 1990</strong> con apenas 12 años, huyendo de la guerra civil en El Salvador. Llegó a Mount Pleasant sin nada. Fue madre adolescente de tres hijos. Habla de los problemas que vivió en carne propia. Encontró comunidad en el Latin American Youth Center y esa experiencia marcó el rumbo de su vida.</p>
+      <p><strong>Todo por lo que Jackie lucha, lo ha vivido.</strong> La vivienda asequible no es para ella un documento de política, es la historia de su padre comprando una casa con el sueldo de lavaplatos. El cuidado infantil universal no es una promesa de campaña, es lo que ella necesitó y no tuvo.</p>
       <div class="timeline">
         <div class="tl-item">
           <div class="tl-yr">1990</div>
-          <h4>Un nuevo comienzo en Mount Pleasant</h4>
-          <p>Llegó a DC a los 12 años, huyendo de la guerra civil en El Salvador. El Ward 1 se convirtió en su hogar.</p>
+          <h4>Un Nuevo Comienzo en Mount Pleasant</h4>
+          <p>Llegó a DC con 12 años huyendo de la guerra civil en El Salvador. El Ward 1 se convirtió en su hogar.</p>
         </div>
         <div class="tl-item">
-          <div class="tl-yr">Principios de los años 90</div>
-          <h4>Encontró comunidad en LAYC</h4>
-          <p>El Latin American Youth Center le brindó recursos, sentido de pertenencia y un ejemplo de cómo se ve el verdadero apoyo comunitario.</p>
+          <div class="tl-yr">Principios de los 90</div>
+          <h4>Encontró Comunidad en el LAYC</h4>
+          <p>El Latin American Youth Center le brindó recursos, pertenencia y un modelo de lo que puede ser el apoyo comunitario real.</p>
         </div>
         <div class="tl-item">
           <div class="tl-yr">1990s–2005</div>
-          <h4>Salió adelante con resiliencia</h4>
-          <p>Madre joven. Sobreviviente de la falta de vivienda. Su padre compró su casa con el salario de lavaplatos. Ella construyó una carrera en el servicio público, vecino por vecino.</p>
+          <h4>Resiliente, Siempre Adelante</h4>
+          <p>Madre joven. Sobreviviente sin hogar. Su padre compró su casa con el salario de lavaplatos. Construyó una carrera en el servicio público, vecino por vecino.</p>
         </div>
         <div class="tl-item">
           <div class="tl-yr">2005–Hoy</div>
-          <h4>DE LA EXPERIENCIA VIVIDA A RESULTADOS CONCRETOS</h4>
-          <p>En 20 años de servicio, Jackie convirtió su historia en acción dentro del gobierno del Distrito:</p>
+          <h4>DE EXPERIENCIA VIVIDA A RESULTADOS CONCRETOS</h4>
+          <p>20 años de servicio: Jackie convirtió su historia en acción dentro del gobierno de Washington DC.</p>
         </div>
-<!--  
       </div>
-      <a href="#" 
-        class="btn-primary" 
-        onclick="openTestimonyModal(event, 'E7b7SKmFeVA')">
-        Mira por qué se postula →
-      </a>
     </div>
-  </div>-->
+  </div>
 </section>
 
-<!-- STORY
-<section id="story">
-  <div class="story-split">
-    <div class="story-photo">
-      <div class="story-photo-bg"></div>
-      <div class="story-year-badge">
-        <span class="yr">1990</span>
-        <span class="yr-lbl">Llegó al Ward 1</span>
-      </div>
-    </div>
-    <div class="story-copy reveal">
-      <div class="section-label">Conoce a Jackie</div>
-      <h2>De <em>refugiada</em><br>a luchadora del<br>Ward 1.</h2>
-      <p>Jackie Reyes Yanes no solo estudió los problemas: los vivió. Y dio resultados.</p>
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-yr">1990</div>
-          <h4>Un nuevo comienzo en Mount Pleasant</h4>
-          <p>Llegó a Washington, DC con apenas 12 años, huyendo de la guerra civil en El Salvador. Llegó a Mount Pleasant sin nada, pero encontró una comunidad que transformaría su vida. Vivió los disturbios de Mt. Pleasant y vio de cerca las consecuencias de la injusticia, la falta de acceso lingüístico y la confianza rota entre el gobierno y la comunidad. Ese momento no solo la marcó: impulsó su lucha de por vida por la equidad y la representación.</p>
-        </div>
-        <div class="tl-item">
-          <div class="tl-yr">Principios de los años 90</div>
-          <h4>ENCONTRÓ COMUNIDAD. ENCONTRÓ PROPÓSITO</h4>
-          <p>At the Latin American Youth Center and Mary’s Center, Jackie found more than services — she found belonging. Those spaces became her foundation and showed her what real community investment looks like.</p>
-        </div>
-        <div class="tl-item">
-          <div class="tl-yr">1990s–2005</div>
-          <h4>RESILIENCE IN ACCIÓN</h4>
-          <p>Madre joven. Sobreviviente de la falta de vivienda. Vio a su padre comprar una casa con salario de lavaplatos, demostrando lo que es posible en el Ward 1.<br>Por eso, la vivienda asequible es personal. El cuidado infantil es supervivencia.<br>Jackie no esperó el cambio: empezó a construirlo.</p>
-        </div>
-        <div class="tl-item">
-          <div class="tl-yr">2005–2025</div>
-          <h4>DE LA EXPERIENCIA VIVIDA A RESULTADOS CONCRETOS</h4>
-          <p>En más de 20 años de servicio, Jackie convirtió su historia en acción dentro del gobierno del Distrito:<br><br>Conectó a más de 20,000 residentes con servicios críticos<br>Ayudó a entregar más de $10M en asistencia de renta a familias<br>Led the Mayor’s Office of Community Affairs (MOCA) — overseeing 14 community offices across all 8 wards<br>Strengthened outreach across communities, including through the Mayor’s Office on Caribbean Affairs (MOCA)<br>Championed inclusion and accessibility through the Mayor’s Office of Deaf, DeafBlind, and Hard of Hearing (MODDHH)<br>Amplió el acceso lingüístico para que ninguna familia se quede atrás<br>Ayudó a ampliar los Servicios Legales de Justicia para Inmigrantes para proteger a familias inmigrantes<br><br>Bajo su liderazgo, la participación comunitaria no fue discurso: fue acción.</p>
-        </div>
-        <div class="tl-item">
-          <div class="tl-yr">AHORA</div>
-          <h4>LISTA PARA LUCHAR POR EL WARD 1</h4>
-          <p>Ward 1 doesn’t need someone learning on the job. It needs a Councilmember who has lived the struggle — and has delivered results.<br><br>Because when Jackie fights: She fights for housing you can vivir. She fights for families who need support. She fights for accessible, responsive government for ALL.
-          <br><br>JACKIE REYES YANES: márcala como tu primera opción para el Ward 1.<br><br>El momento es ahora.</p>
-        </div>
-      </div>
-      <a href="#action" class="btn-primary" style="display:inline-block;margin-top:2rem">BIO de Jackie →</a>
-    </div>
-  </div> 
-  
-</section> -->
-
-<!-- DATOS -->
+<!-- STATS -->
 <div class="numbers">
   <div class="numbers-inner">
-    <div class="n-item"><span class="n-num">$43M+</span><span class="n-lbl">Fondo de apoyo de emergencia para inmigrantes creado</span></div>
-    <div class="n-item"><span class="n-num">$12M+</span><span class="n-lbl">En alivio de renta asegurado para residentes de DC</span></div>
-    <div class="n-item"><span class="n-num">$3.5M</span><span class="n-lbl">Subvención de Justicia para Inmigrantes, ampliada desde $400K</span></div>
-    <div class="n-item"><span class="n-num">$300M+</span><span class="n-lbl">Generados en impacto económico durante WorldPride 2025</span></div>
+    <div class="n-item"><span class="n-num">$43M+</span><span class="n-lbl">Fondo de emergencia para inmigrantes creado</span></div>
+    <div class="n-item"><span class="n-num">$12M+</span><span class="n-lbl">En ayuda de alquiler asegurada para residentes de DC</span></div>
+    <div class="n-item"><span class="n-num">$3.5M</span><span class="n-lbl">Beca de Justicia para Inmigrantes, crecida desde $400K</span></div>
+    <div class="n-item"><span class="n-num">$300M+</span><span class="n-lbl">Impacto económico generado por el World Pride 2025</span></div>
   </div>
 </div>
 
-<!-- LOGROS -->
+<!-- ACHIEVEMENTS -->
 <section id="achievements">
   <div class="wrap">
     <div class="ach-head reveal">
-      <div class="section-label">Trayectoria en el gobierno</div>
-      <h2>Haciendo que las cosas pasen.<br><em>Jackie cumple.</em></h2>
-      <p>Antes de postularse al Concejo, Jackie construyó una carrera de más de 20 años en el gobierno de DC haciendo que las cosas pasaran para la gente: asegurando millones en fondos, protegiendo a familias del desplazamiento y abriendo puertas para inmigrantes y jóvenes que no tenían oportunidades. Jackie quiere crear oportunidades para todos los vecinos del Ward 1.</p>
+      <div class="section-label">Trayectoria en el Gobierno</div>
+      <h2>Haciendo las Cosas.<br><em>Jackie Cumple.</em></h2>
+      <p>Antes de postularse al Concejo, Jackie construyó una carrera de más de 20 años en el gobierno de DC consiguiendo resultados reales para la gente: asegurando millones en financiamiento, protegiendo a familias del desplazamiento, y abriendo puertas para inmigrantes y jóvenes que no tenían ninguna. Jackie quiere crear oportunidades para todos los vecinos del Ward 1.</p>
     </div>
     <div class="ach-grid">
 
@@ -2265,9 +1588,9 @@ body.modal-open{
           <div class="ach-num">01</div>
           <div class="ach-cat">INMIGRACIÓN</div>
         </div>
-        <div class="ach-impact">Protegiendo a las familias de ICE</div>
+        <div class="ach-impact">Protegiendo Familias del ICE</div>
         <div class="ach-title">Abogados de inmigración gratuitos</div>
-        <p class="ach-body">En 2017, en respuesta a la primera administración Trump, Jackie creó la <strong>Subvención de Servicios Legales de Justicia para Inmigrantes</strong>, providing <strong>representación legal migratoria gratuita</strong> a las comunidades inmigrantes de DC. Ayudó a ampliarla desde una inversión inicial de <strong>$400,000</strong> into a <strong>fondo de coalición de $3.5 millones</strong>, dando a miles de inmigrantes de DC acceso a abogados que luchan por su derecho a quedarse.</p>
+        <p class="ach-body">En 2017, en respuesta a la primera administración Trump, Jackie creó la <strong>Beca de Servicios Legales para Justicia de Inmigrantes</strong>, que ofrece <strong>representación legal migratoria gratuita</strong> a las comunidades inmigrantes de DC. Ayudó a hacerla crecer de <strong>$400,000</strong> iniciales a una <strong>coalición de $3.5 millones</strong>, dando acceso a miles de inmigrantes a abogados que defienden su derecho a quedarse.</p>
       </div>
 
       <div class="ach-card reveal">
@@ -2275,20 +1598,20 @@ body.modal-open{
           <div class="ach-num">02</div>
           <div class="ach-cat">VIVIENDA</div>
         </div>
-        <div class="ach-impact">Familias protegidas. Comunidad preservada.</div>
-        <div class="ach-title">Incendio en los Apartamentos Monseñor Romero — residentes salvados (2008)</div>
-        <p class="ach-body">Cuando un incendio destruyó los Apartamentos Monseñor Romero, más de 150 residentes enfrentaron la amenaza real de desplazamiento permanente. Jackie intervino, <strong>luchó por las víctimas</strong>, and helped them form a housing cooperative, giving the families legal ownership and control of their own building so they could <strong>seguir viviendo en su comunidad</strong>, no perderla.</p>
-        <a href="#" class="btn-testimony" onclick="openTestimonyModal(event, 'uv_tD1hcj2Q')">Ver testimonio →</a>
+        <div class="ach-impact">Familias Salvadas. Comunidad Preservada.</div>
+        <div class="ach-title">Incendio en los Apartamentos Monseñor Romero — Residentes Protegidos (2008)</div>
+        <p class="ach-body">Cuando un incendio destruyó los Apartamentos Monseñor Romero, más de 150 residentes enfrentaron el riesgo real de ser desplazados permanentemente. Jackie intervino, <strong>luchó por las víctimas</strong> y les ayudó a formar una cooperativa de vivienda, otorgando a las familias propiedad legal y control de su propio edificio para que pudieran <strong>seguir viviendo en su comunidad</strong>.</p>
+        <a href="#" class="btn-testimony" onclick="openTestimonyModal(event, 'uv_tD1hcj2Q')">Ver Testimonio →</a>
       </div>
 
       <div class="ach-card reveal">
         <div class="ach-top">
           <div class="ach-num">03</div>
-          <div class="ach-cat">SERVICIOS DEL GOBIERNO</div>
+          <div class="ach-cat">SERVICIOS PÚBLICOS</div>
         </div>
-        <div class="ach-impact">Más de $15 millones</div>
-        <div class="ach-title">Ayudando a inquilinos a pagar rentas atrasadas</div>
-        <p class="ach-body">Jackie helped <strong>miles de residentes de DC</strong> a navegar los programas de asistencia de emergencia para la renta de la ciudad (ERAP, Stay DC), facilitando directamente más de <strong>$52 millones en apoyo financiero</strong> para familias con renta atrasada, evitando desalojos y manteniendo a la gente en sus hogares cuando no tenía a dónde más acudir.</p>
+        <div class="ach-impact">$15M+</div>
+        <div class="ach-title">Ayudando a inquilinos a pagar la renta atrasada</div>
+        <p class="ach-body">Jackie ayudó a <strong>miles de residentes de DC</strong> a navegar los programas de asistencia de alquiler de emergencia (ERAP, Stay DC), facilitando directamente más de <strong>$52 millones en apoyo financiero</strong> para familias con renta atrasada, previniendo desalojos y manteniendo a las personas en sus hogares.</p>
       </div>
 
       <div class="ach-card reveal">
@@ -2296,19 +1619,19 @@ body.modal-open{
           <div class="ach-num">04</div>
           <div class="ach-cat">INCLUSIÓN</div>
         </div>
-        <div class="ach-impact">Acceso lingüístico ampliado</div>
-        <div class="ach-title">Que nadie se quede atrás, sin importar el idioma</div>
-        <p class="ach-body">Jackie expanded <strong>el acceso lingüístico</strong> en las agencias de servicios a residentes de DC, específicamente dentro de la Oficina de Asuntos Comunitarios de la Alcaldía (MOCA), asegurando que los residentes que hablan español y otros idiomas pudieran <strong>acceder a los mismos servicios de la ciudad</strong> y recibir la misma calidad de ayuda que los residentes angloparlantes. Que nadie se quede atrás por el idioma.</p>
+        <div class="ach-impact">Acceso al Idioma Ampliado</div>
+        <div class="ach-title">Nadie se queda atrás por el idioma</div>
+        <p class="ach-body">Jackie amplió el <strong>acceso al idioma</strong> en las agencias de servicios públicos de DC, especialmente en la Oficina de Asuntos Comunitarios del Alcalde (MOCA), asegurando que los residentes que hablan español y otros idiomas pudieran <strong>acceder a los mismos servicios</strong> y recibir la misma calidad de atención que los angloparlantes.</p>
       </div>
 
       <div class="ach-card reveal">
         <div class="ach-top">
           <div class="ach-num">05</div>
-          <div class="ach-cat">FUERZA LABORAL</div>
+          <div class="ach-cat">EMPLEO JUVENIL</div>
         </div>
-        <div class="ach-impact">Un entorno positivo para la juventud de DC</div>
+        <div class="ach-impact">Oportunidades Reales para Jóvenes de DC</div>
         <div class="ach-title">Programa de Empleo de Verano para Jóvenes Inmigrantes</div>
-        <p class="ach-body">Jackie <strong>creó el Programa de Empleo de Verano de DC para jóvenes inmigrantes recién llegados</strong>, abriendo la puerta para que los jóvenes recién llegados pudieran <strong>generar ingresos, adquirir experiencia laboral y desarrollar habilidades de liderazgo para un futuro mejor.</strong></p>
+        <p class="ach-body">Jackie <strong>creó el Programa de Empleo de Verano para jóvenes inmigrantes recién llegados</strong> a DC, abriendo la puerta para que los jóvenes recién llegados pudieran <strong>generar ingresos, ganar experiencia laboral y desarrollar habilidades de liderazgo para un futuro mejor.</strong></p>
       </div>
 
       <div class="ach-card reveal">
@@ -2316,35 +1639,34 @@ body.modal-open{
           <div class="ach-num">06</div>
           <div class="ach-cat">DESARROLLO ECONÓMICO</div>
         </div>
-        <div class="ach-impact">Más de $300M en impacto económico</div>
-        <div class="ach-title">A través de la Oficina de la Alcaldía para Asuntos LGBTQ+</div>
-        <p class="ach-body">Coordinated through the Mayor’s Office on LGBTQ+ and Capital Pride Alliance the celebration of WorldPride DC 2025 generating approximately <strong>$310.7 millones</strong> en impacto económico total y atrayendo a 1.2 millones de asistentes.</p>
+        <div class="ach-impact">$300M+ de Impacto Económico</div>
+        <div class="ach-title">A través de la Oficina del Alcalde para la Comunidad LGBTQ+</div>
+        <p class="ach-body">Coordinó junto a la Oficina del Alcalde para la Comunidad LGBTQ+ y Capital Pride Alliance la celebración del WorldPride DC 2025, generando aproximadamente <strong>$310.7 millones</strong> en impacto económico total y atrayendo a 1.2 millones de asistentes.</p>
       </div>
  
       <div class="ach-card reveal" style="background:rgba(212,160,23,.04);border:1px solid rgba(212,160,23,.15);grid-column:1/-1">
         <div class="ach-num" style="color:rgba(212,160,23,.25)">★</div>
-        <div class="ach-impact" style="font-size:1.2rem;color:var(--warm)">Equidad real. Inclusión real.</div>
-        <div class="ach-title" style="color:rgba(244,239,230,.5);margin-top:.8rem">Jackie Reyes Yanes · Luchadora del Ward 1</div>
-        <p class="ach-body" style="margin-top:.8rem;max-width:600px">“La exclusión por omisión es peor que la exclusión intencional, porque significa que ni siquiera pensaste en las personas que estabas dejando atrás.”</p>
-        <a href="#action" class="btn-primary" style="display:inline-block;margin-top:1.5rem;font-size:.75rem">Únete como voluntario/a Warrior →</a>
+        <div class="ach-impact" style="font-size:1.2rem;color:var(--warm)">Equidad Real. Inclusión Real.</div>
+        <div class="ach-title" style="color:rgba(244,239,230,.5);margin-top:.8rem">Jackie Reyes Yanes · Guerrera del Ward 1</div>
+        <p class="ach-body" style="margin-top:.8rem;max-width:600px">"La exclusión por omisión es peor que la exclusión intencional, porque significa que ni siquiera pensaste en las personas que dejabas atrás."</p>
+        <a href="#action" class="btn-primary" style="display:inline-block;margin-top:1.5rem;font-size:.75rem">Conviértete en Voluntario Guerrero →</a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- PLATAFORMA -->
+<!-- PLATFORM -->
 <section id="platform" class="section">
   <div class="wrap">
     <div class="platform-intro reveal">
       <div>
-        <div class="section-label">La plataforma</div>
-        <h2>Un plan.<br><em>Promesas<br>alcanzables.</em></h2>
+        <div class="section-label">Las Propuestas</div>
+        <h2>Un plan.<br><em>Promesas<br>cumplibles.</em></h2>
       </div>
-      <p>Estos compromisos nacen de 20 años de conversaciones en cada vecindario del Ward 1. ¡Jackie hará el trabajo!</p>
+      <p>Estos son compromisos construidos a partir de 20 años de conversaciones en cada vecindario del Ward 1. ¡Jackie va a cumplir!</p>
     </div>
 
-  <!-- menu tabs platform -->
   <div class="platform-tabs-wrap">
     <div class="platform-swipe-hint">
       <span class="hint-mobile">Desliza para ver más propuestas</span>
@@ -2352,33 +1674,32 @@ body.modal-open{
       <span class="swipe-arrow"></span>
     </div>
     <div class="ptabs">
-    <!--<div class="ptabs" role="tablist">-->
-      <button class="ptab on" onclick="switchTab('business',this)">🌮 Reactivación de pequeños negocios</button>
+      <button class="ptab on" onclick="switchTab('business',this)">🌮 Pequeños Negocios</button>
       <button class="ptab" onclick="switchTab('nsc',this)">🤝 Centro de Soluciones</button>
-      <button class="ptab" onclick="switchTab('housing',this)">🏘 Vivienda asequible</button>
-      <button class="ptab" onclick="switchTab('childcare',this)">👶 Cuidado infantil universal</button>
-      <button class="ptab" onclick="switchTab('safety',this)">🌳 Seguridad comunitaria</button>
+      <button class="ptab" onclick="switchTab('housing',this)">🏘 Vivienda Asequible</button>
+      <button class="ptab" onclick="switchTab('childcare',this)">👶 Cuidado Infantil</button>
+      <button class="ptab" onclick="switchTab('safety',this)">🌳 Seguridad Comunitaria</button>
     </div>
 
-    <!-- PEQUEÑOS NEGOCIOS -->
+    <!-- SMALL BUSINESS -->
     <div id="tab-business" class="ppanel on">
       <div class="policy-layout">
         <div class="pl-left">
           <div class="p-num">01</div>
-          <h3><em>Reactivación de pequeños negocios</em> &amp; No More Taxes for Our Local Businesses.</h3>
-          <p class="p-body">El aumento de las rentas comerciales y la falta de capital están desplazando a las bodegas, taquerías y negocios familiares que definen nuestro vecindario. El Programa de Activación de Pequeños Negocios de Jackie pondrá dinero real —hasta $50,000 en subvenciones directas— al alcance de cada negocio del Ward 1 que lo necesite.</p>
+          <h3><em>Reactivación de Pequeños Negocios</em> &amp; Sin Más Impuestos para Nuestros Comercios Locales.</h3>
+          <p class="p-body">El aumento de los alquileres comerciales y la falta de capital están expulsando las bodegas, taquerías y tiendas familiares que definen nuestro vecindario. El Programa de Activación de Pequeños Negocios de Jackie pone dinero real —hasta $50,000 en subvenciones directas— detrás de cada negocio del Ward 1 que lo necesite.</p>
           <blockquote>
-            <p>“Un Ward 1 fuerte depende de una base tributaria fuerte, y eso empieza con los pequeños negocios. Soy la única candidata enfocada en hacer crecer nuestra economía sin subir impuestos, invirtiendo en nuestros emprendedores locales.”</p>
+            <p>«Un Ward 1 fuerte depende de una base fiscal sólida, y eso empieza por los pequeños negocios. Soy la única candidata enfocada en hacer crecer nuestra economía sin subir impuestos, invirtiendo en nuestros emprendedores locales.»</p>
             <cite>— Jackie Reyes Yanes</cite>
           </blockquote>
         </div>
         <div class="pl-right">
           <ul class="p-items">
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Subvenciones de activación para pequeños negocios, de $5,000 a $50,000</h4><p>Un fondo de subvenciones dedicado al Ward 1, <strong>de $5,000 a $50,000</strong>, para cualquier pequeño negocio del Ward 1, destinado a equipos, renovaciones, inventario, contratación y expansión. Sin laberintos burocráticos. Capital real, decisiones rápidas y atención multilingüe.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Corredores culturales y comerciales en el Ward 1</h4><p>Crear, designar y proteger oficialmente <strong>corredores culturales y comerciales</strong> que destaquen la diversidad y vitalidad de las comunidades del Ward 1.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Activación de festivales: cultura en cada esquina</h4><p>Activaciones comunitarias durante todo el año: Día de los Muertos, festivales de libros, música en vivo, mercados nocturnos y noches de cine. La cultura atrae visitantes, y ese movimiento mantiene vivos a los negocios.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>HUB integral de soluciones para negocios</h4><p>Navegadores que ayudan a emprendedores y dueños de negocios, reducen el tiempo para abrir un negocio y los conectan con recursos financieros.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Derecho de primera compra para pequeños negocios</h4><p>Activar locales comerciales vacíos mediante un derecho de primera compra para pequeños negocios y evitar que sus dueños sean desplazados.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Subvenciones de Activación para Pequeños Negocios, $5,000 a $50,000</h4><p>Un fondo de subvenciones dedicado al Ward 1 —<strong>de $5,000 a $50,000</strong>— para cualquier pequeño negocio del Ward 1: equipamiento, renovaciones, inventario, contratación y expansión. Sin laberintos burocráticos. Capital real, decisiones rápidas, multilingüe.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Corredores Culturales y Comerciales en el Ward 1</h4><p>Crear, designar y proteger oficialmente <strong>Destinos de Corredor Cultural y Comercial</strong> que destaquen la diversidad y vitalidad del Ward 1.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Activación de Festivales, Cultura en Cada Esquina</h4><p>Activaciones vecinales durante todo el año: Día de Muertos, festivales del libro, música en vivo, mercados nocturnos, noches de cine. La cultura atrae público; el público mantiene vivos los negocios.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Centro HUB de Soluciones para Negocios</h4><p>Gestores que asisten a emprendedores y propietarios de negocios, reduciendo el tiempo de apertura y conectándolos con recursos financieros.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Derecho Preferente de Compra para Pequeños Negocios</h4><p>Activar locales vacíos mediante un Derecho Preferente de Compra para evitar que los pequeños empresarios sean desplazados.</p></div></li>
           </ul>
         </div>
       </div>
@@ -2390,91 +1711,90 @@ body.modal-open{
       <div class="policy-layout">
         <div class="pl-left">
           <div class="p-num">02</div>
-          <h3>El Centro de <em>Soluciones del Vecindario.</em> Tú llamas. Nosotros respondemos.</h3>
-          <p class="p-body">El NSC no es una línea telefónica, una página web ni una nueva agencia del gobierno. Es un centro basado en el Ward 1 dentro de la oficina del concejal o concejala, donde adultos mayores y jóvenes trabajan lado a lado como Embajadores Comunitarios remunerados, contestando llamadas, recorriendo las calles del Ward 1 y brindando apoyo directo a los vecinos. Gente real. Ayuda real.</p>
+          <h3>El <em>Centro de Soluciones Vecinales.</em> Tú llamas. Nosotros respondemos.</h3>
+          <p class="p-body">El Centro de Soluciones no es una línea directa, un sitio web ni una nueva agencia gubernamental. Es un centro con base en el Ward 1, dentro de la oficina del Concejal, donde personas mayores y jóvenes trabajan codo a codo como Embajadores Comunitarios remunerados, atendiendo teléfonos, recorriendo las calles del Ward 1 y brindando apoyo directo a los vecinos. Gente real. Ayuda real.</p>
           <blockquote>
-            <p>“Quiero ver a una abuela de LeDroit Park y a un joven de 19 años de Columbia Heights trabajando por su comunidad, y que ambos reciban un pago por hacerlo. Eso es el NSC.”</p>
+            <p>«Quiero que una abuela de LeDroit Park y un joven de 19 años de Columbia Heights trabajen juntos para su comunidad, y que ambos cobren un sueldo por ello. Eso es el Centro de Soluciones.»</p>
             <cite>— Jackie Reyes Yanes</cite>
           </blockquote>
         </div>
         <div class="pl-right">
           <ul class="p-items">
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Cuerpo de Embajadores Comunitarios</h4><p>20 embajadores remunerados de medio tiempo: 10 adultos mayores (55+) y 10 jóvenes (18–24). Atienden la línea telefónica, recorren los corredores del Ward 1 y conectan a los residentes con servicios de la ciudad. Salario inicial: $18 por hora.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Apoyo a pie de calle, en tu cuadra</h4><p>Los embajadores recorren semanalmente vecindarios asignados del Ward 1, visitan a adultos mayores, reportan luces dañadas, huecos y basura, y distribuyen recursos en inglés y español.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Línea para residentes con respuesta garantizada en 72 horas</h4><p>Llama al 202-724-8181. Te responde una persona real que conoce tu vecindario. Cada caso se abre, se rastrea y se resuelve. Tableros públicos mensuales muestran las tasas de resolución. Sin vueltas.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Mentoría intergeneracional integrada</h4><p>Adultos mayores y jóvenes embajadores trabajan en parejas, creando mentoría real a través del trabajo. Los residentes mayores aportan memoria del vecindario; los jóvenes aportan energía y tecnología.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Asambleas comunitarias mensuales</h4><p>Reuniones presenciales cada mes en Adams Morgan, Columbia Heights, Mount Pleasant, LeDroit Park y Park View, en inglés y español. Jackie se presenta. Sin excepciones.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Cuerpo de Embajadores Comunitarios</h4><p>20 Embajadores a tiempo parcial remunerados: 10 adultos mayores (55+) y 10 jóvenes (18–24). Atienden la línea telefónica, recorren los corredores del Ward 1 y conectan a los residentes con los servicios de la ciudad. Salario inicial: $18/hora.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Apoyo a Nivel de Calle, en Tu Cuadra</h4><p>Los Embajadores recorren semanalmente los vecindarios asignados del Ward 1, visitan a residentes de la tercera edad, reportan luminarias dañadas, baches y basura, y distribuyen recursos en inglés y español.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Línea de Atención Vecinal con Garantía de Respuesta en 72 Horas</h4><p>Llama al 202-724-8181. Una persona real contesta, alguien que conoce tu vecindario. Cada caso es registrado, rastreado y resuelto. Tableros públicos mensuales muestran las tasas de resolución. Sin rodeos.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Mentoría Intergeneracional Integrada</h4><p>Los Embajadores adultos mayores y jóvenes son emparejados, creando mentorías reales a través del propio trabajo. Los mayores aportan historia del vecindario; los jóvenes aportan energía y tecnología.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Asambleas Vecinales Mensuales</h4><p>Reuniones presenciales en Adams Morgan, Columbia Heights, Mount Pleasant, LeDroit Park y Park View cada mes, en inglés y español. Jackie asiste. Sin excepciones.</p></div></li>
           </ul>
         </div>
       </div>
     </div>
 
-
-  <!-- VIVIENDA -->
+  <!-- HOUSING -->
     <div id="tab-housing" class="ppanel">
       <div class="policy-layout">
         <div class="pl-left">
           <div class="p-num">03</div>
-          <h3>Mantener el Ward 1 <em>asequible</em> para todos.</h3>
-          <p class="p-body">Demasiados vecinos —maestros, enfermeras, trabajadores de restaurantes y artistas que hacen del Ward 1 lo que es— están siendo desplazados. El padre de Jackie compró su casa en los años 90 trabajando como lavaplatos. Esa puerta debe seguir abierta para la próxima generación.</p>
+          <h3>Mantener el Ward 1 <em>Asequible</em> para Todos.</h3>
+          <p class="p-body">Demasiados vecinos —maestros, enfermeros, trabajadores de restaurantes y artistas que hacen del Ward 1 lo que es— están siendo empujados fuera. El padre de Jackie compró su casa en los años 90 trabajando de lavaplatos. Esa puerta debe seguir abierta para la siguiente generación.</p>
           <blockquote>
-            <p>“Mi padre compró esta casa con el salario de lavaplatos. Ese sueño todavía debe ser posible. Lucharé cada día para asegurarme de que lo sea.”</p>
+            <p>«Mi padre compró esta casa con el sueldo de lavaplatos. Ese sueño todavía debe ser posible. Lucharé cada día para asegurarme de que lo sea.»</p>
             <cite>— Jackie Reyes Yanes</cite>
           </blockquote>
-          <div class="p-photo"><img src="/images/jackie-reyes-yanes-vivirable-housing.jpg" alt="Jackie on housing"></div>
+          <div class="p-photo"><img src="/images/jackie-reyes-yanes-affordable-housing.jpg" alt="Jackie sobre vivienda"></div>
         </div>
         <div class="pl-right">
           <ul class="p-items">
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Ampliar el acceso a vivienda propia a través de HPAP</h4><p>Aumentar el fondo del Programa de Asistencia para la Compra de Vivienda de DC a <strong>$30 million</strong> y elevar el límite de ingreso individual a <strong>$150,000</strong>, abriendo la puerta a maestros, enfermeras, socorristas y profesionales trabajadores que ganan demasiado para calificar, pero muy poco para comprar una vivienda.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Fortalecer el control de renta</h4><p>Cerrar los vacíos legales que algunos arrendadores usan para evadir las reglas de estabilización de renta de DC. No más desalojos por renovación. No más declaraciones de vacancia de mala fe. Tu renta es tu renta.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Grupo de trabajo contra el desplazamiento, con herramientas reales</h4><p>Cuatro acciones concretas: (1) un <strong>Equipo de Solicitudes de Inspección</strong> que responda en 72 horas; (2) un <strong>Programa de Alianzas para Propiedades Vacantes</strong> que convierta edificios vacíos en unidades asequibles; (3) <strong>permisos acelerados</strong> para que la vivienda se construya en lugar de quedarse estancada; (4) seguimiento cuadra por cuadra del riesgo de desplazamiento con intervención directa para familias en riesgo.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Más unidades asequibles, ahora</h4><p>Todo nuevo desarrollo en el Ward 1 con más de 10 unidades debe incluir al menos 20% de unidades asequibles al 60% del AMI o menos. Sin exenciones. Sin pagos para evitarlo.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Ampliar la Propiedad de Vivienda a través del HPAP</h4><p>Elevar el fondo del Programa de Asistencia para Compra de Vivienda de DC a <strong>$30 millones</strong> y aumentar el límite de ingresos individuales a <strong>$150,000</strong>, abriendo la puerta a maestros, enfermeros, bomberos y profesionales que ganan demasiado para calificar pero demasiado poco para comprar.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Fortalecer el Control de Alquileres</h4><p>Cerrar los vacíos legales que usan los arrendadores para eludir las reglas de estabilización de alquileres de DC. No más "renovictions". No más solicitudes de vacante de mala fe. Tu alquiler es tu alquiler.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Fuerza de Tarea Contra el Desplazamiento con Herramientas Reales</h4><p>Cuatro acciones concretas: (1) un <strong>Equipo de Atención de Inspecciones</strong> que responde en 72 horas; (2) un <strong>Programa de Asociación para Propiedades Vacías</strong> que convierte edificios vacíos en unidades asequibles; (3) <strong>permisos acelerados</strong> para que las viviendas se construyan en vez de estancarse; (4) seguimiento del riesgo de desplazamiento cuadra por cuadra con intervención directa para familias en riesgo.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Más Unidades Asequibles, Ahora</h4><p>Todos los nuevos desarrollos del Ward 1 de más de 10 unidades deben incluir al menos el 20% de unidades asequibles al 60% del AMI o menos. Sin exenciones. Sin compensaciones.</p></div></li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- CUIDADO INFANTIL -->
+    <!-- CHILDCARE -->
     <div id="tab-childcare" class="ppanel">
       <div class="policy-layout">
         <div class="pl-left">
           <div class="p-num">04</div>
-          <h3>Que ningún padre o madre tenga que elegir entre <em>su carrera</em> and <em>cuidar a su familia.</em></h3>
-          <p class="p-body">El cuidado infantil en DC cuesta más de $2,500 al mes, más que muchas hipotecas. Las familias del Ward 1 toman decisiones imposibles todos los días. Jackie cambiará eso, porque una ciudad que no invierte en sus residentes más pequeños ha renunciado a su futuro.</p>
+          <h3>Ningún Padre Elige Entre <em>Carrera</em> y <em>Familia.</em></h3>
+          <p class="p-body">El cuidado infantil en DC cuesta más de $2,500 al mes, más que la mayoría de las hipotecas. Las familias del Ward 1 están tomando decisiones imposibles todos los días. Jackie pondrá fin a eso, porque una ciudad que no invierte en sus ciudadanos más jóvenes ha renunciado a su futuro.</p>
           <blockquote>
-            <p>“El cuidado infantil no debería costar $2,500 al mes. Tú trabajas duro por tu familia. Esta ciudad debería trabajar igual de duro por ti.”</p>
+            <p>«El cuidado infantil no debería costar $2,500 al mes. Tú trabajas duro por tu familia. Esta ciudad debería trabajar igual de duro por ti.»</p>
             <cite>— Jackie Reyes Yanes</cite>
           </blockquote>
-          <div class="p-photo"><img src="/images/jackie-reyes-yanes-childcare.jpg" alt="Jackie on childcare"></div>
+          <div class="p-photo"><img src="/images/jackie-reyes-yanes-childcare.jpg" alt="Jackie sobre cuidado infantil"></div>
         </div>
         <div class="pl-right">
           <ul class="p-items">
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Pre-K 3 y Pre-K 4 universal</h4><p>Pre-K 3 y Pre-K 4 gratuito y universal para cada niño del Ward 1, sin importar el ingreso familiar. Sin listas de espera. Sin excepciones. Cada niño de 3 y 4 años tendrá un cupo de alta calidad antes de kindergarten.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Pago justo para educadores de primera infancia</h4><p>Suplementos salariales para que todos los educadores de primera infancia ganen al menos $22 por hora, con beneficios y desarrollo profesional. Las personas que forman los primeros años de nuestros niños merecen un salario profesional, no salarios de pobreza.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Build New Childcare Facilities, City &amp; Private Spaces</h4><p>Usar propiedades vacías de la ciudad y espacios privados subutilizados —salones de iglesias, centros comunitarios y locales comerciales en primeros pisos— para construir y renovar centros de cuidado infantil en todo el Ward 1. Más cupos, menores costos, más cerca de casa.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Subsidized Infant &amp; Toddler Care</h4><p>Ampliar la elegibilidad de subsidios a familias que ganan hasta el 150% del AMI, cubriendo a familias trabajadoras del Ward 1 que ganan demasiado para calificar, pero muy poco para pagar $2,500 al mes.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Pre-Kínder Universal para 3 y 4 años</h4><p>Pre-Kínder gratuito y universal para todo niño del Ward 1, sin importar el ingreso familiar. Sin listas de espera. Sin excepciones. Cada niño de 3 y 4 años obtiene un cupo de alta calidad antes del kínder.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Salario Justo para Educadores de Primera Infancia</h4><p>Suplementos salariales que lleven a todos los educadores de primera infancia a al menos $22/hora, con prestaciones y desarrollo profesional. Quienes moldean los primeros años de nuestros hijos merecen un salario profesional, no de pobreza.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Construir Nuevas Instalaciones de Cuidado Infantil</h4><p>Usar propiedades municipales vacías y espacios privados subutilizados —salones de iglesias, centros comunitarios, plantas bajas comerciales— para construir y renovar instalaciones de cuidado infantil en todo el Ward 1. Más cupos, menores costos, más cerca del hogar.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Cuidado Infantil Subsidiado para Bebés y Niños Pequeños</h4><p>Ampliar la elegibilidad de subsidios a familias con ingresos de hasta el 150% del AMI, cubriendo a familias trabajadoras del Ward 1 que ganan demasiado para calificar pero demasiado poco para pagar $2,500 al mes.</p></div></li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- SEGURIDAD -->
+    <!-- SAFETY -->
     <div id="tab-safety" class="ppanel">
       <div class="policy-layout">
         <div class="pl-left">
           <div class="p-num">05</div>
-          <h3>Calles seguras empiezan con <em>comunidades fuertes.</em></h3>
-          <p class="p-body">La seguridad real es ver niños afuera después del anochecer. Adultos mayores esperando el bus sin miedo. Vecinos que se conocen por su nombre.</p>
+          <h3>La Seguridad Real Empieza con <em>Comunidades Fuertes.</em></h3>
+          <p class="p-body">Seguridad real es niños en la calle de noche. Adultos mayores en la parada del autobús sin miedo. Vecinos que se conocen entre sí.</p>
           <blockquote>
-            <p>“Desafortunadamente, en este momento, un toque de queda para jóvenes de hasta 18 años es necesario para proteger a nuestras comunidades y mantener segura a nuestra ciudad. Pero la seguridad real significa más que eso: adultos mayores en la parada del bus sin miedo, vecinos que se conocen por su nombre. Mi enfoque: infraestructura inteligente, espacios públicos activados y programas impulsados por la comunidad que atiendan las causas de raíz, no solo los síntomas.”</p>
+            <p>«Desafortunadamente, en este momento, un toque de queda para jóvenes hasta 18 años es necesario para proteger nuestras comunidades y mantener segura nuestra ciudad. Pero la seguridad real significa más que eso: adultos mayores en la parada sin miedo, vecinos que se conocen. Mi enfoque: infraestructura inteligente, espacios públicos activados y programas comunitarios que atacan las causas de raíz, no solo los síntomas.»</p>
             <cite>— Jackie Reyes Yanes</cite>
           </blockquote>
         </div>
         <div class="pl-right">
           <ul class="p-items">
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Iluminar cada cuadra del Ward 1</h4><p>Auditoría y mejora de cada luz de calle en el Ward 1, priorizando callejones, paradas de transporte y senderos de parques reportados con mayor frecuencia como inseguros. Calles iluminadas son calles seguras. Compromiso del primer año.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Activar los espacios públicos</h4><p>Programación durante todo el año en parques y plazas del Ward 1: cine al aire libre, mercados de fin de semana, ligas deportivas y clases de actividad física para adultos mayores. Los espacios públicos pertenecen a la comunidad, no al miedo.</p></div></li>
-            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Empleo juvenil = seguridad comunitaria</h4><p>Empleos garantizados de verano y después de clases para cada joven del Ward 1 que quiera uno. Un adolescente con trabajo, salario y mentor es la estrategia de prevención del crimen más efectiva que tenemos.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Iluminar Cada Cuadra del Ward 1</h4><p>Auditoría completa y modernización de cada luminaria del Ward 1, priorizando callejones, paradas de transporte y senderos de parques más reportados como inseguros. Las calles iluminadas son calles seguras. Compromiso del Año 1.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Activar los Espacios Públicos</h4><p>Programación durante todo el año en parques y plazas del Ward 1: cine al aire libre, mercados de fin de semana, ligas deportivas, clases de ejercicio para adultos mayores. Los espacios públicos pertenecen a la comunidad, no al miedo.</p></div></li>
+            <li class="p-item"><div class="p-dot"></div><div class="p-item-body"><h4>Empleo Juvenil = Seguridad Comunitaria</h4><p>Empleos de verano y extraescolares garantizados para todo joven del Ward 1 que los quiera. Un adolescente con trabajo, sueldo y un mentor es la estrategia de prevención del crimen más efectiva que existe.</p></div></li>
           </ul>
         </div>
       </div>
@@ -2482,111 +1802,109 @@ body.modal-open{
 
 </section>
 
-<!-- FOTOS -->
+<!-- PHOTO ROW -->
 <div class="photo-row">
-  <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-columbia-heights.jpg" alt="Jackie in Ward 1"></div>
-  <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-reading2.jpg" alt="Jackie in community"></div>
-  <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-meet-and-greet.jpg" alt="Jackie with neighbors"></div>
-  <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-cleanup.jpg" alt="Jackie on the trail"></div>
+  <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-columbia-heights.jpg" alt="Jackie en el Ward 1"></div>
+  <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-reading2.jpg" alt="Jackie en comunidad"></div>
+  <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-meet-and-greet.jpg" alt="Jackie con vecinos"></div>
+  <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-cleanup.jpg" alt="Jackie en acción"></div>
 </div>
 
-<!-- ACCIÓN -->
+<!-- ACTION -->
 <section id="action" class="section">
   <div class="wrap">
     <div class="action-wrap">
       <div class="action-left reveal">
         <div class="section-label">Participa</div>
-        <h2>Esta campaña<br>se mueve con <em>tu apoyo.</em></h2>
-        <p>Tocar puertas. Hacer llamadas. Poner letreros. Presentarnos el 16 de junio. Cada hora que das es un voto por el Ward 1 que merecemos. La campaña de Jackie se mueve con el poder de los vecinos; esa es la única forma de lograrlo.</p>
-        <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" class="btn-primary" style="display:inline-block;margin-bottom:1.5rem">★ &nbsp;Donar via ActBlue</a>
+        <h2>Esta Campaña<br>Corre por <em>Ti.</em></h2>
+        <p>Toca puertas. Llama por teléfono. Pon un letrero en tu jardín. Vota el 16 de junio. Cada hora que des es un voto por el Ward 1 que merecemos. La campaña de Jackie funciona gracias a los vecinos, de esa manera es como se hace.</p>
+        <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank" class="btn-primary" style="display:inline-block;margin-bottom:1.5rem">★ &nbsp;Donar en ActBlue</a>
         <div class="election-box">
-          <div class="e-kicker">Día de la elección primaria</div>
+          <div class="e-kicker">Día de Elecciones Primarias</div>
           <div class="e-date">16 de junio de 2025</div>
-          <div class="e-sub">Primaria demócrata de DC · Concejo de DC por el Ward 1 · Las urnas abren de 7 AM a 8 PM</div>
+          <div class="e-sub">Primaria Demócrata de DC · Concejo del Ward 1 · Urnas abiertas de 7 AM a 8 PM</div>
         </div>
       </div>
-      <form class="form-box reveal" id="join-form" name="join-the-movement" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="join-the-movement">
-        <h3>Únete al movimiento</h3>
-        <p>Regístrate para ser voluntario/a, recibir actualizaciones o ambas cosas.</p>
+      <form class="form-box reveal" id="join-form" name="join-the-movement-es" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="join-the-movement-es">
+        <h3>Únete al Movimiento</h3>
+        <p>Regístrate para ser voluntario, recibir actualizaciones, o ambas cosas.</p>
         <div class="f-row">
-          <div class="f-field"><label>Nombre</label><input type="text" name="first_name" placeholder="Maria"></div>
-          <div class="f-field"><label>Apellido</label><input type="text" name="last_name" placeholder="Garcia"></div>
+          <div class="f-field"><label>Nombre</label><input type="text" name="first_name" placeholder="María"></div>
+          <div class="f-field"><label>Apellido</label><input type="text" name="last_name" placeholder="García"></div>
         </div>
-        <div class="f-field"><label>Correo electrónico</label><input type="email" name="email" placeholder="maria@email.com"></div>
-        <div class="f-field"><label>Número de teléfono</label><input type="tel" name="phone" placeholder="(202) 555-1234"></div>
+        <div class="f-field"><label>Correo Electrónico</label><input type="email" name="email" placeholder="maria@correo.com"></div>
+        <div class="f-field"><label>Número de Teléfono</label><input type="tel" name="phone" placeholder="(202) 555-1234"></div>
         <div class="f-field">
           <label>Quiero</label>
           <select name="interest">
             <option value="">Selecciona una opción...</option>
-            <option>Voluntariado — tocar puertas</option>
-            <option>Voluntariado — hacer llamadas</option>
-            <option>Poner un letrero en mi jardín</option>
-            <option>Organizar un encuentro comunitario</option>
-            <option>Participar en limpieza comunitaria</option>
-            <option>Mantenerme informado/a</option>
+            <option>Voluntario — Tocar Puertas</option>
+            <option>Voluntario — Llamadas Telefónicas</option>
+            <option>Poner un Letrero</option>
+            <option>Organizar una Reunión</option>
+            <option>Participar en Limpieza</option>
+            <option>Recibir Información</option>
             <option>Donar</option>
           </select>
         </div>
-        <button class="f-submit" id="join-submit-btn">★ &nbsp;Count Me In</button>
+        <button class="f-submit" id="join-submit-btn">★ &nbsp;¡Cuenten Conmigo!</button>
         <div id="form-message" style="display:none; margin-top:1rem;"></div>
       </form>
     </div>
   </div>
 </section>
 
-<!-- EVENTOS -->
+<!-- EVENTS -->
 <section id="events" class="section" style="padding-top:0">
   <div class="wrap">
     <div class="events-head">
       <div>
-        <div class="section-label">Próximos eventos</div>
-        <h2>Encuentra a Jackie en<br>the <em>vecindario.</em></h2>
+        <div class="section-label">Próximos Eventos</div>
+        <h2>Encuentra a Jackie en<br>el <em>Vecindario.</em></h2>
       </div>
-      <a href="#action" class="btn-ghost">Recibir alertas de eventos →</a>
+      <a href="#action" class="btn-ghost">Alertas de Eventos →</a>
     </div>
     <div class="events-list" id="events-list"></div>
   </div>
 </section>
 
-<!-- EN LAS NOTICIAS -->
+<!-- NEWS -->
 <section id="news">
   <div class="wrap">
     <div class="news-head">
       <div>
-        <div class="section-label">En las noticias</div>
-        <h2>Jackie en las <em>noticias.</em></h2>
+        <div class="section-label">En los Medios</div>
+        <h2>Jackie en la <em>Prensa.</em></h2>
       </div>
-      <a href="/news.html" target="_blank" class="btn-ghost">Toda la cobertura →</a>
+      <a href="/es/news/" class="btn-ghost">Toda la Cobertura →</a>
     </div>
     <div class="press-grid" id="news-list"></div>
-      <a href="/news.html" class="btn-ghost" style="margin-top:1.5rem; display:inline-block;">Ver toda la cobertura de prensa</a>
-    </div>
+    <a href="/es/news/" class="btn-ghost" style="margin-top:1.5rem; display:inline-block;">Ver Toda la Cobertura de Prensa</a>
   </div>
 </section>
 
-<!-- endorsements -->
+<!-- ENDORSEMENTS -->
 <section id="endorsements" class="section">
   <div class="wrap">
     <div class="news-head">
       <div>
         <div class="section-label">Respaldos</div>
-        <h2>Apoyo de<br><em>personas reales.</em></h2>
+        <h2>El apoyo de<br><em>gente real.</em></h2>
       </div>
-      <a href="/es/endorsements/" class="btn-ghost">Ver todos los respaldos</a>
+      <a href="/es/endorsements/" class="btn-ghost">Ver Todos los Respaldos</a>
     </div>
-
     <div class="endorse-grid" id="endorse-list"></div>
   </div>
 </section>
 
-<!-- PIE DE PÁGINA -->
+<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie logo" style="height:60px;object-fit:contain">
-      <div class="footer-col"><h5>SÍGUENOS EN REDES SOCIALES</h5></div>
+        <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Logo Jackie" style="height:60px;object-fit:contain">
+        <div class="footer-col"><h5>SÍGUENOS EN REDES SOCIALES</h5></div>
         <div class="social-row" style="margin-top:1rem">
           <a href="https://www.facebook.com/profile.php?id=61581923504141" target="_blank" class="soc" title="Facebook">FB</a>
           <a href="https://twitter.com/warriorforward1" target="_blank" class="soc" title="Twitter / X">TW</a>
@@ -2594,46 +1912,44 @@ body.modal-open{
         </div>
       </div>
       <div class="footer-col">
-        <h5>Plataforma</h5>
+        <h5>Propuestas</h5>
         <ul>
-          <li><a href="#platform" onclick="switchTab('business',document.querySelector('.ptab'))">Reactivación de pequeños negocios</a></li>
-          <li><a href="#platform" onclick="switchTab('nsc',document.querySelectorAll('.ptab')[1])">Solution Center</a></li>
-          <li><a href="#platform" onclick="switchTab('housing',document.querySelectorAll('.ptab')[2])">Vivienda asequible</a></li>
-          <li><a href="#platform" onclick="switchTab('childcare',document.querySelectorAll('.ptab')[3])">Cuidado infantil universal</a></li>
-          <li><a href="#platform" onclick="switchTab('safety',document.querySelectorAll('.ptab')[4])">Community Safety</a></li>
+          <li><a href="#platform" onclick="switchTab('business',document.querySelector('.ptab'))">Pequeños Negocios</a></li>
+          <li><a href="#platform" onclick="switchTab('nsc',document.querySelectorAll('.ptab')[1])">Centro de Soluciones</a></li>
+          <li><a href="#platform" onclick="switchTab('housing',document.querySelectorAll('.ptab')[2])">Vivienda Asequible</a></li>
+          <li><a href="#platform" onclick="switchTab('childcare',document.querySelectorAll('.ptab')[3])">Cuidado Infantil</a></li>
+          <li><a href="#platform" onclick="switchTab('safety',document.querySelectorAll('.ptab')[4])">Seguridad Comunitaria</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Participa</h5>
         <ul>
           <li><a href="#action">Voluntariado</a></li>
-          <li><a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank">Donar via ActBlue</a></li>
+          <li><a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" target="_blank">Donar en ActBlue</a></li>
           <li><a href="#events">Eventos</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>About</h5>
+        <h5>Acerca de Jackie</h5>
         <ul>
-          <li><a href="#story">La historia de Jackie</a></li>
+          <li><a href="#story">Historia de Jackie</a></li>
           <li><a href="#achievements">Trayectoria</a></li>
-          <li><a href="#news">Noticias</a></li>
+          <li><a href="#news">Prensa</a></li>
           <li><a href="https://www.jackieforward1.com">jackieforward1.com</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-legal">PAGADO POR JACKIE THE WARRIOR FOR WARD 1. MARCO A. GONZALEZ, TESORERO. 1319 Monroe Street NW, Washington DC 20010. Una copia de nuestro informe está registrada en la Oficina de Financiamiento de Campañas de DC.</div>
-      <div class="footer-legal">★ Vota por JACKIE, tu primera opción, el 16 de junio</div>
+      <div class="footer-legal">PAGADO POR JACKIE THE WARRIOR FOR WARD 1. MARCO A. GONZALEZ, TESORERO. 1319 Monroe Street NW, Washington DC 20010. Una copia de nuestro informe está en archivo en la Oficina de Finanzas de Campaña de DC.</div>
+      <div class="footer-legal">★ Vota JACKIE, Tu Primera Opción, 16 de junio</div>
     </div>
   </div>
 </footer>
 
 <script>
-// Nav scroll
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 50));
 
-// Mobile menu
 function toggleMenu() {
   const h = document.getElementById('ham');
   const m = document.getElementById('mnav');
@@ -2641,11 +1957,9 @@ function toggleMenu() {
   m.classList.toggle('open');
 }
 
-// Plataforma tabs
 function switchTab(id, btn) {
   document.querySelectorAll('.ppanel').forEach(p => p.classList.remove('on'));
   document.querySelectorAll('.ptab').forEach(t => t.classList.remove('on'));
-
   const panel = document.getElementById('tab-' + id);
   if (panel) panel.classList.add('on');
   if (btn && btn.classList) btn.classList.add('on');
@@ -2656,25 +1970,12 @@ document.addEventListener('DOMContentLoaded', () => {
   switchTab('business', firstTab);
 });
 
-// Reveal on scroll
 const ro = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('shown'); ro.unobserve(e.target); } });
 }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
-
-// Stagger ward cells
-document.querySelectorAll('.ward-grid .reveal').forEach((el, i) => {
-  el.style.transitionDelay = (i * 0.07) + 's';
-});
 </script>
 
-<!-- ============================= -->
-<!-- JOIN THE MOVEMENT FORM LOGIC -->
-<!-- Handles:
-     - Form submission
-     - Prevent page reload
-     - Show success/error message -->
-<!-- ============================= -->
 <script>
 const form = document.getElementById("join-form");
 const message = document.getElementById("form-message");
@@ -2683,12 +1984,9 @@ const button = document.getElementById("join-submit-btn");
 if (form) {
   form.addEventListener("submit", function(e){
     e.preventDefault();
-
     button.innerHTML = "Enviando...";
     button.disabled = true;
-
     const data = new FormData(form);
-
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -2696,101 +1994,66 @@ if (form) {
     })
     .then(() => {
       message.style.display = "block";
-      message.innerHTML = "¡Gracias por unirte al movimiento! Pronto estaremos en contacto.";
+      message.innerHTML = "¡Gracias por unirte al movimiento! Estaremos en contacto muy pronto.";
       message.style.color = "#d4a017";
       form.reset();
     })
     .catch(() => {
       message.style.display = "block";
-      message.innerHTML = "Algo salió mal. Inténtalo de nuevo.";
+      message.innerHTML = "Algo salió mal. Por favor intenta de nuevo.";
       message.style.color = "red";
     })
     .finally(() => {
-      button.innerHTML = "★ &nbsp;Cuenta conmigo";
+      button.innerHTML = "★ &nbsp;¡Cuenten Conmigo!";
       button.disabled = false;
     });
   });
 }
 </script>
 
-<!-- 
-EVENTOS SCRIPT
-
-Loads events from /data/events.json, filters out past events,
-sorts upcoming events by date, and renders them dynamically
-into the #events-list container.
--->
 <script>
+function escapeHtml(str = '') {
+  return String(str)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
 
-    function escapeHtml(str = '') {
-      return String(str)
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#39;');
-    }
+function normalizeFeatured(value) {
+  return value === true || value === 'true' || value === 'True' || value === 1 || value === '1';
+}
 
-    function normalizeFeatured(value) {
-      return value === true || value === 'true' || value === 'True' || value === 1 || value === '1';
-    }
-
-    function videoEmbedUrl(url = '') {
-      if (!url) return '';
-      const youtubeId = getYouTubeId(url);
-      if (youtubeId) return `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
-      if (url.includes('vimeo.com/')) {
-        const id = url.split('vimeo.com/')[1].split('?')[0];
-        return `https://player.vimeo.com/video/${id}?autoplay=1`;
-      }
-      return url;
-    }
+function videoEmbedUrl(url = '') {
+  if (!url) return '';
+  const youtubeId = getYouTubeId(url);
+  if (youtubeId) return `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+  if (url.includes('vimeo.com/')) {
+    const id = url.split('vimeo.com/')[1].split('?')[0];
+    return `https://player.vimeo.com/video/${id}?autoplay=1`;
+  }
+  return url;
+}
 
 function getYouTubeId(url = '') {
   if (!url) return '';
-
   try {
     const parsed = new URL(url, window.location.origin);
     const host = parsed.hostname.replace('www.', '');
-
-    // youtu.be/ID
-    if (host === 'youtu.be') {
-      return parsed.pathname.split('/').filter(Boolean)[0] || '';
-    }
-
-    // youtube.com/*
+    if (host === 'youtu.be') return parsed.pathname.split('/').filter(Boolean)[0] || '';
     if (host.includes('youtube.com')) {
-      // watch?v=ID
-      if (parsed.searchParams.get('v')) {
-        return parsed.searchParams.get('v');
-      }
-
+      if (parsed.searchParams.get('v')) return parsed.searchParams.get('v');
       const parts = parsed.pathname.split('/').filter(Boolean);
-
-      // /shorts/ID
       const shortsIndex = parts.indexOf('shorts');
-      if (shortsIndex !== -1 && parts[shortsIndex + 1]) {
-        return parts[shortsIndex + 1];
-      }
-
-      // /embed/ID
+      if (shortsIndex !== -1 && parts[shortsIndex + 1]) return parts[shortsIndex + 1];
       const embedIndex = parts.indexOf('embed');
-      if (embedIndex !== -1 && parts[embedIndex + 1]) {
-        return parts[embedIndex + 1];
-      }
-
-      // /live/ID
-      const liveIndex = parts.indexOf('live');
-      if (liveIndex !== -1 && parts[liveIndex + 1]) {
-        return parts[liveIndex + 1];
-      }
+      if (embedIndex !== -1 && parts[embedIndex + 1]) return parts[embedIndex + 1];
     }
   } catch (e) {
-    // fallback regex
     const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([^?&#/]+)/i);
     return match ? match[1] : '';
   }
-
   return '';
 }
 
@@ -2800,81 +2063,47 @@ function youtubeThumbnail(url = '') {
 }
 
 function mediaImage(item) {
-  return youtubeThumbnail(item.video_url || item.url || '') 
-    || item.card_image 
-    || item.image 
-    || '';
+  return youtubeThumbnail(item.video_url || item.url || '') || item.card_image || item.image || '';
 }
 
 function categoryLabel(category) {
   const labels = {
-    "meet-greet": "Meet & Greet",
-    "cleanup": "Participar en limpieza comunitaria",
-    "canvassing": "Canvassing",
-    "townhall": "Town Hall",
-    "fundraiser": "Fundraiser",
-    "community": "Community Event"
+    "meet-greet": "Encuentro Comunitario",
+    "cleanup": "Limpieza",
+    "canvassing": "Campaña Puerta a Puerta",
+    "townhall": "Asamblea Vecinal",
+    "fundraiser": "Recaudación de Fondos",
+    "community": "Evento Comunitario"
   };
   return labels[category] || category || "";
 }
 
-async function loadUpcomingEventos() {
+async function loadUpcomingEvents() {
   const container = document.getElementById("events-list");
   if (!container) return;
-
   try {
     const response = await fetch("/data/events.json", { cache: "no-store" });
     const data = await response.json();
     const items = Array.isArray(data.items) ? data.items : [];
-
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-
     const upcoming = items
       .filter(item => item.date)
-      .filter(item => {
-        const eventDate = new Date(item.date + "T00:00:00");
-        return eventDate >= today;
-      })
+      .filter(item => new Date(item.date + "T00:00:00") >= today)
       .sort((a, b) => new Date(a.date) - new Date(b.date));
 
     if (upcoming.length === 0) {
-      container.innerHTML = `
-        <div class="event-card">
-          <div class="event-card-body" style="padding:1.2rem;">
-            <h4>No upcoming events right now</h4>
-            <p>Please check back soon for campaign events and volunteer opportunities.</p>
-          </div>
-        </div>
-      `;
+      container.innerHTML = `<div class="event-card"><div class="event-card-body" style="padding:1.2rem;"><h4>No hay eventos próximos por ahora</h4><p>Por favor vuelve pronto para ver eventos de campaña y oportunidades de voluntariado.</p></div></div>`;
       return;
     }
 
     container.innerHTML = upcoming.map(item => {
       const eventDate = new Date(item.date + "T00:00:00");
-      const month = eventDate.toLocaleString("en-US", { month: "short" }).toUpperCase();
+      const month = eventDate.toLocaleString("es-ES", { month: "short" }).toUpperCase();
       const day = eventDate.getDate();
-
-      const imageHtml = item.image
-        ? `
-          <div class="event-card-image">
-            <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title_en || 'Event image')}">
-          </div>
-        `
-        : "";
-
-      const rsvpHtml = item.rsvp
-        ? `
-          <a class="event-rsvp-btn" href="${escapeHtml(item.rsvp)}" target="_blank" rel="noopener noreferrer">
-            RSVP
-          </a>
-        `
-        : "";
-
-      const featuredHtml = item.featured
-        ? `<span class="event-featured-badge">Featured</span>`
-        : "";
-
+      const imageHtml = item.image ? `<div class="event-card-image"><img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title_es || item.title_en || 'Evento')}"></div>` : "";
+      const rsvpHtml = item.rsvp ? `<a class="event-rsvp-btn" href="${escapeHtml(item.rsvp)}" target="_blank" rel="noopener noreferrer">RSVP</a>` : "";
+      const featuredHtml = item.featured ? `<span class="event-featured-badge">Destacado</span>` : "";
       return `
         <div class="event-card ${item.featured ? 'featured' : ''}">
           ${imageHtml}
@@ -2883,333 +2112,247 @@ async function loadUpcomingEventos() {
               <span class="event-month">${month}</span>
               <span class="event-day">${day}</span>
             </div>
-
             <div class="event-meta">
               <span class="event-category">${escapeHtml(categoryLabel(item.category))}</span>
               ${featuredHtml}
             </div>
-
-            <h4>${escapeHtml(item.title_en || '')}</h4>
-
-            <p class="event-time-address">
-              ${escapeHtml(item.time || '')}${item.time ? ' · ' : ''}${escapeHtml(item.address_en || '')}
-            </p>
-
-            <p class="event-description">${escapeHtml(item.description_en || '')}</p>
-
+            <h4>${escapeHtml(item.title_es || item.title_en || '')}</h4>
+            <p class="event-time-address">${escapeHtml(item.time || '')}${item.time ? ' · ' : ''}${escapeHtml(item.address_es || item.address_en || '')}</p>
+            <p class="event-description">${escapeHtml(item.description_es || item.description_en || '')}</p>
             ${rsvpHtml}
           </div>
         </div>
       `;
     }).join("");
   } catch (error) {
-    console.error("Error loading events:", error);
-    container.innerHTML = `
-      <div class="event-card">
-        <div class="event-card-body" style="padding:1.2rem;">
-          <h4>Unable to load events</h4>
-          <p>Please try again later.</p>
-        </div>
-      </div>
-    `;
+    console.error("Error al cargar eventos:", error);
+    container.innerHTML = `<div class="event-card"><div class="event-card-body" style="padding:1.2rem;"><h4>No se pudieron cargar los eventos</h4><p>Por favor intenta más tarde.</p></div></div>`;
   }
 }
 
-loadUpcomingEventos();
+loadUpcomingEvents();
 </script>
 
-<!-- 
-NEWS SCRIPT
-
-Loads news from /data/news.json.
--->
-
 <script>
-  function escapeHtml(str = '') {
-    return String(str)
-      .replaceAll('&', '&amp;')
-      .replaceAll('<', '&lt;')
-      .replaceAll('>', '&gt;')
-      .replaceAll('"', '&quot;')
-      .replaceAll("'", '&#39;');
-  }
+async function loadHomeNews() {
+  const container = document.getElementById("news-list");
+  if (!container) return;
+  try {
+    const response = await fetch("/data/news.json", { cache: "no-store" });
+    const data = await response.json();
+    const items = Array.isArray(data.items) ? data.items : [];
+    const sorted = [...items].sort((a, b) => new Date(b.date || "1900-01-01") - new Date(a.date || "1900-01-01"));
+    const featured = sorted.filter(item => normalizeFeatured(item.featured));
+    const nonFeatured = sorted.filter(item => !normalizeFeatured(item.featured));
+    const selected = [...featured, ...nonFeatured].slice(0, 5);
 
-  async function loadHomeNoticias() {
-    const container = document.getElementById("news-list");
-    if (!container) return;
-
-    try {
-      const response = await fetch("/data/news.json", { cache: "no-store" });
-      const data = await response.json();
-      const items = Array.isArray(data.items) ? data.items : [];
-
-      const sorted = [...items].sort((a, b) => new Date(b.date || "1900-01-01") - new Date(a.date || "1900-01-01"));
-      const featured = sorted.filter(item => normalizeFeatured(item.featured));
-      const nonFeatured = sorted.filter(item => !normalizeFeatured(item.featured));
-      const selected = [...featured, ...nonFeatured].slice(0, 5);
-
-      const cards = selected.map(item => {
-        const image = mediaImage(item);
-        const title = item.title_es || item.title_en || item.title || "";
-        const summary = item.summary_es || item.summary_en || item.summary || "";
-        const target = item.url || item.video_url || "#";
-
-        return `
-          <article class="press-card">
-            <a class="press-card-link" href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer">
-              <div class="press-card-image-wrap">
-                ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(title)}" class="press-card-image">` : `<div class="press-card-placeholder">${item.type === "video" ? "Video" : "Sin imagen"}</div>`}
-              </div>
-              <div class="press-card-body">
-                <div class="press-card-meta">
-                  <span class="press-card-source">${escapeHtml(item.source || "")}</span>
-                  ${item.date ? `<span class="press-card-dot">•</span><span class="press-card-date">${escapeHtml(item.date)}</span>` : ""}
-                  ${item.language ? `<span class="press-card-dot">•</span><span class="press-card-language">${escapeHtml(item.language)}</span>` : ""}
-                </div>
-                <h3>${escapeHtml(title)}</h3>
-                ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
-                <span class="press-card-read">${item.type === "video" ? "Ver nota →" : "Leer cobertura →"}</span>
-              </div>
-            </a>
-          </article>
-        `;
-      }).join("");
-
-      const ctaCard = `
-        <article class="press-card press-card-cta">
-          <div class="press-card-cta-inner">
-            <div class="press-card-cta-star">★</div>
-            <h3>Ver toda la cobertura de prensa</h3>
-            <p>Follow Jackie’s campaign coverage across DC media, community newsletters, and Spanish-language press.</p>
-            <a href="/news.html" class="press-card-cta-link">Visit Noticiasroom →</a>
-          </div>
-        </article>
-      `;
-
-      container.innerHTML = cards + ctaCard;
-    } catch (error) {
-      console.error("Error loading home news:", error);
-      container.innerHTML = `<p>No se puede cargar la cobertura de prensa en este momento.</p>`;
-    }
-  }
-
-  loadHomeNoticias();
-</script>
-
-<!-- 
-RESPALDOS
-Loads RESPALDOS from /data/endorsement.json.
--->
-<script>
-  async function loadHomeRespaldos() {
-    const container = document.getElementById("endorse-list");
-    if (!container) return;
-
-    try {
-      const response = await fetch("/data/endorsements.json", { cache: "no-store" });
-      const data = await response.json();
-      const items = Array.isArray(data.items) ? data.items : [];
-
-      const sorted = [...items].sort((a, b) => new Date(b.date || "1900-01-01") - new Date(a.date || "1900-01-01"));
-      const featured = sorted.filter(item => normalizeFeatured(item.featured));
-      const nonFeatured = sorted.filter(item => !normalizeFeatured(item.featured));
-      const selected = [...featured, ...nonFeatured].slice(0, 5);
-
-      const cards = selected.map(item => {
-        const image = mediaImage(item);
-        const title = item.title_es || item.title_en || item.title || "";
-        const summary = item.summary_es || item.summary_en || item.summary || "";
-        const target = item.url || item.video_url || "#";
-        const isVideo = item.type === "video";
-        const media = image
-          ? isVideo
-            ? `<div class="endorse-media">
-                <button type="button" class="video-cover endorse-media-button" onclick="openEndorsementModal('${escapeHtml(target)}', '${escapeHtml(title)}')" aria-label="Ver respaldo">
-                  <img class="video-thumb" src="${escapeHtml(image)}" alt="${escapeHtml(title)}">
-                  <span class="video-overlay"></span>
-                  <span class="video-play">▶</span>
-                </button>
-              </div>`
-            : `<div class="endorse-media"><img src="${escapeHtml(image)}" alt="${escapeHtml(title)}"></div>`
-          : `<div class="endorse-media endorse-placeholder">${isVideo ? "Video" : "Sin contenido multimedia"}</div>`;
-
-        return `
-          <article class="endorse-card">
-            ${media}
-            <div class="endorse-body">
-              <div class="endorse-meta">
-                ${item.source ? `<span class="endorse-pill endorse-source">${escapeHtml(item.source)}</span>` : ""}
-                ${item.date ? `<span class="endorse-pill endorse-date">${escapeHtml(item.date)}</span>` : ""}
-                ${item.language ? `<span class="endorse-pill endorse-language">${escapeHtml(item.language)}</span>` : ""}
+    const cards = selected.map(item => {
+      const image = mediaImage(item);
+      const title = item.title_es || item.title_en || item.title || "";
+      const summary = item.summary_es || item.summary_en || item.summary || "";
+      const target = item.url || item.video_url || "#";
+      return `
+        <article class="press-card">
+          <a class="press-card-link" href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer">
+            <div class="press-card-image-wrap">
+              ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(title)}" class="press-card-image">` : `<div class="press-card-placeholder">${item.type === "video" ? "Video" : "Sin imagen"}</div>`}
+            </div>
+            <div class="press-card-body">
+              <div class="press-card-meta">
+                <span>${escapeHtml(item.source || "")}</span>
+                ${item.date ? `<span class="press-card-dot">•</span><span>${escapeHtml(item.date)}</span>` : ""}
               </div>
               <h3>${escapeHtml(title)}</h3>
-              ${item.endorser ? `<div class="endorser-name">${escapeHtml(item.endorser)}</div>` : ""}
               ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
-              ${target !== "#"
-                ? isVideo
-                  ? `<button type="button" class="endorse-link" style="background:none;border:none;padding:0;text-align:left;cursor:pointer;" onclick="openEndorsementModal('${escapeHtml(target)}', '${escapeHtml(title)}')">Ver respaldo →</button>`
-                  : `<a href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer" class="endorse-link">Leer cobertura →</a>`
-                : ""}
+              <span class="press-card-read">${item.type === "video" ? "Ver Nota →" : "Leer Cobertura →"}</span>
             </div>
-          </article>
-        `;
-      }).join("");
+          </a>
+        </article>
+      `;
+    }).join("");
 
-      const ctaCard = `
-        <article class="endorse-card endorse-card-cta">
-          <div class="endorse-card-cta-inner">
-            <div class="endorse-card-cta-star">★</div>
-            <h3>Ver todos los respaldos</h3>
-            <p>Explore the growing coalition of community leaders, neighbors, and advocates supporting Jackie.</p>
-            <a href="/es/endorsements/" class="endorse-card-cta-link">Visit Respaldos →</a>
+    const ctaCard = `
+      <article class="press-card press-card-cta">
+        <div class="press-card-cta-inner">
+          <div class="press-card-cta-star">★</div>
+          <h3>Ver Toda la Cobertura de Prensa</h3>
+          <p>Sigue la cobertura de la campaña de Jackie en medios de DC, boletines comunitarios y prensa en español.</p>
+          <a href="/es/news/" class="press-card-cta-link">Visitar la Sala de Prensa →</a>
+        </div>
+      </article>
+    `;
+
+    container.innerHTML = cards + ctaCard;
+  } catch (error) {
+    console.error("Error al cargar noticias:", error);
+    container.innerHTML = `<p>No se pudo cargar la cobertura de prensa en este momento.</p>`;
+  }
+}
+
+loadHomeNews();
+</script>
+
+<script>
+async function loadHomeEndorsements() {
+  const container = document.getElementById("endorse-list");
+  if (!container) return;
+  try {
+    const response = await fetch("/data/endorsements.json", { cache: "no-store" });
+    const data = await response.json();
+    const items = Array.isArray(data.items) ? data.items : [];
+    const sorted = [...items].sort((a, b) => new Date(b.date || "1900-01-01") - new Date(a.date || "1900-01-01"));
+    const featured = sorted.filter(item => normalizeFeatured(item.featured));
+    const nonFeatured = sorted.filter(item => !normalizeFeatured(item.featured));
+    const selected = [...featured, ...nonFeatured].slice(0, 5);
+
+    const cards = selected.map(item => {
+      const image = mediaImage(item);
+      const title = item.title_es || item.title_en || item.title || "";
+      const summary = item.summary_es || item.summary_en || item.summary || "";
+      const target = item.url || item.video_url || "#";
+      const isVideo = item.type === "video";
+      const media = image
+        ? isVideo
+          ? `<div class="endorse-media"><button type="button" class="video-cover endorse-media-button" onclick="openEndorsementModal('${escapeHtml(target)}', '${escapeHtml(title)}')" aria-label="Ver respaldo"><img class="video-thumb" src="${escapeHtml(image)}" alt="${escapeHtml(title)}"><span class="video-overlay"></span><span class="video-play">▶</span></button></div>`
+          : `<div class="endorse-media"><img src="${escapeHtml(image)}" alt="${escapeHtml(title)}"></div>`
+        : `<div class="endorse-media endorse-placeholder">${isVideo ? "Video" : "Sin imagen"}</div>`;
+
+      return `
+        <article class="endorse-card">
+          ${media}
+          <div class="endorse-body">
+            <div class="endorse-meta">
+              ${item.source ? `<span class="endorse-pill endorse-source">${escapeHtml(item.source)}</span>` : ""}
+              ${item.date ? `<span class="endorse-pill endorse-date">${escapeHtml(item.date)}</span>` : ""}
+            </div>
+            <h3>${escapeHtml(title)}</h3>
+            ${item.endorser ? `<div class="endorser-name">${escapeHtml(item.endorser)}</div>` : ""}
+            ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
+            ${target !== "#"
+              ? isVideo
+                ? `<button type="button" class="endorse-link" style="background:none;border:none;padding:0;text-align:left;cursor:pointer;" onclick="openEndorsementModal('${escapeHtml(target)}', '${escapeHtml(title)}')">Ver Respaldo →</button>`
+                : `<a href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer" class="endorse-link">Leer Cobertura →</a>`
+              : ""}
           </div>
         </article>
       `;
+    }).join("");
 
-      container.innerHTML = cards + ctaCard;
-    } catch (error) {
-      console.error("Error loading endorsements:", error);
-      container.innerHTML = "<p>No se pueden cargar los respaldos en este momento.</p>";
-    }
+    const ctaCard = `
+      <article class="endorse-card endorse-card-cta">
+        <div class="endorse-card-cta-inner">
+          <div class="endorse-card-cta-star">★</div>
+          <h3>Ver Todos los Respaldos</h3>
+          <p>Explora la creciente coalición de líderes comunitarios, vecinos y activistas que apoyan a Jackie.</p>
+          <a href="/es/endorsements/" class="endorse-card-cta-link">Ver Respaldos →</a>
+        </div>
+      </article>
+    `;
+
+    container.innerHTML = cards + ctaCard;
+  } catch (error) {
+    console.error("Error al cargar respaldos:", error);
+    container.innerHTML = "<p>No se pudieron cargar los respaldos en este momento.</p>";
   }
+}
 
-  loadHomeRespaldos();
+loadHomeEndorsements();
 </script>
 
-<!-- contador -->
 <script>
-  function updateCountdown() {
-    const today = new Date();
-    const target = new Date(today.getFullYear(), 5, 16); // Junio = mes 5
-
-    // Si ya pasó este año, usa el próximo
-    if (today > target) {
-      target.setFullYear(target.getFullYear() + 1);
-    }
-
-    const diff = target - today;
-    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-
-    const el = document.getElementById("countdown");
-    if (el) {
-      el.textContent = "VOTA POR JACKIE " + days + " DÍAS PARA LA ELECCIÓN - 16 DE JUNIO";
-    }
-  }
-
-  updateCountdown();
+function updateCountdown() {
+  const today = new Date();
+  const target = new Date(today.getFullYear(), 5, 16);
+  if (today > target) target.setFullYear(target.getFullYear() + 1);
+  const diff = target - today;
+  const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+  const el = document.getElementById("countdown");
+  const el2 = document.getElementById("countdown2");
+  const text = "VOTA JACKIE — " + days + " DÍAS PARA LA ELECCIÓN — 16 DE JUNIO";
+  if (el) el.textContent = text;
+  if (el2) el2.textContent = text;
+}
+updateCountdown();
 </script>
 
-
-<!-- endorsement video modal -->
 <script>
-  function openEndorsementModal(url, title = 'Video de respaldo') {
-    const modal = document.getElementById('endorsementModal');
-    const video = document.getElementById('endorsementVideo');
-    if (!modal || !video || !url) return;
+function openEndorsementModal(url, title = 'Video de respaldo') {
+  const modal = document.getElementById('endorsementModal');
+  const video = document.getElementById('endorsementVideo');
+  if (!modal || !video || !url) return;
+  video.src = videoEmbedUrl(url);
+  video.title = title || 'Video de respaldo';
+  modal.classList.add('open');
+  document.body.classList.add('modal-open');
+}
 
-    video.src = videoEmbedUrl(url);
-    video.title = title || 'Video de respaldo';
-
-    modal.classList.add('open');
-    document.body.classList.add('modal-open');
-  }
-
-  function closeEndorsementModal() {
-    const modal = document.getElementById('endorsementModal');
-    const video = document.getElementById('endorsementVideo');
-    if (!modal || !video) return;
-
-    modal.classList.remove('open');
-    video.src = '';
-    document.body.classList.remove('modal-open');
-  }
+function closeEndorsementModal() {
+  const modal = document.getElementById('endorsementModal');
+  const video = document.getElementById('endorsementVideo');
+  if (!modal || !video) return;
+  modal.classList.remove('open');
+  video.src = '';
+  document.body.classList.remove('modal-open');
+}
 </script>
 
 <div class="testimony-modal" id="endorsementModal" aria-hidden="true">
   <div class="testimony-modal-backdrop" onclick="closeEndorsementModal()"></div>
-
   <div class="testimony-modal-content" role="dialog" aria-modal="true" aria-label="Video de respaldo">
-    <button class="testimony-close" onclick="closeEndorsementModal()" aria-label="Close video">×</button>
-
+    <button class="testimony-close" onclick="closeEndorsementModal()" aria-label="Cerrar video">×</button>
     <div class="testimony-video-wrap">
-      <iframe
-        id="endorsementVideo"
-        src=""
-        title="Video de respaldo"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
+      <iframe id="endorsementVideo" src="" title="Video de respaldo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </div>
 </div>
 
-<!-- modal video -->
 <script>
-  function openTestimonyModal(event, videoId) {
-    event.preventDefault();
+function openTestimonyModal(event, videoId) {
+  event.preventDefault();
+  const modal = document.getElementById('testimonyModal');
+  const video = document.getElementById('testimonyVideo');
+  video.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+  modal.classList.add('open');
+  document.body.classList.add('modal-open');
+}
 
-    const modal = document.getElementById('testimonyModal');
-    const video = document.getElementById('testimonyVideo');
-
-    video.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-
-    modal.classList.add('open');
-    document.body.classList.add('modal-open');
-  }
-
-  function closeTestimonyModal() {
-    const modal = document.getElementById('testimonyModal');
-    const video = document.getElementById('testimonyVideo');
-
-    modal.classList.remove('open');
-    video.src = '';
-    document.body.classList.remove('modal-open');
-  }
+function closeTestimonyModal() {
+  const modal = document.getElementById('testimonyModal');
+  const video = document.getElementById('testimonyVideo');
+  modal.classList.remove('open');
+  video.src = '';
+  document.body.classList.remove('modal-open');
+}
 </script>
 
-
-<!-- modal for view testimony -->
 <div class="testimony-modal" id="testimonyModal" aria-hidden="true">
   <div class="testimony-modal-backdrop" onclick="closeTestimonyModal()"></div>
-
-  <div class="testimony-modal-content" role="dialog" aria-modal="true" aria-label="Testimony video">
-    <button class="testimony-close" onclick="closeTestimonyModal()" aria-label="Close video">×</button>
-
+  <div class="testimony-modal-content" role="dialog" aria-modal="true" aria-label="Video de testimonio">
+    <button class="testimony-close" onclick="closeTestimonyModal()" aria-label="Cerrar video">×</button>
     <div class="testimony-video-wrap">
-      <iframe
-        id="testimonyVideo"
-        src=""
-        title="Testimony video"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
+      <iframe id="testimonyVideo" src="" title="Video de testimonio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </div>
 </div>
 
-<!-- video con thumbnail y play encima -->
 <script>
-  document.querySelectorAll('.video-embed').forEach(function(wrapper){
-    const btn = wrapper.querySelector('.video-cover');
-    const videoId = wrapper.dataset.videoId;
-
-    if (!btn || !videoId) return;
-
-    btn.addEventListener('click', function(){
-      wrapper.innerHTML = `
-        <div class="video-frame-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-      `;
-    });
+document.querySelectorAll('.video-embed').forEach(function(wrapper){
+  const btn = wrapper.querySelector('.video-cover');
+  const videoId = wrapper.dataset.videoId;
+  if (!btn || !videoId) return;
+  btn.addEventListener('click', function(){
+    wrapper.innerHTML = `
+      <div class="video-frame-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1"
+          title="Reproductor de YouTube"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    `;
   });
+});
 </script>
 
 </body>
