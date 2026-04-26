@@ -2809,9 +2809,9 @@ function youtubeThumbnail(url = '') {
 }
 
 function mediaImage(item) {
-  return youtubeThumbnail(item.video_url || item.url || '') 
-    || item.card_image 
+  return item.card_image 
     || item.image 
+    || youtubeThumbnail(item.video_url || item.url || '') 
     || '';
 }
 
