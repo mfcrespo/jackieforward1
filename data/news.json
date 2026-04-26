@@ -1,6 +1,45 @@
 {
   "items": [
     {
+      "summary_en": "Ward 1 D.C. Council candidate Jackie Reyes-Yanes is inviting residents to a community meet and greet alongside a bilingual workshop on Ranked Choice Voting in partnership with the DC Board of Elections. The event aims to help voters better understand the voting process ahead of the upcoming primary and engage directly with the campaign.",
+      "summary_es": "La candidata al Concejo de DC por Ward 1, Jackie Reyes-Yanes, invita a los residentes a un encuentro comunitario acompañado de un taller bilingüe sobre votación por orden de preferencia, en alianza con la Junta Electoral de DC. El evento busca ayudar a los votantes a comprender mejor el proceso electoral de cara a las próximas primarias y fortalecer la conexión con la comunidad.",
+      "featured": false,
+      "date": "2026-04-24",
+      "url": "https://weeklyvoice.com/jackie-reyes-yanes-to-host-ward-1-meet-greet-and-bilingual-ranked-choice-voting-workshop-with-dc-board-of-elections/",
+      "title_en": "Jackie Reyes Yanes to Host Ward 1 Meet & Greet and Bilingual Ranked Choice Voting Workshop with DC Board of Elections",
+      "title_es": "Jackie Reyes Yanes organizará un encuentro comunitario en Ward 1 y un taller bilingüe sobre votación por orden de preferencia junto a la Junta Electoral de DC",
+      "language": "English",
+      "source": "Weekly Voice",
+      "image": "http://weeklyvoice.com/jackie-reyes-yanes-to-host-ward-1-meet-greet-and-bilingual-ranked-choice-voting-workshop-with-dc-board-of-elections/",
+      "card_image": "https://weeklyvoice.com/wp-content/uploads/2026/01/Press-Release-3-scaled.jpg"
+    },
+    {
+      "summary_en": "Tensions rise in the DC Delegate race, plus we talk to Ward 1 DC Council candidate Jackie Reyes-Yanes",
+      "summary_es": "Aumentan las tensiones en la carrera por el Delegado de DC, además conversamos con la candidata al Concejo de Ward 1, Jackie Reyes-Yanes",
+      "featured": false,
+      "date": "2026-04-16",
+      "url": "https://www.wusa9.com/video/syndication/ott/wusa9-plus/the-dc-beat/the-dc-beat-041526/65-cda627f3-837f-4db6-b118-9a2e6d36c6e7",
+      "title_en": "The DC Beat with Lorenzo Hall | The race for DC Delegate heats up",
+      "title_es": "The DC Beat con Lorenzo Hall | La contienda en DC se intensifica",
+      "language": "English",
+      "source": "WUSA9",
+      "image": "/images/uploads/jackie-reyes-yanes-with-lorenzo-hall.jpg",
+      "card_image": "https://media.wusa9.com/assets/WUSA/images/a9d6580a-0474-48e9-908a-09ecdf623ee8/20260416T212948/a9d6580a-0474-48e9-908a-09ecdf623ee8_1140x641.jpg"
+    },
+    {
+      "summary_en": "“I chose to speak Spanish today, because this is how my community feels when they go to all of these places, right?” said Jackie Reyes-Yanes. “I wanted everyone to feel how we feel when they speak English.”",
+      "summary_es": "“Elegí hablar en español hoy, porque así es como se siente mi comunidad cuando va a todos estos lugares, ¿verdad?”, dijo Jackie Reyes-Yanes. “Quería que todos sintieran cómo nos sentimos cuando nos hablan en inglés.”",
+      "featured": false,
+      "date": "2026-04-09",
+      "url": "https://wamu.org/story/26/04/09/dc-immigration-crackdown-latino-ward-1-council-race/",
+      "title_en": "Trump’s immigration crackdown is reshaping the council race in D.C.’s heavily Latino Ward 1",
+      "title_es": "Las políticas migratorias de Trump están redefiniendo la carrera al Concejo en Ward 1, una zona mayoritariamente latina de DC",
+      "language": "English",
+      "source": "WAMU",
+      "image": "https://wamu.org/story/26/04/09/dc-immigration-crackdown-latino-ward-1-council-race/",
+      "card_image": "https://wamu.org/wp-content/uploads/2026/04/IMG_9647.jpeg"
+    },
+    {
       "summary_en": "Jackie Reyes Yanes is proud to receive the endorsement of the Associated Builders and Contractors of Metro Washington (ABC) — a leading voice for the construction industry, skilled trades, and workforce development across our region.",
       "summary": "Jackie Reyes Yanes is proud to receive the endorsement of the Associated Builders and Contractors of Metro Washington (ABC)",
       "summary_es": "Jackie Reyes-Yanes se enorgullece de recibir el respaldo de Associated Builders and Contractors of Metro Washington (ABC), una voz líder en la industria de la construcción, los oficios especializados y el desarrollo de la fuerza laboral en nuestra región.",
@@ -14,6 +53,19 @@
       "source": "ABC Metro Washington",
       "image": "/images/uploads/jackie-reyes-yanes-endorment-abc.jpg",
       "card_image": "/images/uploads/jackie-reyes-yanes-endorment-abc.jpg"
+    },
+    {
+      "summary_en": "As the Ward 1 race intensifies, candidates are centering their campaigns on housing affordability, displacement, and the need for a more responsive local government. Residents are calling for leadership that listens, understands community needs, and delivers real solutions.",
+      "summary_es": "A medida que se intensifica la contienda por Ward 1, los candidatos están enfocando sus campañas en la vivienda asequible, el desplazamiento y la necesidad de un gobierno local más receptivo. Los residentes buscan un liderazgo que escuche, entienda las necesidades de la comunidad y ofrezca soluciones reales.",
+      "featured": false,
+      "date": "2026-02-16",
+      "url": "https://www.washingtoninformer.com/dc-council-seat-ward-1-race/",
+      "title_en": "In Ward 1 D.C. Council Race, the Fight Continues for Affordability and Responsive Government",
+      "title_es": "En la contienda por el Concejo de DC en Ward 1, continúa la lucha por la asequibilidad y un gobierno más receptivo",
+      "language": "English",
+      "source": "The Washington Informer",
+      "image": "https://www.washingtoninformer.com/dc-council-seat-ward-1-race/",
+      "card_image": "https://www.washingtoninformer.com/wp-content/uploads/2026/02/Photo-Collage.jpg"
     },
     {
       "summary_en": "With the support of her family and community leaders, Jackie Reyes-Yanes officially launched her candidacy for the D.C. Council in Ward 1. The former Director of Community Affairs is running a campaign focused on community, results, and stronger Latino representation.",
