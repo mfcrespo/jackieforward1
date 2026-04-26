@@ -2812,11 +2812,18 @@ function youtubeThumbnail(url = '') {
   return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
 }
 
+function isUploadedImage(url = "") {
+  return typeof url === "string" && url.startsWith("/images/");
+}
+
 function mediaImage(item) {
-  return youtubeThumbnail(item.video_url || item.url || '') 
-    || item.card_image 
-    || item.image 
-    || '';
+  if (isUploadedImage(item.image)) return item.image;
+  if (isUploadedImage(item.card_image)) return item.card_image;
+
+  if (item.card_image) return item.card_image;
+  if (item.image && !item.image.startsWith("http")) return item.image;
+
+  return youtubeThumbnail(item.video_url || "") || "";
 }
 
 function categoryLabel(category) {
