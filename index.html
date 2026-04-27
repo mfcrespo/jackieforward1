@@ -2960,11 +2960,16 @@ Loads ENDORSEMENTS from /data/endorsement.json.
       const selected = [...featured, ...nonFeatured].slice(0, 5);
 
       const cards = selected.map(item => {
-        const image = mediaImage(item);
-        const title = item.title_en || item.title_es || item.title || "";
-        const summary = item.summary_en || item.summary_es || item.summary || "";
         const target = item.url || item.video_url || "#";
         const isVideo = item.type === "video";
+
+        const image = isVideo
+          ? (youtubeThumbnail(item.video_url || item.url || '') || item.card_image || item.image || '')
+          : mediaImage(item);
+        const title = item.title_en || item.title_es || item.title || "";
+        const summary = item.summary_en || item.summary_es || item.summary || "";
+        // const target = item.url || item.video_url || "#";
+        // const isVideo = item.type === "video";
         const media = image
           ? isVideo
             ? `<div class="endorse-media">
