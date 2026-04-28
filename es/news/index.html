@@ -13,39 +13,74 @@
 
   <!-- Track events GA4 -->
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const trackedLinks = document.querySelectorAll("a");
+  document.addEventListener("click", function (e) {
+    const el = e.target.closest("a, button");
+    if (!el) return;
 
-    trackedLinks.forEach(function (link) {
-      link.addEventListener("click", function () {
-        const text = (link.innerText || link.getAttribute("aria-label") || "").trim();
-        const url = link.href || "";
+    const textRaw = (el.innerText || el.getAttribute("aria-label") || "").trim();
+    const text = textRaw.toLowerCase();
+    const url = el.href || "";
 
-        let eventName = "button_click";
+    let eventName = "button_click";
 
-        if (url.includes("donate") || text.toLowerCase().includes("donate")) {
-          eventName = "donate_click";
-        } else if (url.includes("eventbrite") || text.toLowerCase().includes("rsvp")) {
-          eventName = "rsvp_click";
-        } else if (text.toLowerCase().includes("join")) {
-          eventName = "join_click";
-        } else if (text.toLowerCase().includes("volunteer")) {
-          eventName = "volunteer_click";
-        } else if (text.toLowerCase().includes("endorsement")) {
-          eventName = "endorsement_click";
-        } else if (text.toLowerCase().includes("news") || text.toLowerCase().includes("press")) {
-          eventName = "news_click";
-        }
+    if (
+      url.includes("secure.actblue.com") ||
+      url.includes("donate") ||
+      text.includes("donate") ||
+      text.includes("donar") ||
+      text.includes("contribute") ||
+      text.includes("support") ||
+      text.includes("apoyar")
+    ) {
+      eventName = "donate_click";
+    } else if (
+      url.includes("eventbrite") ||
+      text.includes("rsvp") ||
+      text.includes("event") ||
+      text.includes("evento")
+    ) {
+      eventName = "rsvp_click";
+    } else if (
+      text.includes("volunteer") ||
+      text.includes("voluntariado") ||
+      text.includes("join") ||
+      text.includes("unirse")
+    ) {
+      eventName = "volunteer_click";
+    } else if (
+      el.classList.contains("news-link") ||
+      text.includes("read coverage") ||
+      text.includes("watch story") ||
+      text.includes("leer cobertura") ||
+      text.includes("ver nota")
+    ) {
+      eventName = "news_article_click";
+    } else if (
+      text.includes("news") ||
+      text.includes("press") ||
+      text.includes("prensa") ||
+      text.includes("noticias")
+    ) {
+      eventName = "news_click";
+    } else if (
+      text.includes("endorsement") ||
+      text.includes("endorsements") ||
+      text.includes("respaldo") ||
+      text.includes("respaldos")
+    ) {
+      eventName = "endorsement_click";
+    }
 
-        if (typeof gtag === "function") {
-          gtag("event", eventName, {
-            link_text: text,
-            link_url: url,
-            page_location: window.location.href
-          });
-        }
+    if (typeof gtag === "function") {
+      gtag("event", eventName, {
+        link_text: textRaw,
+        link_url: url,
+        page_location: window.location.href,
+        page_title: document.title
       });
-    });
+
+      console.log("GA4 Event:", eventName, textRaw, url);
+    }
   });
   </script>
 
