@@ -2676,9 +2676,32 @@ function switchTab(id, btn) {
   if (btn && btn.classList) btn.classList.add('on');
 }
 
+// document.addEventListener('DOMContentLoaded', () => {
+//   const firstTab = document.querySelector('.ptab');
+//   switchTab('business', firstTab);
+// });
+
 document.addEventListener('DOMContentLoaded', () => {
-  const firstTab = document.querySelector('.ptab');
-  switchTab('business', firstTab);
+  const tabs = {
+    '#small-business': ['business', document.querySelectorAll('.ptab')[0]],
+    '#solution-center': ['nsc', document.querySelectorAll('.ptab')[1]],
+    '#affordable-housing': ['housing', document.querySelectorAll('.ptab')[2]],
+    '#affordable-childcare': ['childcare', document.querySelectorAll('.ptab')[3]],
+    '#community-safety': ['safety', document.querySelectorAll('.ptab')[4]]
+  };
+
+  const hash = window.location.hash;
+
+  if (tabs[hash]) {
+    switchTab(tabs[hash][0], tabs[hash][1]);
+
+    setTimeout(() => {
+      document.getElementById('platform').scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  } else {
+    const firstTab = document.querySelector('.ptab');
+    switchTab('business', firstTab);
+  }
 });
 
 // Reveal on scroll
