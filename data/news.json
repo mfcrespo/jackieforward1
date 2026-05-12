@@ -26,6 +26,19 @@
       "card_image": "https://weeklyvoice.com/wp-content/uploads/2026/01/Press-Release-3-scaled.jpg"
     },
     {
+      "summary_en": "We spoke with Jackie Reyes-Yanes, a Latina leader who has worked tirelessly for the community since arriving in the United States from El Salvador. We learned more about her story, her journey, and her vision for the Latino community in Washington, DC.",
+      "summary_es": "Hablamos con Jackie Reyes-Yanes una latinoamericana que desde su llegada a los Estados Unidos desde El Salvador ha trabajado incansablemente por la comunidad. Conocemos su historia y su propuesta para la comunidad latina.",
+      "featured": false,
+      "date": "2026-04-17",
+      "url": "https://www.youtube.com/watch?v=GXNMJVkVIIY",
+      "title_en": "Jackie Reyes-Yanes:  A Latina Making History in Washington, DC | THE VOICE OF YOUR VOTE",
+      "title_es": "Jackie Reyes-Yanes, una latina que está está haciendo historia en Washington DC | LA VOZ DE TU VOTO",
+      "language": "Spanish",
+      "source": "Kenia Basilis - Tu Guía",
+      "image": "/images/uploads/jackie-reyes-yanes_dccouncilward1.png",
+      "card_image": "https://i.ytimg.com/vi/GXNMJVkVIIY/maxresdefault.jpg"
+    },
+    {
       "summary_en": "Tensions rise in the DC Delegate race, plus we talk to Ward 1 DC Council candidate Jackie Reyes-Yanes",
       "summary_es": "Aumentan las tensiones en la carrera por el Delegado de DC, además conversamos con la candidata al Concejo de Ward 1, Jackie Reyes-Yanes",
       "featured": false,
@@ -182,7 +195,7 @@
       "language": "English",
       "source": "Forbes",
       "image": "/images/uploads/jackie-reyes-yanes-dc-servant.jpg",
-      "card_image": "/images/uploads/jackie-reyes-yanes-dc-servant.jpg"
+      "card_image": "https://imageio.forbes.com/blogs-images/viviannunez/files/2018/05/unnamed-5.jpg?format=jpg&amp;height=900&amp;width=1600&amp;fit=bounds"
     }
   ]
 }
