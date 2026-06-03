@@ -767,7 +767,7 @@ section { scroll-margin-top: 115px; }
   font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
   color:var(--gold);
 }
-.f-field input,.f-field select{
+.f-field input,.f-field select,.f-field textarea{
   background:rgba(244,239,230,.06);
   border:1px solid rgba(244,239,230,.12);
   padding:.65rem .9rem;
@@ -776,7 +776,7 @@ section { scroll-margin-top: 115px; }
   outline:none;transition:border-color .2s;
   -webkit-appearance:none;
 }
-.f-field input:focus,.f-field select:focus{border-color:var(--gold)}
+.f-field input:focus,.f-field select:focus,.f-field textarea:focus{border-color:var(--gold)}
 .f-field input::placeholder{color:rgba(244,239,230,.25)}
 .f-field select option{background:#0e110e;color:var(--warm)}
 .f-submit{
@@ -788,6 +788,51 @@ section { scroll-margin-top: 115px; }
   margin-top:.5rem;transition:background .2s;
 }
 .f-submit:hover{background:var(--gold-lt)}
+
+.f-field textarea{
+  min-height:150px;
+  resize:vertical;
+  background:rgba(244,239,230,.06);
+  border:1px solid rgba(244,239,230,.12);
+  padding:.65rem .9rem;
+  font-size:.88rem;
+  color:var(--warm);
+  font-family:'League Spartan',sans-serif;
+  outline:none;
+}
+
+.f-field textarea::placeholder{
+  color:rgba(244,239,230,.25);
+}
+
+/* social contact */
+.social-contact{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+}
+
+.social-contact a{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(212,160,23,.35);
+  border-radius:50%;
+
+  color:var(--gold);
+  font-size:1.1rem;
+
+  transition:all .25s ease;
+}
+
+.social-contact a:hover{
+  background:var(--gold);
+  color:var(--ink);
+  transform:translateY(-2px);
+}
 
 /* ─── ACHIEVEMENTS ──────────────────────────── */
 #achievements{background:#0a0d0a;padding:5rem 0;border-top:1px solid rgba(212,160,23,.12)}
@@ -1877,7 +1922,35 @@ body.modal-open{
   border:none;
 }
 
+/* contact details */
+.contact-details{
+  margin-top:2rem;
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+}
 
+.contact-item{
+  color:rgba(244,239,230,.75);
+  line-height:1.8;
+}
+
+.contact-item strong{
+  color:var(--gold);
+  font-family:'League Spartan',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:.8rem;
+}
+
+.contact-item a{
+  color:var(--warm);
+  transition:color .2s;
+}
+
+.contact-item a:hover{
+  color:var(--gold);
+}
 
     /* ─── RESPONSIVE PATCH ───────────────────── */
     @media (max-width: 900px){
@@ -2176,6 +2249,13 @@ body.modal-open{
     }
 
   </style>
+
+<!-- icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
 </head>
 <body>
 
@@ -2193,6 +2273,7 @@ body.modal-open{
       <li><a href="#news">Noticias</a></li>
       <li><a href="#events">Eventos</a></li>
       <li><a href="#volunteer">Voluntariado</a></li>
+      <li><a href="#contact">Contacto</a></li>
     </ul>
       <div class="lang-switch" aria-label="Language switcher">
         <a href="/" hreflang="en" lang="en">EN</a>
@@ -2215,6 +2296,7 @@ body.modal-open{
   <a href="#news" onclick="toggleMenu()">Noticias</a>
   <a href="#events" onclick="toggleMenu()">Eventos</a>
   <a href="#volunteer" onclick="toggleMenu()">Voluntariado</a>
+  <a href="#contact" onclick="toggleMenu()">Contacto</a>
 
 
   <a href="https://secure.actblue.com/donate/jackie-reyes-yanes-1" class="m-cta" target="_blank">Dona ahora</a>
@@ -2636,6 +2718,130 @@ body.modal-open{
   </div>
 </section>
 
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="wrap">
+    <div class="section-label">Contacto</div>
+
+      <div class="action-wrap">
+        <div class="action-left">
+          <h2>
+            Conecta con <em>Jackie</em>
+          </h2>
+          <p>
+            ¿Tienes alguna pregunta, solicitud de prensa o deseas comunicarte con la campaña?
+            Envíanos un mensaje y nuestro equipo te responderá a la brevedad.
+          </p>
+
+          <p>
+            También puedes enviarnos un correo directamente a:
+            <strong>info@jackieforward1.com</strong>.
+          </p>
+
+          <div class="contact-details">
+
+            <div class="contact-item">
+              <strong>Sede de Campaña</strong><br>
+
+              <a href="https://maps.google.com/?q=707+Kenyon+St+NW+Washington+DC+20010"
+                target="_blank">
+                707 Kenyon St NW<br>
+                Washington, DC 20010
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Teléfono</strong><br>
+              <a href="tel:2024911236">(202) 491-1236</a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Email</strong><br>
+              <a href="mailto:jackie@jackieforward1.com">
+                jackie@jackieforward1.com
+              </a><br>
+
+              <a href="mailto:info@jackieforward1.com">
+                info@jackieforward1.com
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Sigue a Jackie</strong>
+
+              <div class="social-contact">
+                <a href="https://www.instagram.com/warriorforward1" target="_blank" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.facebook.com/profile.php?id=61581923504141" target="_blank" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://x.com/warriorforward1" target="_blank" aria-label="X">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="https://www.youtube.com/@JackieForWard1" target="_blank" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+        <div class="form-box">
+          <h3>Contacta la Campaña</h3>
+          <p>Completa este formulario para enviarnos un mensaje.</p>
+
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field">
+
+            <input type="hidden" name="form-name" value="contact">
+
+            <p hidden>
+              <label>
+                No completes este campo:
+                <input name="bot-field">
+              </label>
+            </p>
+
+            <div class="f-row">
+              <div class="f-field">
+                <label>Nombre</label>
+                <input type="text" name="name" required>
+              </div>
+
+              <div class="f-field">
+                <label>Email</label>
+                <input type="email" name="email" required>
+              </div>
+            </div>
+
+            <div class="f-field">
+              <label>Asunto</label>
+              <input type="text" name="subject">
+            </div>
+
+            <div class="f-field">
+              <label>Mensaje</label>
+              <textarea name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="f-submit">
+              Enviar Mensaje
+            </button>
+          </form>
+        </div>
+      </div>  
+    </div>
+  </div>
+</section>
+
 <!-- EVENTS -->
 <section id="events" class="section" style="padding-top:0">
   <div class="wrap">
@@ -2688,9 +2894,23 @@ body.modal-open{
         <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie logo" style="height:60px;object-fit:contain">
       <div class="footer-col"><h5>SÍGUENOS EN REDES SOCIALES</h5></div>
         <div class="social-row" style="margin-top:1rem">
-          <a href="https://www.facebook.com/profile.php?id=61581923504141" target="_blank" class="soc" title="Facebook">FB</a>
-          <a href="https://twitter.com/warriorforward1" target="_blank" class="soc" title="Twitter / X">TW</a>
-          <a href="https://www.instagram.com/warriorforward1" target="_blank" class="soc" title="Instagram">IG</a>
+          <div class="social-contact">
+            <a href="https://www.instagram.com/warriorforward1" target="_blank" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=61581923504141" target="_blank" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="https://x.com/warriorforward1" target="_blank" aria-label="X">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@JackieForWard1" target="_blank" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
         </div>
       </div>
       <div class="footer-col">
