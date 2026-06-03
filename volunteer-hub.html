@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Hub | Jackie Reyes-Yanes</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #0B0D0B;
+      color: #F9F6EF;
+      font-family: Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    img {
+      max-width: 180px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      color: #D4A017;
+      text-transform: uppercase;
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: rgba(249,246,239,.75);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      background: #D4A017;
+      color: #0B0D0B;
+      padding: 16px 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .note {
+      margin-top: 30px;
+      font-size: 14px;
+      color: rgba(249,246,239,.55);
+    }
+  </style>
+
+  <script>
+    const password = prompt("Enter team password:");
+
+    if (password !== "JRYWARD1GOTV2026") {
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.innerHTML =
+          "<div style='padding:60px;text-align:center;color:white;background:#0B0D0B;min-height:100vh;'><h1>Access Denied</h1><p>This page is for authorized team members only.</p></div>";
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <div class="page">
+    <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie Reyes-Yanes logo">
+
+    <h1>Ward 1 Volunteer Hub</h1>
+
+    <p>
+      This page is for Jackie Reyes-Yanes campaign team members only.
+      Use the button below to access the GOTV Volunteer Management Dashboard.
+    </p>
+
+    <a
+      href="https://docs.google.com/spreadsheets/d/1DMXcDF-_y9phvcVXvPFYV0TB8se30vI9tEpC0q5QfZ0/edit?usp=sharing"
+      target="_blank"
+      class="btn">
+      Open Volunteer Dashboard
+    </a>
+
+    <p class="note">
+      The dashboard is restricted. You must be logged into an authorized Google account to access it.
+    </p>
+  </div>
+</body>
+</html>
