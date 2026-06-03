@@ -799,6 +799,35 @@ section { scroll-margin-top: 115px; }
   color:rgba(244,239,230,.25);
 }
 
+/* social contact */
+.social-contact{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+}
+
+.social-contact a{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(212,160,23,.35);
+  border-radius:50%;
+
+  color:var(--gold);
+  font-size:1.1rem;
+
+  transition:all .25s ease;
+}
+
+.social-contact a:hover{
+  background:var(--gold);
+  color:var(--ink);
+  transform:translateY(-2px);
+}
+
 /* ─── ACHIEVEMENTS ──────────────────────────── */
 #achievements{background:#0a0d0a;padding:5rem 0;border-top:1px solid rgba(212,160,23,.12)}
 .ach-head{margin-bottom:3.5rem}
@@ -1887,7 +1916,35 @@ body.modal-open{
   border:none;
 }
 
+/* contact details */
+.contact-details{
+  margin-top:2rem;
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+}
 
+.contact-item{
+  color:rgba(244,239,230,.75);
+  line-height:1.8;
+}
+
+.contact-item strong{
+  color:var(--gold);
+  font-family:'League Spartan',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:.8rem;
+}
+
+.contact-item a{
+  color:var(--warm);
+  transition:color .2s;
+}
+
+.contact-item a:hover{
+  color:var(--gold);
+}
 
     /* ─── RESPONSIVE PATCH ───────────────────── */
     @media (max-width: 900px){
@@ -2186,6 +2243,13 @@ body.modal-open{
     }
 
   </style>
+
+<!-- icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
 </head>
 <body>
 
@@ -2661,68 +2725,121 @@ body.modal-open{
   <div class="wrap">
     <div class="section-label">Contact</div>
 
-    <div class="action-wrap">
-      <div class="action-left">
-        <h2>
-          Get in <em>Touch</em>
-        </h2>
-        <p>
-          Have a question, media inquiry, or want to connect with the campaign?
-          Send us a message and our team will follow up.
-        </p>
-
-        <p>
-          You can also email us directly at
-          <strong>info@jackieforward1.com</strong>.
-        </p>
-      </div>
-
-      <div class="form-box">
-        <h3>Contact the Campaign</h3>
-        <p>Fill out the form below to send us a message.</p>
-
-        <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field">
-
-          <input type="hidden" name="form-name" value="contact">
-
-          <p hidden>
-            <label>
-              Don't fill this out:
-              <input name="bot-field">
-            </label>
+      <div class="action-wrap">
+        <div class="action-left">
+          <h2>
+            Connect with <em>Jackie</em>
+          </h2>
+          <p>
+            Have a question, media inquiry, or want to connect with the campaign?
+            Send us a message and our team will follow up.
           </p>
 
-          <div class="f-row">
-            <div class="f-field">
-              <label>Name</label>
-              <input type="text" name="name" required>
+          <p>
+            You can also email us directly at
+            <strong>info@jackieforward1.com</strong>.
+          </p>
+
+          <div class="contact-details">
+
+            <div class="contact-item">
+              <strong>Campaign Headquarters</strong><br>
+
+              <a href="https://maps.google.com/?q=707+Kenyon+St+NW+Washington+DC+20010"
+                target="_blank">
+                707 Kenyon St NW<br>
+                Washington, DC 20010
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Phone</strong><br>
+              <a href="tel:2024911236">(202) 491-1236</a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Email</strong><br>
+              <a href="mailto:jackie@jackieforward1.com">
+                jackie@jackieforward1.com
+              </a><br>
+
+              <a href="mailto:info@jackieforward1.com">
+                info@jackieforward1.com
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Follow Jackie</strong>
+
+              <div class="social-contact">
+                <a href="https://www.instagram.com/warriorforward1" target="_blank" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.facebook.com/profile.php?id=61581923504141" target="_blank" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://x.com/warriorforward1" target="_blank" aria-label="X">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="https://www.youtube.com/@JackieForWard1" target="_blank" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+        <div class="form-box">
+          <h3>Contact the Campaign</h3>
+          <p>Fill out the form below to send us a message.</p>
+
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field">
+
+            <input type="hidden" name="form-name" value="contact">
+
+            <p hidden>
+              <label>
+                Don't fill this out:
+                <input name="bot-field">
+              </label>
+            </p>
+
+            <div class="f-row">
+              <div class="f-field">
+                <label>Name</label>
+                <input type="text" name="name" required>
+              </div>
+
+              <div class="f-field">
+                <label>Email</label>
+                <input type="email" name="email" required>
+              </div>
             </div>
 
             <div class="f-field">
-              <label>Email</label>
-              <input type="email" name="email" required>
+              <label>Subject</label>
+              <input type="text" name="subject">
             </div>
-          </div>
 
-          <div class="f-field">
-            <label>Subject</label>
-            <input type="text" name="subject">
-          </div>
+            <div class="f-field">
+              <label>Message</label>
+              <textarea name="message" required></textarea>
+            </div>
 
-          <div class="f-field">
-            <label>Message</label>
-            <textarea name="message" required></textarea>
-          </div>
-
-          <button type="submit" class="f-submit">
-            Send Message
-          </button>
-        </form>
-      </div>
+            <button type="submit" class="f-submit">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>  
     </div>
   </div>
 </section>
@@ -2780,9 +2897,23 @@ body.modal-open{
         <img src="/images/jackie-reyes-yanes-logo-yellow-green.png" alt="Jackie logo" style="height:60px;object-fit:contain">
       <div class="footer-col"><h5>FOLLOW US IN SOCIAL MEDIA</h5></div>
         <div class="social-row" style="margin-top:1rem">
-          <a href="https://www.facebook.com/profile.php?id=61581923504141" target="_blank" class="soc" title="Facebook">FB</a>
-          <a href="https://twitter.com/warriorforward1" target="_blank" class="soc" title="Twitter / X">TW</a>
-          <a href="https://www.instagram.com/warriorforward1" target="_blank" class="soc" title="Instagram">IG</a>
+          <div class="social-contact">
+            <a href="https://www.instagram.com/warriorforward1" target="_blank" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=61581923504141" target="_blank" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="https://x.com/warriorforward1" target="_blank" aria-label="X">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@JackieForWard1" target="_blank" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
         </div>
       </div>
       <div class="footer-col">
