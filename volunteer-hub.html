@@ -55,6 +55,48 @@
       font-size: 14px;
       color: rgba(249,246,239,.55);
     }
+
+    .resources-section{
+    margin-top:40px;
+    }
+
+    .resources-section h3{
+    color:#D4A017;
+    font-family:'League Spartan',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:1rem;
+    margin-bottom:15px;
+    }
+
+    .resources-links{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    align-items:center;
+    }
+
+    .resource-link{
+    display:inline-block;
+    padding:12px 24px;
+
+    background:rgba(212,160,23,.08);
+    border:1px solid rgba(212,160,23,.35);
+
+    color:#F4EFE6;
+    text-decoration:none;
+
+    font-family:'League Spartan',sans-serif;
+    font-weight:600;
+
+    transition:.2s;
+    }
+
+    .resource-link:hover{
+    background:#D4A017;
+    color:#000;
+    }
+
   </style>
 
   <script>
@@ -90,6 +132,21 @@
     <p class="note">
       The dashboard is restricted. You must be logged into an authorized Google account to access it.
     </p>
+
+    <div class="resources-section">
+
+        <h3>Campaign Resources</h3>
+
+        <div class="resources-links">
+
+            <a href="/documents/JRY-GOTV Volunteer Management System.pdf"
+            target="_blank"
+            class="resource-link">
+            📘 GOTV Volunteer Management System - Tutorial
+            </a>
+
+        </div>
+    </div>
   </div>
 </body>
 </html>
