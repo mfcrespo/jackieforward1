@@ -1946,6 +1946,25 @@ body.modal-open{
   color:var(--gold);
 }
 
+/* check-box */
+.checkbox-label{
+  display:flex;
+  gap:.6rem;
+  align-items:flex-start;
+  color:rgba(244,239,230,.75);
+  font-family:'Barlow',sans-serif;
+  font-size:.9rem;
+  line-height:1.5;
+  letter-spacing:0;
+  text-transform:none;
+}
+
+.checkbox-label input{
+  margin-top:.2rem;
+}
+
+
+
     /* ─── RESPONSIVE PATCH ───────────────────── */
     @media (max-width: 900px){
       #nav{
@@ -2266,6 +2285,7 @@ body.modal-open{
       <li><a href="#endorsements">Endorsements</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#events">Events</a></li>
+      <li><a href="#shift-signup">Volunteer Shifts</a></li>
       <li><a href="#volunteer">Volunteer</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -2661,6 +2681,155 @@ body.modal-open{
   <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-meet-and-greet.jpg" alt="Jackie with neighbors"></div>
   <div class="photo-row-cell"><img src="/images/jackie-reyes-yanes-cleanup.jpg" alt="Jackie on the trail"></div>
 </div>
+
+<!-- Volunteer for Early Voting & Election Day -->
+<section id="shift-signup" class="section">
+
+  <div class="wrap">
+
+    <div class="action-wrap">
+
+      <div class="action-left reveal">
+
+        <div class="section-label">
+          Early Voting & Election Day
+        </div>
+
+        <h2>
+          Volunteer for<br>
+          <em>Early Voting & Election Day</em>
+        </h2>
+
+        <p>
+          Help us reach voters across Ward 1.
+          Choose the location and shift that works best for you and our team will follow up with additional details.
+        </p>
+
+        <div class="election-box">
+          <div class="e-kicker">
+            Volunteer Opportunity
+          </div>
+
+          <div class="e-date">
+            June 16
+          </div>
+
+          <div class="e-sub">
+            Early Voting & Election Day Shifts Available
+          </div>
+        </div>
+
+      </div>
+
+      <form id="shiftSignupForm" class="form-box">
+
+        <h3>
+          Choose Your Shift
+        </h3>
+
+        <p>
+          Select the location and time that works best for you.
+        </p>
+
+        <div class="f-row">
+
+          <div class="f-field">
+            <label>First Name</label>
+            <input type="text" name="firstName" required>
+          </div>
+
+          <div class="f-field">
+            <label>Last Name</label>
+            <input type="text" name="lastName" required>
+          </div>
+
+        </div>
+
+        <div class="f-field">
+          <label>Email</label>
+          <input type="email" name="email" required>
+        </div>
+
+        <div class="f-field">
+          <label>Phone</label>
+          <input type="tel" name="phone" required>
+        </div>
+
+        <div class="f-field">
+          <label>Shift</label>
+
+          <select name="shift" id="shiftSelect" required>
+            <option value="">Loading available shifts...</option>
+          </select>
+        </div>
+
+        <div class="f-field">
+          <label>Languages Spoken</label>
+
+          <select name="language">
+
+            <option value="">
+              Select language
+            </option>
+
+            <option value="English">
+              English
+            </option>
+
+            <option value="Spanish">
+              Spanish
+            </option>
+
+            <option value="Amharic">
+              Amharic
+            </option>
+
+            <option value="English & Spanish">
+              English & Spanish
+            </option>
+
+          </select>
+
+        </div>
+
+        <div class="f-field">
+          <label>Notes</label>
+
+          <textarea
+            name="notes"
+            placeholder="Anything else we should know?"
+          ></textarea>
+
+        </div>
+
+        <div class="f-field">
+          <label class="checkbox-label">
+            <input type="checkbox" name="consent" required>
+            I agree to be contacted by the campaign regarding my volunteer shift.
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          class="f-submit"
+          id="shiftSubmitBtn">
+
+          Reserve My Shift
+
+        </button>
+
+        <p
+          id="shiftFormMessage"
+          style="display:none;margin-top:15px;">
+        </p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
 
 <!-- ACTION -->
 <section id="volunteer" class="section">
@@ -3568,6 +3737,89 @@ Loads ENDORSEMENTS from /data/endorsement.json.
       `;
     });
   });
+</script>
+
+<!-- Volunteer for Early Voting & Election Day Script -->
+<script>
+  const SHIFT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwMxioP5xy3Sl8TGeentRSIbQY9otiAWBiMV9VXWbIg8svHcjKZdzJ2FlsNPqxDOA/exec";
+
+  const shiftSelect = document.getElementById("shiftSelect");
+  const shiftForm = document.getElementById("shiftSignupForm");
+  const shiftMessage = document.getElementById("shiftFormMessage");
+  const shiftButton = document.getElementById("shiftSubmitBtn");
+
+  async function loadShifts() {
+    try {
+      const response = await fetch(SHIFT_SCRIPT_URL);
+      const shifts = await response.json();
+
+      shiftSelect.innerHTML = '<option value="">Select a shift</option>';
+
+      shifts.forEach(shift => {
+        const option = document.createElement("option");
+        option.value = shift.label;
+        option.textContent = shift.label;
+        shiftSelect.appendChild(option);
+      });
+
+    } catch (error) {
+      shiftSelect.innerHTML = '<option value="">Unable to load shifts</option>';
+    }
+  }
+
+  if (shiftSelect) {
+    loadShifts();
+  }
+
+  if (shiftForm) {
+    shiftForm.addEventListener("input", function(){
+      shiftMessage.style.display = "none";
+    });
+
+    shiftForm.addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      shiftButton.disabled = true;
+      shiftButton.innerHTML = "Submitting...";
+
+      const data = {
+        firstName: shiftForm.firstName.value,
+        lastName: shiftForm.lastName.value,
+        email: shiftForm.email.value,
+        phone: shiftForm.phone.value,
+        shift: shiftForm.shift.value,
+        language: shiftForm.language.value,
+        notes: shiftForm.notes.value,
+        consent: shiftForm.consent.checked ? "Yes" : "No"
+      };
+
+      try {
+        await fetch(SHIFT_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        shiftMessage.style.display = "block";
+        shiftMessage.style.color = "#D4A017";
+        shiftMessage.innerHTML = "Thank you! Your shift request has been submitted.";
+
+        shiftForm.reset();
+        loadShifts();
+
+      } catch (error) {
+        shiftMessage.style.display = "block";
+        shiftMessage.style.color = "red";
+        shiftMessage.innerHTML = "There was an error. Please try again.";
+      }
+
+      shiftButton.disabled = false;
+      shiftButton.innerHTML = "Reserve My Shift";
+    });
+  }
 </script>
 
 </body>
