@@ -1959,8 +1959,13 @@ body.modal-open{
   text-transform:none;
 }
 
-.checkbox-label input{
-  margin-top:.2rem;
+.checkbox-label input[type="checkbox"]{
+  appearance:auto;
+  -webkit-appearance:checkbox;
+  width:22px;
+  height:22px;
+  accent-color:var(--gold);
+  flex-shrink:0;
 }
 
 
@@ -3757,7 +3762,7 @@ Loads ENDORSEMENTS from /data/endorsement.json.
 
       shifts.forEach(shift => {
         const option = document.createElement("option");
-        option.value = shift.label;
+        option.value = shift.id + " | " + shift.label;
         option.textContent = shift.label;
         shiftSelect.appendChild(option);
       });
