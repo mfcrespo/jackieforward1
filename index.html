@@ -1968,6 +1968,42 @@ body.modal-open{
   flex-shrink:0;
 }
 
+/* Shift cards */
+.shift-cards{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+
+.shift-card{
+  border:1px solid rgba(212,160,23,.35);
+  background:rgba(244,239,230,.04);
+  padding:1rem;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.shift-card:hover{
+  border-color:var(--gold);
+  background:rgba(212,160,23,.08);
+}
+
+.shift-card input{
+  margin-right:.6rem;
+  accent-color:var(--gold);
+}
+
+.shift-card strong{
+  color:var(--gold);
+  display:block;
+  margin-bottom:.35rem;
+}
+
+.shift-card span{
+  display:block;
+  color:rgba(244,239,230,.7);
+  line-height:1.5;
+}
 
 
     /* ─── RESPONSIVE PATCH ───────────────────── */
@@ -2761,11 +2797,10 @@ body.modal-open{
         </div>
 
         <div class="f-field">
-          <label>Shift</label>
-
-          <select name="shift" id="shiftSelect" required>
-            <option value="">Loading available shifts...</option>
-          </select>
+          <label>Available Shifts</label>
+          <div id="shiftCards" class="shift-cards">
+            <p>Loading available shifts...</p>
+          </div>
         </div>
 
         <div class="f-field">
@@ -2777,23 +2812,30 @@ body.modal-open{
               Select language
             </option>
 
-            <option value="English">
-              English
-            </option>
-
-            <option value="Spanish">
-              Spanish
-            </option>
-
-            <option value="Amharic">
-              Amharic
-            </option>
-
-            <option value="English & Spanish">
-              English & Spanish
-            </option>
+            <option value="English">English</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Bilingual">Bilingual</option>
+            <option value="Amharic">Amharic</option>
+            <option value="French">French</option>
+            <option value="Other">Other</option>
 
           </select>
+        </div>          
+
+        <div class="f-field">
+          <label>Transportation</label>          
+          <select name="transportation">
+
+            <option value="">
+              Select
+            </option>
+
+            <option value="Y">Has transportation</option>
+            <option value="N">No transportation</option>
+            <option value="N">Needs ride</option>
+            <option value="D">Driver available</option>
+
+          </select>          
 
         </div>
 
@@ -3748,7 +3790,7 @@ Loads ENDORSEMENTS from /data/endorsement.json.
 <script>
   const SHIFT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwMxioP5xy3Sl8TGeentRSIbQY9otiAWBiMV9VXWbIg8svHcjKZdzJ2FlsNPqxDOA/exec";
 
-  const shiftSelect = document.getElementById("shiftSelect");
+  const shiftCards = document.getElementById("shiftCards");
   const shiftForm = document.getElementById("shiftSignupForm");
   const shiftMessage = document.getElementById("shiftFormMessage");
   const shiftButton = document.getElementById("shiftSubmitBtn");
@@ -3758,31 +3800,58 @@ Loads ENDORSEMENTS from /data/endorsement.json.
       const response = await fetch(SHIFT_SCRIPT_URL);
       const shifts = await response.json();
 
-      shiftSelect.innerHTML = '<option value="">Select a shift</option>';
+      shiftCards.innerHTML = "";
+
+      if (!shifts.length) {
+        shiftCards.innerHTML = "<p>No available shifts at this time.</p>";
+        return;
+      }
 
       shifts.forEach(shift => {
-        const option = document.createElement("option");
-        option.value = shift.id + " | " + shift.label;
-        option.textContent = shift.label;
-        shiftSelect.appendChild(option);
+        const label = document.createElement("label");
+        label.className = "shift-card";
+
+        label.innerHTML = `
+          <input type="checkbox"
+                name="shifts"
+                value="${shift.id}"
+                data-label="${shift.label}">
+          <strong>${shift.date}</strong>
+          <span>${shift.siteName}</span>
+          <span>${shift.shift}</span>
+          <span>${shift.shiftType}</span>
+          <span>${shift.remaining} spots available</span>
+        `;
+
+        shiftCards.appendChild(label);
       });
 
     } catch (error) {
-      shiftSelect.innerHTML = '<option value="">Unable to load shifts</option>';
+      shiftCards.innerHTML = "<p>Unable to load shifts.</p>";
     }
   }
 
-  if (shiftSelect) {
+  if (shiftCards) {
     loadShifts();
   }
 
   if (shiftForm) {
-    shiftForm.addEventListener("input", function(){
-      shiftMessage.style.display = "none";
-    });
-
     shiftForm.addEventListener("submit", async function(e) {
       e.preventDefault();
+
+      const selectedShifts = Array.from(
+        shiftForm.querySelectorAll('input[name="shifts"]:checked')
+      ).map(input => ({
+        id: input.value,
+        label: input.dataset.label
+      }));
+
+      if (selectedShifts.length === 0) {
+        shiftMessage.style.display = "block";
+        shiftMessage.style.color = "red";
+        shiftMessage.innerHTML = "Please select at least one shift.";
+        return;
+      }
 
       shiftButton.disabled = true;
       shiftButton.innerHTML = "Submitting...";
@@ -3792,8 +3861,9 @@ Loads ENDORSEMENTS from /data/endorsement.json.
         lastName: shiftForm.lastName.value,
         email: shiftForm.email.value,
         phone: shiftForm.phone.value,
-        shift: shiftForm.shift.value,
+        shifts: selectedShifts,
         language: shiftForm.language.value,
+        transportation: shiftForm.transportation.value,
         notes: shiftForm.notes.value,
         consent: shiftForm.consent.checked ? "Yes" : "No"
       };
