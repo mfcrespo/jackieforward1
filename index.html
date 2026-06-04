@@ -2015,6 +2015,53 @@ body.modal-open{
   flex-shrink:0;
 }
 
+.shift-cards{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  max-height:420px;
+  overflow-y:auto;
+  padding-right:6px;
+}
+
+.shift-card{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  border:1px solid rgba(212,160,23,.35);
+  background:rgba(244,239,230,.04);
+  padding:1rem;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.shift-card:hover{
+  border-color:var(--gold);
+  background:rgba(212,160,23,.08);
+}
+
+.shift-card input[type="checkbox"]{
+  appearance:auto;
+  -webkit-appearance:checkbox;
+  width:22px;
+  height:22px;
+  accent-color:var(--gold);
+  flex-shrink:0;
+  margin-top:3px;
+}
+
+.shift-card strong{
+  color:var(--gold);
+  display:block;
+  margin-bottom:.25rem;
+}
+
+.shift-card span{
+  display:block;
+  color:rgba(244,239,230,.7);
+  line-height:1.45;
+}
+
     /* ─── RESPONSIVE PATCH ───────────────────── */
     @media (max-width: 900px){
       #nav{
@@ -2803,6 +2850,22 @@ body.modal-open{
         <div class="f-field">
           <label>Phone</label>
           <input type="tel" name="phone" required>
+        </div>
+
+        <div class="f-row">
+          <div class="f-field">
+            <label>Filter by Date</label>
+            <select id="dateFilter">
+              <option value="">All Dates</option>
+            </select>
+          </div>
+
+          <div class="f-field">
+            <label>Filter by Location</label>
+            <select id="siteFilter">
+              <option value="">All Locations</option>
+            </select>
+          </div>
         </div>
 
         <div class="f-field">
@@ -3804,40 +3867,92 @@ Loads ENDORSEMENTS from /data/endorsement.json.
   const shiftMessage = document.getElementById("shiftFormMessage");
   const shiftButton = document.getElementById("shiftSubmitBtn");
 
+  const dateFilter = document.getElementById("dateFilter");
+  const siteFilter = document.getElementById("siteFilter");
+
+  let allShifts = [];
+
   async function loadShifts() {
     try {
       const response = await fetch(SHIFT_SCRIPT_URL);
-      const shifts = await response.json();
+      allShifts = await response.json();
 
-      shiftCards.innerHTML = "";
+      populateFilters(allShifts);
+      renderShifts();
 
-      if (!shifts.length) {
-        shiftCards.innerHTML = "<p>No available shifts at this time.</p>";
-        return;
-      }
+    } catch (error) {
+      shiftCards.innerHTML = "<p>Unable to load shifts.</p>";
+    }
+  }
 
-      shifts.forEach(shift => {
-        const label = document.createElement("label");
-        label.className = "shift-card";
+  function populateFilters(shifts) {
+    const dates = [...new Set(shifts.map(s => s.date))];
+    const sites = [...new Set(shifts.map(s => s.siteName))];
 
-        label.innerHTML = `
-          <input type="checkbox"
-                name="shifts"
-                value="${shift.id}"
-                data-label="${shift.label}">
+    dateFilter.innerHTML = '<option value="">All Dates</option>';
+    siteFilter.innerHTML = '<option value="">All Locations</option>';
+
+    dates.forEach(date => {
+      const option = document.createElement("option");
+      option.value = date;
+      option.textContent = date;
+      dateFilter.appendChild(option);
+    });
+
+    sites.forEach(site => {
+      const option = document.createElement("option");
+      option.value = site;
+      option.textContent = site;
+      siteFilter.appendChild(option);
+    });
+  }
+
+  function renderShifts() {
+    const selectedDate = dateFilter.value;
+    const selectedSite = siteFilter.value;
+
+    const filtered = allShifts.filter(shift => {
+      const matchDate = !selectedDate || shift.date === selectedDate;
+      const matchSite = !selectedSite || shift.siteName === selectedSite;
+      return matchDate && matchSite;
+    });
+
+    shiftCards.innerHTML = "";
+
+    if (!filtered.length) {
+      shiftCards.innerHTML = "<p>No shifts available for this selection.</p>";
+      return;
+    }
+
+    filtered.forEach(shift => {
+      const card = document.createElement("label");
+      card.className = "shift-card";
+
+      card.innerHTML = `
+        <input type="checkbox"
+               name="shifts"
+               value="${shift.id}"
+               data-label="${shift.label}">
+
+        <div>
           <strong>${shift.date}</strong>
           <span>${shift.siteName}</span>
           <span>${shift.shift}</span>
           <span>${shift.shiftType}</span>
           <span>${shift.remaining} spots available</span>
-        `;
+        </div>
+      `;
 
-        shiftCards.appendChild(label);
-      });
+      shiftCards.appendChild(card);
+    });
+  }
 
-    } catch (error) {
-      shiftCards.innerHTML = "<p>Unable to load shifts.</p>";
-    }
+  if (dateFilter) {
+    dateFilter.addEventListener("change", renderShifts);
+  }
+
+  if (siteFilter) {
+    siteFilter.addEventListener("change", renderShifts);
   }
 
   if (shiftCards) {
