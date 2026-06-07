@@ -2062,6 +2062,47 @@ body.modal-open{
   line-height:1.45;
 }
 
+/* press kit */
+
+/* PRESS & MEDIA */
+
+.media-kit-wrapper{
+  margin-top:3rem;
+}
+
+.media-kit-wrapper .section-label{
+  margin-bottom:1rem;
+}
+
+.media-kit-simple{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.press-kit-btn{
+  background:var(--gold);
+  color:#000;
+  border:2px solid var(--gold);
+}
+
+.press-kit-btn:hover{
+  background:#f3c43b;
+  border-color:#f3c43b;
+  color:#000;
+}
+
+/* Mobile press kit */
+
+@media(max-width:768px){
+
+  .media-kit-simple{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
     /* ─── RESPONSIVE PATCH ───────────────────── */
     @media (max-width: 900px){
       #nav{
@@ -2509,6 +2550,32 @@ body.modal-open{
           <h4>FROM LIVED EXPERIENCE TO DELIVERED RESULTS</h4>
           <p>20 years of service, Jackie turned her story into action across District government:</p>
         </div>
+      </div>
+      <div class="media-kit-wrapper">
+
+        <div class="section-label">
+          Press & Media
+        </div>
+
+        <div class="media-kit-simple">
+
+          <a href="/documents/Jackie-Reyes-Yanes-Press-Kit.zip"
+            class="bio-download-btn press-kit-btn"
+            download>
+            Download Press Kit
+          </a>
+
+          <a href="/documents/Jackie-Reyes-Yanes-Official-Photos.zip"
+            class="bio-download-btn"
+            download>
+            Official Photos
+          </a>
+
+        </div>
+
+      </div>
+    </div>     
+  </div>    
 
 </section>
 
