@@ -712,7 +712,13 @@
               </div>
               <h2>${escapeHtml(item.title_en || item.title_es || item.title || "")}</h2>
               ${(item.summary_en || item.summary_es || item.summary) ? `<p>${escapeHtml(item.summary_en || item.summary_es || item.summary || "")}</p>` : ""}
-              <a class="news-link" href="${escapeHtml(item.url || item.video_url || "#")}" target="_blank" rel="noopener noreferrer">${item.type === "video" ? "Watch Story" : "Read Coverage"}</a>
+              <a 
+                class="news-link" 
+                href="${item.content_type === 'statement' ? `/statement.html?title=${encodeURIComponent(item.title_en || item.title_es || item.title || '')}` : escapeHtml(item.url || item.video_url || '#')}"
+                ${item.content_type === 'statement' ? '' : 'target="_blank" rel="noopener noreferrer"'}
+              >
+                ${item.content_type === "statement" ? "Read Statement" : item.type === "video" ? "Watch Story" : "Read Coverage"}
+              </a>
             </div>
           </article>
         `).join("");

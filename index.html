@@ -2103,6 +2103,61 @@ body.modal-open{
   }
 }
 
+/* STATEMENT */
+
+#statement{
+  background:#0e110e;
+  border-top:1px solid rgba(244,239,230,.06);
+  border-bottom:1px solid rgba(244,239,230,.06);
+}
+
+.statement-grid{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:3rem;
+  align-items:center;
+}
+
+.statement-image img{
+  width:100%;
+  display:block;
+  border:1px solid rgba(212,160,23,.25);
+}
+
+.statement-date{
+  font-family:'League Spartan',sans-serif;
+  font-size:.8rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:1rem;
+}
+
+.statement-content h2{
+  font-family:'League Spartan',sans-serif;
+  font-size:clamp(2rem,4vw,3.5rem);
+  font-weight:800;
+  text-transform:uppercase;
+  line-height:.9;
+  color:var(--warm);
+  margin-bottom:1.5rem;
+}
+
+.statement-content p{
+  font-family:'Lora',serif;
+  line-height:1.8;
+  color:rgba(244,239,230,.72);
+  margin-bottom:1rem;
+}
+
+@media(max-width:900px){
+
+  .statement-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
     /* ─── RESPONSIVE PATCH ───────────────────── */
     @media (max-width: 900px){
       #nav{
@@ -2502,6 +2557,63 @@ body.modal-open{
     <span class="mi">Neighborhood Solution Center</span>
   </div>
 </div>
+
+<!-- Statement -->
+<section id="statement" class="section">
+  <div class="wrap">
+
+    <div class="section-label">
+      Community Update
+    </div>
+
+    <div class="statement-grid">
+
+      <div class="statement-image">
+        <img src="/images/jackie-statement-june-2026.jpg"
+             alt="Jackie Reyes-Yanes statement to Ward 1">
+      </div>
+
+      <div class="statement-content">
+
+        <div class="statement-date">
+          June 17, 2026
+        </div>
+
+        <h2>
+          Mil Gracias,<br>
+          Ward 1.
+        </h2>
+
+        <p>
+          Last night did not end the way we had hoped,
+          but I want one thing to be absolutely clear:
+          I am incredibly proud of what we built together.
+        </p>
+
+        <p>
+          To every volunteer, supporter, resident, and voter
+          who believed in this campaign: thank you.
+          Your belief does not end here.
+        </p>
+
+        <p>
+          I am a product of Ward 1. I am part of this community.
+          And I will continue fighting for the families,
+          neighborhoods, and residents who deserve to be seen,
+          heard, and represented.
+        </p>
+
+        <a href="/statement-june-2026.html"
+           class="btn-primary">
+           Read Full Statement
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 <!-- STORY -->
 <section id="story">
