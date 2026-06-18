@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Statement | Jackie Reyes-Yanes</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=League+Spartan:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --gold:#D4A017;
+      --ink:#0B0D0B;
+      --warm:#F4EFE6;
+    }
+
+    body{
+      margin:0;
+      background:var(--ink);
+      color:var(--warm);
+      font-family:'Lora',serif;
+    }
+
+    .wrap{
+      max-width:900px;
+      margin:0 auto;
+      padding:4rem 1.25rem;
+    }
+
+    .back{
+      display:inline-block;
+      margin-bottom:2rem;
+      color:var(--gold);
+      font-family:'League Spartan',sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .meta{
+      color:var(--gold);
+      font-family:'League Spartan',sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:1rem;
+    }
+
+    h1{
+      font-family:'League Spartan',sans-serif;
+      font-size:clamp(2.2rem,5vw,4rem);
+      line-height:.95;
+      text-transform:uppercase;
+      margin:0 0 2rem;
+    }
+
+    .hero-img{
+      width:100%;
+      margin:0 0 2rem;
+      border:1px solid rgba(212,160,23,.35);
+      display:block;
+    }
+
+    .body{
+      font-size:1.08rem;
+      line-height:1.85;
+      color:rgba(244,239,230,.86);
+      white-space:pre-line;
+    }
+
+    .body h1,
+    .body h2,
+    .body h3{
+      font-family:'League Spartan',sans-serif;
+      color:var(--gold);
+      text-transform:uppercase;
+      line-height:1;
+      margin-top:2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <a href="/news.html" class="back">← Back to News</a>
+
+    <div id="statement-content">
+      Loading statement...
+    </div>
+  </main>
+
+  <script>
+    function escapeHtml(str = '') {
+      return String(str)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name) || "";
+    }
+
+    function simpleMarkdown(text = "") {
+      return escapeHtml(text)
+        .replace(/^# (.*)$/gm, "<h1>$1</h1>")
+        .replace(/^## (.*)$/gm, "<h2>$1</h2>")
+        .replace(/^### (.*)$/gm, "<h3>$1</h3>")
+        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+    }
+
+    async function loadStatement() {
+      const container = document.getElementById("statement-content");
+      const titleParam = getParam("title");
+
+      try {
+        const response = await fetch("/data/news.json", { cache: "no-store" });
+        const data = await response.json();
+        const items = Array.isArray(data.items) ? data.items : [];
+
+        const item = items.find(i =>
+          (i.content_type === "statement") &&
+          ((i.title_en || i.title_es || i.title || "") === titleParam)
+        );
+
+        if (!item) {
+          container.innerHTML = "<p>Statement not found.</p>";
+          return;
+        }
+
+        document.title = `${item.title_en || item.title_es || "Statement"} | Jackie Reyes-Yanes`;
+
+        container.innerHTML = `
+          <div class="meta">
+            ${escapeHtml(item.source || "Jackie Reyes-Yanes")}
+            ${item.date ? " • " + escapeHtml(item.date) : ""}
+          </div>
+
+          <h1>${escapeHtml(item.title_en || item.title_es || item.title || "Statement")}</h1>
+
+          ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title_en || item.title_es || "Statement")}" class="hero-img">` : ""}
+
+          <div class="body">
+            ${simpleMarkdown(item.body || item.summary_en || item.summary_es || "")}
+          </div>
+        `;
+      } catch (error) {
+        console.error(error);
+        container.innerHTML = "<p>Unable to load this statement right now.</p>";
+      }
+    }
+
+    loadStatement();
+  </script>
+</body>
+</html>
