@@ -2569,7 +2569,7 @@ body.modal-open{
     <div class="statement-grid">
 
       <div class="statement-image">
-        <img src="/images/jackie-statement-june-2026.jpg"
+        <img src="/images/uploads/jry-statement_16062026_eng.jpg"
              alt="Jackie Reyes-Yanes statement to Ward 1">
       </div>
 
@@ -2603,9 +2603,8 @@ body.modal-open{
           heard, and represented.
         </p>
 
-        <a href="/statement-june-2026.html"
-           class="btn-primary">
-           Read Full Statement
+        <a href="/statement.html?title=Statement%20from%20Jackie%20Reyes-Yanes%20Following%20the%20Ward%201%20Democratic%20Primary" class="btn-primary">
+          Read Full Statement
         </a>
 
       </div>
@@ -3773,11 +3772,13 @@ Loads news from /data/news.json.
         const image = mediaImage(item);
         const title = item.title_en || item.title_es || item.title || "";
         const summary = item.summary_en || item.summary_es || item.summary || "";
-        const target = item.url || item.video_url || "#";
+        const target = item.content_type === "statement"
+              ? `/statement.html?title=${encodeURIComponent(title)}`
+              : item.url || item.video_url || "#";
 
         return `
           <article class="press-card">
-            <a class="press-card-link" href="${escapeHtml(target)}" target="_blank" rel="noopener noreferrer">
+            <a class="press-card-link" href="${escapeHtml(target)}" ${item.content_type === "statement" ? "" : 'target="_blank" rel="noopener noreferrer"'}>
               <div class="press-card-image-wrap">
                 ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(title)}" class="press-card-image">` : `<div class="press-card-placeholder">${item.type === "video" ? "Video" : "No Image"}</div>`}
               </div>
@@ -3789,7 +3790,7 @@ Loads news from /data/news.json.
                 </div>
                 <h3>${escapeHtml(title)}</h3>
                 ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
-                <span class="press-card-read">${item.type === "video" ? "Watch Story →" : "Read Coverage →"}</span>
+                <span class="press-card-read">${item.content_type === "statement" ? "Read Statement →" : item.type === "video" ? "Watch Story →" : "Read Coverage →"}</span>
               </div>
             </a>
           </article>
